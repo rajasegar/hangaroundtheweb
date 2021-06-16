@@ -1,0 +1,4 @@
+baseURL = "http://hangaroundtheweb.com/"
+languageCode = "en-us"
+title = "hangaroundtheweb"
+theme = "ananke"
