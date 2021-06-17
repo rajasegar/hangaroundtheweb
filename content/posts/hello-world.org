@@ -1,8 +1,13 @@
 ---
+categories:
+- Uncategorized
 title: "Hello World"
 date: 2021-06-16T13:13:34+05:30
 draft: true
 summary: This is an org mode post
+tags:
+- articles
+- html
 ---
 
 * Hello world
