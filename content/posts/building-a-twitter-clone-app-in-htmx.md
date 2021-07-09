@@ -281,7 +281,7 @@ This is our full and final server code for our demo application. The code is hos
 
 ### server.js
 
-```
+```js
 const express = require('express');
 const bodyParser = require('body-parser');
 const pug = require('pug');
