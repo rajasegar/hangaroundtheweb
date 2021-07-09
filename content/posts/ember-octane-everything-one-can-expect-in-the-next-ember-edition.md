@@ -2,7 +2,7 @@
 title: 'Ember Octane - everything one can expect in the next Ember edition'
 date: Sun, 26 Aug 2018 22:17:45 +0000
 draft: false
-tags: ['#EmberJS2018', 'ember', 'ember-octane', 'emberjs', 'Uncategorized']
+tags: ['EmberJS2018', 'ember', 'ember-octane', 'emberjs', 'Uncategorized']
 ---
 
 Everything one can expect in Ember Octane
