@@ -22,7 +22,7 @@ We always have a choice about whether to act on them, but we have no choice abou
 
 A fundamental rule of business is that the bottom line, rather than the moral or aesthetic value of a particular idea, will dictate corporate decisions. Companies are for profit, and even the not-for-profit companies are more and more required to be efficient. The first and often last question asked about any new idea or change is, How much will it cost? You need to realize this, have gravity on your side and be ready with an answer. Better yet, have some idea about how your proposed change will make money or save money over a period of time. You should be a firm believer in the long-term view and idea that good ethics make good business. It is still up to you to demonstrate your contentions are correct rather than expecting people to accept your ideas because they are right.
 
-![](http://hangaroundtheweb.com/wp-content/uploads/2018/07/claire-anderson-60670-unsplash.jpg)
+![](/wp-content/claire-anderson-60670-unsplash.jpeg)
 
 > Opportunities go not to the most qualified but to the people who promote themselves the best and are in the right place at the right time.
 
@@ -32,7 +32,7 @@ This may be unfair, but it is definitely not accidental. If you want to get anyw
 
 Count on the fact that your job will change. You will always have to do things that aren't in your job description just to be allowed to do the things that are. All instructions that you will ever be given will leave out at least one or two crucial items. Many of the most important questions will never be answered.
 
-![](http://hangaroundtheweb.com/wp-content/uploads/2018/07/simson-petrol-133138-unsplash.jpg)
+![](/wp-content/uploads/2018/07/simson-petrol-133138-unsplash.jpg)
 
 ### 3\. People will not do what they should do.
 

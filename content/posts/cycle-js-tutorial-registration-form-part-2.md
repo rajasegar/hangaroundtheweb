@@ -42,7 +42,7 @@ create-cycle-app my-awesome-app
 
 The application folder structure will look like this:
 
-![folder-structure-small.jpg](http://hangaroundtheweb.com/wp-content/uploads/2017/02/folder-structure-small.jpg)
+![folder-structure-small.jpg](/wp-content/uploads/2017/02/folder-structure-small.jpg)
 
 Inside the **src/** directory, we will be having the source code:
 
@@ -165,7 +165,7 @@ State SPY
 
 ```
 
-![state-spy2.jpg](http://hangaroundtheweb.com/wp-content/uploads/2017/02/state-spy2.jpg)
+![state-spy2.jpg](/wp-content/uploads/2017/02/state-spy2.jpg)
 
 Also, we are capturing the application state using the values stored in **username** and **email** and rendering them in the DOM using pre tags in JSON format.
 

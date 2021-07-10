@@ -47,7 +47,7 @@ var keyups = Rx.Observable.fromEvent($input, 'keyup')
 
 ```
 
-### ![](http://hangaroundtheweb.com/wp-content/uploads/2017/03/wikisearch-rxjs.jpg)
+### ![](/wp-content/uploads/2017/03/wikisearch-rxjs.jpg)
 
 ### 1.4 Throttle the input events
 
