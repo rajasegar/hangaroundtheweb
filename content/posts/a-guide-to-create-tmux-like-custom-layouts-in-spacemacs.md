@@ -52,7 +52,7 @@ Vim provides multiple ways to organize your work, one of them being the ability 
 
 A tab page is a collection of windows.
 
-![](http://hangaroundtheweb.com/wp-content/uploads/2019/06/Tabs-windows-buffers.png)
+![](/wp-content/uploads/2019/06/Tabs-windows-buffers.png)
 
 #### Emacs: Frames
 
@@ -66,7 +66,7 @@ A window is an area of the screen that is used to display a buffer.
 
 Windows are grouped into frames. Each frame contains at least one window; the user can subdivide it into multiple, non-overlapping windows to view several buffers at once.
 
-![](http://hangaroundtheweb.com/wp-content/uploads/2019/06/Emacs-windows-frames.png)
+![](/wp-content/uploads/2019/06/Emacs-windows-frames.png)
 
 #### tmux
 
@@ -102,7 +102,7 @@ Custom layouts in Spacemacs can be defined using the macro **spacemacs|define-c
 
 Panes are spread out evenly from left to right across the window.
 
-![](http://hangaroundtheweb.com/wp-content/uploads/2019/06/spacemacs-even-horizontal.jpg)
+![](/wp-content/uploads/2019/06/spacemacs-even-horizontal.jpg)
 
 ```
 ;; even-horizontal
@@ -117,7 +117,7 @@ Panes are spread out evenly from left to right across the window.
 
 Panes are spread evenly from top to bottom.
 
-![](http://hangaroundtheweb.com/wp-content/uploads/2019/06/spacemacs-even-vertical.jpg)
+![](/wp-content/uploads/2019/06/spacemacs-even-vertical.jpg)
 
 ```
 ;; even-vertical
@@ -132,7 +132,7 @@ Panes are spread evenly from top to bottom.
 
 A large (main) pane is shown at the top of the window and the remaining panes are spread from left to right in the leftover space at the bottom. Use the main-pane-height window option to specify the height of the top pane.
 
-![](http://hangaroundtheweb.com/wp-content/uploads/2019/06/spacemacs-main-horizontal.jpg)
+![](/wp-content/uploads/2019/06/spacemacs-main-horizontal.jpg)
 
 ```
 ;; main-horizontal
@@ -149,7 +149,7 @@ A large (main) pane is shown at the top of the window and the remaining panes ar
 
 Similar to main-horizontal but the large pane is placed on the left and the others spread from top to bottom along the right.
 
-![](http://hangaroundtheweb.com/wp-content/uploads/2019/06/spacemacs-main-vertical.jpg)
+![](/wp-content/uploads/2019/06/spacemacs-main-vertical.jpg)
 
 ```
 ;; main-vertical
@@ -166,7 +166,7 @@ Similar to main-horizontal but the large pane is placed on the left and the othe
 
 Panes are spread out as evenly as possible over the window in both rows and columns.
 
-![](http://hangaroundtheweb.com/wp-content/uploads/2019/06/spacemacs-tiled-layout.jpg)
+![](/wp-content/uploads/2019/06/spacemacs-tiled-layout.jpg)
 
 ```
 ;; tiled
@@ -220,7 +220,7 @@ The above same configuration can be easily ported to Spacemacs like below. All y
 
 The resultant layout will look something similar to this:
 
-![](http://hangaroundtheweb.com/wp-content/uploads/2019/06/spacemacs-custom-layout.jpg)
+![](/wp-content/uploads/2019/06/spacemacs-custom-layout.jpg)
 
 ### References
 

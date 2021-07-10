@@ -10,7 +10,7 @@ Two simple ways to negotiate consensus in a software development group
 
 You can't reach consensus unless you recognize it when you have it in your grasp. This means that software development groups trying to reach collective decisions are wise to agree, in advance, on the criteria by which technical matters will be decided. What is important? What matters? What is “good” and what is “bad” within the confines of this particular project?
 
-![](http://hangaroundtheweb.com/wp-content/uploads/2018/05/jakob-owens-209001-unsplash.jpg)
+![](/wp-content/uploads/2018/05/jakob-owens-209001-unsplash.jpg)
 
 Many times, when a group gets bogged down trying to reach a conclusion on an analysis or design problem and says, **“We can't decide which way to go,”** We can ask them, **“How will you know which approach is better?”**
 
@@ -18,7 +18,7 @@ Many times, when a group gets bogged down trying to reach a conclusion on an ana
 
 Resolving trade-offs requires knowing something about the value, within a given project, of whatever is gained or lost in the trade-off.
 
-![](http://hangaroundtheweb.com/wp-content/uploads/2018/05/project-objectives-composition.jpg)
+![](/wp-content/uploads/2018/05/project-objectives-composition.jpg)
 
 In almost all engineering, projects are driven by competing criteria. It is not possible to meet all of them equally well in every detail at every juncture. Most projects pursue a mixture of technical and economic objectives. They want on-time delivery, run-time efficiency, ease of use, marketability, extensibility, and maintainability, along with a host of other goodies next to godliness. How are these to be weighed?
 
@@ -28,7 +28,7 @@ It helps to have your priorities straight. The metrics mavens will probably push
 
 > “Well, we just did what the formula said we should; it's not our fault that each screen update takes 17 seconds.”
 
-![](http://hangaroundtheweb.com/wp-content/uploads/2018/05/negotiating-consensus-001.jpg)
+![](/wp-content/uploads/2018/05/negotiating-consensus-001.jpg)
 
 Accountability is promoted when development teams participate in establishing their principal goals and, on the basis of these, rank the criteria by which issues are to be decided. Once agreed upon, the criteria and their ordering are no longer open to debate. Most of the time they won't even enter into technical discussions. It is not necessary to analyze every little trade-off in terms of seven or eight criteria. The agreed-on list of criteria is taken off the shelf only when needed to help resolve a decision that is unclear or is taking too long.
 
@@ -36,7 +36,7 @@ Accountability is promoted when development teams participate in establishing th
 
 Lack of clarity or agreement on criteria is not the only thing that can hinder negotiation to technical consensus. Free-wheeling discussions are not only the heart of consensus teamwork, but they're fun. Vigorous discussion, however, can cross the line into rancorous debate. Neither the courtroom nor the political podium offers a good model for consensus-based teamwork. Whether or not the adversarial approach works in the justice system, it is essential that design and development groups not end up as debating societies.
 
-![](http://hangaroundtheweb.com/wp-content/uploads/2018/05/rawpixel-668349-unsplash.jpg)
+![](/wp-content/uploads/2018/05/rawpixel-668349-unsplash.jpg)
 
 It is very common to see members of a team complaining about their group was getting nowhere. They were repeatedly getting bogged down in seemingly endless wrangles. Even what little progress they were able to make was seriously substandard compared to other teams in the same class. If one watched them work—or try to work—we can realize that the discussions were being dominated by one man who was an arguer par excellence, but his ideas were not up to his debating skills. Some other members of the team had a sense of the shortcomings in his thinking but, outgunned by his argumentation, kept falling back on opinions and feelings:
 
@@ -60,11 +60,11 @@ Sometimes starting from a set of prior proposals or already worked out solutions
 
 Where distinct subgroups or teams have been involved in preparing proposed solutions, after the initial discussions each subteam can be invited to go back and improve their own proposal by incorporating what they think are some of the best features of opposing approaches. This means that the next meeting starts with the opposing positions already moved closer together.
 
-![](http://hangaroundtheweb.com/wp-content/uploads/2018/05/Screenshot-2018-5-25-Tools-of-the-Trade-photo-by-Scott-Warman-scottiewarman-on-Unsplash.jpg)
+![](/wp-content/uploads/2018/05/Screenshot-2018-5-25-Tools-of-the-Trade-photo-by-Scott-Warman-scottiewarman-on-Unsplash.jpg)
 
 In general, technical consensus is built from alternatives by finding ways that combine or even transcend the best features of each. Instead of starting with positions, with specific technical proposals, it is often more efficient and effective to start with issues. The team's first job is to explore and settle on what are the essential technical issues represented in the various possibilities, the underlying reasons and technical rationale that are reflected in stated positions or proposed solutions.
 
-![](http://hangaroundtheweb.com/wp-content/uploads/2018/05/violeta-pencheva-1827-unsplash.jpg)
+![](/wp-content/uploads/2018/05/violeta-pencheva-1827-unsplash.jpg)
 
 The stage for creative synthesis is set even before the first meeting. Instead of having team members think about approaches to, say, the file structure, they might be asked to come with a catalog of the issues involved in designing an efficient file structure. They might list and prioritize specific decision criteria. They may even have to be discouraged from coming up with design ideas or proposed solutions. With many of the more maverick software developers, the problem is not so much spurring them on as reining them in before they stampede.
 

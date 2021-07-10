@@ -21,7 +21,7 @@ But the real motivation behind code refactorings are the smells in your code or 
 
 Bad smells in code are certain structures in the code that suggest (sometimes they scream for) the possibility of refactoring. Determining what is and is not a code smell is subjective, and varies by language, developer, and development methodology. In [Refactoring](https://refactoring.com/), Martin Fowler along with [Kent Beck](https://en.wikipedia.org/wiki/Kent_Beck) have identified about 20 different kinds of [code smells](https://en.wikipedia.org/wiki/Code_smell). They have also catalogued the various refactoring methods that can be applied to remove these code smells from your source.
 
-![](http://hangaroundtheweb.com/wp-content/uploads/2019/03/common-code-smells.png)
+![](/wp-content/uploads/2019/03/common-code-smells.png)
 
 ### Tools
 
@@ -66,13 +66,13 @@ var output = recast.print(ast).code;
 
 At a very high level, codemods do a very simple processing with your source code like converting it to AST representations, manipulating nodes in the AST and then finally converting the AST back to source code.
 
-![](http://hangaroundtheweb.com/wp-content/uploads/2019/03/codemod-high-level.png)
+![](/wp-content/uploads/2019/03/codemod-high-level.png)
 
 ### Different stages of Codemods
 
 Below you can find the details working of how the jscodeshift and recast tools transform your source code into AST and back to code again.
 
-![](http://hangaroundtheweb.com/wp-content/uploads/2019/03/codemod-stage-final.png)
+![](/wp-content/uploads/2019/03/codemod-stage-final.png)
 
 ### AST
 

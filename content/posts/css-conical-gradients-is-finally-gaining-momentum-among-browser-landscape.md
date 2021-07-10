@@ -22,17 +22,17 @@ These gradients are called "conic" or "conical" because, if the color stops are 
 
 In various image editing programs like [Adobe Photoshop](https://www.adobe.com/in/products/photoshop.html), [GIMP](http://gimp.org), etc., this type of gradient is known by different names. In Photoshop, this type of gradient is known as **Angular Gradients**:
 
-![](http://hangaroundtheweb.com/wp-content/uploads/2018/08/angular-gradient-photoshop.png)
+![](/wp-content/uploads/2018/08/angular-gradient-photoshop.png)
 
 In GIMP, which is an open-source image editor, it is called as Conical (Symmetrical and Asymmetrical) gradients.
 
-![](http://hangaroundtheweb.com/wp-content/uploads/2018/08/conical-gradient-gimp.png)
+![](/wp-content/uploads/2018/08/conical-gradient-gimp.png)
 
 ### Visual Illustration
 
 This example visually illustrates how **conic-gradient(at 25% 30%, white, black 60%)** would be drawn. Note that since color stop positions always resolve to angles, the only effect of the center is a 2D translation of the gradient, i.e. it does not affect how the gradient is drawn.
 
-![](http://hangaroundtheweb.com/wp-content/uploads/2018/08/conic-diagram.png)
+![](/wp-content/uploads/2018/08/conic-diagram.png)
 
 ### Syntax
 
@@ -126,7 +126,7 @@ The following steps must be applied in order to process the <color-stop-list>. A
 
 This is the current browser support status for Conical Gradients as of today.
 
-![](http://hangaroundtheweb.com/wp-content/uploads/2018/08/conical-gradient-caniuse.png)
+![](/wp-content/uploads/2018/08/conical-gradient-caniuse.png)
 
 You can view more community examples in [Codepen](https://codepen.io/search/pens?q=conical%20gradient&page=1&order=popularity&depth=everything&show_forks=false) and also [here](https://leaverou.github.io/conic-gradient/). Please feel free to share your views/thoughts on conical gradients in the comments.
 

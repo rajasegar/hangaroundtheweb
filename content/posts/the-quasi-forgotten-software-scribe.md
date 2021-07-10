@@ -38,7 +38,7 @@ The function of the scribe or recorder on a software development team is to be r
 
 A good group memory must carry a lot of information. Some of this is volatile or temporary storage, some is permanent. Some of it is active and worked with dynamically in meetings and the day-to-day tasks of the team, while some is more passively filed. The information management functions can be divided for convenience into session memory and project memory. Session memory consists of the records generated and manipulated during group sessions, whenever the team is meeting and solving problems as a group. Project memory covers the permanent records and documentation produced and used by the group. It includes the work product, which means not only code but also all the design and analysis models and documents generated along the way to the code. Project memory also covers inputs to the project, such as requirements and specifications, and other background documents. Managing the project memory really requires a librarian, and often the role is known by that title.
 
-![](http://hangaroundtheweb.com/wp-content/uploads/2018/05/info-mgmt.png)
+![](/wp-content/uploads/2018/05/info-mgmt.png)
 
 ### Modular Memory
 
@@ -60,7 +60,7 @@ A third special record that proves useful on development teams is a “parts bin
 
 The “reject bin” is just the opposite, a place to note all those unused ideas and paths not taken, along with that vital rationale for rejection.
 
-![](http://hangaroundtheweb.com/wp-content/uploads/2018/05/do-list.png)
+![](/wp-content/uploads/2018/05/do-list.png)
 
 All four of these special records—the do-list, the deferred decisions, the parts bin, and the reject bin— serve to record things that might otherwise be lost or forgotten. They also help the group to make efficient use of time. By recording digressions and distractions in one of these specialized bins, the group can stay on track with the main problem without losing useful information. It can also keep a group from getting stuck on discussions that are going nowhere. Instead of more wheel-spinning, an issue can be moved to one of the “bins” for later attention. The bins themselves also serve as quality assurance mechanisms. By the end of a project, everything in the bins must have been crossed off or otherwise accounted for.
 

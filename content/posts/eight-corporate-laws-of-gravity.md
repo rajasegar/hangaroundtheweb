@@ -38,13 +38,13 @@ Count on the fact that your job will change. You will always have to do things t
 
 The rules that you follow are not necessarily those that the universe follows. People will do what they are sufficiently rewarded to do. This is where virtue being its own reward comes in. Or they will do what is easiest. A corollary to this is, tasks that are not checked will not be done. Most people will leave most things until the last minute. If there is no time limit, then the task will await judgment day for completion.
 
-![](http://hangaroundtheweb.com/wp-content/uploads/2018/07/mitch-lensink-213301-unsplash.jpg)
+![](/wp-content/uploads/2018/07/mitch-lensink-213301-unsplash.jpg)
 
 ### 4\. People will consider their own feelings and best interests before they consider yours.
 
 This is true even of close friends and family. Never assume malicious intent when ignorance is sufficient to explain. People will come to you for favors but will not be as ready to do favors for you when you come to them as you were to do favors for them when they came to you.
 
-![](http://hangaroundtheweb.com/wp-content/uploads/2018/07/arnaud-mesureur-86639-unsplash.jpg)
+![](/wp-content/uploads/2018/07/arnaud-mesureur-86639-unsplash.jpg)
 
 People will tell you their problems but will never be available to listen to yours. If you tell somebody at work something in confidence and it's of any importance, it will get out. If you are abrasive and aggressive, nobody will ever come and tell you. That's because they're afraid of you. If you want to form an alliance, make a group cohesive or start a friendship, you will have to do all the work. It will seem that you're the one who always has to do all the phone calling, planning or grunt stuff. If you feel that way, it means you're doing it right. If you're on a committee, you'll have to do most of the work, but you'll have to divide the credit.
 
@@ -52,23 +52,23 @@ People will tell you their problems but will never be available to listen to you
 
 That's really what this book is about. The Dinosaur Brain thinking is the source of politics. You might as well know the rules because you will have to live by them.
 
-![](http://hangaroundtheweb.com/wp-content/uploads/2018/07/isai-ramos-451950-unsplash.jpg)
+![](/wp-content/uploads/2018/07/isai-ramos-451950-unsplash.jpg)
 
 ### 6\. There will never be time of smooth sailing.
 
 As soon as one crisis is over, another will move in to take its place. Nature abhors a vacuum. There will never be a good, quiet time to make a change. If you're waiting for all your work to be done before you take a vacation or do long- term planning, you'll probably wait forever. This is the problem that workaholics have. It's not, as popularly believed, that they like to work all the time; they're just waiting until the work in front of them is done before they stop.
 
-![](http://hangaroundtheweb.com/wp-content/uploads/2018/07/michael-henry-389405-unsplash.jpg)
+![](/wp-content/uploads/2018/07/michael-henry-389405-unsplash.jpg)
 
 ### 7\. The government was not created to make your job easier or more efficient.
 
-![](http://hangaroundtheweb.com/wp-content/uploads/2018/07/jorge-alcala-325378-unsplash.jpg)
+![](/wp-content/uploads/2018/07/jorge-alcala-325378-unsplash.jpg)
 
 ### 8\. All the information will never be in.
 
 You'll never know in advance whether a decision is right or wrong. Most often you have to choose one of the roads and make it the right choice by your actions after the decision is made.
 
-![](http://hangaroundtheweb.com/wp-content/uploads/2018/07/markus-spiske-207946-unsplash.jpg)
+![](/wp-content/uploads/2018/07/markus-spiske-207946-unsplash.jpg)
 
 ### Reference
 

@@ -14,7 +14,7 @@ Eight Elegant Quotes on Coding best practices
 
 The brute force method, also known as Proof by exhaustion, proof by cases, proof by case analysis, or the complete induction, is a method of mathematical proof in which the statement to be proved is split into a finite number of cases or sets of equivalent cases and each type of case is checked to see if the proposition in question holds. This is a method of direct proof.
 
-![](http://hangaroundtheweb.com/wp-content/uploads/2018/07/brute-force.png)
+![](/wp-content/uploads/2018/07/brute-force.png)
 
 ### Quote #2
 
@@ -22,37 +22,37 @@ The brute force method, also known as Proof by exhaustion, proof by cases, proof
 
 Asymmetry is the absence of, or a violation of, symmetry (the property of an object being invariant to a transformation, such as reflection). Symmetry is an important property of both physical and abstract systems and it may be displayed in precise terms or in more aesthetic terms. The absence of or violation of symmetry that are either expected or desired can have important consequences for a system.
 
-![](http://hangaroundtheweb.com/wp-content/uploads/2018/07/avoid-asymmetry.jpg)
+![](/wp-content/uploads/2018/07/avoid-asymmetry.jpg)
 
 ### Quote #3
 
 > **The sooner you start to code, the longer the program will take.** – Roy Carlson, University of Wisconsin
 
-![](http://hangaroundtheweb.com/wp-content/uploads/2018/07/sooner-code.png)
+![](/wp-content/uploads/2018/07/sooner-code.png)
 
 ### Quote #4
 
 > **If you can't write it down in English, you can't code it.** – Peter Halpern, Brooklyn, New York
 
-![](http://hangaroundtheweb.com/wp-content/uploads/2018/07/write-down-english.jpg)
+![](/wp-content/uploads/2018/07/write-down-english.jpg)
 
 ### Quote #5
 
 > **Details Count.** – Peter Weinberger, Bell Labs
 
-![](http://hangaroundtheweb.com/wp-content/uploads/2018/07/details-count.jpg)
+![](/wp-content/uploads/2018/07/details-count.jpg)
 
 ### Quote #6
 
 > **If the code and the comments disagree, then both are probably wrong.** – Norm Schryer, Bell Labs
 
-![](http://hangaroundtheweb.com/wp-content/uploads/2018/07/code-n-comments.jpg)
+![](/wp-content/uploads/2018/07/code-n-comments.jpg)
 
 ### Quote #7
 
 > **If you have too many special cases, then you are doing it wrong.** – Craig Zerouni, Computer FX Ltd. London, England
 
-![](http://hangaroundtheweb.com/wp-content/uploads/2018/07/special-cases.jpg)
+![](/wp-content/uploads/2018/07/special-cases.jpg)
 
 ### Quote #8
 
@@ -60,7 +60,7 @@ Asymmetry is the absence of, or a violation of, symmetry (the property of an obj
 
 In computer science, a data structure is a data organization and storage format that enables efficient access and modification. More precisely, a data structure is a collection of data values, the relationships among them, and the functions or operations that can be applied to the data.
 
-![](http://hangaroundtheweb.com/wp-content/uploads/2018/07/data-structures.jpg)
+![](/wp-content/uploads/2018/07/data-structures.jpg)
 
 Cover photo from Unsplash by:
 

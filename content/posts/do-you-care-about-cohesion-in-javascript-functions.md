@@ -142,7 +142,7 @@ function completeNewEmployee() {
 
 This example raises the issue of choosing a name that describes the function at the right level of abstraction. You could decide to name the function **readConfigFileInitScratchFileEtc()**, which would imply that the function had only coincidental cohesion. If you name it **startup()**, however, it would be clear that it had a single purpose and clear that it had functional cohesion.
 
-![functional-cohesion.png](http://hangaroundtheweb.com/wp-content/uploads/2017/09/functional-cohesion.png)
+![functional-cohesion.png](/wp-content/uploads/2017/09/functional-cohesion.png)
 
 The remaining kinds of cohesion are generally unacceptable. They result in code that’s poorly organized, hard to debug, and hard to modify. If a function has bad cohesion, it’s better to put effort into a rewrite to have better cohesion than investing in a pinpoint diagnosis of the problem. Knowing what to avoid can be useful, however, so here are the unacceptable kinds of cohesion:
 
@@ -202,7 +202,7 @@ It’s usually all right, however, to create a logically cohesive function if it
 
 Coincidental cohesion occurs when the operations in a function have no discernible relationship to each other. Other good names are “no cohesion” or “chaotic cohesion.” It’s hard to convert coincidental cohesion to any better kind of cohesion—you usually need to do a deeper redesign and reimplementation.
 
-![cohesion-table.png](http://hangaroundtheweb.com/wp-content/uploads/2017/09/cohesion-table.png)
+![cohesion-table.png](/wp-content/uploads/2017/09/cohesion-table.png)
 
 None of these terms are magical or sacred. Learn the ideas rather than the terminology. It’s nearly always possible to write functions with functional cohesion, so focus your attention on functional cohesion for maximum benefit.
 

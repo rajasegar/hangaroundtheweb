@@ -5,7 +5,7 @@ draft: true
 ---
 
 #+options:  num:nil toc:nil  html-postamble:nil 
-#+html_head: <link rel="stylesheet" id="modernize-style-css" href="http://hangaroundtheweb.com/wp-content/themes/modernize/style.css?ver=4.9.4" type="text/css" media="all">
+#+html_head: <link rel="stylesheet" id="modernize-style-css" href="/wp-content/themes/modernize/style.css?ver=4.9.4" type="text/css" media="all">
 #+HTML_HEAD_EXTRA: <style> body { padding: 1em 3em; max-width: 700px; margin: 0 auto; }  img { width: 100%; }</style>
 #+HTML_DOCTYPE: <!DOCTYPE html>
 

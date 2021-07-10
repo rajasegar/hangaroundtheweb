@@ -102,7 +102,7 @@ The twelve barriers to communication can be divided into three major categories:
 *   **sending solutions, and**
 *   **avoidance of other’s concerns**
 
-![](http://hangaroundtheweb.com/wp-content/uploads/2018/02/12-barriers.png)
+![](/wp-content/uploads/2018/02/12-barriers.png)
 
 ### References:
 

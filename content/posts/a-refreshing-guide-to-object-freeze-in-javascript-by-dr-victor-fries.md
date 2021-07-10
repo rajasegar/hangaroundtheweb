@@ -16,7 +16,7 @@ In JavaScript, objects are used to store keyed collections of various data and m
 
 The **Object.freeze()** method freezes an object: basically it prevents four things from an object:
 
-![](http://hangaroundtheweb.com/wp-content/uploads/2018/06/object-freeze2.jpg)
+![](/wp-content/uploads/2018/06/object-freeze2.jpg)
 
 The method returns the passed object.
 

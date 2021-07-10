@@ -44,19 +44,19 @@ Consider the case of Bill who was working in one of the early space tracking sys
 
 #### Looking for a critic
 
-![two-programmers.jpg](http://hangaroundtheweb.com/wp-content/uploads/2018/03/two-programmers.jpg)
+![two-programmers.jpg](/wp-content/uploads/2018/03/two-programmers.jpg)
 
 Bill found Marilyn willing to peruse his code in exchange for his returning the favor. This was nothing unusual in this group; indeed, nobody would have thought of going on the machine without such scrutiny by a second party. Whenever possible an exchange was made, so nobody would feel in that position of being criticized by someone else. But for Bill, who was well schooled in this method, the protection of an exchange was not necessary. His value system, when it came to programming, dictated that secretive possessive programming was bad and that open, shared programming was good.
 
-![worker-doing-a-research-work.jpg](http://hangaroundtheweb.com/wp-content/uploads/2018/03/worker-doing-a-research-work.jpg)
+![worker-doing-a-research-work.jpg](/wp-content/uploads/2018/03/worker-doing-a-research-work.jpg)
 
 Errors that might be found in code he had written – not "his" code, for that terminology was not used here – were simply facts to be exposed to investigation with an eye to future improvement, not attacks on his person.
 
-![personal_attacks.jpg](http://hangaroundtheweb.com/wp-content/uploads/2018/03/personal_attacks.jpg)
+![personal_attacks.jpg](/wp-content/uploads/2018/03/personal_attacks.jpg)
 
 #### Bad programming days
 
-![bad-programming-days.jpg](http://hangaroundtheweb.com/wp-content/uploads/2018/03/bad-programming-days.jpg)
+![bad-programming-days.jpg](/wp-content/uploads/2018/03/bad-programming-days.jpg)
 
 In this particular instance, Bill had been having one his "bad programming days". As Marilyn worked and worked over the code – as she found one error after another – he became more and more amused, rather than more and more defensive as he might have done had he been trained as so many of our programmers are. Finally, he emerged from their conference announcing to the world the startling fact that Marilyn had been able to find **seventeen** bugs in only **thirteen** statements. He insisted on showing everyone who would listen how this had been possible. In fact, since the very exercise had proved to him that this was not his day for coding, he simply spent the rest of the day telling and retelling the episode in all its hilarious details.
 
@@ -64,13 +64,13 @@ In this particular instance, Bill had been having one his "bad programming days"
 
 Marilyn, at the same time, did not feel any false confidence in her own work on the problem, for – she reasoned correctly – where there had been 17 errors, there were probably a few more. In particular, she knew that after a certain amount of time working on the code, she had internalized it as much as had Bill, even though she had not written it originally. So she in turn went looking for a critic; and while Bill was giving everyone an enormous laugh at his expense, Marilyn and others managed to find 3 more errors before the day was over.
 
-![false-confidence.jpg](http://hangaroundtheweb.com/wp-content/uploads/2018/03/false-confidence.jpg)
+![false-confidence.jpg](/wp-content/uploads/2018/03/false-confidence.jpg)
 
 As an epilogue to this incident, it should be noted that when this code was finally put on the computer, no further errors were found, in spite of the most diabolical testing possible. In fact, this simulator was put into use in more than a dozen installations for real-time operations, and over a period of at least nine years no other errors were ever found. How different might have been the story had Bill felt that each error found in the code was a wound in his pride – an advertisement of his stupidity.
 
 ### Strengths & Weaknesses:
 
-![egoless-programming-pros-cons.png](http://hangaroundtheweb.com/wp-content/uploads/2018/03/egoless-programming-pros-cons.png)
+![egoless-programming-pros-cons.png](/wp-content/uploads/2018/03/egoless-programming-pros-cons.png)
 
 ### Why not so popular?
 
@@ -114,7 +114,7 @@ The adaptability of programs is also improved, for we are assured that at least 
 
 #### Scrutiny by a second party
 
-![scrutiny-2nd-party.jpg](http://hangaroundtheweb.com/wp-content/uploads/2018/03/scrutiny-2nd-party.jpg)
+![scrutiny-2nd-party.jpg](/wp-content/uploads/2018/03/scrutiny-2nd-party.jpg)
 
 By having a second party look at the program, it would seem that we increase the possibility of eliminating at least the most obviously inefficient areas, although overall efficiency is usually going to be primarily influenced by the original structure chosen.
 

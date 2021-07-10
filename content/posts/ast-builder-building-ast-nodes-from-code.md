@@ -9,15 +9,15 @@ In this article, we are going to take a look at a tool called 'AST Builder' whic
 
 [Codemod](https://github.com/facebook/codemod) is a tool/library to assist you with large-scale codebase refactors that can be partially automated but still require human oversight and occasional intervention. Codemod was developed at Facebook and released as open source.
 
-If you want to know more about codemods, their building blocks and how they work, please check out this [detailed post](http://hangaroundtheweb.com/2019/03/codemods-the-new-age-saviors-for-js-developers/) about codemods.
+If you want to know more about codemods, their building blocks and how they work, please check out this [detailed post](/2019/03/codemods-the-new-age-saviors-for-js-developers/) about codemods.
 
-![](http://hangaroundtheweb.com/wp-content/uploads/2019/12/ast-builder-screenshot-main.png)
+![](/wp-content/uploads/2019/12/ast-builder-screenshot-main.png)
 
 ### What?
 
 [AST Builder](https://rajasegar.github.io/ast-builder/) is actually a playground for building [AST](http://en.wikipedia.org/wiki/Abstract_syntax_tree) nodes using source code. Because ASTs play a big role in writing codemods, this tool will assist the developers to a great extent in writing codemods. Because codemods actually do AST-to-AST transformation on your source code, and that's one of the primary reasons, why codemods are more resilient in making effective code transformations.
 
-![](http://hangaroundtheweb.com/wp-content/uploads/2019/12/ast-builder-annotated.jpg)
+![](/wp-content/uploads/2019/12/ast-builder-annotated.jpg)
 
 It currently supports Javascript (ES5, ES6 and some ES7 constructs) , JSX and [Glimmer.js](https://github.com/glimmerjs) handlebars syntax. Please take a look at these issues, [Cover core api](https://github.com/rajasegar/ast-node-builder/issues/1), [Cover ES6 api](https://github.com/rajasegar/ast-node-builder/issues/2) for coverage information. And I am planning to include more language syntax and semantics.
 

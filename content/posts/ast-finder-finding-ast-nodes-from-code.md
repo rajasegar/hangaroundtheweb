@@ -7,15 +7,15 @@ tags: ['abstract syntax tree', 'Articles', 'codemod', 'codemods', 'Javascript', 
 
 In this article, we are going to take a look at a tool called 'AST Finder' which will significantly improve the developer experience for writing codemods.
 
-This is a continuation post for [AST Builder](http://hangaroundtheweb.com/2019/12/ast-builder-building-ast-nodes-from-code/) which is a tool to generate AST nodes automatically from source code.
+This is a continuation post for [AST Builder](/2019/12/ast-builder-building-ast-nodes-from-code/) which is a tool to generate AST nodes automatically from source code.
 
-If you want to know more about codemods, their building blocks and how they work, please check out this [detailed post](http://hangaroundtheweb.com/2019/03/codemods-the-new-age-saviors-for-js-developers/) about codemods.
+If you want to know more about codemods, their building blocks and how they work, please check out this [detailed post](/2019/03/codemods-the-new-age-saviors-for-js-developers/) about codemods.
 
 ### What?
 
 [AST Finder](https://rajasegar.github.io/ast-finder/) is actually a playground for finding [AST](http://en.wikipedia.org/wiki/Abstract_syntax_tree) nodes using source code. Because ASTs play a big role in writing codemods, this tool will assist the developers to a great extent in writing codemods. Because codemods actually do AST-to-AST transformation on your source code, and that's one of the primary reasons, why codemods are more resilient in making effective code transformations.
 
-![](http://hangaroundtheweb.com/wp-content/uploads/2019/12/ast-finder-annotated.jpg)
+![](/wp-content/uploads/2019/12/ast-finder-annotated.jpg)
 
 ### Why?
 

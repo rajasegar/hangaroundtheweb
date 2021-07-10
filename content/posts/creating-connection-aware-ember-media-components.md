@@ -65,7 +65,7 @@ init() {
 
 ```
 
-![](http://hangaroundtheweb.com/wp-content/uploads/2018/08/ember-video.png)
+![](/wp-content/uploads/2018/08/ember-video.png)
 
 Next we are going to determine the type of component to be rendered based on the **connectionType** using a computed property called **componentType** which will be used in the component template.
 
@@ -88,11 +88,11 @@ componentType: computed('connectionType', function() {
 
 ```
 
-![](http://hangaroundtheweb.com/wp-content/uploads/2018/08/ember-image-highRes.png)
+![](/wp-content/uploads/2018/08/ember-image-highRes.png)
 
 As you can see, we need three more components , one for the image, one for video and one placeholder component for other stuff like offline and unknown connection types.
 
-![](http://hangaroundtheweb.com/wp-content/uploads/2018/08/ember-image-lowRes.png)
+![](/wp-content/uploads/2018/08/ember-image-lowRes.png)
 
 Hence we will generate the three components accordingly:
 
@@ -107,7 +107,7 @@ We are making use the [PODS](https://ember-cli.com/user-guide/#using-pods) str
 
 Now the respective component templates for each and every component will be like the following.
 
-![](http://hangaroundtheweb.com/wp-content/uploads/2018/08/place-holder.png)
+![](/wp-content/uploads/2018/08/place-holder.png)
 
 For the **place-holder** component, the template will be something like:
 

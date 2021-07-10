@@ -11,7 +11,7 @@ Richard Sennett is a prime observer of society … one of his great strengths, t
 
 The Craftsman is a complex but very rewarding read about craftsmanship, pride in one's work and the differences between individual work and mechanical production, and the intellectual investment in the former versus the more mechanistic approach in the latter.
 
-![](http://hangaroundtheweb.com/wp-content/uploads/2019/09/craftsman.png)
+![](/wp-content/uploads/2019/09/craftsman.png)
 
 The Craftsman by Richard Sennett
 

@@ -14,13 +14,13 @@ A few days ago, Tom Dale opened the [Ember 2018 Roadmap RFC](https://github.com
 *   Finish the major initiatives that have already been started.
 *   Ship a new edition, Ember Octane, focused on performance and productivity.
 
-![](http://hangaroundtheweb.com/wp-content/uploads/2018/08/ember-2018-roadmap.png)
+![](/wp-content/uploads/2018/08/ember-2018-roadmap.png)
 
 In this article we will focus on Ember Octane which is primarily targeted to improve performance of Ember applications for low-end devices and the like.
 
 Ember Octane will be a new edition of Ember, emphasizing its modern productivity and performance. The Core team promises to polish Ember's compatibility with new JavaScript language features like native classes, decorators, and async functions. There is also some significant emphasis to continue efforts like optional jQuery and treeshaking that reduce file size. It is also expected that the Ember team will overhaul the Ember homepage to align with Octane and tell the story of modern Ember.
 
-![](http://hangaroundtheweb.com/wp-content/uploads/2018/08/ember-octane.png)
+![](/wp-content/uploads/2018/08/ember-octane.png)
 
 Some of the primary motivations for Ember Octane came from The 2018 Community Survey, #EmberJS2018 blog posts, [Ember Discussion Forum](https://discuss.emberjs.com) and deliberations among the Ember core teams.
 
@@ -54,13 +54,13 @@ These are some of the highlights of Ember Octane as quoted by Tom Dale in the RF
 
 ### 1\. No jQuery
 
-![](http://hangaroundtheweb.com/wp-content/uploads/2018/08/no-jquery.png)
+![](/wp-content/uploads/2018/08/no-jquery.png)
 
 Currently available as an optional feature, this will be enabled by default. The process of making jQuery optional started with the [Make jQuery optional RFC](https://github.com/emberjs/rfcs/blob/master/text/0294-optional-jquery.md) by Robert Jackson in January this year. For the past Ember has been relying and depending on jQuery. This RFC proposes making jQuery optional and having a well defined way for users to opt-out of bundling jQuery.
 
 Mathias Bynens has [demonstrated](https://mathiasbynens.be/demo/jquery-size) the major drawback of having jQuery, the increased bundle size, which amounts to ~29KB (minified and gzipped).
 
-![](http://hangaroundtheweb.com/wp-content/uploads/2018/08/jquery-usage.png)
+![](/wp-content/uploads/2018/08/jquery-usage.png)
 
 ### 2\. Svelte builds
 
@@ -78,7 +78,7 @@ Ember Octane will make use of native Javascript classes which perform better and
 
 ### 4\. Glimmer Components
 
-![](http://hangaroundtheweb.com/wp-content/uploads/2018/08/glimmer.png)
+![](/wp-content/uploads/2018/08/glimmer.png)
 
 [Glimmer](https://glimmerjs.com/) is one of the fastest DOM rendering engines, delivering exceptional performance for initial renders as well as updates. Architected like a virtual machine (VM), Glimmer compiles your templates into low-level code so it can run as fast as possible—without sacrificing ease of use. With Ember Octane, Glimmer components offer a greatly simplified API and remove common slow paths.
 
@@ -86,7 +86,7 @@ Glimmer differentiates between static and dynamic components, thus reducing the 
 
 Another key [difference](https://auth0.com/blog/face-off-virtual-dom-vs-incremental-dom-vs-glimmer/) between Glimmer and other solutions lies in the way nodes are stored and compared. Glimmer stores nodes as simple stream-like objects (that is, simple queues of values) rather than full-fledged DOM-like nodes. To find out whether a real DOM node needs updating, the final value of a Glimmer node is compared to the last known real DOM value. If the value has not changed, no further actions are taken.
 
-![](http://hangaroundtheweb.com/wp-content/uploads/2018/08/emberdom4.png)
+![](/wp-content/uploads/2018/08/emberdom4.png)
 
 ### 5\. Incremental rendering and rehydration
 

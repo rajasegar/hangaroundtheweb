@@ -7,7 +7,7 @@ tags: ['Articles', 'codemod', 'codemods', 'ember', 'emberjs', 'EmberJS', 'teleme
 
 In this article, we are going to take a glimpse at the [ember-codemods-telemetry-helpers](https://github.com/ember-codemods/ember-codemods-telemetry-helpers) package and how it helps to create more advanced codemods for [Ember.js](https://emberjs.com/).
 
-If you want a more in-depth introduction to codemods, you can checkout this [post](http://hangaroundtheweb.com/2019/03/codemods-the-new-age-saviors-for-js-developers/) detailing the why's and how's of codemods.
+If you want a more in-depth introduction to codemods, you can checkout this [post](/2019/03/codemods-the-new-age-saviors-for-js-developers/) detailing the why's and how's of codemods.
 
 ### Telemetry for layman
 
@@ -19,7 +19,7 @@ First we will take a look at what Telemetry is all about. According to [Wikiped
 
 In software, telemetry is used to gather data on the use and performance of applications and its components, e.g. how often certain features are used, measurements of start-up time and processing time, hardware, application crashes and general usage statistics and/or user behavior. In some cases, very detailed data is reported like individual window metrics, counts of used features and individual function timings.
 
-![](http://hangaroundtheweb.com/wp-content/uploads/2019/10/Telemetry-Visibility-Analytics.png)
+![](/wp-content/uploads/2019/10/Telemetry-Visibility-Analytics.png)
 
 This kind of telemetry can be essential to software developers to receive data from a wide variety of endpoints that can't possibly all be tested in-house.
 
@@ -35,13 +35,13 @@ Telemetry helpers runs the app, grabs basic info about all of the modules at run
 
 Below you can find the package composition of the `ember-codemods-telemetry-helpers` package.
 
-![](http://hangaroundtheweb.com/wp-content/uploads/2019/10/telemetry-package.png)
+![](/wp-content/uploads/2019/10/telemetry-package.png)
 
 The goal of this project is to enable each codemod to manage its own type of data gathering and to provide the harness to run that custom gathering function.
 
 This package exports six functions for gathering telemetry information which can be used in the codemods.
 
-![](http://hangaroundtheweb.com/wp-content/uploads/2019/10/ember-codemods-telemetry-helpers-module-exports.png)
+![](/wp-content/uploads/2019/10/ember-codemods-telemetry-helpers-module-exports.png)
 
 ### Using the telemetry helpers for codemods
 
@@ -97,7 +97,7 @@ const { analyzeEmberObject } = require('ember-codemods-telemetry-helpers');
 
 It parses Ember meta data object, collects the runtime information and returns the following list of properties :
 
-![](http://hangaroundtheweb.com/wp-content/uploads/2019/10/analyzeEmberObject.png)
+![](/wp-content/uploads/2019/10/analyzeEmberObject.png)
 
 ### Gathering runtime data
 
@@ -116,7 +116,7 @@ If you have any lazily loaded modules, such as modules from [Ember Engines](htt
 
 This project was extracted from [ember-native-class-codemod.](https://github.com/ember-codemods/ember-native-class-codemod) That codemod uses [Puppeteer](https://github.com/GoogleChrome/puppeteer) through this package to visit the Ember app and gather telemetry necessary to convert to native classes.
 
-![](http://hangaroundtheweb.com/wp-content/uploads/2019/10/telemetry-arch.png)
+![](/wp-content/uploads/2019/10/telemetry-arch.png)
 
 The idea for the extraction was to put the harness in this package (extracted from the native class codemod), but have the actual **"telemetry gathering"** live in each individual codemod project because the things that they need are quite different, for example, for [implicit this codemod](https://github.com/ember-codemods/ember-no-implicit-this-codemod) and [angle brackets codemod](https://github.com/ember-codemods/ember-angle-brackets-codemod) all we need to know is an array of the helpers and components in the app, but for [native class codemod](https://github.com/ember-codemods/ember-native-class-codemod) it needs much more information such as names and types of methods, properties, etc on each default export.
 

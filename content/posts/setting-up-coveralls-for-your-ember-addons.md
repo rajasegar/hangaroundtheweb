@@ -49,7 +49,7 @@ Coveralls is a language-agnostic and CI-agnostic web service to help you track y
 
 Add your github repo for the app/addon to Coveralls using Add Repos option in the website.
 
-![](http://hangaroundtheweb.com/wp-content/uploads/2020/05/coveralls-add-repo.png)
+![](/wp-content/uploads/2020/05/coveralls-add-repo.png)
 
 After adding the repo, Coveralls will provide you with a repo token, which we need to identify the repo with Coveralls. You need to add a [Github Secret](https://help.github.com/en/actions/configuring-and-managing-workflows/creating-and-storing-encrypted-secrets) with the value of this token in your repo. This will be later used in our Github actions to set up the **COVERALLS\_REPO\_TOKEN** environment variable before sending coverage information to Coveralls.
 

@@ -20,7 +20,7 @@ First is the sheer joy of making things. As the child delights in his mud pie, s
 > 
 > **– Eric Schmidt, Google**
 
-![](http://hangaroundtheweb.com/wp-content/uploads/2018/08/sheer-joy.jpg)
+![](/wp-content/uploads/2018/08/sheer-joy.jpg)
 
 > Innovation distinguishes between a leader and a follower.
 > 
@@ -30,7 +30,7 @@ First is the sheer joy of making things. As the child delights in his mud pie, s
 
 Second is the pleasure of making things that are useful to other people. Deep within, we want others to use our work and to find it helpful. In this respect the programming system is not essentially different from the child's first clay pencil holder "for Daddy's office."
 
-![](http://hangaroundtheweb.com/wp-content/uploads/2018/08/useful-to-others.jpg)
+![](/wp-content/uploads/2018/08/useful-to-others.jpg)
 
 > The purpose of life is not to be happy. It is to be useful, to be honorable, to be compassionate, to have it make some difference that you have lived and lived well.
 > 
@@ -40,7 +40,7 @@ Second is the pleasure of making things that are useful to other people. Deep wi
 
 Third is the fascination of fashioning complex puzzle-like objects of interlocking moving parts and watching them work in subtle cycles, playing out the consequences of principles built in from the beginning. The programmed computer has all the fascination of the pinball machine or the jukebox mechanism, carried to the ultimate.
 
-![](http://hangaroundtheweb.com/wp-content/uploads/2018/08/complex-puzzles.jpg)
+![](/wp-content/uploads/2018/08/complex-puzzles.jpg)
 
 > “Simplicity is a great virtue but it requires hard work to achieve it and education to appreciate it. And to make matters worse: complexity sells better.”
 > 
@@ -50,7 +50,7 @@ Third is the fascination of fashioning complex puzzle-like objects of interlocki
 
 Fourth is the joy of always learning, which springs from the non-repeating nature of the task. In one way or another the problem is ever new, and its solver learns something: sometimes practical, sometimes theoretical, and sometimes both.
 
-![](http://hangaroundtheweb.com/wp-content/uploads/2018/08/perennial-learning.jpg)
+![](/wp-content/uploads/2018/08/perennial-learning.jpg)
 
 > “Live as if you were to die tomorrow. Learn as if you were to live forever.”
 > 
@@ -60,7 +60,7 @@ Fourth is the joy of always learning, which springs from the non-repeating natur
 
 Finally, there is the delight of working in such a tractable medium. The programmer, like the poet, works only slightly removed from pure thought-stuff. He builds his castles in the air, from air, creating by exertion of the imagination. Few media of creation are so flexible, so easy to polish and rework, so readily capable of realizing grand conceptual structures.
 
-![](http://hangaroundtheweb.com/wp-content/uploads/2018/08/tractable-medium.jpg)
+![](/wp-content/uploads/2018/08/tractable-medium.jpg)
 
 Yet the program construct, unlike the poet's words, is real in the sense that it moves and works, producing visible outputs separate from the construct itself. It prints results, draws pictures, produces sounds, moves arms. The magic of myth and legend has come true in our time. One types the correct incantation on a keyboard, and a display screen comes to life, showing things that never were nor could be.
 

@@ -5,7 +5,7 @@ draft: false
 tags: ['Cycle.js', 'cycle.js', 'tutorial', 'tutorials', 'web development']
 ---
 
-This tutorial is the second part of our [previous](http://hangaroundtheweb.com/2017/02/cycle-js-tutorial-create-a-simple-registration-form-and-track-the-application-state/) tutorial where we built a simple registration form using Cycle.js. In this part, we will introduce some basic concepts for building Cycle.js like seeds, intents and state.
+This tutorial is the second part of our [previous](/2017/02/cycle-js-tutorial-create-a-simple-registration-form-and-track-the-application-state/) tutorial where we built a simple registration form using Cycle.js. In this part, we will introduce some basic concepts for building Cycle.js like seeds, intents and state.
 
 Table of Contents
 -----------------
@@ -24,7 +24,7 @@ Table of Contents
 1 Cycle.js tutorial: Registration Form - Part 2
 -----------------------------------------------
 
-This tutorial is the second part of our [previous](http://hangaroundtheweb.com/2017/02/cycle-js-tutorial-create-a-simple-registration-form-and-track-the-application-state/) tutorial where we built a simple registration form using Cycle.js. In this part, we will introduce some basic concepts for building Cycle.js like seeds, intents and state. Online demo is available [here](https://outstanding-playground.surge.sh/). Source code for this tutorial is available in [Github](https://github.com/rajasegar/cyclejs-state-spy-2).
+This tutorial is the second part of our [previous](/2017/02/cycle-js-tutorial-create-a-simple-registration-form-and-track-the-application-state/) tutorial where we built a simple registration form using Cycle.js. In this part, we will introduce some basic concepts for building Cycle.js like seeds, intents and state. Online demo is available [here](https://outstanding-playground.surge.sh/). Source code for this tutorial is available in [Github](https://github.com/rajasegar/cyclejs-state-spy-2).
 
 ### 1.1 About Cycle.js
 

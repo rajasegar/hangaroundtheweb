@@ -26,7 +26,7 @@ While Ember was ruling the MVC realms, there came a knight known as "[React](htt
 Octane
 ------
 
-Octane is the one thing I eagerly waited for in Ember a year ago when Tom Dale published his [Ember 2018 Roadmap RFC](https://github.com/emberjs/rfcs/blob/26c4d83fb66568e1087a05818fb39a307ebf8da8/text/0000-roadmap-2018.md). I even remember that I explored the RFC in detail in my blog [here](http://hangaroundtheweb.com/2018/08/ember-octane-everything-one-can-expect-in-the-next-ember-edition/). But still we are yet to see a full-blown Octane Edition landing in Ember. And it would be a disgrace if I fail to appreciate the effort put by the Team to make the necessary provisions for the Octane release by making the guides ready with great care and great tact.
+Octane is the one thing I eagerly waited for in Ember a year ago when Tom Dale published his [Ember 2018 Roadmap RFC](https://github.com/emberjs/rfcs/blob/26c4d83fb66568e1087a05818fb39a307ebf8da8/text/0000-roadmap-2018.md). I even remember that I explored the RFC in detail in my blog [here](/2018/08/ember-octane-everything-one-can-expect-in-the-next-ember-edition/). But still we are yet to see a full-blown Octane Edition landing in Ember. And it would be a disgrace if I fail to appreciate the effort put by the Team to make the necessary provisions for the Octane release by making the guides ready with great care and great tact.
 
 More Flexible CLI
 -----------------

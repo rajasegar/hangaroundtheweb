@@ -31,7 +31,7 @@ Read all the documentation possible, especially design documentation. This shoul
 > 
 > \-- Gerald Weinberg, The Psychology of Computer Programming
 
-![](http://hangaroundtheweb.com/wp-content/uploads/2019/04/design-documentation.png)
+![](/wp-content/uploads/2019/04/design-documentation.png)
 
 Note this does not necessarily mean formalized design docs, it could just be searching for any README's or relevant wiki pages. You're just gathering threads at this point, and documentation tends to be a lot more compact and easily digestible than foreign code.
 

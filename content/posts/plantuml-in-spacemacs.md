@@ -90,7 +90,7 @@ Now if you render the preview using **Spc-mcc**, you can see the below rendered
 
 You can save the image buffer as a PNG file using **Spc-fs** with a **.png** extension.
 
-![](http://hangaroundtheweb.com/wp-content/uploads/2019/07/puml-in-spacemacs.png)
+![](/wp-content/uploads/2019/07/puml-in-spacemacs.png)
 
 That's it. We will how you can draw more different type of diagrams with PlantUML from your favorite editor itself. Stay Tuned!
 

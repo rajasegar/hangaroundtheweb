@@ -50,7 +50,7 @@ This kind of builds are somewhat costly still, due to how slow available sourceM
 
 The various builds are compared based on their characteristics and performance:
 
-![](http://hangaroundtheweb.com/wp-content/uploads/2018/02/ember-performance.png)
+![](/wp-content/uploads/2018/02/ember-performance.png)
 
 > These times are based on a posix box with and SSD, win32 unfortunately tends to be slower. As the Core Team continues to improve performance, both posix and win32 will improve, hopefully future work will bring these platforms build times closer together.
 
@@ -237,7 +237,7 @@ DEBUG\_DEPTH=5 DEBUG\_LEVEL=debug DEBUG=broccoli-merge-trees: ember build
     
     To get a better understanding, you can watch this talk: **Dissecting an ember-cli build by Estelle Deblois**   An example visualization graph should look like this, with only a subset of the whole graph cropped for clear understanding.
     
-    ![](http://hangaroundtheweb.com/wp-content/uploads/2018/02/broccoli-viz.jpg)
+    ![](/wp-content/uploads/2018/02/broccoli-viz.jpg)
     
     Each build will generate an additional graph, instrumentation.build..json
     

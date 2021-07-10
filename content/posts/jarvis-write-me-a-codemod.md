@@ -7,15 +7,15 @@ tags: ['Articles', 'codemod', 'codemods', 'Javascript', 'jscodeshift']
 
 In this article, we are going to take a look at a tool called **JARVIS** which will profoundly transform the way how you write codemods.
 
-This is a continuation post for [AST Finder](http://hangaroundtheweb.com/2019/12/ast-finder-finding-ast-nodes-from-code/) which is a tool to generate an api to find AST nodes automatically from source code.
+This is a continuation post for [AST Finder](/2019/12/ast-finder-finding-ast-nodes-from-code/) which is a tool to generate an api to find AST nodes automatically from source code.
 
-If you want to know more about codemods, their building blocks and how they work, please check out this [detailed post](http://hangaroundtheweb.com/2019/03/codemods-the-new-age-saviors-for-js-developers/) about codemods.
+If you want to know more about codemods, their building blocks and how they work, please check out this [detailed post](/2019/03/codemods-the-new-age-saviors-for-js-developers/) about codemods.
 
 ### What?
 
 [JARVIS](https://rajasegar.github.io/jarvis/) is actually a playground for writing codemods, where in you can specify the input and output code, choose the appropriate transformation you want to apply and the codemod is automatically generated for you.
 
-![](http://hangaroundtheweb.com/wp-content/uploads/2019/12/jarvis-annotated.jpg)
+![](/wp-content/uploads/2019/12/jarvis-annotated.jpg)
 
 JARVIS currently supports Javascript and [Glimmer.js](https://glimmerjs.com) templates. For Javascript, you can use parsers like [recast](https://github.com/benjamn/recast) and [babel](https://babeljs.io). For Glimmer.js templates which is a more advanced form of [Handlebars](https://handlebarsjs.com/) templates used by Ember.js framework, it is using the [ember-template-recast](https://github.com/ember-template-lint/ember-template-recast) parser to parse and transform the code.
 
@@ -50,7 +50,7 @@ $ jscodeshift -t transform.js app/components
 
 JARVIS uses two npm packages underneath. One for [building](https://github.com/rajasegar/ast-node-finder) AST nodes from code and the other one for [finding](https://github.com/rajasegar/ast-node-finder) AST nodes from code. It is pretty much a combination of both AST-Builder and AST-Finder working together to automatically generate code transforms.
 
-![](http://hangaroundtheweb.com/wp-content/uploads/2019/12/jarvis-arch.png)
+![](/wp-content/uploads/2019/12/jarvis-arch.png)
 
 First you need to specify the input code in the top-left panel (please see the annotated screenshot above for reference), then you choose the appropriate AST Node operation below. You can choose to remove the node, replace , insert the new node before or after the existing node.
 

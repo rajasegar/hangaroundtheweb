@@ -86,7 +86,7 @@ Now we will take a look at how to use the styles in our component template. It's
 <HelloWorld />
 ```
 
-![](http://hangaroundtheweb.com/wp-content/uploads/2020/07/ember-csz-simple.png)
+![](/wp-content/uploads/2020/07/ember-csz-simple.png)
 
 The dynamically generated class names from the style tag will be:
 
@@ -140,7 +140,7 @@ Next we will see how to use the \`MyButton\` component in our templates. If the 
 <MyButton>Normal</MyButton>
 ```
 
-![](http://hangaroundtheweb.com/wp-content/uploads/2020/07/ember-csz-adapt-props.png)
+![](/wp-content/uploads/2020/07/ember-csz-adapt-props.png)
 
 ### Animation and Keyframe namespacing
 
@@ -275,7 +275,7 @@ export default class MyPseudoComponent extends Component {
 </div>
 ```
 
-![](http://hangaroundtheweb.com/wp-content/uploads/2020/07/ember-csz-pseudo.png)
+![](/wp-content/uploads/2020/07/ember-csz-pseudo.png)
 
 ### Theming
 
@@ -322,7 +322,7 @@ When you pass the \`@theme\` property to the component, it takes the colors from
 <ThemeButton @theme={{this.theme}}>Primary</ThemeButton>
 ```
 
-![](http://hangaroundtheweb.com/wp-content/uploads/2020/07/ember-csz-theme.png)
+![](/wp-content/uploads/2020/07/ember-csz-theme.png)
 
 The class names dynamically generated at runtime in the style tag will be:
 

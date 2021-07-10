@@ -2,7 +2,7 @@
 title: 'htmx and HTML Driven Development'
 date: Sat, 10 Apr 2021 23:05:14 +0000
 draft: false
-tags: ['Articles', 'html', 'HTML', 'htmx', 'ssr', 'Uncategorized']
+tags: ['htmx', 'ssr']
 ---
 
 In this post, I am going to share some of my experiences and the benefits of using [htmx](https://htmx.org/) to build modern, rich and interactive web applications driven by HTML which can serve as an alternative to the bloated, JavaScript heavy Single Page Application (SPA) approach.

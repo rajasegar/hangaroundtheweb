@@ -7,7 +7,7 @@ tags: ['Articles', 'conceptualintegrity', 'programming', 'software']
 
 Conceptual integrity is the principle that anywhere you look in your system, you can tell that the design is part of the same overall design. This includes low-level issues such as formatting and identifier naming, but also issues such as how modules and classes are designed, etc. This is vitally important, because inevitably, unanticipated issues come up that must be resolved quickly. If there is a coherent design to the system, it can be much easier to resolve these issues by determining what would be consistent with the overall design, especially if the other designers are not present.
 
-![](http://hangaroundtheweb.com/wp-content/uploads/2018/08/conceptual-disunity.png)
+![](/wp-content/uploads/2018/08/conceptual-disunity.png)
 
 Conceptual Integrity is a required ingredient for achieving the principle that **a system must have a powerful metaphor that is uniformly applied throughout a system**.
 
@@ -21,7 +21,7 @@ Conceptual integrity does not mean one shouldn't include many minds (or even the
 
 (3) refactoring the design into something more polished.
 
-In fact, the earlier the architect or design-team can include the entire team (or domain-team leads for very large teams), the higher quality the design will be. The Design Team must be open to and accept criticism, the architect(s) must be egoless (see [Egoless Programming](http://hangaroundtheweb.com/2018/03/egoless-programming/)).
+In fact, the earlier the architect or design-team can include the entire team (or domain-team leads for very large teams), the higher quality the design will be. The Design Team must be open to and accept criticism, the architect(s) must be egoless (see [Egoless Programming](/2018/03/egoless-programming/)).
 
 In this article, we will examine the consequences of this theme for programming system design:
 
@@ -43,7 +43,7 @@ In obtaining conceptual integrity, we are concerned with the emergence of concep
 
 Raw experiences are potentially confusing or incoherent as **“they come in a chaos of incommensurable relations”**. To make sense of them, we need to abstract groups of relations between them and study them separately. Abstracting groups of relations from experiences is the embryonic concept-forming activity. The concepts formed may conflict each other. Obtaining conceptual integrity is a process of removing conflict. To remove conflict, we need to access the raw experiences that originally informed our concepts – to explore them, to understand, to compare and to analyze. This idea is depicted in the following figure. At the left-hand-side of the figure, two groups of concepts are formed by abstracting relations from raw experiences. To obtain conceptual integrity, we need to combine the concepts into one group of unified concepts. This involves the resolution of potential conflict between concepts so that they acquire coherence.
 
-![](http://hangaroundtheweb.com/wp-content/uploads/2018/08/conceptual-integrity.png)
+![](/wp-content/uploads/2018/08/conceptual-integrity.png)
 
 Significant features of the above observations that relate to the nature of conceptual integrity include:
 
@@ -67,11 +67,11 @@ This point is widely misunderstood.
 
 For a given level of function, however, that system is best in which one can specify things with the most simplicity aid straightforwardness. Simplicity is not enough.
 
-![](http://hangaroundtheweb.com/wp-content/uploads/2018/08/simplicity-straightforward.png)
+![](/wp-content/uploads/2018/08/simplicity-straightforward.png)
 
 The expression of the things one wants to do often requires involuted and unexpected combinations of the basic facilities. It is not enough to learn the elements and rules of combination; one must also learn the idiomatic usage, a whole lore of how the elements are combined in practice. Simplicity and straightforwardness proceed from conceptual integrity. Every part must reflect the same philosophies and the same balancing of desiderata. Every part must even use the same techniques in syntax and analogous notions in semantics. Ease of use, then, dictates unity of design, conceptual integrity.
 
-![](http://hangaroundtheweb.com/wp-content/uploads/2018/08/ci-unity-of-design.png)
+![](/wp-content/uploads/2018/08/ci-unity-of-design.png)
 
 ### Aristocracy and Democracy
 
@@ -127,7 +127,7 @@ The first of these is a real danger, and it will be treated in the next chapter.
 
 The last objection is one of timing and phasing. A quick answer is to refrain from hiring implementers until the specifications are complete. This is what is done when a building is constructed. In the computer systems business, however, the pace is quicker, and one wants to compress the schedule as much as possible. How much can specification and building be overlapped? As Blaauw points out, the total creative effort involves three distinct phases: architecture, implementation, and realization. It turns out that these can in fact be begun in parallel and proceed simultaneously.
 
-![](http://hangaroundtheweb.com/wp-content/uploads/2018/08/creative-effort-3-phases.png)
+![](/wp-content/uploads/2018/08/creative-effort-3-phases.png)
 
 In computer design, for example, the implementer can start as soon as he has relatively vague assumptions about the manual, somewhat clearer ideas about the technology, and well-defined cost and performance objectives. He can begin designing data flows, control sequences, gross packaging concepts, and so on. He devises or adapts the tools he will need, especially the recordkeeping system, including the design automation system.
 

@@ -9,7 +9,7 @@ This post is the second in the series of posts called **PlantUML in Spacemacs**
 
 And you will find only minimal documentation in the official site related to mind map diagrams. This post gives you some additional bonus information such as adding colors to your mind map, creating high resolution mind maps and so on. You can find all these details in the Advanced Usage section in the bottom of the post.
 
-If you want to know how to setup PlantUML in Spacemacs, please visit our [previous](http://hangaroundtheweb.com/2019/07/plantuml-in-spacemacs/) post in this series.
+If you want to know how to setup PlantUML in Spacemacs, please visit our [previous](/2019/07/plantuml-in-spacemacs/) post in this series.
 
 ### Spacemacs
 
@@ -45,7 +45,7 @@ Mind maps in PlantUML support the [org-mode](http://orgmode.org) syntax also, 
 
 ```
 
-![](http://hangaroundtheweb.com/wp-content/uploads/2019/07/mm-orgmode.png)
+![](/wp-content/uploads/2019/07/mm-orgmode.png)
 
 #### Removing box
 
@@ -65,7 +65,7 @@ You can remove the box drawing using an underscore.
 
 ```
 
-![](http://hangaroundtheweb.com/wp-content/uploads/2019/07/mm-remove-box.png)
+![](/wp-content/uploads/2019/07/mm-remove-box.png)
 
 #### Arithmetic notation
 
@@ -92,7 +92,7 @@ You can use the following notation to choose diagram side.
 
 ```
 
-![](http://hangaroundtheweb.com/wp-content/uploads/2019/07/mm-arithmetic-notation.png)
+![](/wp-content/uploads/2019/07/mm-arithmetic-notation.png)
 
 #### Markdown syntax
 
@@ -109,7 +109,7 @@ This syntax is compatible with Markdown.
 
 ```
 
-![](http://hangaroundtheweb.com/wp-content/uploads/2019/07/mm-markdown.png)
+![](/wp-content/uploads/2019/07/mm-markdown.png)
 
 #### Changing diagram direction
 
@@ -133,7 +133,7 @@ left side
 
 ```
 
-![](http://hangaroundtheweb.com/wp-content/uploads/2019/07/mm-direction.png)
+![](/wp-content/uploads/2019/07/mm-direction.png)
 
 #### Complete Example
 
@@ -171,7 +171,7 @@ legend right
 
 ```
 
-![](http://hangaroundtheweb.com/wp-content/uploads/2019/07/mm-complete.png)
+![](/wp-content/uploads/2019/07/mm-complete.png)
 
 ### Advanced Usage
 
@@ -208,7 +208,7 @@ skinparam backgroundColor #EEAADD
 
 ```
 
-![](http://hangaroundtheweb.com/wp-content/uploads/2019/07/mm-backgroundcolor.png)
+![](/wp-content/uploads/2019/07/mm-backgroundcolor.png)
 
 #### Changing color of each node
 
@@ -225,7 +225,7 @@ Using color names:
 
 ```
 
-![](http://hangaroundtheweb.com/wp-content/uploads/2019/07/mm-colornodes.png)
+![](/wp-content/uploads/2019/07/mm-colornodes.png)
 
 Using HEX values:
 
@@ -264,7 +264,7 @@ skinparam monochrome true
 
 ```
 
-![](http://hangaroundtheweb.com/wp-content/uploads/2019/07/mm-monochrome.png)
+![](/wp-content/uploads/2019/07/mm-monochrome.png)
 
 #### Handwritten style
 
@@ -281,7 +281,7 @@ skinparam handwritten true
 
 ```
 
-![](http://hangaroundtheweb.com/wp-content/uploads/2019/07/mm-handwritten.png)
+![](/wp-content/uploads/2019/07/mm-handwritten.png)
 
 #### Disabling Shadows
 
@@ -296,7 +296,7 @@ skinparam shadowing false
 
 ```
 
-![](http://hangaroundtheweb.com/wp-content/uploads/2019/07/mm-no-shadows.png)
+![](/wp-content/uploads/2019/07/mm-no-shadows.png)
 
 #### Creating Print resolution Mind Map
 
@@ -317,7 +317,7 @@ skinparam dpi 300
 
 ```
 
-![](http://hangaroundtheweb.com/wp-content/uploads/2019/07/mm-dpi-300.png)
+![](/wp-content/uploads/2019/07/mm-dpi-300.png)
 
 Hope you enjoyed the post and it will help you to create awesome Mind maps from within your favorite editor. Please let me know your feedback or queries in the comments. Stay tuned for more in this series on other cool stuff you can do with PlantUML.
 
