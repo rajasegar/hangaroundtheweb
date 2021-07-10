@@ -18,7 +18,7 @@ This conservatism is both an asset and a liability. Both individual habits and i
 
 Dinosaurs are creatures of habit, and their brains have a way of elevating habits to truths. A lizard will do the same thing in the same way for the same reason, until his habit becomes the only way to do it. If you don't believe me, just think of how you felt, riding in the carpool, when the driver decided to take a slightly different route to work.
 
-![](http://hangaroundtheweb.com/wp-content/uploads/2018/08/power-of-habit.jpg)
+![](/wp-content/uploads/2018/08/power-of-habit.jpg)
 
 When it was your turn to drive again, you probably still took your own route, even if the other way was shorter and had fewer stop-lights.
 
@@ -34,7 +34,7 @@ Usually, the first way something is done is the way it always will be done. If y
 
 In the empirical approach, you set goals, test your hypotheses and make plans accordingly. The emotional brain will urge you to **just do it** because it seems right and fits what you already know. If you follow the Emotional Brain, it's not possible to learn anything new from a situation.
 
-![](http://hangaroundtheweb.com/wp-content/uploads/2018/08/empirical-approach.png)
+![](/wp-content/uploads/2018/08/empirical-approach.png)
 
 Here's how to make an empirical business decision:
 
@@ -58,7 +58,7 @@ Now here's one way to make a emotional business decision:
 
 Religion has its place in business. I'm not talking about saying your prayers before a merger meeting, but about the power of shared habits or rituals that point to a connection between daily events and something bigger, a connection with other people in the same company doing the same thing for the same reason.
 
-![](http://hangaroundtheweb.com/wp-content/uploads/2018/08/power-of-ritual.jpg)
+![](/wp-content/uploads/2018/08/power-of-ritual.jpg)
 
 The earliest rituals were ceremonies of transition, habits that symbolized evolutions from one state to another— rites of passage for birth, becoming an adult, joining the tribe, marriage and death. People who participated in the rituals felt a part of something bigger and more powerful than themselves.
 
@@ -76,7 +76,7 @@ It could be a time for the revealing of new knowledge and fostering a stronger f
 
 When a person joins a company is an excellent time to begin making him or her feel part of the corporate culture. In many companies, the whole hiring experience seems to be designed to conceal what actually goes on from the new person. It all begins with the job interview. This ritual almost universally involves a mutual sales job. The people in the company tell you how great it is; you tell them how great you are.
 
-![](http://hangaroundtheweb.com/wp-content/uploads/2018/08/joining-the-company.jpg)
+![](/wp-content/uploads/2018/08/joining-the-company.jpg)
 
 > The underlying rules communicated here are that it's important to withhold certain information because it might create a bad impression and that it's standard procedure to lie for a good cause.
 
@@ -106,7 +106,7 @@ The concept of hazing is universal and could be adapted positively for business.
 
 No discussion of ritual would be complete without mentioning status symbols. The Emotional Brain is always on the lookout for cues about who is on top. The cues are virtually everywhere. What clothes people wear, what they drive, where they eat, what restroom they use, the size and decor of their offices, you name it. When these cues are displayed, the emotional brain can be fooled into thinking that one's status is higher than it really is. A great deal of management literature is designed to teach people how to fool the emotional brain in this way, so much so that large parts of the corporate world wear gray suits, drive gray BMWs and eat lunch at Chez Louis.
 
-![](http://hangaroundtheweb.com/wp-content/uploads/2018/08/status-symbols.jpg)
+![](/wp-content/uploads/2018/08/status-symbols.jpg)
 
 The emotional brain is smarter than that. When everybody has the same, easily visible status symbols, it will pick out more subtle ones that still have meaning. Then there will be more books to read.
 
@@ -114,7 +114,7 @@ The emotional brain is smarter than that. When everybody has the same, easily vi
 
 Some companies require corporate uniforms—not the whole outfit, just a jacket, tie, lapel pin or the like. Uniforms are aimed at fostering a sense of esprit de corps, but sometimes they can do just the opposite. If, for example, the CEO doesn't wear the uniform, then wearing it is a mark of being a grunt, and the ritual becomes one of fealty rather than affiliation.
 
-![](http://hangaroundtheweb.com/wp-content/uploads/2018/08/corporate-uniforms.jpg)
+![](/wp-content/uploads/2018/08/corporate-uniforms.jpg)
 
 The ritual also goes wrong if wearing the uniform or displaying the object is something you have to do or you get in trouble rather than a choice to show your loyalty or a reward for making the grade. It would be better if the lapel pins could be earned instead of required.
 
@@ -128,7 +128,7 @@ Showing appreciation for significant deeds will become especially important as m
 
 Before beginning a mad whirl of staff birthday parties and employee-of-the-month celebrations, however, you need to decide what kinds of behaviors or achievements you're going to reward. They should be the kinds of behaviors you want to see more of: being a team player, showing bravery in the face of adversity, or whatever your company or department holds dear.
 
-![](http://hangaroundtheweb.com/wp-content/uploads/2018/08/sign-of-appreciation-ritual.jpg)
+![](/wp-content/uploads/2018/08/sign-of-appreciation-ritual.jpg)
 
 A word or two, also, about noncontingent rewards like birthday cakes and Christmas cards from the boss. Once begun, these rituals must be continued or people feel insulted. It's best to keep the ritual manageable from the beginning, a birthday card instead of a cake, for instance, or a sign on the person's office door announcing his or her special day.
 

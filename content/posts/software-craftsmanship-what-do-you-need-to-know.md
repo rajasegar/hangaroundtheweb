@@ -13,7 +13,7 @@ In this article we will take a look at different perspectives about craftsmanshi
 
 In the [Pragmatic Programmer](https://www.amazon.com/Pragmatic-Programmer-Journeyman-Master/dp/020161622X/ref=sr_1_1?crid=VAPXDO4CEAOS&keywords=the+pragmatic+programmer&qid=1551091102&s=books&sprefix=the+pragmatic,aps,347&sr=1-1), [Andy Hunt](https://en.wikipedia.org/wiki/Andy_Hunt_(author)) and [Dave Thomas](https://en.wikipedia.org/wiki/Dave_Thomas_(programmer)) discusses about craftsmanship with the likes of construction workers and civil engineers on how they treat their craft by envisioning it as a divine endeavor of building cathedrals.
 
-![](http://hangaroundtheweb.com/wp-content/uploads/2019/02/cathedral.png)
+![](/wp-content/uploads/2019/02/cathedral.png)
 
 The construction of software should be an engineering discipline. However, this doesn't preclude individual craftsmanship. Think about the large cathedrals built in Europe during the Middle Ages. Each took thousands of person-years of effort, spread over many decades. Lessons learned were passed down to the next set of builders, who advanced the state of structural engineering with their accomplishments. But the carpenters, stonecutters, carvers, and glass workers were all craftspeople, interpreting the engineering requirements to produce a whole that transcended the purely mechanical side of the construction. It was their belief in their individual contributions that sustained the projects:
 
@@ -39,11 +39,11 @@ In traditional crafts, apprenticeship is situated learning, where the apprentice
 
 In [Clean Code](https://www.amazon.com/Clean-Code-Handbook-Software-Craftsmanship/dp/0132350882/ref=sr_1_1?keywords=clean+code&qid=1551093567&s=books&sr=1-1), [Robert C Martin](https://en.wikipedia.org/wiki/Robert_C._Martin) enlists the essential elements that makes up the craftsmanship. There are two parts to learning craftsmanship: knowledge and work.
 
-![](http://hangaroundtheweb.com/wp-content/uploads/2019/02/learning-craftsmanship.png)
+![](/wp-content/uploads/2019/02/learning-craftsmanship.png)
 
 You must gain the knowledge of principles, patterns, practices, and heuristics that a craftsman knows, and you must also grind that knowledge into your fingers, eyes, and gut by working hard and practicing.
 
-![](http://hangaroundtheweb.com/wp-content/uploads/2019/02/knowledge-ppph.png)
+![](/wp-content/uploads/2019/02/knowledge-ppph.png)
 
 ### The Craftsmanship Mindset
 
@@ -53,7 +53,7 @@ In the [Clean Coder](https://www.amazon.com/Clean-Coder-Conduct-Professional-Pr
 
 The word craftsman brings to mind skill and quality. It evokes experience and competence. A craftsman is someone who works quickly, but without rushing, who provides reasonable estimates and meets commitments. A craftsman knows when to say no, but tries hard to say yes. A craftsman is a professional.
 
-![](http://hangaroundtheweb.com/wp-content/uploads/2019/02/craftsman-skill-quality.png)
+![](/wp-content/uploads/2019/02/craftsman-skill-quality.png)
 
 Craftsmanship is the mindset held by craftsmen. Craftsmanship is a meme that contains values, disciplines, techniques, attitudes, and answers. But how do craftsmen adopt this meme? How do they attain this mindset? The craftsmanship meme is handed from one person to another. It is taught by elders to the young. It is exchanged between peers. It is observed and relearned, as elders observe the young. Craftsmanship is a contagion, a kind of mental virus. You catch it by observing others and allowing the meme to take hold.
 
@@ -65,7 +65,7 @@ You can’t convince people to be craftsmen. You can’t convince them to accept
 
 In the book, [The Craftsman](https://www.amazon.com/Craftsman-Richard-Sennett/dp/0300151195/ref=sr_1_1?keywords=the+craftsman&qid=1551093828&s=books&sr=1-1), [Richard Sennett](https://en.wikipedia.org/wiki/Richard_Sennett) explores the dimensions of skill, commitment, and judgment in a particular way. It focuses on the intimate connection between hand and head. Every good craftsman conducts a dialogue between concrete practices and thinking; this dialogue evolves into sustaining habits, and these habits establish a rhythm between problem solving and problem finding.
 
-![](http://hangaroundtheweb.com/wp-content/uploads/2019/02/craftsmanship-3d.png)
+![](/wp-content/uploads/2019/02/craftsmanship-3d.png)
 
 ### References:
 

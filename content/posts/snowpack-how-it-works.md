@@ -170,7 +170,7 @@ module.exports = {
 
 Now the dependency tree of our demo app looks like this.
 
-![](http://hangaroundtheweb.com/wp-content/uploads/2020/03/dependency-tree.png)
+![](/wp-content/uploads/2020/03/dependency-tree.png)
 
 Now install the dependencies using npm and then run snowpack.
 
@@ -184,11 +184,11 @@ $
 
 Snowpack will read the dependencies from the package.json and start bundling them. Each individual dependency is built with all its dependent packages are flattened into a single file. As you can see below the finance and math packages is bundled into a single file in the new **webmodules** directory called **finance.js**. And this is the file which we will be consuming in our demo app.
 
-![](http://hangaroundtheweb.com/wp-content/uploads/2020/03/snowpack-run1.png)
+![](/wp-content/uploads/2020/03/snowpack-run1.png)
 
 Now if you inspect the finance.js file in your **webmodules** folder.
 
-![](http://hangaroundtheweb.com/wp-content/uploads/2020/03/finance-js-1.png)
+![](/wp-content/uploads/2020/03/finance-js-1.png)
 
 Now we can see how we can use the finance.js from the webmodules folder in our app.js
 
@@ -252,7 +252,7 @@ Now add the same package to the dependencies list for the demo app in package.js
 
 The dependency tree of our demo will now look like this:
 
-![](http://hangaroundtheweb.com/wp-content/uploads/2020/03/dependency-tree-new.png)
+![](/wp-content/uploads/2020/03/dependency-tree-new.png)
 
 Now install the dependencies using npm and then run snowpack.
 
@@ -276,21 +276,21 @@ You can optionally add “snowpack” as a "prepare" script to your package.json
 
 After the installing and running snowpack the bundled files inside webmodules directory will be three Javascript files. One for the bmi package, one for the finance package and we now have common directory which contains the common code in the file named index-093dfa0c.js used by both the packages, which is actually the math package code.
 
-![](http://hangaroundtheweb.com/wp-content/uploads/2020/03/snowpack-run-2.png)
+![](/wp-content/uploads/2020/03/snowpack-run-2.png)
 
 If you inspect the contents of the file in the webmodules folder you can see yourself that Snowpack changed both the bmi and finance package to import from the common math package bundled.
 
 This is how the bundled bmi package will look like now.
 
-![](http://hangaroundtheweb.com/wp-content/uploads/2020/03/web-modules-bmi.png)
+![](/wp-content/uploads/2020/03/web-modules-bmi.png)
 
 And this is how the bundled finance package will look like.
 
-![](http://hangaroundtheweb.com/wp-content/uploads/2020/03/web-modules-finance.png)
+![](/wp-content/uploads/2020/03/web-modules-finance.png)
 
 And if you are curious what goes inside the common index file, as I mentioned previously it just contains the code of the math package.
 
-![](http://hangaroundtheweb.com/wp-content/uploads/2020/03/web-modules-common.png)
+![](/wp-content/uploads/2020/03/web-modules-common.png)
 
 Now we can import the bmi package into our demo application from the webmodules folder like below:
 
@@ -315,7 +315,7 @@ $ snowpack --optimize
 
 ```
 
-![](http://hangaroundtheweb.com/wp-content/uploads/2020/03/production-builds.png)
+![](/wp-content/uploads/2020/03/production-builds.png)
 
 ### Tree Shaking
 
@@ -373,7 +373,7 @@ $ snowpack --include "src/app.js"
 
 You will have your math package properly tree-shaked or the unused subtract methods from the package will be removed since it is not used by any of the dependencies.
 
-![](http://hangaroundtheweb.com/wp-content/uploads/2020/03/tree-shaking.png)
+![](/wp-content/uploads/2020/03/tree-shaking.png)
 
 That's all from this tutorial. Hope you have a better idea now about how Snowpack bundles your dependencies in your applications from the above examples. Please let me know for any issues or feedback about the article in the comments.
 
