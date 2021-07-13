@@ -1,0 +1,250 @@
+---
+title: 'Searching, Sorting and Pagination in a Common Lisp web application'
+date: Sat, 10 Jul 2021 09:00:00 +0000
+draft: true
+tags: ['common-lisp','lisp']
+summary: 'In this post, we are going to build a demo web application in Common Lisp with search, sort and pagination functionalities with a tabular data.'
+---
+In this post, we are going to build a demo web application in Common Lisp with search, sort and pagination functionalities with a tabular data. 
+
+** Project bootstraping
+
+** Index route
+
+
+#+BEGIN_SRC lisp
+(defroute "/" (&key _parsed)
+  (format t "_parsed = ~a~%" _parsed)
+  (let ((start (parse-integer (or (query-param "start" _parsed) "0")))
+        (direction (or (query-param "direction" _parsed) "asc"))
+        (sort-by (or (query-param "sort-by" _parsed) "name")))
+    (render #P"index.html"
+            (list
+             :foods (slice-list start (sort-list direction sort-by))
+             :total (length *foods*)
+	     :pages (generate-pages)
+	     :start start
+	     :direction direction
+	     :sort-by sort-by
+	     :opposite-direction (get-opposite-direction direction)))))
+
+
+#+END_SRC
+
+** Index template
+
+#+BEGIN_SRC html
+{% extends "layouts/default.html" %}
+{% block title %}Common Lisp - Tabular demo{% endblock %}
+{% block content %}
+<div class="container">
+  <h1>Common Lisp - Tabular demo</h1>
+  <form>
+    <div class="mb-4">
+      <div class="col-6">
+        <input class="form-control form-control-lg" type="text" placeholder="Search dish name..."  name="query" hx-post="/search?start=0&direction=asc&sort-by=name" hx-trigger="keyup changed delay:500ms" hx-target="#results">
+      </div>
+    </div>
+  </form>
+  <div id="results" hx-boost="true">
+    <p>{{total}} results found</p>
+    <table class="table table-striped">
+      <thead>
+        <tr class="table-dark">
+          <th><a href="/?start=0&sort-by=name&amp;direction={{opposite-direction}}">Name
+	      {% if sort-by == "name" and  direction == "asc" %} &uarr; {% endif %}
+	      {% if sort-by == "name" and  direction == "desc" %} &darr; {% endif %}
+	  </a></th>
+          <th><a href="/?start=0&sort-by=rating&amp;direction={{opposite-direction}}">Rating
+	      {% if sort-by == "rating" and  direction == "asc" %} &uarr; {% endif %}
+	      {% if sort-by == "rating" and  direction == "desc" %} &darr; {% endif %}
+	  </a></th>
+          <th><a href="/?start=0&sort-by=price&amp;direction={{opposite-direction}}"> Price
+	      {% if sort-by == "price" and  direction == "asc" %} &uarr; {% endif %}
+	      {% if sort-by == "price" and  direction == "desc" %} &darr; {% endif %}
+	  </a></th>
+          <th><a href="/?start=0&sort-by=cuisine&amp;direction={{opposite-direction}}">Cuisine
+	      {% if sort-by == "cuisine" and  direction == "asc" %} &uarr; {% endif %}
+	      {% if sort-by == "cuisine" and  direction == "desc" %} &darr; {% endif %}
+	  </a></th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for food in foods %}
+        <tr>
+          <td>{{food.name}}</td>
+          <td>
+	    {% ifequal food.rating 1 %}&starf;{% endifequal %}
+	    {% ifequal food.rating 2 %}&starf;&starf;{% endifequal %}
+	    {% ifequal food.rating 3 %}&starf;&starf;&starf;{% endifequal %}
+	    {% ifequal food.rating 4 %}&starf;&starf;&starf;&starf;{% endifequal %}
+	    {% ifequal food.rating 5 %}&starf;&starf;&starf;&starf;&starf;{% endifequal %}
+	  </td>
+          <td>
+	    ${{food.price}}
+	  </td>
+          <td>{{food.cuisine}}</td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+    <nav aria-label="Page navigation example">
+      <ul class="pagination">
+	{% for page in pages %}
+        <li class="page-item {% ifequal start page.start %} active {% endifequal %}" >
+	  <a class="page-link" href="/?start={{page.start}}&amp;direction={{direction}}&amp;sort-by={{sort-by}}">{{page.id}}</a>
+	</li>
+	{% endfor %}
+      </ul>
+    </nav>
+  </div>
+</div>
+{% endblock %}
+
+#+END_SRC
+
+** Building our data
+
+#+BEGIN_SRC lisp
+(defvar *foods* nil)
+#+END_SRC
+
+**# Dishes
+#+BEGIN_SRC lisp
+(defvar *dishes* '("Pizza"
+		   "Noodles"
+		   "Fried Rice"
+		   "Roti"
+		   "Lasagna"
+		   "Churros"
+		   "Tea"
+		   "Soup"
+		   "Egg roll"
+		   "Salad"
+		   "Burger"
+		   "Rice"
+		   "Curry"
+		   "Bread"))
+
+#+END_SRC
+
+**# Cuisines
+#+BEGIN_SRC lisp
+(defvar *cuisines* '("Indian"
+		     "Chinese"
+		     "Thai"
+		     "Continental"
+		     "Mexican"
+		     "Indonesian"
+		     "Japanese"
+		     "Spanish"
+		     "Italian"
+		     "Greek"))
+#+END_SRC
+
+**# Generating random data
+#+BEGIN_SRC lisp
+;; Clear the list
+(setf *foods* nil)
+
+;; Push 100 items into foods with random values
+(dotimes (i 100)
+  (push (list :name (random-elt *dishes*)
+	      :cuisine (random-elt *cuisines*)
+	      :rating (+ 1 (random 5))
+	      :price (+ 1 (random 100))) *foods*))
+
+#+END_SRC
+** Pagination
+#+BEGIN_SRC lisp
+(defun generate-pages ()
+  "Generate pagination"
+  (let ((pages nil))
+    (dotimes (i 10)
+      (push (list :id (+ 1 i) :start (* 10 i)) pages))
+    (reverse pages)))
+#+END_SRC
+
+** Sorting
+#+BEGIN_SRC lisp
+(defun sort-list (direction sort-by)
+  "Sort a list based on the direction and key"
+  (cond ((string= sort-by "name") (sort-list-by-name direction))
+	((string= sort-by "rating") (sort-list-by-rating direction))
+	((string= sort-by "price") (sort-list-by-price direction))
+	((string= sort-by "cuisine") (sort-list-by-cuisine direction))))
+
+(defun sort-list-by-name (direction)
+  "Sort a list by name"
+  (let ((sort-fn (if (string= direction "asc") #'string< #'string>)))
+    (sort (copy-list *foods*) sort-fn :key (lambda (plist) (getf plist :name)))))
+
+(defun sort-list-by-rating (direction)
+  "Sort a list by rating"
+  (let ((sort-fn (if (string= direction "asc") #'< #'>)))
+    (sort (copy-list *foods*) sort-fn :key (lambda (plist) (getf plist :rating)))))
+
+(defun sort-list-by-price (direction)
+  "Sort a list by price"
+  (let ((sort-fn (if (string= direction "asc") #'< #'>)))
+    (sort (copy-list *foods*) sort-fn :key (lambda (plist) (getf plist :price)))))
+
+(defun sort-list-by-cuisine (direction)
+  "Sort a list by price"
+  (let ((sort-fn (if (string= direction "asc") #'string< #'string>)))
+    (sort (copy-list *foods*) sort-fn :key (lambda (plist) (getf plist :cuisine)))))
+
+#+END_SRC
+
+** Search route
+#+BEGIN_SRC lisp
+(defroute ("/search" :method :POST) (&key _parsed)
+  (format t "_parsed = ~a~%" _parsed)
+  (let* ((query (cdr (assoc "query" _parsed :test #'string=)))
+        (filtered-foods (filter-foods query)))
+    (render #P"_search.html"
+            (list
+             :foods filtered-foods
+             :total (length filtered-foods)))))
+#+END_SRC
+
+** Search template
+#+BEGIN_SRC html
+<div id="results" >
+  <p><a href="/">Clear Search</a></p>
+  <p>{{total}} results found</p>
+  <table class="table table-striped">
+    <thead>
+      <tr class="table-dark">
+        <th> <a href="/?sort-by=name&amp;direction=desc"> Name ↓</a></th>
+        <th> <a href="/?sort-by=stars&amp;direction=desc"> Stars</a></th>
+        <th> <a href="/?sort-by=price&amp;direction=desc"> Price</a></th>
+        <th> <a href="/?sort-by=category&amp;direction=desc"> Category</a></th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for food in foods %}
+      <tr>
+        <td>{{food.name}}</td>
+        <td>{{food.rating}}</td>
+        <td>{{food.price}}</td>
+        <td>{{food.cuisine}}</td>
+      </tr>
+      {% endfor %}
+  </tbody></table>
+</div>
+#+END_SRC
+
+
+** Filtering data
+#+BEGIN_SRC lisp
+(defun filter-foods (query)
+  "Filter foods based on the query with name"
+  (remove-if #'(lambda (food)
+                 (let ((name (getf food :name)))
+                   (if (search query name :test #'char-equal)
+                       nil
+                       t))) *foods*))
+#+END_SRC
+** HTMX
+

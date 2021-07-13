@@ -6,7 +6,6 @@ show_reading_time = "true"
 [params]
   favicon = ""
   site_logo = ""
-  description = "The last theme you'll ever need. Maybe."
   twitter = "https://twitter.com/rajasegar_c"
   github = "https://github.com/rajasegar"
   rss = ""
