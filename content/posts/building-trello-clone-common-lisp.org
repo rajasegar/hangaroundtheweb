@@ -2,6 +2,7 @@
 #+date: <2021-07-14 Wed>
 #+tags[]: common-lisp, lisp
 #+summary: In this post we are going to build a Trello clone using Common Lisp
+#+draft: true
 
 * Building a Trello Clone in Common Lisp
   In this post we are going to build a Trello clone demo application in
