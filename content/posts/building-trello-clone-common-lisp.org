@@ -1,0 +1,16 @@
+#+title: Building a Trello Clone in Common Lisp
+#+date: <2021-07-14 Wed>
+#+tags[]: common-lisp, lisp
+#+summary: In this post we are going to build a Trello clone using Common Lisp
+
+* Building a Trello Clone in Common Lisp
+  In this post we are going to build a Trello clone demo application in
+Common Lisp. It is just a demo app without any authentication or persistence,
+it's going to focus mainly on the routing, user experience and api mechanisms.
+We are going to use a couple of JavaScript libraries to enhance the user experience
+like drag-n-drop, inline forms, etc.,
+
+** Boards
+
+
+** Lists

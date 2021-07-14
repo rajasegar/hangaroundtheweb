@@ -5,6 +5,9 @@ draft: false
 tags: ['common-lisp','lisp']
 summary: 'In this post, we are going to build a demo web application in Common Lisp with search, sort and pagination functionalities with a tabular data.'
 ---
+
+#+options: toc:nil num:nil html-postamble:nil
+
 In this post, we are going to build a demo web application in Common Lisp with search, sort and pagination functionalities with a tabular data 
 of randomly generated food dish names, ratings, price and cuisines.
 
