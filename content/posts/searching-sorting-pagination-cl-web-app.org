@@ -1,6 +1,6 @@
 ---
 title: 'Searching, Sorting and Pagination in a Common Lisp web application'
-date: Sat, 10 Jul 2021 09:00:00 +0000
+date: Tue, 13 Jul 2021 09:00:00 +0000
 draft: false
 tags: ['common-lisp','lisp']
 summary: 'In this post, we are going to build a demo web application in Common Lisp with search, sort and pagination functionalities with a tabular data.'
@@ -11,7 +11,7 @@ of randomly generated food dish names, ratings, price and cuisines.
 ** Project bootstraping
    As usual we are going to use [[https://github.com/fukamachi/caveman][Caveman]] for scaffolding our web application.
    If you want to know more about Caveman or why Caveman, you might want to take a look at my previous [[https://hangaroundtheweb.com/posts/lisp-for-the-web-5][post]]
-   about Common Lisp and web development. Caveman is available in quicklisp , so you can install it with:
+   about Common Lisp and web development. Caveman is available in quicklisp, so you can install it with:
 
 #+BEGIN_SRC lisp
 (ql:quickload :caveman2)
@@ -114,10 +114,13 @@ So this is a simple form with an input field with the name ~query~.
   </form>
 #+END_SRC
    
+
 We are adding some custom attributes starting with ~hx-~ , these are actually some enhanced
 attributes for HTML using a library called [[https://htmx.org][htmx]] which  allows you to access AJAX, 
 CSS Transitions, WebSockets and Server Sent Events directly in HTML, using attributes, 
 so you can build modern user interfaces with the simplicity and power of hypertext
+
+[[/images/lisp-ssp-search.png]]
 
 Using htmx, we are sending a POST request to the url ~/search~ and the response will be 
 swapped with the element with an id ~#results~. Hence as soon as you 
@@ -129,7 +132,8 @@ delay of 500 milli seconds and you get to see the results populated in the table
 like Name, Rating, Price and Cuisine. When you click on the table headers, it will toggle the sort 
 direction automatically from ascending to descending and vice-versa for a particular column value.
 We will show some up and down arrows to indicate the sorting direction.
-   
+
+[[/images/lisp-ssp-table.png]]
 
 
 #+BEGIN_SRC html
@@ -205,7 +209,11 @@ the respective pagination data for the page and the start offset value for
 the table data.  It will be something like for page 2, we will start with
 the record offset 10 and for page 3, it will be 20 and so on. Please make 
 note that our records for the first page start from 0 to 9, so the second
-page starts from 10 and so on. We are also ensuring that the pagination 
+page starts from 10 and so on. 
+
+[[/images/lisp-ssp-pagination.png]]
+
+We are also ensuring that the pagination 
 data is in ascending order using the ~reverse~ function at the end while 
 returning the output from the function, otherwise we will end up with pages 
 in the descending order.
@@ -416,6 +424,11 @@ dish names.
   </tbody></table>
 </div>
 #+END_SRC
+
+And this is how the final app look like in action.
+
+[[https://github.com/rajasegar/cl-tabular/raw/main/cl-tabular-demo.gif]]
+
 
 ** Code
 The source code for this application is hosted in [[https://github.com/rajasegar/cl-tabular][Github]].
