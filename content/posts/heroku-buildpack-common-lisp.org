@@ -1,0 +1,180 @@
+#+title: Heroku Buildpack for Common Lisp
+#+date: <2021-07-30 Fri>
+#+options: toc:nil num:nil html-postamble:nil
+#+summary: A Heroku buildpack for Common Lisp
+#+tags[]: common-lisp lisp heroku-buildpacks
+
+* Heroku Buildpack for Common Lisp
+  In this post we are going to take a look at one of the Heroku buildpacks for deploying Common Lisp web
+applications into Heroku. The build pack is called [[https://gitlab.com/duncan-bayne/heroku-buildpack-common-lisp][heroku-buildpack-common-lisp]] and is created by
+[[https://duncan.bayne.id.au/][Duncan Bayne]]. 
+
+
+This buildpack allows you to build web applications with Common Lisp, and deploy them to the [[https://heroku.com/][Heroku]] platform.
+It is a forked and highly modified version of [[https://github.com/bhyde][bhyde]]'s [[https://github.com/bhyde/heroku-buildpack-ccl64][heroku-buildpack-ccl64]].
+It is licensed under the GNU Lesser General Public License. It uses [[https://ccl.clozure.com/][CCL]] as the Lisp implementation.
+
+** CCL
+Clozure CL (often called CCL for short) is a free Common Lisp implementation with a long history. 
+Some distinguishing features of the implementation include fast compilation speed, native threads, 
+a precise, generational, compacting garbage collector, and a convenient foreign-function interface. 
+
+
+*** Principles
+This buildpack is based on the following principles:
+
+1. Use modern Common Lisp tooling in particular, [[https://github.com/roswell/roswell][Roswell]] and [[http://www.quicklisp.org/][QuickLisp]].
+2. Use CI and linting to prevent bit-rot and avoidable bugs.
+3. Support the latest Heroku stack 
+4. Support any common Common Lisp implementations (currently any supported by Roswell).
+
+
+** Getting started
+The easiest way of getting started is to clone a template application, create a Heroku app for it, and deploy.
+
+#+BEGIN_SRC sh
+# Clone the sample application.
+git clone https://gitlab.com/duncan-bayne/heroku-app-clozure-common-lisp
+
+# Create a Heroku app for it, using this buildpack.
+cd heroku-app-clozure-common-lisp
+heroku apps:create my-ccl-app --buildpack https://gitlab.com/duncan-bayne/heroku-buildpack-common-lisp
+
+# Deploy it.
+git push heroku master
+
+# Open it in a browser.
+heroku open
+#+END_SRC
+
+** Structure of your app
+In order to use this buildpack properly, you application must contain a minimum of four important files:
+- application.lisp
+- heroku-compile.lisp
+- ASDF definition file
+- package.lisp
+
+
+** application.lisp
+   This is where your application source code lives. Here you an initialize your web server (something like Hunchentoot),
+define your api endpoints, routes, and so on. One mandatory function you need in this file is the ~initialize-application~,
+which is actually used by this buildpack to start the web server when you deploy your apps in to Heroku.
+
+#+BEGIN_SRC lisp
+(in-package #:cl-user)
+
+(hunchentoot:define-easy-handler (root :uri "/") ()
+  (cl-who:with-html-output-to-string (s nil :prologue t)
+    (:html
+      (:body
+        (:p "hello, world")
+        (:img :src "lisp-logo120x80.png")))))
+
+(defvar *acceptor* nil)
+
+(defun initialize-application (&key port)
+  (setf hunchentoot:*dispatch-table*
+    `(hunchentoot:dispatch-easy-handlers
+       ,(hunchentoot:create-folder-dispatcher-and-handler
+          "/" "/app/static/")))
+
+  (when *acceptor*
+    (hunchentoot:stop *acceptor*))
+
+  (setf *acceptor*
+    (hunchentoot:start (make-instance 'hunchentoot:easy-acceptor :port port))))
+
+#+END_SRC
+
+Let's see how the buildpack uses our app source code and the ~initialize-application~ function 
+to start our server. This is taking place inside the buildpack's [[https://gitlab.com/duncan-bayne/heroku-buildpack-common-lisp/-/blob/master/setup/compile.lisp][setup/compile.lisp]] file.
+
+#+BEGIN_SRC lisp
+;;; App can redefine this to do runtime initializations
+(defun initialize-application (&key port)
+  (declare (ignore port)))
+
+;;; Default toplevel, app can redefine.
+(defun heroku-toplevel ()
+  (initialize-application :port (parse-integer (getenv "PORT")))
+  (loop (sleep 600)))			;sleep forever
+
+#+END_SRC
+
+So our ~initialize-application~ function is actually invoked by the buildpack 
+inside the ~heroku-toplevel~ function by giving a port number from the environment variable
+called ~PORT~ which is exposed by Heroku for our applications. Then we put our
+app to sleep.
+
+[[/images/heroku-commonlisp-buildpak.svg]]
+
+
+** heroku-compile.lisp
+This file is a mandatory one and it should be named exactly like ~heroku-compile.lisp~ and should contain the 
+following contents. This file is used to detect whether the app is currently using this buildpack or not.
+So it is a must have.
+
+#+BEGIN_SRC lisp
+(ql:quickload :heroku-app-clozure-common-lisp)
+#+END_SRC
+
+As you can see, we are just loading our app using Quicklisp here.
+So let's see how the buildpack detects our app, whether we are using this buildpack or not. It will just 
+check for the presence of this file named ~heroku-compile.lisp~. This is done inside the buildpack's 
+[[https://gitlab.com/duncan-bayne/heroku-buildpack-common-lisp/-/blob/master/bin/detect][detect]] script like this.
+
+#+BEGIN_SRC sh
+#!/bin/sh
+
+# this pack is valid for apps with a heroku-compile.lisp in the root
+if [ -f "$1/heroku-compile.lisp" ]; then
+  echo "CLFramework"
+  exit 0
+else
+  exit 1
+fi
+#+END_SRC
+
+** ASDF system definition
+All your Common Lisp web applications need to have one system definition file, which contains all the meta
+information about the app like dependencies, components, author, version and so on. This is how our sample
+ASD file looks like:
+
+#+BEGIN_SRC lisp
+(asdf:defsystem #:heroku-app-clozure-common-lisp
+  :description "Describe heroku-app-clozure-common-lisp here"
+  :author "Duncan Bayne"
+  :license  "GNU Lesser Public License 3.0"
+  :version "0.0.1"
+  :serial t
+  :depends-on (#:hunchentoot #:cl-who)
+  :components ((:file "package")
+               (:file "application")))
+#+END_SRC
+
+** package.lisp
+This is just a package definition file for our application. You define the package by giving it a name
+and list out the dependencies which are being used in our app.
+
+#+BEGIN_SRC lisp
+(defpackage #:heroku-app-clozure-common-lisp
+  (:use #:cl))
+#+END_SRC
+
+
+*** Choosing a different Common Lisp implementation
+This buildpack supports any Common Lisp implementation supported by Roswell.  To set the implementation to something other 
+than Clozure Common Lisp, set the ~CL_IMPL~ setting on your Heroku application.
+
+For example, to use Steel Bank Common Lisp:
+
+#+BEGIN_SRC sh
+cd heroku-app-clozure-common-lisp
+heroku config:set CL_IMPL=sbcl-bin
+#+END_SRC
+
+That's it about the Heroku buildpack for Common Lisp. Please give this buildpack a try and deploy your 
+Common Lisp web applications to Heroku. If you like the buildpack give it a star in Gitlab, fork it and 
+play around with it. Let me know your queries and feedback in the comments section. 
+
+Happy hacking with Heroku and Common Lisp!
