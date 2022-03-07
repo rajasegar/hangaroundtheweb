@@ -1,4 +1,4 @@
-baseURL = "http://hangaroundtheweb.com/"
+baseURL = "https://hangaroundtheweb.com/"
 languageCode = "en-us"
 title = "hangaroundtheweb"
 theme = "ananke"

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>webdev on hangaroundtheweb</title>
+    <link>http://hangaroundtheweb.com/tags/webdev/</link>
+    <description>Recent content in webdev on hangaroundtheweb</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 08 Jul 2021 23:01:09 +0000</lastBuildDate><atom:link href="http://hangaroundtheweb.com/tags/webdev/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Lisp for the web -5</title>
+      <link>http://hangaroundtheweb.com/posts/lisp-for-the-web-5/</link>
+      <pubDate>Thu, 08 Jul 2021 23:01:09 +0000</pubDate>
+      
+      <guid>http://hangaroundtheweb.com/posts/lisp-for-the-web-5/</guid>
+      <description>Lisp for the web - 5  This is a post about using Common Lisp for web development. Lisp is one of the oldest programming languages that has been still used today. It has been dubbed as the `programmable programming language` for it&amp;#39;s great extensible characteristics. It has pioneered many programming concepts like recursion and macros.
+ There has been many great posts about using Lisp for Web development in the past.</description>
+    </item>
+    
+  </channel>
+</rss>

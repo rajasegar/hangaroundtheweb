@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>thesaurus on hangaroundtheweb</title>
+    <link>http://hangaroundtheweb.com/tags/thesaurus/</link>
+    <description>Recent content in thesaurus on hangaroundtheweb</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 20 Jun 2019 02:28:03 +0000</lastBuildDate><atom:link href="http://hangaroundtheweb.com/tags/thesaurus/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>How to use Thesaurus from Spacemacs</title>
+      <link>http://hangaroundtheweb.com/posts/how-to-use-thesaurus-from-spacemacs/</link>
+      <pubDate>Thu, 20 Jun 2019 02:28:03 +0000</pubDate>
+      
+      <guid>http://hangaroundtheweb.com/posts/how-to-use-thesaurus-from-spacemacs/</guid>
+      <description>In this tutorial, we will see how we can integrate the Merriam Webster Thesaurus in to Spacemacs. Having a thesaurus by your side while writing, is really a productive thing. Since you don&amp;rsquo;t have to lookup every time the alternative word you want to use and that too integrating with your favorite editor is definitely a feather in your cap.
+For this we are going to install an awesome package from Ag Ibragimov called mw-thesaurus.</description>
+    </item>
+    
+  </channel>
+</rss>

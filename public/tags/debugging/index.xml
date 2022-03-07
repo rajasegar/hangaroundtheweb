@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>debugging on hangaroundtheweb</title>
+    <link>http://hangaroundtheweb.com/tags/debugging/</link>
+    <description>Recent content in debugging on hangaroundtheweb</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 21 Jul 2018 22:54:06 +0000</lastBuildDate><atom:link href="http://hangaroundtheweb.com/tags/debugging/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Nine Illuminating Quotes on Debugging</title>
+      <link>http://hangaroundtheweb.com/posts/nine-illuminating-quotes-on-debugging/</link>
+      <pubDate>Sat, 21 Jul 2018 22:54:06 +0000</pubDate>
+      
+      <guid>http://hangaroundtheweb.com/posts/nine-illuminating-quotes-on-debugging/</guid>
+      <description>Nine Illuminating Quotes on Debugging Here we present you a list of quotes about debugging programs by renowned developers and programmers from around the world.
+Quote #1  Of all my programming bugs, 80% are syntax errors. Of the remaining 20%, 80% are trivial logical errors. Of the remaining 4%, 80% are pointer errors. And the remaining 0.4% are hard. – Marc Donner, IBM Watson Research Center
+ Quote #2  It takes three times the effort to find and fix bugs in system test than when done by the developer.</description>
+    </item>
+    
+  </channel>
+</rss>

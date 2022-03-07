@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>software on hangaroundtheweb</title>
+    <link>http://hangaroundtheweb.com/tags/software/</link>
+    <description>Recent content in software on hangaroundtheweb</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 06 Aug 2018 02:04:26 +0000</lastBuildDate><atom:link href="http://hangaroundtheweb.com/tags/software/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Conceptual Integrity - Revisited</title>
+      <link>http://hangaroundtheweb.com/posts/conceptual-integrity-revisited/</link>
+      <pubDate>Mon, 06 Aug 2018 02:04:26 +0000</pubDate>
+      
+      <guid>http://hangaroundtheweb.com/posts/conceptual-integrity-revisited/</guid>
+      <description>Conceptual integrity is the principle that anywhere you look in your system, you can tell that the design is part of the same overall design. This includes low-level issues such as formatting and identifier naming, but also issues such as how modules and classes are designed, etc. This is vitally important, because inevitably, unanticipated issues come up that must be resolved quickly. If there is a coherent design to the system, it can be much easier to resolve these issues by determining what would be consistent with the overall design, especially if the other designers are not present.</description>
+    </item>
+    
+    <item>
+      <title>Classical quotations and words of wisdom on managing software</title>
+      <link>http://hangaroundtheweb.com/posts/classical-quotations-and-words-of-wisdom-on-managing-software/</link>
+      <pubDate>Mon, 23 Jul 2018 23:45:42 +0000</pubDate>
+      
+      <guid>http://hangaroundtheweb.com/posts/classical-quotations-and-words-of-wisdom-on-managing-software/</guid>
+      <description>Managing Software - Words of Wisdom Software project management is an art and science of planning and leading software projects. It is a sub-discipline of project management in which software projects are planned, implemented, monitored and controlled. These words of wisdom are the outcome of multi-role viewpoint on software development. There is no ranking for better practices. But what really matters is to apply these practices where they make sense and where the users can benefit the most.</description>
+    </item>
+    
+    <item>
+      <title>Seven Principles of Software Development - Revisited</title>
+      <link>http://hangaroundtheweb.com/posts/seven-principles-of-software-development-revisited/</link>
+      <pubDate>Sun, 22 Apr 2018 20:56:05 +0000</pubDate>
+      
+      <guid>http://hangaroundtheweb.com/posts/seven-principles-of-software-development-revisited/</guid>
+      <description>Seven Principles of Software Development - Revisited Principle #1: The Reason It All Exists A software system exists for one reason: to provide value to its users. All decisions should be made with this in mind. Before specifying a system requirement, before noting a piece of system functionality, before determining the hardware platforms or development processes, ask yourself questions such as: Does this add real VALUE to the system? If the answer is no, don&amp;rsquo;t do it.</description>
+    </item>
+    
+  </channel>
+</rss>

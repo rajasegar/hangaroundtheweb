@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>telemetry on hangaroundtheweb</title>
+    <link>http://hangaroundtheweb.com/tags/telemetry/</link>
+    <description>Recent content in telemetry on hangaroundtheweb</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 31 Oct 2019 22:30:28 +0000</lastBuildDate><atom:link href="http://hangaroundtheweb.com/tags/telemetry/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Creating runtime assisted Codemods using Telemetry helpers</title>
+      <link>http://hangaroundtheweb.com/posts/creating-runtime-assisted-codemods-using-telemetry-helpers/</link>
+      <pubDate>Thu, 31 Oct 2019 22:30:28 +0000</pubDate>
+      
+      <guid>http://hangaroundtheweb.com/posts/creating-runtime-assisted-codemods-using-telemetry-helpers/</guid>
+      <description>In this article, we are going to take a glimpse at the ember-codemods-telemetry-helpers package and how it helps to create more advanced codemods for Ember.js.
+If you want a more in-depth introduction to codemods, you can checkout this post detailing the why&amp;rsquo;s and how&amp;rsquo;s of codemods.
+Telemetry for layman First we will take a look at what Telemetry is all about. According to Wikipedia,
+ Telemetry is the collection of measurements or other data at remote or inaccessible points and their automatic transmission to receiving equipment for monitoring.</description>
+    </item>
+    
+  </channel>
+</rss>

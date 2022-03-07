@@ -5,6 +5,772 @@
     <link>http://hangaroundtheweb.com/tags/</link>
     <description>Recent content in Tags on hangaroundtheweb</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language><atom:link href="http://hangaroundtheweb.com/tags/index.xml" rel="self" type="application/rss+xml" />
+    <language>en-us</language>
+    <lastBuildDate>Wed, 14 Jul 2021 00:00:00 +0000</lastBuildDate><atom:link href="http://hangaroundtheweb.com/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>common-lisp</title>
+      <link>http://hangaroundtheweb.com/tags/common-lisp/</link>
+      <pubDate>Wed, 14 Jul 2021 00:00:00 +0000</pubDate>
+      
+      <guid>http://hangaroundtheweb.com/tags/common-lisp/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>lisp</title>
+      <link>http://hangaroundtheweb.com/tags/lisp/</link>
+      <pubDate>Wed, 14 Jul 2021 00:00:00 +0000</pubDate>
+      
+      <guid>http://hangaroundtheweb.com/tags/lisp/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>webdev</title>
+      <link>http://hangaroundtheweb.com/tags/webdev/</link>
+      <pubDate>Thu, 08 Jul 2021 23:01:09 +0000</pubDate>
+      
+      <guid>http://hangaroundtheweb.com/tags/webdev/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Articles</title>
+      <link>http://hangaroundtheweb.com/tags/articles/</link>
+      <pubDate>Sun, 11 Apr 2021 21:22:31 +0000</pubDate>
+      
+      <guid>http://hangaroundtheweb.com/tags/articles/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>HTML</title>
+      <link>http://hangaroundtheweb.com/tags/html/</link>
+      <pubDate>Sun, 11 Apr 2021 21:22:31 +0000</pubDate>
+      
+      <guid>http://hangaroundtheweb.com/tags/html/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>html5</title>
+      <link>http://hangaroundtheweb.com/tags/html5/</link>
+      <pubDate>Sun, 11 Apr 2021 21:22:31 +0000</pubDate>
+      
+      <guid>http://hangaroundtheweb.com/tags/html5/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>htmx</title>
+      <link>http://hangaroundtheweb.com/tags/htmx/</link>
+      <pubDate>Sun, 11 Apr 2021 21:22:31 +0000</pubDate>
+      
+      <guid>http://hangaroundtheweb.com/tags/htmx/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>ssr</title>
+      <link>http://hangaroundtheweb.com/tags/ssr/</link>
+      <pubDate>Sat, 10 Apr 2021 23:05:14 +0000</pubDate>
+      
+      <guid>http://hangaroundtheweb.com/tags/ssr/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>EmberJS</title>
+      <link>http://hangaroundtheweb.com/tags/emberjs/</link>
+      <pubDate>Thu, 30 Jul 2020 23:49:37 +0000</pubDate>
+      
+      <guid>http://hangaroundtheweb.com/tags/emberjs/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>emacs</title>
+      <link>http://hangaroundtheweb.com/tags/emacs/</link>
+      <pubDate>Thu, 02 Jul 2020 00:57:51 +0000</pubDate>
+      
+      <guid>http://hangaroundtheweb.com/tags/emacs/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>emms</title>
+      <link>http://hangaroundtheweb.com/tags/emms/</link>
+      <pubDate>Thu, 02 Jul 2020 00:57:51 +0000</pubDate>
+      
+      <guid>http://hangaroundtheweb.com/tags/emms/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>music</title>
+      <link>http://hangaroundtheweb.com/tags/music/</link>
+      <pubDate>Thu, 02 Jul 2020 00:57:51 +0000</pubDate>
+      
+      <guid>http://hangaroundtheweb.com/tags/music/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Spacemacs</title>
+      <link>http://hangaroundtheweb.com/tags/spacemacs/</link>
+      <pubDate>Thu, 02 Jul 2020 00:57:51 +0000</pubDate>
+      
+      <guid>http://hangaroundtheweb.com/tags/spacemacs/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>node</title>
+      <link>http://hangaroundtheweb.com/tags/node/</link>
+      <pubDate>Sun, 28 Jun 2020 21:01:00 +0000</pubDate>
+      
+      <guid>http://hangaroundtheweb.com/tags/node/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>nvm</title>
+      <link>http://hangaroundtheweb.com/tags/nvm/</link>
+      <pubDate>Sun, 28 Jun 2020 21:01:00 +0000</pubDate>
+      
+      <guid>http://hangaroundtheweb.com/tags/nvm/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>prettier</title>
+      <link>http://hangaroundtheweb.com/tags/prettier/</link>
+      <pubDate>Sat, 30 May 2020 03:59:02 +0000</pubDate>
+      
+      <guid>http://hangaroundtheweb.com/tags/prettier/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>coverage</title>
+      <link>http://hangaroundtheweb.com/tags/coverage/</link>
+      <pubDate>Wed, 13 May 2020 17:06:18 +0000</pubDate>
+      
+      <guid>http://hangaroundtheweb.com/tags/coverage/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>coveralls</title>
+      <link>http://hangaroundtheweb.com/tags/coveralls/</link>
+      <pubDate>Wed, 13 May 2020 17:06:18 +0000</pubDate>
+      
+      <guid>http://hangaroundtheweb.com/tags/coveralls/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>ember</title>
+      <link>http://hangaroundtheweb.com/tags/ember/</link>
+      <pubDate>Wed, 13 May 2020 17:06:18 +0000</pubDate>
+      
+      <guid>http://hangaroundtheweb.com/tags/ember/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>ember-addon</title>
+      <link>http://hangaroundtheweb.com/tags/ember-addon/</link>
+      <pubDate>Wed, 13 May 2020 17:06:18 +0000</pubDate>
+      
+      <guid>http://hangaroundtheweb.com/tags/ember-addon/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>bundlers</title>
+      <link>http://hangaroundtheweb.com/tags/bundlers/</link>
+      <pubDate>Thu, 26 Mar 2020 19:22:01 +0000</pubDate>
+      
+      <guid>http://hangaroundtheweb.com/tags/bundlers/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Javascript</title>
+      <link>http://hangaroundtheweb.com/tags/javascript/</link>
+      <pubDate>Thu, 26 Mar 2020 19:22:01 +0000</pubDate>
+      
+      <guid>http://hangaroundtheweb.com/tags/javascript/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>snowpack</title>
+      <link>http://hangaroundtheweb.com/tags/snowpack/</link>
+      <pubDate>Thu, 26 Mar 2020 19:22:01 +0000</pubDate>
+      
+      <guid>http://hangaroundtheweb.com/tags/snowpack/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>codemod</title>
+      <link>http://hangaroundtheweb.com/tags/codemod/</link>
+      <pubDate>Wed, 18 Dec 2019 05:08:13 +0000</pubDate>
+      
+      <guid>http://hangaroundtheweb.com/tags/codemod/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>codemods</title>
+      <link>http://hangaroundtheweb.com/tags/codemods/</link>
+      <pubDate>Wed, 18 Dec 2019 05:08:13 +0000</pubDate>
+      
+      <guid>http://hangaroundtheweb.com/tags/codemods/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>jscodeshift</title>
+      <link>http://hangaroundtheweb.com/tags/jscodeshift/</link>
+      <pubDate>Wed, 18 Dec 2019 05:08:13 +0000</pubDate>
+      
+      <guid>http://hangaroundtheweb.com/tags/jscodeshift/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>abstract syntax tree</title>
+      <link>http://hangaroundtheweb.com/tags/abstract-syntax-tree/</link>
+      <pubDate>Tue, 10 Dec 2019 02:27:46 +0000</pubDate>
+      
+      <guid>http://hangaroundtheweb.com/tags/abstract-syntax-tree/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>telemetry</title>
+      <link>http://hangaroundtheweb.com/tags/telemetry/</link>
+      <pubDate>Thu, 31 Oct 2019 22:30:28 +0000</pubDate>
+      
+      <guid>http://hangaroundtheweb.com/tags/telemetry/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>mindmaps</title>
+      <link>http://hangaroundtheweb.com/tags/mindmaps/</link>
+      <pubDate>Tue, 24 Sep 2019 02:23:44 +0000</pubDate>
+      
+      <guid>http://hangaroundtheweb.com/tags/mindmaps/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Uncategorized</title>
+      <link>http://hangaroundtheweb.com/tags/uncategorized/</link>
+      <pubDate>Tue, 24 Sep 2019 02:23:44 +0000</pubDate>
+      
+      <guid>http://hangaroundtheweb.com/tags/uncategorized/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>plantuml</title>
+      <link>http://hangaroundtheweb.com/tags/plantuml/</link>
+      <pubDate>Thu, 11 Jul 2019 18:06:41 +0000</pubDate>
+      
+      <guid>http://hangaroundtheweb.com/tags/plantuml/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>thesaurus</title>
+      <link>http://hangaroundtheweb.com/tags/thesaurus/</link>
+      <pubDate>Thu, 20 Jun 2019 02:28:03 +0000</pubDate>
+      
+      <guid>http://hangaroundtheweb.com/tags/thesaurus/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>EmberJS2019</title>
+      <link>http://hangaroundtheweb.com/tags/emberjs2019/</link>
+      <pubDate>Sat, 15 Jun 2019 23:30:36 +0000</pubDate>
+      
+      <guid>http://hangaroundtheweb.com/tags/emberjs2019/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>bestpractices</title>
+      <link>http://hangaroundtheweb.com/tags/bestpractices/</link>
+      <pubDate>Sun, 21 Apr 2019 22:30:14 +0000</pubDate>
+      
+      <guid>http://hangaroundtheweb.com/tags/bestpractices/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>productivity</title>
+      <link>http://hangaroundtheweb.com/tags/productivity/</link>
+      <pubDate>Sun, 21 Apr 2019 22:30:14 +0000</pubDate>
+      
+      <guid>http://hangaroundtheweb.com/tags/productivity/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>comparison</title>
+      <link>http://hangaroundtheweb.com/tags/comparison/</link>
+      <pubDate>Fri, 01 Mar 2019 23:28:43 +0000</pubDate>
+      
+      <guid>http://hangaroundtheweb.com/tags/comparison/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>decisionmaking</title>
+      <link>http://hangaroundtheweb.com/tags/decisionmaking/</link>
+      <pubDate>Fri, 01 Mar 2019 23:28:43 +0000</pubDate>
+      
+      <guid>http://hangaroundtheweb.com/tags/decisionmaking/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>decisions</title>
+      <link>http://hangaroundtheweb.com/tags/decisions/</link>
+      <pubDate>Fri, 01 Mar 2019 23:28:43 +0000</pubDate>
+      
+      <guid>http://hangaroundtheweb.com/tags/decisions/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>crafts</title>
+      <link>http://hangaroundtheweb.com/tags/crafts/</link>
+      <pubDate>Mon, 25 Feb 2019 18:56:54 +0000</pubDate>
+      
+      <guid>http://hangaroundtheweb.com/tags/crafts/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>craftsman</title>
+      <link>http://hangaroundtheweb.com/tags/craftsman/</link>
+      <pubDate>Mon, 25 Feb 2019 18:56:54 +0000</pubDate>
+      
+      <guid>http://hangaroundtheweb.com/tags/craftsman/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>craftsmanship</title>
+      <link>http://hangaroundtheweb.com/tags/craftsmanship/</link>
+      <pubDate>Mon, 25 Feb 2019 18:56:54 +0000</pubDate>
+      
+      <guid>http://hangaroundtheweb.com/tags/craftsmanship/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>quality</title>
+      <link>http://hangaroundtheweb.com/tags/quality/</link>
+      <pubDate>Mon, 25 Feb 2019 18:56:54 +0000</pubDate>
+      
+      <guid>http://hangaroundtheweb.com/tags/quality/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>ember-octane</title>
+      <link>http://hangaroundtheweb.com/tags/ember-octane/</link>
+      <pubDate>Sun, 26 Aug 2018 22:17:45 +0000</pubDate>
+      
+      <guid>http://hangaroundtheweb.com/tags/ember-octane/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>EmberJS2018</title>
+      <link>http://hangaroundtheweb.com/tags/emberjs2018/</link>
+      <pubDate>Sun, 26 Aug 2018 22:17:45 +0000</pubDate>
+      
+      <guid>http://hangaroundtheweb.com/tags/emberjs2018/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>component</title>
+      <link>http://hangaroundtheweb.com/tags/component/</link>
+      <pubDate>Sat, 11 Aug 2018 03:18:42 +0000</pubDate>
+      
+      <guid>http://hangaroundtheweb.com/tags/component/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>networkinformationapi</title>
+      <link>http://hangaroundtheweb.com/tags/networkinformationapi/</link>
+      <pubDate>Sat, 11 Aug 2018 03:18:42 +0000</pubDate>
+      
+      <guid>http://hangaroundtheweb.com/tags/networkinformationapi/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>conicalgradient</title>
+      <link>http://hangaroundtheweb.com/tags/conicalgradient/</link>
+      <pubDate>Fri, 10 Aug 2018 02:39:43 +0000</pubDate>
+      
+      <guid>http://hangaroundtheweb.com/tags/conicalgradient/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>CSS</title>
+      <link>http://hangaroundtheweb.com/tags/css/</link>
+      <pubDate>Fri, 10 Aug 2018 02:39:43 +0000</pubDate>
+      
+      <guid>http://hangaroundtheweb.com/tags/css/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>gradients</title>
+      <link>http://hangaroundtheweb.com/tags/gradients/</link>
+      <pubDate>Fri, 10 Aug 2018 02:39:43 +0000</pubDate>
+      
+      <guid>http://hangaroundtheweb.com/tags/gradients/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>programming</title>
+      <link>http://hangaroundtheweb.com/tags/programming/</link>
+      <pubDate>Wed, 08 Aug 2018 23:16:48 +0000</pubDate>
+      
+      <guid>http://hangaroundtheweb.com/tags/programming/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>corporate</title>
+      <link>http://hangaroundtheweb.com/tags/corporate/</link>
+      <pubDate>Mon, 06 Aug 2018 19:20:26 +0000</pubDate>
+      
+      <guid>http://hangaroundtheweb.com/tags/corporate/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>habits</title>
+      <link>http://hangaroundtheweb.com/tags/habits/</link>
+      <pubDate>Mon, 06 Aug 2018 19:20:26 +0000</pubDate>
+      
+      <guid>http://hangaroundtheweb.com/tags/habits/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>rituals</title>
+      <link>http://hangaroundtheweb.com/tags/rituals/</link>
+      <pubDate>Mon, 06 Aug 2018 19:20:26 +0000</pubDate>
+      
+      <guid>http://hangaroundtheweb.com/tags/rituals/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>conceptualintegrity</title>
+      <link>http://hangaroundtheweb.com/tags/conceptualintegrity/</link>
+      <pubDate>Mon, 06 Aug 2018 02:04:26 +0000</pubDate>
+      
+      <guid>http://hangaroundtheweb.com/tags/conceptualintegrity/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>software</title>
+      <link>http://hangaroundtheweb.com/tags/software/</link>
+      <pubDate>Mon, 06 Aug 2018 02:04:26 +0000</pubDate>
+      
+      <guid>http://hangaroundtheweb.com/tags/software/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>article</title>
+      <link>http://hangaroundtheweb.com/tags/article/</link>
+      <pubDate>Tue, 31 Jul 2018 22:46:04 +0000</pubDate>
+      
+      <guid>http://hangaroundtheweb.com/tags/article/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>psychology</title>
+      <link>http://hangaroundtheweb.com/tags/psychology/</link>
+      <pubDate>Tue, 31 Jul 2018 22:46:04 +0000</pubDate>
+      
+      <guid>http://hangaroundtheweb.com/tags/psychology/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>quotes</title>
+      <link>http://hangaroundtheweb.com/tags/quotes/</link>
+      <pubDate>Mon, 23 Jul 2018 23:45:42 +0000</pubDate>
+      
+      <guid>http://hangaroundtheweb.com/tags/quotes/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>debugging</title>
+      <link>http://hangaroundtheweb.com/tags/debugging/</link>
+      <pubDate>Sat, 21 Jul 2018 22:54:06 +0000</pubDate>
+      
+      <guid>http://hangaroundtheweb.com/tags/debugging/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>ui</title>
+      <link>http://hangaroundtheweb.com/tags/ui/</link>
+      <pubDate>Fri, 20 Jul 2018 18:34:41 +0000</pubDate>
+      
+      <guid>http://hangaroundtheweb.com/tags/ui/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>user-interface</title>
+      <link>http://hangaroundtheweb.com/tags/user-interface/</link>
+      <pubDate>Fri, 20 Jul 2018 18:34:41 +0000</pubDate>
+      
+      <guid>http://hangaroundtheweb.com/tags/user-interface/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>gravity</title>
+      <link>http://hangaroundtheweb.com/tags/gravity/</link>
+      <pubDate>Sun, 08 Jul 2018 22:50:14 +0000</pubDate>
+      
+      <guid>http://hangaroundtheweb.com/tags/gravity/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>skills</title>
+      <link>http://hangaroundtheweb.com/tags/skills/</link>
+      <pubDate>Sun, 24 Jun 2018 22:35:52 +0000</pubDate>
+      
+      <guid>http://hangaroundtheweb.com/tags/skills/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>compromise</title>
+      <link>http://hangaroundtheweb.com/tags/compromise/</link>
+      <pubDate>Mon, 04 Jun 2018 23:45:53 +0000</pubDate>
+      
+      <guid>http://hangaroundtheweb.com/tags/compromise/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>consensus</title>
+      <link>http://hangaroundtheweb.com/tags/consensus/</link>
+      <pubDate>Mon, 04 Jun 2018 23:45:53 +0000</pubDate>
+      
+      <guid>http://hangaroundtheweb.com/tags/consensus/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>scribe</title>
+      <link>http://hangaroundtheweb.com/tags/scribe/</link>
+      <pubDate>Wed, 30 May 2018 02:17:01 +0000</pubDate>
+      
+      <guid>http://hangaroundtheweb.com/tags/scribe/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>negotiation</title>
+      <link>http://hangaroundtheweb.com/tags/negotiation/</link>
+      <pubDate>Sun, 27 May 2018 19:56:20 +0000</pubDate>
+      
+      <guid>http://hangaroundtheweb.com/tags/negotiation/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>uncertainty</title>
+      <link>http://hangaroundtheweb.com/tags/uncertainty/</link>
+      <pubDate>Mon, 14 May 2018 02:44:12 +0000</pubDate>
+      
+      <guid>http://hangaroundtheweb.com/tags/uncertainty/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>development</title>
+      <link>http://hangaroundtheweb.com/tags/development/</link>
+      <pubDate>Sun, 22 Apr 2018 20:56:05 +0000</pubDate>
+      
+      <guid>http://hangaroundtheweb.com/tags/development/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>principles</title>
+      <link>http://hangaroundtheweb.com/tags/principles/</link>
+      <pubDate>Sun, 22 Apr 2018 20:56:05 +0000</pubDate>
+      
+      <guid>http://hangaroundtheweb.com/tags/principles/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>performance</title>
+      <link>http://hangaroundtheweb.com/tags/performance/</link>
+      <pubDate>Fri, 23 Feb 2018 03:32:25 +0000</pubDate>
+      
+      <guid>http://hangaroundtheweb.com/tags/performance/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>tips</title>
+      <link>http://hangaroundtheweb.com/tags/tips/</link>
+      <pubDate>Fri, 23 Feb 2018 03:32:25 +0000</pubDate>
+      
+      <guid>http://hangaroundtheweb.com/tags/tips/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>communication</title>
+      <link>http://hangaroundtheweb.com/tags/communication/</link>
+      <pubDate>Sun, 18 Feb 2018 03:02:46 +0000</pubDate>
+      
+      <guid>http://hangaroundtheweb.com/tags/communication/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>accessibility</title>
+      <link>http://hangaroundtheweb.com/tags/accessibility/</link>
+      <pubDate>Thu, 15 Feb 2018 22:13:13 +0000</pubDate>
+      
+      <guid>http://hangaroundtheweb.com/tags/accessibility/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>tutorial</title>
+      <link>http://hangaroundtheweb.com/tags/tutorial/</link>
+      <pubDate>Thu, 15 Feb 2018 22:13:13 +0000</pubDate>
+      
+      <guid>http://hangaroundtheweb.com/tags/tutorial/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>addon</title>
+      <link>http://hangaroundtheweb.com/tags/addon/</link>
+      <pubDate>Mon, 29 Jan 2018 05:10:32 +0000</pubDate>
+      
+      <guid>http://hangaroundtheweb.com/tags/addon/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>tutorials</title>
+      <link>http://hangaroundtheweb.com/tags/tutorials/</link>
+      <pubDate>Mon, 29 Jan 2018 05:10:32 +0000</pubDate>
+      
+      <guid>http://hangaroundtheweb.com/tags/tutorials/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>refactoring</title>
+      <link>http://hangaroundtheweb.com/tags/refactoring/</link>
+      <pubDate>Tue, 21 Nov 2017 22:50:33 +0000</pubDate>
+      
+      <guid>http://hangaroundtheweb.com/tags/refactoring/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>web development</title>
+      <link>http://hangaroundtheweb.com/tags/web-development/</link>
+      <pubDate>Sun, 22 Oct 2017 17:56:10 +0000</pubDate>
+      
+      <guid>http://hangaroundtheweb.com/tags/web-development/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>rxjs</title>
+      <link>http://hangaroundtheweb.com/tags/rxjs/</link>
+      <pubDate>Tue, 07 Mar 2017 18:43:10 +0000</pubDate>
+      
+      <guid>http://hangaroundtheweb.com/tags/rxjs/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>cycle.js</title>
+      <link>http://hangaroundtheweb.com/tags/cycle.js/</link>
+      <pubDate>Sun, 12 Feb 2017 23:47:49 +0000</pubDate>
+      
+      <guid>http://hangaroundtheweb.com/tags/cycle.js/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>cyclejs</title>
+      <link>http://hangaroundtheweb.com/tags/cyclejs/</link>
+      <pubDate>Wed, 08 Feb 2017 05:54:11 +0000</pubDate>
+      
+      <guid>http://hangaroundtheweb.com/tags/cyclejs/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>frp</title>
+      <link>http://hangaroundtheweb.com/tags/frp/</link>
+      <pubDate>Wed, 08 Feb 2017 05:54:11 +0000</pubDate>
+      
+      <guid>http://hangaroundtheweb.com/tags/frp/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>functional programming</title>
+      <link>http://hangaroundtheweb.com/tags/functional-programming/</link>
+      <pubDate>Wed, 08 Feb 2017 05:54:11 +0000</pubDate>
+      
+      <guid>http://hangaroundtheweb.com/tags/functional-programming/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>reactive programming</title>
+      <link>http://hangaroundtheweb.com/tags/reactive-programming/</link>
+      <pubDate>Wed, 08 Feb 2017 05:54:11 +0000</pubDate>
+      
+      <guid>http://hangaroundtheweb.com/tags/reactive-programming/</guid>
+      <description></description>
+    </item>
+    
   </channel>
 </rss>

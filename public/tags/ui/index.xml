@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>ui on hangaroundtheweb</title>
+    <link>http://hangaroundtheweb.com/tags/ui/</link>
+    <description>Recent content in ui on hangaroundtheweb</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 20 Jul 2018 18:34:41 +0000</lastBuildDate><atom:link href="http://hangaroundtheweb.com/tags/ui/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Six Sensible Quotes on User Interface</title>
+      <link>http://hangaroundtheweb.com/posts/six-sensible-quotes-on-user-interface/</link>
+      <pubDate>Fri, 20 Jul 2018 18:34:41 +0000</pubDate>
+      
+      <guid>http://hangaroundtheweb.com/posts/six-sensible-quotes-on-user-interface/</guid>
+      <description>Six Sensible Quotes on User Interface Quote #1  The Principle of Least Astonishment Make a user interface as consistent and as predictable as possible.
+  Quote #2  A program designed for inputs from people is usually stressed beyond the breaking point by computer-generated inputs. – Dennis Ritchie, Bell Labs
+  Quote #3  Twenty percent of all input forms filled out by people contain bad data. – Vic Vyssotsky, Bell Labs</description>
+    </item>
+    
+  </channel>
+</rss>

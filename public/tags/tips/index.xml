@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>tips on hangaroundtheweb</title>
+    <link>http://hangaroundtheweb.com/tags/tips/</link>
+    <description>Recent content in tips on hangaroundtheweb</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 23 Feb 2018 03:32:25 +0000</lastBuildDate><atom:link href="http://hangaroundtheweb.com/tags/tips/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>An Elementary Guide to Ember Build Performance</title>
+      <link>http://hangaroundtheweb.com/posts/an-elementary-guide-to-ember-build-performance/</link>
+      <pubDate>Fri, 23 Feb 2018 03:32:25 +0000</pubDate>
+      
+      <guid>http://hangaroundtheweb.com/posts/an-elementary-guide-to-ember-build-performance/</guid>
+      <description>An Elementary Guide to Ember Build Performance When we talk about build performance, it is important to understand that there are several build phases:
+ Cold build Warm build Rebuild  Cold build Cold build is the build which happens when you boot your app up for the first time. This build is the slowest because the cache is not yet populated and the application is booting for the first time.</description>
+    </item>
+    
+    <item>
+      <title>The Twelve Roadblocks to Healthy Conversations</title>
+      <link>http://hangaroundtheweb.com/posts/the-twelve-roadblocks-to-healthy-conversations/</link>
+      <pubDate>Sun, 18 Feb 2018 03:02:46 +0000</pubDate>
+      
+      <guid>http://hangaroundtheweb.com/posts/the-twelve-roadblocks-to-healthy-conversations/</guid>
+      <description>The Twelve Roadblocks to Healthy Conversations What obvious obstacles are relevant to obstruct a conversation? Experts in interpersonal communication have identified various response patterns that tend to block conversation. Thomas Gordon devised a comprehensive list that he calls the &amp;ldquo;dirty dozen&amp;rdquo; of communication spoilers. These undesirable responses include:
+Criticizing Making a negative evaluation of the other person, his/her actions, or attitudes. The act of passing judgment as to the merits of anything; censure; faultfinding.</description>
+    </item>
+    
+  </channel>
+</rss>

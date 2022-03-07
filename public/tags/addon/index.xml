@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>addon on hangaroundtheweb</title>
+    <link>http://hangaroundtheweb.com/tags/addon/</link>
+    <description>Recent content in addon on hangaroundtheweb</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 29 Jan 2018 05:10:32 +0000</lastBuildDate><atom:link href="http://hangaroundtheweb.com/tags/addon/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>How to create an accessible slider component in Ember?</title>
+      <link>http://hangaroundtheweb.com/posts/how-to-create-an-accessible-slider-component-in-ember/</link>
+      <pubDate>Mon, 29 Jan 2018 05:10:32 +0000</pubDate>
+      
+      <guid>http://hangaroundtheweb.com/posts/how-to-create-an-accessible-slider-component-in-ember/</guid>
+      <description>Table of Contents  1. How to create an accessible slider component in Ember?  1.1. Class diagram 1.2. Component Interface 1.3. aria-slider -&amp;gt; template 1.4. aria-slider -&amp;gt; component 1.5. aria-slider-thumb -&amp;gt; component 1.6. Source Code 1.7. Demo 1.8. References     1 How to create an accessible slider component in Ember? In this tutorial we will see how to create an accessible slider component in Ember based on the WAI-ARIA authoring practices.</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>EmberJS2019 on hangaroundtheweb</title>
+    <link>http://hangaroundtheweb.com/tags/emberjs2019/</link>
+    <description>Recent content in EmberJS2019 on hangaroundtheweb</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 15 Jun 2019 23:30:36 +0000</lastBuildDate><atom:link href="http://hangaroundtheweb.com/tags/emberjs2019/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Ember into Futurity</title>
+      <link>http://hangaroundtheweb.com/posts/ember-into-futurity/</link>
+      <pubDate>Sat, 15 Jun 2019 23:30:36 +0000</pubDate>
+      
+      <guid>http://hangaroundtheweb.com/posts/ember-into-futurity/</guid>
+      <description>Nobody can predict the future, but everybody can wish for something in it. It could be for the benefit and interest of one person or a community as a whole. I am putting down my thoughts and wishes for Ember.js as both a consumer of the framework itself and producer of the supporting tools and addons for the same.
+The best way to predict the future is to invent it.</description>
+    </item>
+    
+  </channel>
+</rss>

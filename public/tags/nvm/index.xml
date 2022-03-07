@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>nvm on hangaroundtheweb</title>
+    <link>http://hangaroundtheweb.com/tags/nvm/</link>
+    <description>Recent content in nvm on hangaroundtheweb</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 28 Jun 2020 21:01:00 +0000</lastBuildDate><atom:link href="http://hangaroundtheweb.com/tags/nvm/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Using nvm with Spacemacs</title>
+      <link>http://hangaroundtheweb.com/posts/using-nvm-with-spacemacs/</link>
+      <pubDate>Sun, 28 Jun 2020 21:01:00 +0000</pubDate>
+      
+      <guid>http://hangaroundtheweb.com/posts/using-nvm-with-spacemacs/</guid>
+      <description>nvm is a version manager for Node.js, designed to be installed per-user, and invoked per-shell. nvm works on any POSIX-compliant shell (sh, dash, ksh, zsh, bash), in particular on these platforms: Unix, Mac OS, and Windows WSL. But most of the times, it is not properly identified by eshell in Spacemacs. Recently I found out a package called nvm.el by Johan Andersson.
+Let&amp;rsquo;s walk you through how you can use nvm to choose different Node.</description>
+    </item>
+    
+  </channel>
+</rss>

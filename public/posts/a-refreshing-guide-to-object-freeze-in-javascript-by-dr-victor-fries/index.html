@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    
+    <title>A Refreshing Guide to Object.freeze in Javascript by Dr.Victor Fries | hangaroundtheweb</title>
+    <meta name="viewport" content="width=device-width,minimum-scale=1">
+    <meta name="description" content="A Refreshing Guide to Object.freeze in Javascript by Dr.Victor Fries What killed the dinosaurs? The Ice Age! In JavaScript, objects are used to store keyed collections of various data and more complex entities. Objects penetrate almost every aspect of the JavaScript language. The object might be accessed as global or passed as an argument. Functions that have access to the object can modify the object, whether intentionally or accidentally. To prevent modification of our objects, one of the techniques is to use Object.">
+    <meta name="generator" content="Hugo 0.83.1" />
+    
+    
+      <META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
+    
+
+    
+<link rel="stylesheet" href="/ananke/css/main.min.css" >
+
+
+
+
+    
+      
+
+    
+
+    
+    
+    <meta property="og:title" content="A Refreshing Guide to Object.freeze in Javascript by Dr.Victor Fries" />
+<meta property="og:description" content="A Refreshing Guide to Object.freeze in Javascript by Dr.Victor Fries What killed the dinosaurs? The Ice Age! In JavaScript, objects are used to store keyed collections of various data and more complex entities. Objects penetrate almost every aspect of the JavaScript language. The object might be accessed as global or passed as an argument. Functions that have access to the object can modify the object, whether intentionally or accidentally. To prevent modification of our objects, one of the techniques is to use Object." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://hangaroundtheweb.com/posts/a-refreshing-guide-to-object-freeze-in-javascript-by-dr-victor-fries/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2018-06-21T23:58:52&#43;00:00" />
+<meta property="article:modified_time" content="2018-06-21T23:58:52&#43;00:00" />
+
+<meta itemprop="name" content="A Refreshing Guide to Object.freeze in Javascript by Dr.Victor Fries">
+<meta itemprop="description" content="A Refreshing Guide to Object.freeze in Javascript by Dr.Victor Fries What killed the dinosaurs? The Ice Age! In JavaScript, objects are used to store keyed collections of various data and more complex entities. Objects penetrate almost every aspect of the JavaScript language. The object might be accessed as global or passed as an argument. Functions that have access to the object can modify the object, whether intentionally or accidentally. To prevent modification of our objects, one of the techniques is to use Object."><meta itemprop="datePublished" content="2018-06-21T23:58:52&#43;00:00" />
+<meta itemprop="dateModified" content="2018-06-21T23:58:52&#43;00:00" />
+<meta itemprop="wordCount" content="1252">
+<meta itemprop="keywords" content="article,Articles,articles,javascript,Javascript," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="A Refreshing Guide to Object.freeze in Javascript by Dr.Victor Fries"/>
+<meta name="twitter:description" content="A Refreshing Guide to Object.freeze in Javascript by Dr.Victor Fries What killed the dinosaurs? The Ice Age! In JavaScript, objects are used to store keyed collections of various data and more complex entities. Objects penetrate almost every aspect of the JavaScript language. The object might be accessed as global or passed as an argument. Functions that have access to the object can modify the object, whether intentionally or accidentally. To prevent modification of our objects, one of the techniques is to use Object."/>
+
+	
+  </head>
+
+  <body class="ma0 avenir bg-near-white">
+
+    
+   
+  
+
+  <header>
+    <div class="bg-black">
+      <nav class="pv3 ph3 ph4-ns" role="navigation">
+  <div class="flex-l justify-between items-center center">
+    <a href="/" class="f3 fw2 hover-white no-underline white-90 dib">
+      
+        hangaroundtheweb
+      
+    </a>
+    <div class="flex-l items-center">
+      
+
+      
+      
+
+
+
+
+<a href="https://twitter.com/rajasegar_c" target="_blank" class="link-transition twitter link dib z-999 pt3 pt0-l mr1" title="Twitter link" rel="noopener" aria-label="follow on Twitter——Opens in a new window">
+  <svg height="32px"  style="enable-background:new 0 0 67 67;" version="1.1" viewBox="0 0 67 67" width="32px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M37.167,22.283c-2.619,0.953-4.274,3.411-4.086,6.101  l0.063,1.038l-1.048-0.127c-3.813-0.487-7.145-2.139-9.974-4.915l-1.383-1.377l-0.356,1.017c-0.754,2.267-0.272,4.661,1.299,6.271  c0.838,0.89,0.649,1.017-0.796,0.487c-0.503-0.169-0.943-0.296-0.985-0.233c-0.146,0.149,0.356,2.076,0.754,2.839  c0.545,1.06,1.655,2.097,2.871,2.712l1.027,0.487l-1.215,0.021c-1.173,0-1.215,0.021-1.089,0.467  c0.419,1.377,2.074,2.839,3.918,3.475l1.299,0.444l-1.131,0.678c-1.676,0.976-3.646,1.526-5.616,1.568  C19.775,43.256,19,43.341,19,43.405c0,0.211,2.557,1.397,4.044,1.864c4.463,1.377,9.765,0.783,13.746-1.568  c2.829-1.673,5.657-5,6.978-8.221c0.713-1.716,1.425-4.851,1.425-6.354c0-0.975,0.063-1.102,1.236-2.267  c0.692-0.678,1.341-1.419,1.467-1.631c0.21-0.403,0.188-0.403-0.88-0.043c-1.781,0.636-2.033,0.551-1.152-0.402  c0.649-0.678,1.425-1.907,1.425-2.267c0-0.063-0.314,0.042-0.671,0.233c-0.377,0.212-1.215,0.53-1.844,0.72l-1.131,0.361l-1.027-0.7  c-0.566-0.381-1.361-0.805-1.781-0.932C39.766,21.902,38.131,21.944,37.167,22.283z M33,64C16.432,64,3,50.569,3,34S16.432,4,33,4  s30,13.431,30,30S49.568,64,33,64z" style="fill-rule:evenodd;clip-rule:evenodd;fill:;"/></svg>
+
+<span class="new-window"><svg  height="8px"  style="enable-background:new 0 0 1000 1000;" version="1.1" viewBox="0 0 1000 1000" width="8px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" >
+<path d="M598 128h298v298h-86v-152l-418 418-60-60 418-418h-152v-86zM810 810v-298h86v298c0 46-40 86-86 86h-596c-48 0-86-40-86-86v-596c0-46 38-86 86-86h298v86h-298v596h596z" style="fill-rule:evenodd;clip-rule:evenodd;fill:;"/>
+</svg>
+</span></a>
+
+
+
+
+
+<a href="https://github.com/rajasegar" target="_blank" class="link-transition github link dib z-999 pt3 pt0-l mr1" title="Github link" rel="noopener" aria-label="follow on Github——Opens in a new window">
+  <svg  height="32px"  style="enable-background:new 0 0 512 512;" version="1.1" viewBox="0 0 512 512" width="32px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" >
+  <path d="M256,32C132.3,32,32,134.8,32,261.7c0,101.5,64.2,187.5,153.2,217.9c11.2,2.1,15.3-5,15.3-11.1   c0-5.5-0.2-19.9-0.3-39.1c-62.3,13.9-75.5-30.8-75.5-30.8c-10.2-26.5-24.9-33.6-24.9-33.6c-20.3-14.3,1.5-14,1.5-14   c22.5,1.6,34.3,23.7,34.3,23.7c20,35.1,52.4,25,65.2,19.1c2-14.8,7.8-25,14.2-30.7c-49.7-5.8-102-25.5-102-113.5   c0-25.1,8.7-45.6,23-61.6c-2.3-5.8-10-29.2,2.2-60.8c0,0,18.8-6.2,61.6,23.5c17.9-5.1,37-7.6,56.1-7.7c19,0.1,38.2,2.6,56.1,7.7   c42.8-29.7,61.5-23.5,61.5-23.5c12.2,31.6,4.5,55,2.2,60.8c14.3,16.1,23,36.6,23,61.6c0,88.2-52.4,107.6-102.3,113.3   c8,7.1,15.2,21.1,15.2,42.5c0,30.7-0.3,55.5-0.3,63c0,6.1,4,13.3,15.4,11C415.9,449.1,480,363.1,480,261.7   C480,134.8,379.7,32,256,32z"/>
+</svg>
+
+<span class="new-window"><svg  height="8px"  style="enable-background:new 0 0 1000 1000;" version="1.1" viewBox="0 0 1000 1000" width="8px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" >
+<path d="M598 128h298v298h-86v-152l-418 418-60-60 418-418h-152v-86zM810 810v-298h86v298c0 46-40 86-86 86h-596c-48 0-86-40-86-86v-596c0-46 38-86 86-86h298v86h-298v596h596z" style="fill-rule:evenodd;clip-rule:evenodd;fill:;"/>
+</svg>
+</span></a>
+
+
+
+
+
+
+
+
+    </div>
+  </div>
+</nav>
+
+    </div>
+  </header>
+
+
+
+    <main class="pb7" role="main">
+      
+  
+  <article class="flex-l flex-wrap justify-between mw8 center ph3">
+    <header class="mt4 w-100">
+      <aside class="instapaper_ignoref b helvetica tracked">
+          
+        POSTS
+      </aside>
+      
+
+
+
+
+  <div id="sharing" class="mt3">
+
+    
+    <a href="https://www.facebook.com/sharer.php?u=http://hangaroundtheweb.com/posts/a-refreshing-guide-to-object-freeze-in-javascript-by-dr-victor-fries/" class="facebook no-underline" aria-label="share on Facebook">
+      <svg height="32px"  style="enable-background:new 0 0 67 67;" version="1.1" viewBox="0 0 67 67" width="32px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M28.765,50.32h6.744V33.998h4.499l0.596-5.624h-5.095  l0.007-2.816c0-1.466,0.14-2.253,2.244-2.253h2.812V17.68h-4.5c-5.405,0-7.307,2.729-7.307,7.317v3.377h-3.369v5.625h3.369V50.32z   M33,64C16.432,64,3,50.569,3,34S16.432,4,33,4s30,13.431,30,30S49.568,64,33,64z" style="fill-rule:evenodd;clip-rule:evenodd;"/></svg>
+
+    </a>
+
+    
+    
+    <a href="https://twitter.com/share?url=http://hangaroundtheweb.com/posts/a-refreshing-guide-to-object-freeze-in-javascript-by-dr-victor-fries/&amp;text=A%20Refreshing%20Guide%20to%20Object.freeze%20in%20Javascript%20by%20Dr.Victor%20Fries" class="twitter no-underline" aria-label="share on Twitter">
+      <svg height="32px"  style="enable-background:new 0 0 67 67;" version="1.1" viewBox="0 0 67 67" width="32px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M37.167,22.283c-2.619,0.953-4.274,3.411-4.086,6.101  l0.063,1.038l-1.048-0.127c-3.813-0.487-7.145-2.139-9.974-4.915l-1.383-1.377l-0.356,1.017c-0.754,2.267-0.272,4.661,1.299,6.271  c0.838,0.89,0.649,1.017-0.796,0.487c-0.503-0.169-0.943-0.296-0.985-0.233c-0.146,0.149,0.356,2.076,0.754,2.839  c0.545,1.06,1.655,2.097,2.871,2.712l1.027,0.487l-1.215,0.021c-1.173,0-1.215,0.021-1.089,0.467  c0.419,1.377,2.074,2.839,3.918,3.475l1.299,0.444l-1.131,0.678c-1.676,0.976-3.646,1.526-5.616,1.568  C19.775,43.256,19,43.341,19,43.405c0,0.211,2.557,1.397,4.044,1.864c4.463,1.377,9.765,0.783,13.746-1.568  c2.829-1.673,5.657-5,6.978-8.221c0.713-1.716,1.425-4.851,1.425-6.354c0-0.975,0.063-1.102,1.236-2.267  c0.692-0.678,1.341-1.419,1.467-1.631c0.21-0.403,0.188-0.403-0.88-0.043c-1.781,0.636-2.033,0.551-1.152-0.402  c0.649-0.678,1.425-1.907,1.425-2.267c0-0.063-0.314,0.042-0.671,0.233c-0.377,0.212-1.215,0.53-1.844,0.72l-1.131,0.361l-1.027-0.7  c-0.566-0.381-1.361-0.805-1.781-0.932C39.766,21.902,38.131,21.944,37.167,22.283z M33,64C16.432,64,3,50.569,3,34S16.432,4,33,4  s30,13.431,30,30S49.568,64,33,64z" style="fill-rule:evenodd;clip-rule:evenodd;fill:;"/></svg>
+
+    </a>
+
+    
+    <a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=http://hangaroundtheweb.com/posts/a-refreshing-guide-to-object-freeze-in-javascript-by-dr-victor-fries/&amp;title=A%20Refreshing%20Guide%20to%20Object.freeze%20in%20Javascript%20by%20Dr.Victor%20Fries" class="linkedin no-underline" aria-label="share on LinkedIn">
+      <svg  height="32px"  style="enable-background:new 0 0 65 65;" version="1.1" viewBox="0 0 65 65" width="32px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <path d="M50.837,48.137V36.425c0-6.275-3.35-9.195-7.816-9.195  c-3.604,0-5.219,1.983-6.119,3.374V27.71h-6.79c0.09,1.917,0,20.427,0,20.427h6.79V36.729c0-0.609,0.044-1.219,0.224-1.655  c0.49-1.22,1.607-2.483,3.482-2.483c2.458,0,3.44,1.873,3.44,4.618v10.929H50.837z M22.959,24.922c2.367,0,3.842-1.57,3.842-3.531  c-0.044-2.003-1.475-3.528-3.797-3.528s-3.841,1.524-3.841,3.528c0,1.961,1.474,3.531,3.753,3.531H22.959z M34,64  C17.432,64,4,50.568,4,34C4,17.431,17.432,4,34,4s30,13.431,30,30C64,50.568,50.568,64,34,64z M26.354,48.137V27.71h-6.789v20.427  H26.354z" style="fill-rule:evenodd;clip-rule:evenodd;fill:;"/>
+</svg>
+
+    </a>
+  </div>
+
+
+      <h1 class="f1 athelas mt3 mb1">A Refreshing Guide to Object.freeze in Javascript by Dr.Victor Fries</h1>
+      
+      
+      <time class="f6 mv4 dib tracked" datetime="2018-06-21T23:58:52Z">June 21, 2018</time>
+
+      
+      
+    </header>
+    <div class="nested-copy-line-height lh-copy serif f4 nested-links nested-img mid-gray pr4-l w-two-thirds-l"><h2 id="a-refreshing-guide-to-objectfreeze-in-javascript-by-drvictor-fries">A Refreshing Guide to Object.freeze in Javascript by Dr.Victor Fries</h2>
+<h3 id="what-killed-the-dinosaurs-the-ice-age">What killed the dinosaurs? The Ice Age!</h3>
+<p>In JavaScript, objects are used to store keyed collections of various data and more complex entities. Objects penetrate almost every aspect of the JavaScript language. The object might be accessed as global or passed as an argument. Functions that have access to the object can modify the object, whether intentionally or accidentally. To prevent modification of our objects, one of the techniques is to use Object.freeze(). Freezing an object can be useful for representing a logically immutable data structure, especially if changing the properties of the object could lead to bad behavior elsewhere in your application.</p>
+<blockquote>
+<p>Allow me to break the ice: My name is <strong>Object.freeze()</strong>. Learn it well, for it&rsquo;s the chilling sound of your doom.</p>
+</blockquote>
+<p>The <strong>Object.freeze()</strong> method freezes an object: basically it prevents four things from an object:</p>
+<p><img src="/wp-content/uploads/2018/06/object-freeze2.jpg" alt=""></p>
+<p>The method returns the passed object.</p>
+<h3 id="lets-kick-some-ice">Let&rsquo;s kick some ice!</h3>
+<pre><code>const object1 = {
+  property1: 42
+};
+
+const object2 = Object.freeze(object1);
+
+object2.property1 = 33;
+// Throws an error in strict mode
+
+console.log(object2.property1);
+// expected output: 42
+
+</code></pre><h3 id="tonights-forecast-a-freeze-is-coming">Tonight&rsquo;s forecast… a freeze is coming!</h3>
+<p>Nothing can be added to or removed from the properties set of a frozen object. Any attempt to do so will fail, either silently or by throwing a <strong>TypeError</strong> exception (most commonly, but not exclusively, when in <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Strict_mode">strict mode</a>). For data properties of a frozen object, values cannot be changed, the writable and configurable attributes are set to false. Accessor properties (getters and setters) work the same (and still give the illusion that you are changing the value). Note that values that are objects can still be modified, unless they are also frozen. As an object, an array can be frozen whereafter its elements cannot be altered. No elements can be added or removed from it as well. The function returns the passed object. It does not create a frozen copy.</p>
+<h3 id="tonight-hell-freezes-over-freezing-objects">Tonight, hell freezes over! (Freezing Objects)</h3>
+<pre><code>var obj = {
+  prop: function() {},
+  foo: 'bar'
+};
+
+// New properties may be added, existing properties may be
+// changed or removed
+obj.foo = 'baz';
+obj.lumpy = 'woof';
+delete obj.prop;
+
+// Both the object being passed as well as the returned
+// object will be frozen. It is unnecessary to save the
+// returned object in order to freeze the original.
+var o = Object.freeze(obj);
+
+o === obj; // true
+Object.isFrozen(obj); // === true
+
+// Now any changes will fail
+obj.foo = 'quux'; // silently does nothing
+// silently doesn't add the property
+obj.quaxxor = 'the friendly duck';
+
+// In strict mode such attempts will throw TypeErrors
+function fail(){
+  'use strict';
+  obj.foo = 'sparky'; // throws a TypeError
+  delete obj.foo; // throws a TypeError
+  delete obj.quaxxor; // returns true since attribute 'quaxxor' was never added
+  obj.sparky = 'arf'; // throws a TypeError
+}
+
+fail();
+
+// Attempted changes through Object.defineProperty; 
+// both statements below throw a TypeError.
+Object.defineProperty(obj, 'ohai', { value: 17 });
+Object.defineProperty(obj, 'foo', { value: 'eit' });
+
+// It's also impossible to change the prototype
+// both statements below will throw a TypeError.
+Object.setPrototypeOf(obj, { x: 20 })
+obj.\_\_proto\_\_ = { x: 20 }
+
+</code></pre><h3 id="im-putting-array-on-ice-freezing-arrays">I&rsquo;m putting array on ice (Freezing Arrays)</h3>
+<pre><code>let a = \[0\];
+Object.freeze(a); // The array cannot be modified now.
+
+a\[0\]=1; // fails silently
+a.push(2); // fails silently
+
+// In strict mode such attempts will throw TypeErrors
+function fail() {
+  &quot;use strict&quot;
+  a\[0\] = 1;
+  a.push(2);
+}
+
+fail();
+
+
+</code></pre><p>The object being frozen is <em>immutable</em>. However, it is not necessarily <em>constant</em>. The following example shows that a frozen object is not constant (freeze is shallow).</p>
+<pre><code>obj1 = {
+  internal: {}
+};
+
+Object.freeze(obj1);
+obj1.internal.a = 'aValue';
+
+obj1.internal.a // 'aValue'
+
+</code></pre><p>To be a constant object, the entire reference graph (direct and indirect references to other objects) must reference only immutable frozen objects. The object being frozen is said to be immutable because the entire object state (values and references to other objects) within the whole object is fixed. Note that strings, numbers, and booleans are always immutable and that Functions and Arrays are objects.</p>
+<h3 id="freeze-in-hell-batman-the-shallow-freeze">Freeze in hell, Batman! (The Shallow Freeze)</h3>
+<p>The result of calling <strong>Object.freeze(object)</strong> only applies to the immediate properties of <strong>object</strong>itself and will prevent future property addition, removal or value re-assignment operations only on <strong>object</strong>. If the value of those properties are objects themselves, those objects are not frozen and may be the target of property addition, removal or value re-assignment operations.</p>
+<pre><code>var batman = {
+  name: &quot;Bruce Wayne&quot;,
+  designation: &quot;CEO&quot;,
+  address: {
+    street: &quot;23rd&quot;,
+    city: &quot;Gotham&quot;
+  }
+};
+
+Object.freeze(batman);
+
+batman.name = &quot;Robin&quot;; // fails silently in non-strict mode
+batman.address.city = &quot;NewYork&quot;; // attributes of child object can be modified
+
+console.log(batman.address.city) // Output: &quot;NewYork&quot;
+
+</code></pre><h3 id="everything-freezes-the-deep-freeze">Everything freezes! (The Deep Freeze)</h3>
+<blockquote>
+<p>In this universe, there&rsquo;s only one absolute… everything freezes!</p>
+</blockquote>
+<p>To make an object immutable, recursively freeze each property which is of type object (deep freeze). Use the pattern on a case-by-case basis based on your design when you know the object contains no <a href="https://en.wikipedia.org/wiki/Cycle_(graph_theory)">cycles</a> in the reference graph, otherwise an endless loop will be triggered. An enhancement to <strong>deepFreeze()</strong> would be to have an internal function that receives a path (e.g. an Array) argument so you can suppress calling <strong>deepFreeze()</strong> recursively when an object is in the process of being made immutable. You still run a risk of freezing an object that shouldn&rsquo;t be frozen, such as <strong>window</strong>.</p>
+<pre><code>function deepFreeze(object) {
+
+  // Retrieve the property names defined on object
+  var propNames = Object.getOwnPropertyNames(object);
+
+  // Freeze properties before freezing self
+
+  for (let name of propNames) {
+    let value = object\[name\];
+
+    object\[name\] = value &amp;&amp; typeof value === &quot;object&quot; ? 
+      deepFreeze(value) : value;
+  }
+
+  return Object.freeze(object);
+}
+
+var obj2 = {
+  internal: {
+    a: null
+  }
+};
+
+deepFreeze(obj2);
+
+obj2.internal.a = 'anotherValue'; // fails silently in non-strict mode
+obj2.internal.a; // null
+
+</code></pre><h3 id="objectfreeze-vs-const">Object.freeze vs const</h3>
+<p>const and Object.freeze are two completely different things.</p>
+<blockquote>
+<p>The const declaration creates a read-only reference to a value. <strong>It does not mean the value it holds is immutable</strong>, solely that the variable identifier can not be reassigned.</p>
+</blockquote>
+<p>const applies to <strong>bindings</strong> (&ldquo;variables&rdquo;). It creates an immutable binding, i.e. you cannot assign a new value to the binding. Object.freeze works on <strong>values</strong>, and more specifically, object values. It makes an object immutable, i.e. you cannot change its properties. In ES5 Object.freeze <strong>doesn&rsquo;t work on primitives</strong>, which would probably be more commonly declared using const than objects. You can freeze primitives in ES6, but then you also have support for const. On the other hand const used to declare objects doesn&rsquo;t &ldquo;freeze&rdquo; them, you just can&rsquo;t redeclare the whole object, but you can modify its keys freely. On the other hand you can redeclare frozen objects.</p>
+<h3 id="objectfreeze-vs-objectseal">Object.freeze vs Object.seal</h3>
+<p>Objects sealed with Object.seal() can have their existing properties changed. Existing properties in objects frozen with Object.freeze() are made immutable. The following related functions prevent the modification of object attributes.</p>
+<p>Function</p>
+<p>Object is made non-extensible</p>
+<p>configurable is set to false for each property</p>
+<p>writable is set to false for each property</p>
+<p><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/preventExtensions">Object.preventExtensions</a></p>
+<p>Yes</p>
+<p>No</p>
+<p>No</p>
+<p><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/seal">Object.seal</a></p>
+<p>Yes</p>
+<p>Yes</p>
+<p>No</p>
+<p>Object.freeze</p>
+<p>Yes</p>
+<p>Yes</p>
+<p>Yes</p>
+<h3 id="winter-has-come-at-last">Winter has come at last</h3>
+<blockquote>
+<p>Yes! If I must suffer… Humanity will suffer with me! I shall repay them for sentencing me to a life without human comfort. I will blanket the city in endless winter! First… Gotham. And then… The world!</p>
+</blockquote>
+<p>Hope, you enjoyed the article and learned something new about <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/freeze">Object.freeze()</a> in Javascript. Please show us your love by sharing the article and let us know your views in the comments.</p>
+<h3 id="references">References</h3>
+<ul>
+<li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/freeze">https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/freeze</a></li>
+<li><a href="https://www.imdb.com/title/tt0118688/">https://www.imdb.com/title/tt0118688/</a></li>
+<li><a href="https://stackoverflow.com/questions/33124058/object-freeze-vs-const">https://stackoverflow.com/questions/33124058/object-freeze-vs-const</a></li>
+<li><a href="https://docs.microsoft.com/en-us/scripting/javascript/reference/object-freeze-function-javascript">https://docs.microsoft.com/en-us/scripting/javascript/reference/object-freeze-function-javascript</a></li>
+<li><a href="https://mathiasbynens.be/notes/es6-const">https://mathiasbynens.be/notes/es6-const</a></li>
+</ul>
+<ul class="pa0">
+  
+   <li class="list">
+     <a href="/tags/article" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">article</a>
+   </li>
+  
+   <li class="list">
+     <a href="/tags/articles" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">Articles</a>
+   </li>
+  
+   <li class="list">
+     <a href="/tags/articles" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">articles</a>
+   </li>
+  
+   <li class="list">
+     <a href="/tags/javascript" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">javascript</a>
+   </li>
+  
+   <li class="list">
+     <a href="/tags/javascript" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">Javascript</a>
+   </li>
+  
+</ul>
+<div class="mt6 instapaper_ignoref">
+      
+      
+      </div>
+    </div>
+
+    <aside class="w-30-l mt6-l">
+
+
+
+
+  <div class="bg-light-gray pa3 nested-list-reset nested-copy-line-height nested-links">
+    <p class="f5 b mb3">Related</p>
+    <ul class="pa0 list">
+	   
+	     <li  class="mb2">
+          <a href="/posts/arguing-for-the-sake-of-arguments-in-javascript/">Arguing for the sake of arguments in JavaScript</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/posts/consensus-and-compromise/">Consensus and Compromise</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/posts/the-quasi-forgotten-software-scribe/">The Quasi-Forgotten Software Scribe</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/posts/two-simple-ways-to-negotiate-consensus-in-a-software-development-group/">Two simple ways to negotiate consensus in a software development group</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/posts/the-four-factors-of-a-good-program/">The Four Factors of a Good Program</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/posts/egoless-programming/">Egoless Programming</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/posts/the-twelve-roadblocks-to-healthy-conversations/">The Twelve Roadblocks to Healthy Conversations</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/posts/javascript-refactoring-series-inline-temp/">Javascript Refactoring Series: Inline Temp</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/posts/javascript-refactoring-series-inline-function/">Javascript Refactoring Series: Inline Function</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/posts/javascript-refactoring-series-extract-function/">Javascript Refactoring Series: Extract Function</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/posts/refactoring-a-simple-loop-into-a-pipeline-in-javascript/">Refactoring a simple loop into a pipeline in Javascript</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/posts/do-you-care-about-cohesion-in-javascript-functions/">Do you care about Cohesion in Javascript functions?</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/posts/the-10-typical-sources-of-uncertainty-in-software-projects/">The 10 typical sources of uncertainty in Software projects</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/posts/how-to-create-an-accessible-slider-component-in-ember/">How to create an accessible slider component in Ember?</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/posts/refactor-your-javascript-like-a-pro-with-js2-refactor/">Refactor your Javascript like a Pro with js2-refactor</a>
+        </li>
+	    
+    </ul>
+</div>
+
+</aside>
+
+  </article>
+
+    </main>
+    <footer class="bg-black bottom-0 w-100 pa3" role="contentinfo">
+  <div class="flex justify-between">
+  <a class="f4 fw4 hover-white no-underline white-70 dn dib-ns pv2 ph3" href="http://hangaroundtheweb.com/" >
+    &copy;  hangaroundtheweb 2022 
+  </a>
+    <div>
+
+
+
+
+<a href="https://twitter.com/rajasegar_c" target="_blank" class="link-transition twitter link dib z-999 pt3 pt0-l mr1" title="Twitter link" rel="noopener" aria-label="follow on Twitter——Opens in a new window">
+  <svg height="32px"  style="enable-background:new 0 0 67 67;" version="1.1" viewBox="0 0 67 67" width="32px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M37.167,22.283c-2.619,0.953-4.274,3.411-4.086,6.101  l0.063,1.038l-1.048-0.127c-3.813-0.487-7.145-2.139-9.974-4.915l-1.383-1.377l-0.356,1.017c-0.754,2.267-0.272,4.661,1.299,6.271  c0.838,0.89,0.649,1.017-0.796,0.487c-0.503-0.169-0.943-0.296-0.985-0.233c-0.146,0.149,0.356,2.076,0.754,2.839  c0.545,1.06,1.655,2.097,2.871,2.712l1.027,0.487l-1.215,0.021c-1.173,0-1.215,0.021-1.089,0.467  c0.419,1.377,2.074,2.839,3.918,3.475l1.299,0.444l-1.131,0.678c-1.676,0.976-3.646,1.526-5.616,1.568  C19.775,43.256,19,43.341,19,43.405c0,0.211,2.557,1.397,4.044,1.864c4.463,1.377,9.765,0.783,13.746-1.568  c2.829-1.673,5.657-5,6.978-8.221c0.713-1.716,1.425-4.851,1.425-6.354c0-0.975,0.063-1.102,1.236-2.267  c0.692-0.678,1.341-1.419,1.467-1.631c0.21-0.403,0.188-0.403-0.88-0.043c-1.781,0.636-2.033,0.551-1.152-0.402  c0.649-0.678,1.425-1.907,1.425-2.267c0-0.063-0.314,0.042-0.671,0.233c-0.377,0.212-1.215,0.53-1.844,0.72l-1.131,0.361l-1.027-0.7  c-0.566-0.381-1.361-0.805-1.781-0.932C39.766,21.902,38.131,21.944,37.167,22.283z M33,64C16.432,64,3,50.569,3,34S16.432,4,33,4  s30,13.431,30,30S49.568,64,33,64z" style="fill-rule:evenodd;clip-rule:evenodd;fill:;"/></svg>
+
+<span class="new-window"><svg  height="8px"  style="enable-background:new 0 0 1000 1000;" version="1.1" viewBox="0 0 1000 1000" width="8px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" >
+<path d="M598 128h298v298h-86v-152l-418 418-60-60 418-418h-152v-86zM810 810v-298h86v298c0 46-40 86-86 86h-596c-48 0-86-40-86-86v-596c0-46 38-86 86-86h298v86h-298v596h596z" style="fill-rule:evenodd;clip-rule:evenodd;fill:;"/>
+</svg>
+</span></a>
+
+
+
+
+
+<a href="https://github.com/rajasegar" target="_blank" class="link-transition github link dib z-999 pt3 pt0-l mr1" title="Github link" rel="noopener" aria-label="follow on Github——Opens in a new window">
+  <svg  height="32px"  style="enable-background:new 0 0 512 512;" version="1.1" viewBox="0 0 512 512" width="32px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" >
+  <path d="M256,32C132.3,32,32,134.8,32,261.7c0,101.5,64.2,187.5,153.2,217.9c11.2,2.1,15.3-5,15.3-11.1   c0-5.5-0.2-19.9-0.3-39.1c-62.3,13.9-75.5-30.8-75.5-30.8c-10.2-26.5-24.9-33.6-24.9-33.6c-20.3-14.3,1.5-14,1.5-14   c22.5,1.6,34.3,23.7,34.3,23.7c20,35.1,52.4,25,65.2,19.1c2-14.8,7.8-25,14.2-30.7c-49.7-5.8-102-25.5-102-113.5   c0-25.1,8.7-45.6,23-61.6c-2.3-5.8-10-29.2,2.2-60.8c0,0,18.8-6.2,61.6,23.5c17.9-5.1,37-7.6,56.1-7.7c19,0.1,38.2,2.6,56.1,7.7   c42.8-29.7,61.5-23.5,61.5-23.5c12.2,31.6,4.5,55,2.2,60.8c14.3,16.1,23,36.6,23,61.6c0,88.2-52.4,107.6-102.3,113.3   c8,7.1,15.2,21.1,15.2,42.5c0,30.7-0.3,55.5-0.3,63c0,6.1,4,13.3,15.4,11C415.9,449.1,480,363.1,480,261.7   C480,134.8,379.7,32,256,32z"/>
+</svg>
+
+<span class="new-window"><svg  height="8px"  style="enable-background:new 0 0 1000 1000;" version="1.1" viewBox="0 0 1000 1000" width="8px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" >
+<path d="M598 128h298v298h-86v-152l-418 418-60-60 418-418h-152v-86zM810 810v-298h86v298c0 46-40 86-86 86h-596c-48 0-86-40-86-86v-596c0-46 38-86 86-86h298v86h-298v596h596z" style="fill-rule:evenodd;clip-rule:evenodd;fill:;"/>
+</svg>
+</span></a>
+
+
+
+
+
+
+
+</div>
+  </div>
+</footer>
+
+  </body>
+</html>

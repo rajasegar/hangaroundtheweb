@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    
+    <title>JARVIS - Write me a Codemod | hangaroundtheweb</title>
+    <meta name="viewport" content="width=device-width,minimum-scale=1">
+    <meta name="description" content="In this article, we are going to take a look at a tool called JARVIS which will profoundly transform the way how you write codemods.
+This is a continuation post for AST Finder which is a tool to generate an api to find AST nodes automatically from source code.
+If you want to know more about codemods, their building blocks and how they work, please check out this detailed post about codemods.">
+    <meta name="generator" content="Hugo 0.83.1" />
+    
+    
+      <META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
+    
+
+    
+<link rel="stylesheet" href="/ananke/css/main.min.css" >
+
+
+
+
+    
+      
+
+    
+
+    
+    
+    <meta property="og:title" content="JARVIS - Write me a Codemod" />
+<meta property="og:description" content="In this article, we are going to take a look at a tool called JARVIS which will profoundly transform the way how you write codemods.
+This is a continuation post for AST Finder which is a tool to generate an api to find AST nodes automatically from source code.
+If you want to know more about codemods, their building blocks and how they work, please check out this detailed post about codemods." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://hangaroundtheweb.com/posts/jarvis-write-me-a-codemod/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2019-12-18T05:08:13&#43;00:00" />
+<meta property="article:modified_time" content="2019-12-18T05:08:13&#43;00:00" />
+
+<meta itemprop="name" content="JARVIS - Write me a Codemod">
+<meta itemprop="description" content="In this article, we are going to take a look at a tool called JARVIS which will profoundly transform the way how you write codemods.
+This is a continuation post for AST Finder which is a tool to generate an api to find AST nodes automatically from source code.
+If you want to know more about codemods, their building blocks and how they work, please check out this detailed post about codemods."><meta itemprop="datePublished" content="2019-12-18T05:08:13&#43;00:00" />
+<meta itemprop="dateModified" content="2019-12-18T05:08:13&#43;00:00" />
+<meta itemprop="wordCount" content="1045">
+<meta itemprop="keywords" content="Articles,codemod,codemods,Javascript,jscodeshift," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="JARVIS - Write me a Codemod"/>
+<meta name="twitter:description" content="In this article, we are going to take a look at a tool called JARVIS which will profoundly transform the way how you write codemods.
+This is a continuation post for AST Finder which is a tool to generate an api to find AST nodes automatically from source code.
+If you want to know more about codemods, their building blocks and how they work, please check out this detailed post about codemods."/>
+
+	
+  </head>
+
+  <body class="ma0 avenir bg-near-white">
+
+    
+   
+  
+
+  <header>
+    <div class="bg-black">
+      <nav class="pv3 ph3 ph4-ns" role="navigation">
+  <div class="flex-l justify-between items-center center">
+    <a href="/" class="f3 fw2 hover-white no-underline white-90 dib">
+      
+        hangaroundtheweb
+      
+    </a>
+    <div class="flex-l items-center">
+      
+
+      
+      
+
+
+
+
+<a href="https://twitter.com/rajasegar_c" target="_blank" class="link-transition twitter link dib z-999 pt3 pt0-l mr1" title="Twitter link" rel="noopener" aria-label="follow on Twitter——Opens in a new window">
+  <svg height="32px"  style="enable-background:new 0 0 67 67;" version="1.1" viewBox="0 0 67 67" width="32px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M37.167,22.283c-2.619,0.953-4.274,3.411-4.086,6.101  l0.063,1.038l-1.048-0.127c-3.813-0.487-7.145-2.139-9.974-4.915l-1.383-1.377l-0.356,1.017c-0.754,2.267-0.272,4.661,1.299,6.271  c0.838,0.89,0.649,1.017-0.796,0.487c-0.503-0.169-0.943-0.296-0.985-0.233c-0.146,0.149,0.356,2.076,0.754,2.839  c0.545,1.06,1.655,2.097,2.871,2.712l1.027,0.487l-1.215,0.021c-1.173,0-1.215,0.021-1.089,0.467  c0.419,1.377,2.074,2.839,3.918,3.475l1.299,0.444l-1.131,0.678c-1.676,0.976-3.646,1.526-5.616,1.568  C19.775,43.256,19,43.341,19,43.405c0,0.211,2.557,1.397,4.044,1.864c4.463,1.377,9.765,0.783,13.746-1.568  c2.829-1.673,5.657-5,6.978-8.221c0.713-1.716,1.425-4.851,1.425-6.354c0-0.975,0.063-1.102,1.236-2.267  c0.692-0.678,1.341-1.419,1.467-1.631c0.21-0.403,0.188-0.403-0.88-0.043c-1.781,0.636-2.033,0.551-1.152-0.402  c0.649-0.678,1.425-1.907,1.425-2.267c0-0.063-0.314,0.042-0.671,0.233c-0.377,0.212-1.215,0.53-1.844,0.72l-1.131,0.361l-1.027-0.7  c-0.566-0.381-1.361-0.805-1.781-0.932C39.766,21.902,38.131,21.944,37.167,22.283z M33,64C16.432,64,3,50.569,3,34S16.432,4,33,4  s30,13.431,30,30S49.568,64,33,64z" style="fill-rule:evenodd;clip-rule:evenodd;fill:;"/></svg>
+
+<span class="new-window"><svg  height="8px"  style="enable-background:new 0 0 1000 1000;" version="1.1" viewBox="0 0 1000 1000" width="8px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" >
+<path d="M598 128h298v298h-86v-152l-418 418-60-60 418-418h-152v-86zM810 810v-298h86v298c0 46-40 86-86 86h-596c-48 0-86-40-86-86v-596c0-46 38-86 86-86h298v86h-298v596h596z" style="fill-rule:evenodd;clip-rule:evenodd;fill:;"/>
+</svg>
+</span></a>
+
+
+
+
+
+<a href="https://github.com/rajasegar" target="_blank" class="link-transition github link dib z-999 pt3 pt0-l mr1" title="Github link" rel="noopener" aria-label="follow on Github——Opens in a new window">
+  <svg  height="32px"  style="enable-background:new 0 0 512 512;" version="1.1" viewBox="0 0 512 512" width="32px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" >
+  <path d="M256,32C132.3,32,32,134.8,32,261.7c0,101.5,64.2,187.5,153.2,217.9c11.2,2.1,15.3-5,15.3-11.1   c0-5.5-0.2-19.9-0.3-39.1c-62.3,13.9-75.5-30.8-75.5-30.8c-10.2-26.5-24.9-33.6-24.9-33.6c-20.3-14.3,1.5-14,1.5-14   c22.5,1.6,34.3,23.7,34.3,23.7c20,35.1,52.4,25,65.2,19.1c2-14.8,7.8-25,14.2-30.7c-49.7-5.8-102-25.5-102-113.5   c0-25.1,8.7-45.6,23-61.6c-2.3-5.8-10-29.2,2.2-60.8c0,0,18.8-6.2,61.6,23.5c17.9-5.1,37-7.6,56.1-7.7c19,0.1,38.2,2.6,56.1,7.7   c42.8-29.7,61.5-23.5,61.5-23.5c12.2,31.6,4.5,55,2.2,60.8c14.3,16.1,23,36.6,23,61.6c0,88.2-52.4,107.6-102.3,113.3   c8,7.1,15.2,21.1,15.2,42.5c0,30.7-0.3,55.5-0.3,63c0,6.1,4,13.3,15.4,11C415.9,449.1,480,363.1,480,261.7   C480,134.8,379.7,32,256,32z"/>
+</svg>
+
+<span class="new-window"><svg  height="8px"  style="enable-background:new 0 0 1000 1000;" version="1.1" viewBox="0 0 1000 1000" width="8px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" >
+<path d="M598 128h298v298h-86v-152l-418 418-60-60 418-418h-152v-86zM810 810v-298h86v298c0 46-40 86-86 86h-596c-48 0-86-40-86-86v-596c0-46 38-86 86-86h298v86h-298v596h596z" style="fill-rule:evenodd;clip-rule:evenodd;fill:;"/>
+</svg>
+</span></a>
+
+
+
+
+
+
+
+
+    </div>
+  </div>
+</nav>
+
+    </div>
+  </header>
+
+
+
+    <main class="pb7" role="main">
+      
+  
+  <article class="flex-l flex-wrap justify-between mw8 center ph3">
+    <header class="mt4 w-100">
+      <aside class="instapaper_ignoref b helvetica tracked">
+          
+        POSTS
+      </aside>
+      
+
+
+
+
+  <div id="sharing" class="mt3">
+
+    
+    <a href="https://www.facebook.com/sharer.php?u=http://hangaroundtheweb.com/posts/jarvis-write-me-a-codemod/" class="facebook no-underline" aria-label="share on Facebook">
+      <svg height="32px"  style="enable-background:new 0 0 67 67;" version="1.1" viewBox="0 0 67 67" width="32px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M28.765,50.32h6.744V33.998h4.499l0.596-5.624h-5.095  l0.007-2.816c0-1.466,0.14-2.253,2.244-2.253h2.812V17.68h-4.5c-5.405,0-7.307,2.729-7.307,7.317v3.377h-3.369v5.625h3.369V50.32z   M33,64C16.432,64,3,50.569,3,34S16.432,4,33,4s30,13.431,30,30S49.568,64,33,64z" style="fill-rule:evenodd;clip-rule:evenodd;"/></svg>
+
+    </a>
+
+    
+    
+    <a href="https://twitter.com/share?url=http://hangaroundtheweb.com/posts/jarvis-write-me-a-codemod/&amp;text=JARVIS%20-%20Write%20me%20a%20Codemod" class="twitter no-underline" aria-label="share on Twitter">
+      <svg height="32px"  style="enable-background:new 0 0 67 67;" version="1.1" viewBox="0 0 67 67" width="32px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M37.167,22.283c-2.619,0.953-4.274,3.411-4.086,6.101  l0.063,1.038l-1.048-0.127c-3.813-0.487-7.145-2.139-9.974-4.915l-1.383-1.377l-0.356,1.017c-0.754,2.267-0.272,4.661,1.299,6.271  c0.838,0.89,0.649,1.017-0.796,0.487c-0.503-0.169-0.943-0.296-0.985-0.233c-0.146,0.149,0.356,2.076,0.754,2.839  c0.545,1.06,1.655,2.097,2.871,2.712l1.027,0.487l-1.215,0.021c-1.173,0-1.215,0.021-1.089,0.467  c0.419,1.377,2.074,2.839,3.918,3.475l1.299,0.444l-1.131,0.678c-1.676,0.976-3.646,1.526-5.616,1.568  C19.775,43.256,19,43.341,19,43.405c0,0.211,2.557,1.397,4.044,1.864c4.463,1.377,9.765,0.783,13.746-1.568  c2.829-1.673,5.657-5,6.978-8.221c0.713-1.716,1.425-4.851,1.425-6.354c0-0.975,0.063-1.102,1.236-2.267  c0.692-0.678,1.341-1.419,1.467-1.631c0.21-0.403,0.188-0.403-0.88-0.043c-1.781,0.636-2.033,0.551-1.152-0.402  c0.649-0.678,1.425-1.907,1.425-2.267c0-0.063-0.314,0.042-0.671,0.233c-0.377,0.212-1.215,0.53-1.844,0.72l-1.131,0.361l-1.027-0.7  c-0.566-0.381-1.361-0.805-1.781-0.932C39.766,21.902,38.131,21.944,37.167,22.283z M33,64C16.432,64,3,50.569,3,34S16.432,4,33,4  s30,13.431,30,30S49.568,64,33,64z" style="fill-rule:evenodd;clip-rule:evenodd;fill:;"/></svg>
+
+    </a>
+
+    
+    <a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=http://hangaroundtheweb.com/posts/jarvis-write-me-a-codemod/&amp;title=JARVIS%20-%20Write%20me%20a%20Codemod" class="linkedin no-underline" aria-label="share on LinkedIn">
+      <svg  height="32px"  style="enable-background:new 0 0 65 65;" version="1.1" viewBox="0 0 65 65" width="32px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <path d="M50.837,48.137V36.425c0-6.275-3.35-9.195-7.816-9.195  c-3.604,0-5.219,1.983-6.119,3.374V27.71h-6.79c0.09,1.917,0,20.427,0,20.427h6.79V36.729c0-0.609,0.044-1.219,0.224-1.655  c0.49-1.22,1.607-2.483,3.482-2.483c2.458,0,3.44,1.873,3.44,4.618v10.929H50.837z M22.959,24.922c2.367,0,3.842-1.57,3.842-3.531  c-0.044-2.003-1.475-3.528-3.797-3.528s-3.841,1.524-3.841,3.528c0,1.961,1.474,3.531,3.753,3.531H22.959z M34,64  C17.432,64,4,50.568,4,34C4,17.431,17.432,4,34,4s30,13.431,30,30C64,50.568,50.568,64,34,64z M26.354,48.137V27.71h-6.789v20.427  H26.354z" style="fill-rule:evenodd;clip-rule:evenodd;fill:;"/>
+</svg>
+
+    </a>
+  </div>
+
+
+      <h1 class="f1 athelas mt3 mb1">JARVIS - Write me a Codemod</h1>
+      
+      
+      <time class="f6 mv4 dib tracked" datetime="2019-12-18T05:08:13Z">December 18, 2019</time>
+
+      
+      
+    </header>
+    <div class="nested-copy-line-height lh-copy serif f4 nested-links nested-img mid-gray pr4-l w-two-thirds-l"><p>In this article, we are going to take a look at a tool called <strong>JARVIS</strong> which will profoundly transform the way how you write codemods.</p>
+<p>This is a continuation post for <a href="/2019/12/ast-finder-finding-ast-nodes-from-code/">AST Finder</a> which is a tool to generate an api to find AST nodes automatically from source code.</p>
+<p>If you want to know more about codemods, their building blocks and how they work, please check out this <a href="/2019/03/codemods-the-new-age-saviors-for-js-developers/">detailed post</a> about codemods.</p>
+<h3 id="what">What?</h3>
+<p><a href="https://rajasegar.github.io/jarvis/">JARVIS</a> is actually a playground for writing codemods, where in you can specify the input and output code, choose the appropriate transformation you want to apply and the codemod is automatically generated for you.</p>
+<p><img src="/wp-content/uploads/2019/12/jarvis-annotated.jpg" alt=""></p>
+<p>JARVIS currently supports Javascript and <a href="https://glimmerjs.com">Glimmer.js</a> templates. For Javascript, you can use parsers like <a href="https://github.com/benjamn/recast">recast</a> and <a href="https://babeljs.io">babel</a>. For Glimmer.js templates which is a more advanced form of <a href="https://handlebarsjs.com/">Handlebars</a> templates used by Ember.js framework, it is using the <a href="https://github.com/ember-template-lint/ember-template-recast">ember-template-recast</a> parser to parse and transform the code.</p>
+<p>It gives a playground to write code transformations just like AST Explorer but with a more fine-grained control and flexibility to write the transformations because it automatically figures out a lot of things for you like, how you can build new nodes, how you can find nodes from the AST, how to replace, remove or insert nodes into the tree, which visitor function you need to use for writing transformations.</p>
+<h3 id="why">Why?</h3>
+<blockquote>
+<p>If the goal is to enhance software development throughput, you can either:</p>
+<p>• get faster people to do the work,<br>
+• get more people to do the work, or<br>
+• automate the work.</p>
+<p>― <strong>Chad Fowler</strong> in The Pragmatic Programmer</p>
+</blockquote>
+<p>We already have a very good tool called &ldquo;<a href="https://astexplorer.net/">ast-explorer</a>&rdquo; for visualizing abstract syntax trees or ASTs and writing codemods. Why we need a new tool then? Because AST explorer is only for exploring your ASTs, it doesn&rsquo;t tell how to find or build AST nodes. You have to figure out a lot of things before you can start writing a codemod.</p>
+<p>I spent a lot of time figuring out the jscodeshift apis, by looking at their documentation, learning from existing codemods, searching in google, and so on. The learning curve is kind of steep. And my colleagues have to tread down the same path. Whenever we tell any new developer in our team to learn about codemods, they face the same challenges we had in learning about them. Hence I wanted to make their lives easier and approach, learning about codemods a painless task. And that&rsquo;s why JARVIS is created.</p>
+<p>The first task in writing codemods is to find the appropriate nodes in the AST and work on them. And we definitely need a tool which makes it easy to find nodes. The problem is, there is no proper documentation on finding AST nodes using the jscodeshift api. All you have to do is learn from other <a href="https://github.com/rajasegar/awesome-codemods">awesome-codemods</a> out there and sift through the code and find out how you can query nodes.</p>
+<p>And the second thing, when you are replacing nodes, you need to know how you can build new nodes. While writing codemods, most of the time we will be creating new nodes. JARVIS can take care of these things for you so that you can focus on building or tweaking the transformation rather than wasting most of your precious time in finding the reference or documentation for building and finding AST nodes.</p>
+<p>Once you are done with the transformation, you can simply copy the codemod from JARVIS, put it in a file, let&rsquo;s say for example <code>transform.js</code> and run it through with jscodeshift.</p>
+<pre><code>$ jscodeshift -t transform.js app/components
+
+</code></pre><h3 id="how">How?</h3>
+<p>JARVIS uses two npm packages underneath. One for <a href="https://github.com/rajasegar/ast-node-finder">building</a> AST nodes from code and the other one for <a href="https://github.com/rajasegar/ast-node-finder">finding</a> AST nodes from code. It is pretty much a combination of both AST-Builder and AST-Finder working together to automatically generate code transforms.</p>
+<p><img src="/wp-content/uploads/2019/12/jarvis-arch.png" alt=""></p>
+<p>First you need to specify the input code in the top-left panel (please see the annotated screenshot above for reference), then you choose the appropriate AST Node operation below. You can choose to remove the node, replace , insert the new node before or after the existing node.</p>
+<p>Second, if you are replacing code you can enter the destination code how it is going to change in the bottom-left panel. Then JARVIS will automatically generate a boilerplate code for your transformation in the top-right panel. You can tweak the transformation according to your requirements and verify the transformation is working properly or not by looking at the output in the bottom-right panel.</p>
+<p>Let&rsquo;s consider a simple example in JS. Let&rsquo;s say you want to replace all your <code>foo()</code> calls with <code>foo.bar()</code> in your code. The first task here is you need to identify the type of AST node you want to manipulate, in our case replace. This is an <code>ExpressionStatement</code> with an expression of type <code>CallExpression</code>. Whereas, the expected output node type is a <code>MemberExpression</code>. Hence you need to understand the syntax and semantics of finding a <code>CallExpression</code> and create a <code>MemberExpression</code> AST node, which will be a very difficult endeavor for someone who has just starting with codemods.</p>
+<pre><code>foo()
+
+</code></pre><p>What JARVIS does here is, it figures out the type of the input node and the output node, the node manipulation operation you want to do with, and then automatically generates a codemod boilerplate for the same.</p>
+<pre><code>foo.bar()
+
+</code></pre><p>The codemod for the above transformation will look something like this:</p>
+<pre><code>module.exports = function transformer(file, api) {
+  const j = api.jscodeshift;
+  const root = j(file.source);
+  const body = root.get().value.program.body;
+
+  root.find(j.CallExpression, {
+    callee: {
+      name: &quot;foo&quot;
+    }
+  }).replaceWith(path =&gt; {
+    return j.callExpression(
+      j.memberExpression(
+        j.identifier(&quot;foo&quot;), j.identifier(&quot;bar&quot;), false), \[\]);
+  });
+
+  return root.toSource();
+};
+</code></pre><p>To know more about how JARVIS works, you can take a look at the source code <a href="https://github.com/rajasegar/jarvis">here</a>, it is built in <a href="https://emberjs.com/">Ember.js</a>.</p>
+<p>And if you are a dark-theme fan, JARVIS also allows to switch your editor themes to dark mode. Please use the <code>Report issues</code> link at the footer if you want to report any issues or feedback, you can tell us how we can improve the tool and what additional languages / parsers we need to support.</p>
+<p>Stay tuned or subscribe to the newsletter at the bottom to know more about the exciting tools we are building around ASTs and Codemods.</p>
+<h3 id="references">References</h3>
+<ul>
+<li><a href="https://github.com/facebook/jscodeshift">jscodeshift</a></li>
+<li><a href="https://github.com/benjamn/recast">recast</a></li>
+<li><a href="https://github.com/benjamn/ast-types">ast-types</a></li>
+<li><a href="https://rajasegar.github.io/ast-builder/">ast-builder</a></li>
+<li><a href="https://rajasegar.github.io/ast-finder/">ast-finder</a></li>
+<li><a href="https://github.com/rajasegar/ast-node-builder">ast-node-builder</a></li>
+<li><a href="https://github.com/rajasegar/ast-node-finder">ast-node-finder</a></li>
+<li><a href="https://github.com/rajasegar/jarvis">jarvis</a></li>
+</ul>
+<ul class="pa0">
+  
+   <li class="list">
+     <a href="/tags/articles" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">Articles</a>
+   </li>
+  
+   <li class="list">
+     <a href="/tags/codemod" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">codemod</a>
+   </li>
+  
+   <li class="list">
+     <a href="/tags/codemods" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">codemods</a>
+   </li>
+  
+   <li class="list">
+     <a href="/tags/javascript" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">Javascript</a>
+   </li>
+  
+   <li class="list">
+     <a href="/tags/jscodeshift" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">jscodeshift</a>
+   </li>
+  
+</ul>
+<div class="mt6 instapaper_ignoref">
+      
+      
+      </div>
+    </div>
+
+    <aside class="w-30-l mt6-l">
+
+
+
+
+  <div class="bg-light-gray pa3 nested-list-reset nested-copy-line-height nested-links">
+    <p class="f5 b mb3">Related</p>
+    <ul class="pa0 list">
+	   
+	     <li  class="mb2">
+          <a href="/posts/ast-finder-finding-ast-nodes-from-code/">AST Finder - Finding AST nodes from code</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/posts/ast-builder-building-ast-nodes-from-code/">AST Builder - Building AST nodes from code</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/posts/codemods-the-new-age-saviors-for-js-developers/">Codemods - The New Age Saviors for JS Developers</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/posts/creating-runtime-assisted-codemods-using-telemetry-helpers/">Creating runtime assisted Codemods using Telemetry helpers</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/posts/a-refreshing-guide-to-object-freeze-in-javascript-by-dr-victor-fries/">A Refreshing Guide to Object.freeze in Javascript by Dr.Victor Fries</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/posts/arguing-for-the-sake-of-arguments-in-javascript/">Arguing for the sake of arguments in JavaScript</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/posts/how-to-create-an-accessible-slider-component-in-ember/">How to create an accessible slider component in Ember?</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/posts/javascript-refactoring-series-inline-temp/">Javascript Refactoring Series: Inline Temp</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/posts/javascript-refactoring-series-inline-function/">Javascript Refactoring Series: Inline Function</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/posts/javascript-refactoring-series-extract-function/">Javascript Refactoring Series: Extract Function</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/posts/refactoring-a-simple-loop-into-a-pipeline-in-javascript/">Refactoring a simple loop into a pipeline in Javascript</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/posts/do-you-care-about-cohesion-in-javascript-functions/">Do you care about Cohesion in Javascript functions?</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/posts/mind-maps-in-spacemacs/">Mind maps in Spacemacs</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/posts/plantuml-in-spacemacs/">PlantUML in Spacemacs</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/posts/a-guide-to-create-tmux-like-custom-layouts-in-spacemacs/">A guide to create tmux like Custom Layouts in Spacemacs</a>
+        </li>
+	    
+    </ul>
+</div>
+
+</aside>
+
+  </article>
+
+    </main>
+    <footer class="bg-black bottom-0 w-100 pa3" role="contentinfo">
+  <div class="flex justify-between">
+  <a class="f4 fw4 hover-white no-underline white-70 dn dib-ns pv2 ph3" href="http://hangaroundtheweb.com/" >
+    &copy;  hangaroundtheweb 2022 
+  </a>
+    <div>
+
+
+
+
+<a href="https://twitter.com/rajasegar_c" target="_blank" class="link-transition twitter link dib z-999 pt3 pt0-l mr1" title="Twitter link" rel="noopener" aria-label="follow on Twitter——Opens in a new window">
+  <svg height="32px"  style="enable-background:new 0 0 67 67;" version="1.1" viewBox="0 0 67 67" width="32px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M37.167,22.283c-2.619,0.953-4.274,3.411-4.086,6.101  l0.063,1.038l-1.048-0.127c-3.813-0.487-7.145-2.139-9.974-4.915l-1.383-1.377l-0.356,1.017c-0.754,2.267-0.272,4.661,1.299,6.271  c0.838,0.89,0.649,1.017-0.796,0.487c-0.503-0.169-0.943-0.296-0.985-0.233c-0.146,0.149,0.356,2.076,0.754,2.839  c0.545,1.06,1.655,2.097,2.871,2.712l1.027,0.487l-1.215,0.021c-1.173,0-1.215,0.021-1.089,0.467  c0.419,1.377,2.074,2.839,3.918,3.475l1.299,0.444l-1.131,0.678c-1.676,0.976-3.646,1.526-5.616,1.568  C19.775,43.256,19,43.341,19,43.405c0,0.211,2.557,1.397,4.044,1.864c4.463,1.377,9.765,0.783,13.746-1.568  c2.829-1.673,5.657-5,6.978-8.221c0.713-1.716,1.425-4.851,1.425-6.354c0-0.975,0.063-1.102,1.236-2.267  c0.692-0.678,1.341-1.419,1.467-1.631c0.21-0.403,0.188-0.403-0.88-0.043c-1.781,0.636-2.033,0.551-1.152-0.402  c0.649-0.678,1.425-1.907,1.425-2.267c0-0.063-0.314,0.042-0.671,0.233c-0.377,0.212-1.215,0.53-1.844,0.72l-1.131,0.361l-1.027-0.7  c-0.566-0.381-1.361-0.805-1.781-0.932C39.766,21.902,38.131,21.944,37.167,22.283z M33,64C16.432,64,3,50.569,3,34S16.432,4,33,4  s30,13.431,30,30S49.568,64,33,64z" style="fill-rule:evenodd;clip-rule:evenodd;fill:;"/></svg>
+
+<span class="new-window"><svg  height="8px"  style="enable-background:new 0 0 1000 1000;" version="1.1" viewBox="0 0 1000 1000" width="8px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" >
+<path d="M598 128h298v298h-86v-152l-418 418-60-60 418-418h-152v-86zM810 810v-298h86v298c0 46-40 86-86 86h-596c-48 0-86-40-86-86v-596c0-46 38-86 86-86h298v86h-298v596h596z" style="fill-rule:evenodd;clip-rule:evenodd;fill:;"/>
+</svg>
+</span></a>
+
+
+
+
+
+<a href="https://github.com/rajasegar" target="_blank" class="link-transition github link dib z-999 pt3 pt0-l mr1" title="Github link" rel="noopener" aria-label="follow on Github——Opens in a new window">
+  <svg  height="32px"  style="enable-background:new 0 0 512 512;" version="1.1" viewBox="0 0 512 512" width="32px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" >
+  <path d="M256,32C132.3,32,32,134.8,32,261.7c0,101.5,64.2,187.5,153.2,217.9c11.2,2.1,15.3-5,15.3-11.1   c0-5.5-0.2-19.9-0.3-39.1c-62.3,13.9-75.5-30.8-75.5-30.8c-10.2-26.5-24.9-33.6-24.9-33.6c-20.3-14.3,1.5-14,1.5-14   c22.5,1.6,34.3,23.7,34.3,23.7c20,35.1,52.4,25,65.2,19.1c2-14.8,7.8-25,14.2-30.7c-49.7-5.8-102-25.5-102-113.5   c0-25.1,8.7-45.6,23-61.6c-2.3-5.8-10-29.2,2.2-60.8c0,0,18.8-6.2,61.6,23.5c17.9-5.1,37-7.6,56.1-7.7c19,0.1,38.2,2.6,56.1,7.7   c42.8-29.7,61.5-23.5,61.5-23.5c12.2,31.6,4.5,55,2.2,60.8c14.3,16.1,23,36.6,23,61.6c0,88.2-52.4,107.6-102.3,113.3   c8,7.1,15.2,21.1,15.2,42.5c0,30.7-0.3,55.5-0.3,63c0,6.1,4,13.3,15.4,11C415.9,449.1,480,363.1,480,261.7   C480,134.8,379.7,32,256,32z"/>
+</svg>
+
+<span class="new-window"><svg  height="8px"  style="enable-background:new 0 0 1000 1000;" version="1.1" viewBox="0 0 1000 1000" width="8px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" >
+<path d="M598 128h298v298h-86v-152l-418 418-60-60 418-418h-152v-86zM810 810v-298h86v298c0 46-40 86-86 86h-596c-48 0-86-40-86-86v-596c0-46 38-86 86-86h298v86h-298v596h596z" style="fill-rule:evenodd;clip-rule:evenodd;fill:;"/>
+</svg>
+</span></a>
+
+
+
+
+
+
+
+</div>
+  </div>
+</footer>
+
+  </body>
+</html>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>emms on hangaroundtheweb</title>
+    <link>http://hangaroundtheweb.com/tags/emms/</link>
+    <description>Recent content in emms on hangaroundtheweb</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 02 Jul 2020 00:57:51 +0000</lastBuildDate><atom:link href="http://hangaroundtheweb.com/tags/emms/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Playing Music in Spacemacs with EMMS</title>
+      <link>http://hangaroundtheweb.com/posts/playing-music-in-spacemacs-with-emms/</link>
+      <pubDate>Thu, 02 Jul 2020 00:57:51 +0000</pubDate>
+      
+      <guid>http://hangaroundtheweb.com/posts/playing-music-in-spacemacs-with-emms/</guid>
+      <description>I have been thinking about playing songs inside Spacemacs for quite a while, so that I don&amp;rsquo;t have to leave my favorite editor for just playing music. After a small exploration I found out that all I need is to enable EMMS inside Spacemacs.
+Spacemacs Spacemacs is a community-driven Emacs distribution. It is a new way to experience Emacs with a sophisticated and polished set-up focused on ergonomics, mnemonics and consistency.</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,558 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    
+    <title>Arguing for the sake of arguments in JavaScript | hangaroundtheweb</title>
+    <meta name="viewport" content="width=device-width,minimum-scale=1">
+    <meta name="description" content="Arguing for the sake of arguments in JavaScript This article deals with some intricacies revolving around the arguments object, a magical and mysterious creature residing in the functional realms of the Javascript world, which can be summoned anytime in your code by the programming wizards without any spells, incantations or sorcery. The arguments object is an Array-like object corresponding to the arguments passed to a function. It is a local variable available within all (non-arrow) functions.">
+    <meta name="generator" content="Hugo 0.83.1" />
+    
+    
+      <META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
+    
+
+    
+<link rel="stylesheet" href="/ananke/css/main.min.css" >
+
+
+
+
+    
+      
+
+    
+
+    
+    
+    <meta property="og:title" content="Arguing for the sake of arguments in JavaScript" />
+<meta property="og:description" content="Arguing for the sake of arguments in JavaScript This article deals with some intricacies revolving around the arguments object, a magical and mysterious creature residing in the functional realms of the Javascript world, which can be summoned anytime in your code by the programming wizards without any spells, incantations or sorcery. The arguments object is an Array-like object corresponding to the arguments passed to a function. It is a local variable available within all (non-arrow) functions." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://hangaroundtheweb.com/posts/arguing-for-the-sake-of-arguments-in-javascript/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2018-03-29T03:52:42&#43;00:00" />
+<meta property="article:modified_time" content="2018-03-29T03:52:42&#43;00:00" />
+
+<meta itemprop="name" content="Arguing for the sake of arguments in JavaScript">
+<meta itemprop="description" content="Arguing for the sake of arguments in JavaScript This article deals with some intricacies revolving around the arguments object, a magical and mysterious creature residing in the functional realms of the Javascript world, which can be summoned anytime in your code by the programming wizards without any spells, incantations or sorcery. The arguments object is an Array-like object corresponding to the arguments passed to a function. It is a local variable available within all (non-arrow) functions."><meta itemprop="datePublished" content="2018-03-29T03:52:42&#43;00:00" />
+<meta itemprop="dateModified" content="2018-03-29T03:52:42&#43;00:00" />
+<meta itemprop="wordCount" content="1515">
+<meta itemprop="keywords" content="article,Articles,articles,javascript,Javascript," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Arguing for the sake of arguments in JavaScript"/>
+<meta name="twitter:description" content="Arguing for the sake of arguments in JavaScript This article deals with some intricacies revolving around the arguments object, a magical and mysterious creature residing in the functional realms of the Javascript world, which can be summoned anytime in your code by the programming wizards without any spells, incantations or sorcery. The arguments object is an Array-like object corresponding to the arguments passed to a function. It is a local variable available within all (non-arrow) functions."/>
+
+	
+  </head>
+
+  <body class="ma0 avenir bg-near-white">
+
+    
+   
+  
+
+  <header>
+    <div class="bg-black">
+      <nav class="pv3 ph3 ph4-ns" role="navigation">
+  <div class="flex-l justify-between items-center center">
+    <a href="/" class="f3 fw2 hover-white no-underline white-90 dib">
+      
+        hangaroundtheweb
+      
+    </a>
+    <div class="flex-l items-center">
+      
+
+      
+      
+
+
+
+
+<a href="https://twitter.com/rajasegar_c" target="_blank" class="link-transition twitter link dib z-999 pt3 pt0-l mr1" title="Twitter link" rel="noopener" aria-label="follow on Twitter——Opens in a new window">
+  <svg height="32px"  style="enable-background:new 0 0 67 67;" version="1.1" viewBox="0 0 67 67" width="32px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M37.167,22.283c-2.619,0.953-4.274,3.411-4.086,6.101  l0.063,1.038l-1.048-0.127c-3.813-0.487-7.145-2.139-9.974-4.915l-1.383-1.377l-0.356,1.017c-0.754,2.267-0.272,4.661,1.299,6.271  c0.838,0.89,0.649,1.017-0.796,0.487c-0.503-0.169-0.943-0.296-0.985-0.233c-0.146,0.149,0.356,2.076,0.754,2.839  c0.545,1.06,1.655,2.097,2.871,2.712l1.027,0.487l-1.215,0.021c-1.173,0-1.215,0.021-1.089,0.467  c0.419,1.377,2.074,2.839,3.918,3.475l1.299,0.444l-1.131,0.678c-1.676,0.976-3.646,1.526-5.616,1.568  C19.775,43.256,19,43.341,19,43.405c0,0.211,2.557,1.397,4.044,1.864c4.463,1.377,9.765,0.783,13.746-1.568  c2.829-1.673,5.657-5,6.978-8.221c0.713-1.716,1.425-4.851,1.425-6.354c0-0.975,0.063-1.102,1.236-2.267  c0.692-0.678,1.341-1.419,1.467-1.631c0.21-0.403,0.188-0.403-0.88-0.043c-1.781,0.636-2.033,0.551-1.152-0.402  c0.649-0.678,1.425-1.907,1.425-2.267c0-0.063-0.314,0.042-0.671,0.233c-0.377,0.212-1.215,0.53-1.844,0.72l-1.131,0.361l-1.027-0.7  c-0.566-0.381-1.361-0.805-1.781-0.932C39.766,21.902,38.131,21.944,37.167,22.283z M33,64C16.432,64,3,50.569,3,34S16.432,4,33,4  s30,13.431,30,30S49.568,64,33,64z" style="fill-rule:evenodd;clip-rule:evenodd;fill:;"/></svg>
+
+<span class="new-window"><svg  height="8px"  style="enable-background:new 0 0 1000 1000;" version="1.1" viewBox="0 0 1000 1000" width="8px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" >
+<path d="M598 128h298v298h-86v-152l-418 418-60-60 418-418h-152v-86zM810 810v-298h86v298c0 46-40 86-86 86h-596c-48 0-86-40-86-86v-596c0-46 38-86 86-86h298v86h-298v596h596z" style="fill-rule:evenodd;clip-rule:evenodd;fill:;"/>
+</svg>
+</span></a>
+
+
+
+
+
+<a href="https://github.com/rajasegar" target="_blank" class="link-transition github link dib z-999 pt3 pt0-l mr1" title="Github link" rel="noopener" aria-label="follow on Github——Opens in a new window">
+  <svg  height="32px"  style="enable-background:new 0 0 512 512;" version="1.1" viewBox="0 0 512 512" width="32px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" >
+  <path d="M256,32C132.3,32,32,134.8,32,261.7c0,101.5,64.2,187.5,153.2,217.9c11.2,2.1,15.3-5,15.3-11.1   c0-5.5-0.2-19.9-0.3-39.1c-62.3,13.9-75.5-30.8-75.5-30.8c-10.2-26.5-24.9-33.6-24.9-33.6c-20.3-14.3,1.5-14,1.5-14   c22.5,1.6,34.3,23.7,34.3,23.7c20,35.1,52.4,25,65.2,19.1c2-14.8,7.8-25,14.2-30.7c-49.7-5.8-102-25.5-102-113.5   c0-25.1,8.7-45.6,23-61.6c-2.3-5.8-10-29.2,2.2-60.8c0,0,18.8-6.2,61.6,23.5c17.9-5.1,37-7.6,56.1-7.7c19,0.1,38.2,2.6,56.1,7.7   c42.8-29.7,61.5-23.5,61.5-23.5c12.2,31.6,4.5,55,2.2,60.8c14.3,16.1,23,36.6,23,61.6c0,88.2-52.4,107.6-102.3,113.3   c8,7.1,15.2,21.1,15.2,42.5c0,30.7-0.3,55.5-0.3,63c0,6.1,4,13.3,15.4,11C415.9,449.1,480,363.1,480,261.7   C480,134.8,379.7,32,256,32z"/>
+</svg>
+
+<span class="new-window"><svg  height="8px"  style="enable-background:new 0 0 1000 1000;" version="1.1" viewBox="0 0 1000 1000" width="8px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" >
+<path d="M598 128h298v298h-86v-152l-418 418-60-60 418-418h-152v-86zM810 810v-298h86v298c0 46-40 86-86 86h-596c-48 0-86-40-86-86v-596c0-46 38-86 86-86h298v86h-298v596h596z" style="fill-rule:evenodd;clip-rule:evenodd;fill:;"/>
+</svg>
+</span></a>
+
+
+
+
+
+
+
+
+    </div>
+  </div>
+</nav>
+
+    </div>
+  </header>
+
+
+
+    <main class="pb7" role="main">
+      
+  
+  <article class="flex-l flex-wrap justify-between mw8 center ph3">
+    <header class="mt4 w-100">
+      <aside class="instapaper_ignoref b helvetica tracked">
+          
+        POSTS
+      </aside>
+      
+
+
+
+
+  <div id="sharing" class="mt3">
+
+    
+    <a href="https://www.facebook.com/sharer.php?u=http://hangaroundtheweb.com/posts/arguing-for-the-sake-of-arguments-in-javascript/" class="facebook no-underline" aria-label="share on Facebook">
+      <svg height="32px"  style="enable-background:new 0 0 67 67;" version="1.1" viewBox="0 0 67 67" width="32px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M28.765,50.32h6.744V33.998h4.499l0.596-5.624h-5.095  l0.007-2.816c0-1.466,0.14-2.253,2.244-2.253h2.812V17.68h-4.5c-5.405,0-7.307,2.729-7.307,7.317v3.377h-3.369v5.625h3.369V50.32z   M33,64C16.432,64,3,50.569,3,34S16.432,4,33,4s30,13.431,30,30S49.568,64,33,64z" style="fill-rule:evenodd;clip-rule:evenodd;"/></svg>
+
+    </a>
+
+    
+    
+    <a href="https://twitter.com/share?url=http://hangaroundtheweb.com/posts/arguing-for-the-sake-of-arguments-in-javascript/&amp;text=Arguing%20for%20the%20sake%20of%20arguments%20in%20JavaScript" class="twitter no-underline" aria-label="share on Twitter">
+      <svg height="32px"  style="enable-background:new 0 0 67 67;" version="1.1" viewBox="0 0 67 67" width="32px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M37.167,22.283c-2.619,0.953-4.274,3.411-4.086,6.101  l0.063,1.038l-1.048-0.127c-3.813-0.487-7.145-2.139-9.974-4.915l-1.383-1.377l-0.356,1.017c-0.754,2.267-0.272,4.661,1.299,6.271  c0.838,0.89,0.649,1.017-0.796,0.487c-0.503-0.169-0.943-0.296-0.985-0.233c-0.146,0.149,0.356,2.076,0.754,2.839  c0.545,1.06,1.655,2.097,2.871,2.712l1.027,0.487l-1.215,0.021c-1.173,0-1.215,0.021-1.089,0.467  c0.419,1.377,2.074,2.839,3.918,3.475l1.299,0.444l-1.131,0.678c-1.676,0.976-3.646,1.526-5.616,1.568  C19.775,43.256,19,43.341,19,43.405c0,0.211,2.557,1.397,4.044,1.864c4.463,1.377,9.765,0.783,13.746-1.568  c2.829-1.673,5.657-5,6.978-8.221c0.713-1.716,1.425-4.851,1.425-6.354c0-0.975,0.063-1.102,1.236-2.267  c0.692-0.678,1.341-1.419,1.467-1.631c0.21-0.403,0.188-0.403-0.88-0.043c-1.781,0.636-2.033,0.551-1.152-0.402  c0.649-0.678,1.425-1.907,1.425-2.267c0-0.063-0.314,0.042-0.671,0.233c-0.377,0.212-1.215,0.53-1.844,0.72l-1.131,0.361l-1.027-0.7  c-0.566-0.381-1.361-0.805-1.781-0.932C39.766,21.902,38.131,21.944,37.167,22.283z M33,64C16.432,64,3,50.569,3,34S16.432,4,33,4  s30,13.431,30,30S49.568,64,33,64z" style="fill-rule:evenodd;clip-rule:evenodd;fill:;"/></svg>
+
+    </a>
+
+    
+    <a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=http://hangaroundtheweb.com/posts/arguing-for-the-sake-of-arguments-in-javascript/&amp;title=Arguing%20for%20the%20sake%20of%20arguments%20in%20JavaScript" class="linkedin no-underline" aria-label="share on LinkedIn">
+      <svg  height="32px"  style="enable-background:new 0 0 65 65;" version="1.1" viewBox="0 0 65 65" width="32px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <path d="M50.837,48.137V36.425c0-6.275-3.35-9.195-7.816-9.195  c-3.604,0-5.219,1.983-6.119,3.374V27.71h-6.79c0.09,1.917,0,20.427,0,20.427h6.79V36.729c0-0.609,0.044-1.219,0.224-1.655  c0.49-1.22,1.607-2.483,3.482-2.483c2.458,0,3.44,1.873,3.44,4.618v10.929H50.837z M22.959,24.922c2.367,0,3.842-1.57,3.842-3.531  c-0.044-2.003-1.475-3.528-3.797-3.528s-3.841,1.524-3.841,3.528c0,1.961,1.474,3.531,3.753,3.531H22.959z M34,64  C17.432,64,4,50.568,4,34C4,17.431,17.432,4,34,4s30,13.431,30,30C64,50.568,50.568,64,34,64z M26.354,48.137V27.71h-6.789v20.427  H26.354z" style="fill-rule:evenodd;clip-rule:evenodd;fill:;"/>
+</svg>
+
+    </a>
+  </div>
+
+
+      <h1 class="f1 athelas mt3 mb1">Arguing for the sake of arguments in JavaScript</h1>
+      
+      
+      <time class="f6 mv4 dib tracked" datetime="2018-03-29T03:52:42Z">March 29, 2018</time>
+
+      
+      
+    </header>
+    <div class="nested-copy-line-height lh-copy serif f4 nested-links nested-img mid-gray pr4-l w-two-thirds-l"><h2 id="arguing-for-the-sake-of-arguments-in-javascript">Arguing for the sake of arguments in JavaScript</h2>
+<p>This article deals with some intricacies revolving around the <strong>arguments</strong> object, a magical and mysterious creature residing in the functional realms of the Javascript world, which can be summoned anytime in your code by the programming wizards without any spells, incantations or sorcery. The arguments object is an Array-like object corresponding to the arguments passed to a function. It is a local variable available within all <strong>(non-arrow)</strong> functions. We will also be discussing the different ways the <strong>arguments</strong> object can be put to use to solve various problems involving multiple argument functions.</p>
+<h3 id="build-a-function-that-multiplies-the-first-argument-with-the-largest-of-the-remaining-arguments">Build a function that multiplies the first argument with the largest of the remaining arguments</h3>
+<p>As an example we will be looking to build a function that multiplies the first argument with the largest of the remaining arguments We’ll grab the first argument and multiply it by the biggest of the remaining argument values. Clearly this problem requires an ingenious use of the <strong>arguments</strong> object of the function we are going to build, since this function takes variable number of arguments which is also known as a <strong>variadic</strong> function. Also this function obviously qualifies as a <strong>polyadic</strong> function since it requires multiple arguments.</p>
+<p>Function Type</p>
+<p>No. of arguments</p>
+<p>Also known as</p>
+<p>Niladic function</p>
+<p>0</p>
+<p>Nullary function</p>
+<p>Monadic function</p>
+<p>1</p>
+<p>Unary function</p>
+<p>Dyadic function</p>
+<p>2</p>
+<p>Binary function</p>
+<p>Triadic function</p>
+<p>3</p>
+<p>Ternary function</p>
+<p>Polyadic function</p>
+<p>Multiple</p>
+<p>n-ary function</p>
+<p>Variadic function</p>
+<p>Variable</p>
+<blockquote>
+<p>In mathematics and in computer programming, a <strong>variadic</strong> function is a function of indefinite <strong>arity</strong>, i.e., one which accepts a variable number of arguments.</p>
+</blockquote>
+<p>The <strong>arity</strong> of a function or operation is the number of arguments or operands that the function takes. So this gives us an useful insight such as whenever you are encountered with a problem of variadic functions in Javascript, most often the <strong>arguments</strong> object will be our savior. Our general approach to this particular problem will be like this:</p>
+<ul>
+<li>Convert the arguments object to a real array</li>
+<li>Get the remaining arguments from this array excluding the first element</li>
+<li>Sort the remaining arguments in descending order</li>
+<li>Return the product of the first argument and the largest of the remaining (i.e, the first of the sorted )</li>
+</ul>
+<h4 id="es5---v1">ES5 - v1</h4>
+<p>The arguments object is not an Array. It is similar to an Array, but does not have any Array properties except length. However it can be converted to a real Array: using any one of the two below examples in ES5:</p>
+<pre><code>var args = Array.prototype.slice.call(arguments);
+var args = \[\].slice.call(arguments);
+
+</code></pre><p>With the first method using <strong>Array.prototype.slice.call(arguments)</strong> we can write our program as:</p>
+<pre><code>function multiMax() {
+  var args = Array.prototype.slice.call(arguments);
+  var remaining = args.slice(1);
+  var sorted = remaining.sort(function(a, b) {
+    return b - a;
+  });
+  return args\[0\] \* sorted\[0\];
+}
+
+</code></pre><p>With the second method using <strong>[].slice.call(arguments)</strong> the same program will be like:</p>
+<h4 id="es5---v2">ES5 - v2</h4>
+<pre><code>function multiMax() {
+  var args = \[\].slice.call(arguments);
+  var remaining = args.slice(1);
+  var sorted = remaining.sort(function(a, b) {
+    return b - a;
+  });
+  return args\[0\] \* sorted\[0\];
+}
+
+</code></pre><p>In ES6, it is very easy to convert the arguments object to an array, using the **Array.from()**function.</p>
+<pre><code>const args = Array.from(arguments);
+
+</code></pre><h4 id="es6---v1">ES6 - v1:</h4>
+<pre><code>function multiMax() {
+  let args = Array.from(arguments);
+  let remaining = args.slice(1);
+  let sorted = remaining.sort((a, b) =&gt; b - a);
+  return args\[0\] \* sorted\[0\];
+}
+
+</code></pre><p>We can also use the <strong>spread</strong> operator to convert the arguments object like this:</p>
+<h4 id="es6---v2">ES6 - v2</h4>
+<pre><code>function multiMax() {
+  let args = \[...arguments\];
+  let remaining = args.slice(1);
+  let sorted = remaining.sort((a, b) =&gt; b - a);
+  return args\[0\] \* sorted\[0\];
+}
+
+</code></pre><p>Or we can also make use of , in ES6, <strong>rest parameters</strong></p>
+<h4 id="es6---v3">ES6 - v3</h4>
+<pre><code>function multiMax(first, ...remaining) {
+  let sorted = remaining.sort((a, b) =&gt; b - a);
+  return first \* sorted\[0\];
+}
+
+</code></pre><h3 id="define-a-function-that-concatenates-several-strings">Define a function that concatenates several strings</h3>
+<p>Our next problem we are going to take it for our discussion is to define a function that concatenates several strings. This example defines a function that concatenates several strings. The only formal argument for the function is a string that specifies the characters that separate the items to concatenate. The function is defined as follows:</p>
+<pre><code>function multiConcat(separator) {
+  var args = Array.prototype.slice.call(arguments, 1);
+  return args.join(separator);
+}
+
+</code></pre><p>Example use of this function will be like:</p>
+<pre><code>// returns &quot;red, orange, blue&quot;
+multiConcat(', ', 'red', 'orange', 'blue');
+
+// returns &quot;elephant; giraffe; lion; cheetah&quot;
+multiConcat('; ', 'elephant', 'giraffe', 'lion', 'cheetah');
+
+// returns &quot;sage. basil. oregano. pepper. parsley&quot;
+multiConcat('. ', 'sage', 'basil', 'oregano', 'pepper', 'parsley');
+
+</code></pre><h3 id="define-a-function-to-compute-the-average-of-numbers">Define a function to compute the average of numbers</h3>
+<pre><code>function average(/\*numbers\*/) {
+    for (var i=0, total = 0, len=arguments.length; i  
+</code></pre><p>If you are planning to solve this problem more elegantly and functional way, we can make use of the Array <strong>reduce</strong> function to obtain the sum of the arguments once it has been converted to a real array like below.</p>
+<pre><code>function average() {
+  var args = \[\].slice.call(arguments);
+  var sum  = args.reduce(function(a, b) {
+    return a + b;
+  }, 0);
+  return sum / args.length;
+}
+
+</code></pre><p>If you want to go all guns blazing with ES6 spread operator and arrow functions, you may write.</p>
+<pre><code>function average() {
+  var args = \[...arguments\];
+  var sum  = args.reduce((a, b) =&gt;  a + b, 0);
+  return sum / args.length;
+}
+
+</code></pre><h3 id="find-the-maximum-number">Find the maximum number</h3>
+<p>The following function accepts any number of numeric arguments and returns the value of the largest argument it is passed (see also the built-in function Math.max(), which behaves the same way):</p>
+<pre><code>function max( /\* ... \*/ ) {
+  var max = Number.NEGATIVE\_INFINITY;
+  // Loop through the arguments, looking for, and remembering, the biggest.
+  for (var i = 0; i &lt; arguments.length; i++) {
+    if (arguments\[i\] &gt; max) {
+      max = arguments\[i\];
+    }
+  }
+  // Return the biggest
+  return max;
+}
+var largest = max(1, 10, 100, 2, 3, 1000, 4, 5, 10000, 6); // =&gt; 10000
+
+</code></pre><h3 id="verifying-all-named-arguments-are-supplied">Verifying all named arguments are supplied</h3>
+<p>JavaScript’s liberal attitude to parameter passing is appealing but some functions will break if all named arguments are not supplied. We could write a function wrapper to enforce this when necessary:</p>
+<pre><code>function requireAllArgs(fn) {
+    return function() {
+        if (arguments.length &lt; fn.length) {
+            throw(\[&quot;Expected&quot;, fn.length, &quot;arguments, got&quot;, arguments.length\].join(&quot; &quot;));
+        }
+        return fn.apply(this, arguments);
+    }   
+} 
+
+var divide = requireAllArgs(function(a, b) {return a/b});
+
+divide(2/5); //&quot;Expected 2 arguments, got 1&quot;
+divide(2,5); //0.4
+
+</code></pre><h3 id="defining-a-function-that-creates-html-lists">Defining a function that creates HTML lists</h3>
+<p>This example defines a function that creates a string containing HTML for a list. The only formal argument for the function is a string that is &ldquo;u&rdquo; if the list is to be unordered (bulleted), or &ldquo;o&rdquo; if the list is to be ordered (numbered). The function is defined as follows:</p>
+<pre><code>function list(type) {
+  var result = '&lt;' + type + 'l&gt;*   ';
+      var args = Array.prototype.slice.call(arguments, 1);
+      result += args.join('
+*   ');
+      result += '
+'; // end list
+
+  return result;
+}
+
+</code></pre><p>You can pass any number of arguments to this function, and it adds each argument as an item to a list of the type indicated. For example:</p>
+<pre><code>var listHTML = list('u', 'One', 'Two', 'Three');
+
+/\* listHTML is:
+
+&quot;
+
+*   One
+*   Two
+*   Three
+
+&quot;
+
+\*/
+
+</code></pre><h3 id="a-string-formatter">A String formatter</h3>
+<pre><code>function format(string) {  
+    var args = arguments;  
+    var pattern = RegExp(&quot;%(\[1-&quot; + (arguments.length-1) + &quot;\])&quot;, &quot;g&quot;);
+    return string.replace(pattern, function(match, index) {  
+        return args\[index\];  
+    });  
+}; 
+
+format(&quot;a %1 and a %2&quot;, &quot;cat&quot;, &quot;dog&quot;);
+//&quot;a cat and a dog&quot;
+
+</code></pre><h3 id="partial-function-application">Partial function application</h3>
+<p>The typical JavaScript implementations of curry, partial and compose store the arguments object for later concatenation with the runtime arguments of the inner function.</p>
+<pre><code>Function.prototype.curry = function() {
+    if (arguments.length&lt;1) {
+        return this; //nothing to curry with - return function
+    }
+    var \_\_method = this;
+    var args = \[\].slice.apply(arguments);
+    return function() {
+        return \_\_method.apply(this, args.concat(\[\].slice.apply(arguments)));
+    }
+}
+
+var converter = function(ratio, symbol, input) {
+    return \[(input\*ratio).toFixed(1),symbol\].join(&quot; &quot;);
+}
+
+var kilosToPounds = converter.curry(2.2,&quot;lbs&quot;);
+var milesToKilometers = converter.curry(1.62, &quot;km&quot;);
+
+kilosToPounds(4); //8.8 lbs
+milesToKilometers(34); //55.1 km
+
+</code></pre><h3 id="no-binding-of-arguments-inside-es6-arrow-functions">No binding of arguments inside ES6 arrow functions</h3>
+<p>An arrow function expression has a shorter syntax than a function expression and does not have its own this, arguments, super, or new.target. These function expressions are best suited for non-method functions, and they cannot be used as constructors.</p>
+<pre><code>let myArrowFunc = () =&gt; {
+  let args = \[...arguments\];
+  return args\[0\];
+};
+
+console.log(&quot;myArrowFunc = &quot;, myArrowFunc(1, 2, 3));
+
+// Instead of returning 1, it returns an empty object  literal
+// myArrowFunc = {}
+
+
+</code></pre><p>Arrow functions do not have their own arguments object. Thus, in this example, arguments is simply a reference to the arguments of the enclosing scope:</p>
+<pre><code>var arguments = \[1, 2, 3\];
+var arr = () =&gt; arguments\[0\];
+
+arr(); // 1
+
+function foo(n) {
+  var f = () =&gt; arguments\[0\] + n; // foo's implicit arguments binding. arguments\[0\] is n
+  return f();
+}
+
+foo(1); // 2
+
+</code></pre><p>In most cases, using rest parameters is a good alternative to using an arguments object.</p>
+<pre><code>function foo(n) { 
+  var f = (...args) =&gt; args\[0\] + n; 
+  return f(10); 
+}
+
+foo(1); // 11
+
+</code></pre><h3 id="references">References:</h3>
+<ul>
+<li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/arguments">https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/arguments</a></li>
+<li><a href="https://javascriptweblog.wordpress.com/2011/01/18/javascripts-arguments-object-and-beyond/">https://javascriptweblog.wordpress.com/2011/01/18/javascripts-arguments-object-and-beyond/</a></li>
+<li><a href="https://www.nczonline.net/blog/2010/11/02/mysterious-arguments-object-assignments/">https://www.nczonline.net/blog/2010/11/02/mysterious-arguments-object-assignments/</a></li>
+<li><a href="http://webreflection.blogspot.in/2009/06/javascript-arguments-weridness.html">http://webreflection.blogspot.in/2009/06/javascript-arguments-weridness.html</a></li>
+<li><a href="https://en.wikipedia.org/wiki/Variadic_function">https://en.wikipedia.org/wiki/Variadic_function</a></li>
+<li><a href="https://softwareengineering.stackexchange.com/questions/178827/what-does-polyadic-mean-in-the-context-of-functional-programming-and-type-syst">https://softwareengineering.stackexchange.com/questions/178827/what-does-polyadic-mean-in-the-context-of-functional-programming-and-type-syst</a></li>
+<li><a href="http://amzn.in/ai34lJ7%20">Secrets of the JavaScript Ninja - 2nd Edition by John Resig</a></li>
+<li><a href="http://amzn.in/2A5obPx%20">Functional Programming in Javascript by Dan Mantyla</a></li>
+<li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Arrow_functions">https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Arrow_functions</a></li>
+</ul>
+<p>Cover Image from Unsplash by:</p>
+<p><a href="https://unsplash.com/@jasonrosewell?utm_medium=referral&amp;utm_campaign=photographer-credit&amp;utm_content=creditBadge" title="Download free do whatever you want high-resolution photos from Jason Rosewell">unsplash-logoJason Rosewell</a></p>
+<ul class="pa0">
+  
+   <li class="list">
+     <a href="/tags/article" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">article</a>
+   </li>
+  
+   <li class="list">
+     <a href="/tags/articles" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">Articles</a>
+   </li>
+  
+   <li class="list">
+     <a href="/tags/articles" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">articles</a>
+   </li>
+  
+   <li class="list">
+     <a href="/tags/javascript" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">javascript</a>
+   </li>
+  
+   <li class="list">
+     <a href="/tags/javascript" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">Javascript</a>
+   </li>
+  
+</ul>
+<div class="mt6 instapaper_ignoref">
+      
+      
+      </div>
+    </div>
+
+    <aside class="w-30-l mt6-l">
+
+
+
+
+  <div class="bg-light-gray pa3 nested-list-reset nested-copy-line-height nested-links">
+    <p class="f5 b mb3">Related</p>
+    <ul class="pa0 list">
+	   
+	     <li  class="mb2">
+          <a href="/posts/the-four-factors-of-a-good-program/">The Four Factors of a Good Program</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/posts/egoless-programming/">Egoless Programming</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/posts/the-twelve-roadblocks-to-healthy-conversations/">The Twelve Roadblocks to Healthy Conversations</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/posts/javascript-refactoring-series-inline-temp/">Javascript Refactoring Series: Inline Temp</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/posts/javascript-refactoring-series-inline-function/">Javascript Refactoring Series: Inline Function</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/posts/javascript-refactoring-series-extract-function/">Javascript Refactoring Series: Extract Function</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/posts/refactoring-a-simple-loop-into-a-pipeline-in-javascript/">Refactoring a simple loop into a pipeline in Javascript</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/posts/do-you-care-about-cohesion-in-javascript-functions/">Do you care about Cohesion in Javascript functions?</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/posts/how-to-create-an-accessible-slider-component-in-ember/">How to create an accessible slider component in Ember?</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/posts/refactor-your-javascript-like-a-pro-with-js2-refactor/">Refactor your Javascript like a Pro with js2-refactor</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/posts/an-elementary-guide-to-ember-build-performance/">An Elementary Guide to Ember Build Performance</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/posts/how-to-create-an-accessible-checkbox-component-in-ember/">How to create an accessible checkbox component in Ember?</a>
+        </li>
+	    
+    </ul>
+</div>
+
+</aside>
+
+  </article>
+
+    </main>
+    <footer class="bg-black bottom-0 w-100 pa3" role="contentinfo">
+  <div class="flex justify-between">
+  <a class="f4 fw4 hover-white no-underline white-70 dn dib-ns pv2 ph3" href="http://hangaroundtheweb.com/" >
+    &copy;  hangaroundtheweb 2022 
+  </a>
+    <div>
+
+
+
+
+<a href="https://twitter.com/rajasegar_c" target="_blank" class="link-transition twitter link dib z-999 pt3 pt0-l mr1" title="Twitter link" rel="noopener" aria-label="follow on Twitter——Opens in a new window">
+  <svg height="32px"  style="enable-background:new 0 0 67 67;" version="1.1" viewBox="0 0 67 67" width="32px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M37.167,22.283c-2.619,0.953-4.274,3.411-4.086,6.101  l0.063,1.038l-1.048-0.127c-3.813-0.487-7.145-2.139-9.974-4.915l-1.383-1.377l-0.356,1.017c-0.754,2.267-0.272,4.661,1.299,6.271  c0.838,0.89,0.649,1.017-0.796,0.487c-0.503-0.169-0.943-0.296-0.985-0.233c-0.146,0.149,0.356,2.076,0.754,2.839  c0.545,1.06,1.655,2.097,2.871,2.712l1.027,0.487l-1.215,0.021c-1.173,0-1.215,0.021-1.089,0.467  c0.419,1.377,2.074,2.839,3.918,3.475l1.299,0.444l-1.131,0.678c-1.676,0.976-3.646,1.526-5.616,1.568  C19.775,43.256,19,43.341,19,43.405c0,0.211,2.557,1.397,4.044,1.864c4.463,1.377,9.765,0.783,13.746-1.568  c2.829-1.673,5.657-5,6.978-8.221c0.713-1.716,1.425-4.851,1.425-6.354c0-0.975,0.063-1.102,1.236-2.267  c0.692-0.678,1.341-1.419,1.467-1.631c0.21-0.403,0.188-0.403-0.88-0.043c-1.781,0.636-2.033,0.551-1.152-0.402  c0.649-0.678,1.425-1.907,1.425-2.267c0-0.063-0.314,0.042-0.671,0.233c-0.377,0.212-1.215,0.53-1.844,0.72l-1.131,0.361l-1.027-0.7  c-0.566-0.381-1.361-0.805-1.781-0.932C39.766,21.902,38.131,21.944,37.167,22.283z M33,64C16.432,64,3,50.569,3,34S16.432,4,33,4  s30,13.431,30,30S49.568,64,33,64z" style="fill-rule:evenodd;clip-rule:evenodd;fill:;"/></svg>
+
+<span class="new-window"><svg  height="8px"  style="enable-background:new 0 0 1000 1000;" version="1.1" viewBox="0 0 1000 1000" width="8px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" >
+<path d="M598 128h298v298h-86v-152l-418 418-60-60 418-418h-152v-86zM810 810v-298h86v298c0 46-40 86-86 86h-596c-48 0-86-40-86-86v-596c0-46 38-86 86-86h298v86h-298v596h596z" style="fill-rule:evenodd;clip-rule:evenodd;fill:;"/>
+</svg>
+</span></a>
+
+
+
+
+
+<a href="https://github.com/rajasegar" target="_blank" class="link-transition github link dib z-999 pt3 pt0-l mr1" title="Github link" rel="noopener" aria-label="follow on Github——Opens in a new window">
+  <svg  height="32px"  style="enable-background:new 0 0 512 512;" version="1.1" viewBox="0 0 512 512" width="32px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" >
+  <path d="M256,32C132.3,32,32,134.8,32,261.7c0,101.5,64.2,187.5,153.2,217.9c11.2,2.1,15.3-5,15.3-11.1   c0-5.5-0.2-19.9-0.3-39.1c-62.3,13.9-75.5-30.8-75.5-30.8c-10.2-26.5-24.9-33.6-24.9-33.6c-20.3-14.3,1.5-14,1.5-14   c22.5,1.6,34.3,23.7,34.3,23.7c20,35.1,52.4,25,65.2,19.1c2-14.8,7.8-25,14.2-30.7c-49.7-5.8-102-25.5-102-113.5   c0-25.1,8.7-45.6,23-61.6c-2.3-5.8-10-29.2,2.2-60.8c0,0,18.8-6.2,61.6,23.5c17.9-5.1,37-7.6,56.1-7.7c19,0.1,38.2,2.6,56.1,7.7   c42.8-29.7,61.5-23.5,61.5-23.5c12.2,31.6,4.5,55,2.2,60.8c14.3,16.1,23,36.6,23,61.6c0,88.2-52.4,107.6-102.3,113.3   c8,7.1,15.2,21.1,15.2,42.5c0,30.7-0.3,55.5-0.3,63c0,6.1,4,13.3,15.4,11C415.9,449.1,480,363.1,480,261.7   C480,134.8,379.7,32,256,32z"/>
+</svg>
+
+<span class="new-window"><svg  height="8px"  style="enable-background:new 0 0 1000 1000;" version="1.1" viewBox="0 0 1000 1000" width="8px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" >
+<path d="M598 128h298v298h-86v-152l-418 418-60-60 418-418h-152v-86zM810 810v-298h86v298c0 46-40 86-86 86h-596c-48 0-86-40-86-86v-596c0-46 38-86 86-86h298v86h-298v596h596z" style="fill-rule:evenodd;clip-rule:evenodd;fill:;"/>
+</svg>
+</span></a>
+
+
+
+
+
+
+
+</div>
+  </div>
+</footer>
+
+  </body>
+</html>

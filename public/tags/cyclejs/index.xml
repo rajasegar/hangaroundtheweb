@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>cyclejs on hangaroundtheweb</title>
+    <link>http://hangaroundtheweb.com/tags/cyclejs/</link>
+    <description>Recent content in cyclejs on hangaroundtheweb</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 08 Feb 2017 05:54:11 +0000</lastBuildDate><atom:link href="http://hangaroundtheweb.com/tags/cyclejs/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Cycle.js tutorial: Create a simple registration form and track the application state</title>
+      <link>http://hangaroundtheweb.com/posts/cycle-js-tutorial-create-a-simple-registration-form-and-track-the-application-state/</link>
+      <pubDate>Wed, 08 Feb 2017 05:54:11 +0000</pubDate>
+      
+      <guid>http://hangaroundtheweb.com/posts/cycle-js-tutorial-create-a-simple-registration-form-and-track-the-application-state/</guid>
+      <description>Create a simple registration form using Cycle.js and track the application state This tutorial is the first in a series where we will be building a simple registration form using Cycle.js and we will be tracking the application state on what the user input is.
+Table of Contents  1. Create a simple registration form using Cycle.js and track the application state  1.1. About Cycle.js 1.2. Create the application boilerplate 1.</description>
+    </item>
+    
+  </channel>
+</rss>

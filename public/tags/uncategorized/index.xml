@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Uncategorized on hangaroundtheweb</title>
+    <link>http://hangaroundtheweb.com/tags/uncategorized/</link>
+    <description>Recent content in Uncategorized on hangaroundtheweb</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 24 Sep 2019 02:23:44 +0000</lastBuildDate><atom:link href="http://hangaroundtheweb.com/tags/uncategorized/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>The Craftsman - Mind Map</title>
+      <link>http://hangaroundtheweb.com/posts/the-craftsman-mind-map/</link>
+      <pubDate>Tue, 24 Sep 2019 02:23:44 +0000</pubDate>
+      
+      <guid>http://hangaroundtheweb.com/posts/the-craftsman-mind-map/</guid>
+      <description>In this post, we are going to share you a mind map of the book called The Craftsman by Richard Sennett.
+Richard Sennett is a prime observer of society … one of his great strengths, the thing that makes his narrative so gripping, is the sheer range of his thinking and his brilliance in relating the past to the present.
+The Craftsman is a complex but very rewarding read about craftsmanship, pride in one&amp;rsquo;s work and the differences between individual work and mechanical production, and the intellectual investment in the former versus the more mechanistic approach in the latter.</description>
+    </item>
+    
+    <item>
+      <title>24 ways for being productive with big code base</title>
+      <link>http://hangaroundtheweb.com/posts/24-ways-for-being-productive-with-big-code-base/</link>
+      <pubDate>Sun, 21 Apr 2019 22:30:14 +0000</pubDate>
+      
+      <guid>http://hangaroundtheweb.com/posts/24-ways-for-being-productive-with-big-code-base/</guid>
+      <description>In this article we will take a look at some of the guiding principles which are beneficial while working with large code base.
+The whole idea of this post is to collect and come up with a checklist of significant approaches and ways to deal with large and legacy code bases.
+The readers are welcome to share more tools, methods and approaches in the comments section below.
+1. Onboarding Documentation Ask if there is onboarding documentation, or someone who can give you a high-level overview of the codebase.</description>
+    </item>
+    
+    <item>
+      <title>Software Craftsmanship - What do you need to know?</title>
+      <link>http://hangaroundtheweb.com/posts/software-craftsmanship-what-do-you-need-to-know/</link>
+      <pubDate>Mon, 25 Feb 2019 18:56:54 +0000</pubDate>
+      
+      <guid>http://hangaroundtheweb.com/posts/software-craftsmanship-what-do-you-need-to-know/</guid>
+      <description>Software craftsmanship is an approach to software development that emphasizes the coding skills of the software developers themselves. It is a response by software developers to the perceived ills of the mainstream software industry, including the prioritization of financial concerns over developer accountability.
+In this article we will take a look at different perspectives about craftsmanship in general and some specific notions of the same in software and programming from various authors and programmers.</description>
+    </item>
+    
+    <item>
+      <title>Ember Octane - everything one can expect in the next Ember edition</title>
+      <link>http://hangaroundtheweb.com/posts/ember-octane-everything-one-can-expect-in-the-next-ember-edition/</link>
+      <pubDate>Sun, 26 Aug 2018 22:17:45 +0000</pubDate>
+      
+      <guid>http://hangaroundtheweb.com/posts/ember-octane-everything-one-can-expect-in-the-next-ember-edition/</guid>
+      <description>Everything one can expect in Ember Octane A few days ago, Tom Dale opened the Ember 2018 Roadmap RFC that set the goals for Ember in 2018. The RFC consisted of three major goals like:
+ Improve communication and streamline decision-making, and empower new leaders. Finish the major initiatives that have already been started. Ship a new edition, Ember Octane, focused on performance and productivity.  In this article we will focus on Ember Octane which is primarily targeted to improve performance of Ember applications for low-end devices and the like.</description>
+    </item>
+    
+    <item>
+      <title>Six Corporate Habits and Rituals that seem to be far-fetched</title>
+      <link>http://hangaroundtheweb.com/posts/six-corporate-habits-and-rituals-that-seem-to-be-far-fetched/</link>
+      <pubDate>Mon, 06 Aug 2018 19:20:26 +0000</pubDate>
+      
+      <guid>http://hangaroundtheweb.com/posts/six-corporate-habits-and-rituals-that-seem-to-be-far-fetched/</guid>
+      <description>Six Corporate Habits and Rituals that seem to be far-fetched The emotional brain neither has the capacity for, nor believes in, experimentation. Whatever it does is to be done the same way every time. Simply put, it firmly believes in the motto:
+ Experimentum periculosm - Experimentation is perilous.
+ This conservatism is both an asset and a liability. Both individual habits and institutionalized habits or rituals must be checked from time to time to see if they are working for us or against us.</description>
+    </item>
+    
+  </channel>
+</rss>

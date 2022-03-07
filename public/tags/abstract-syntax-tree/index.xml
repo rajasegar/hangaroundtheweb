@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>abstract syntax tree on hangaroundtheweb</title>
+    <link>http://hangaroundtheweb.com/tags/abstract-syntax-tree/</link>
+    <description>Recent content in abstract syntax tree on hangaroundtheweb</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 10 Dec 2019 02:27:46 +0000</lastBuildDate><atom:link href="http://hangaroundtheweb.com/tags/abstract-syntax-tree/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>AST Finder - Finding AST nodes from code</title>
+      <link>http://hangaroundtheweb.com/posts/ast-finder-finding-ast-nodes-from-code/</link>
+      <pubDate>Tue, 10 Dec 2019 02:27:46 +0000</pubDate>
+      
+      <guid>http://hangaroundtheweb.com/posts/ast-finder-finding-ast-nodes-from-code/</guid>
+      <description>In this article, we are going to take a look at a tool called &amp;lsquo;AST Finder&amp;rsquo; which will significantly improve the developer experience for writing codemods.
+This is a continuation post for AST Builder which is a tool to generate AST nodes automatically from source code.
+If you want to know more about codemods, their building blocks and how they work, please check out this detailed post about codemods.
+What? AST Finder is actually a playground for finding AST nodes using source code.</description>
+    </item>
+    
+    <item>
+      <title>AST Builder - Building AST nodes from code</title>
+      <link>http://hangaroundtheweb.com/posts/ast-builder-building-ast-nodes-from-code/</link>
+      <pubDate>Sun, 08 Dec 2019 23:01:09 +0000</pubDate>
+      
+      <guid>http://hangaroundtheweb.com/posts/ast-builder-building-ast-nodes-from-code/</guid>
+      <description>In this article, we are going to take a look at a tool called &amp;lsquo;AST Builder&amp;rsquo; which will significantly improve the developer experience for writing codemods.
+Codemod is a tool/library to assist you with large-scale codebase refactors that can be partially automated but still require human oversight and occasional intervention. Codemod was developed at Facebook and released as open source.
+If you want to know more about codemods, their building blocks and how they work, please check out this detailed post about codemods.</description>
+    </item>
+    
+  </channel>
+</rss>

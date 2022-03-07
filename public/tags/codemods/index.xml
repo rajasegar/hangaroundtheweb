@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>codemods on hangaroundtheweb</title>
+    <link>http://hangaroundtheweb.com/tags/codemods/</link>
+    <description>Recent content in codemods on hangaroundtheweb</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 18 Dec 2019 05:08:13 +0000</lastBuildDate><atom:link href="http://hangaroundtheweb.com/tags/codemods/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>JARVIS - Write me a Codemod</title>
+      <link>http://hangaroundtheweb.com/posts/jarvis-write-me-a-codemod/</link>
+      <pubDate>Wed, 18 Dec 2019 05:08:13 +0000</pubDate>
+      
+      <guid>http://hangaroundtheweb.com/posts/jarvis-write-me-a-codemod/</guid>
+      <description>In this article, we are going to take a look at a tool called JARVIS which will profoundly transform the way how you write codemods.
+This is a continuation post for AST Finder which is a tool to generate an api to find AST nodes automatically from source code.
+If you want to know more about codemods, their building blocks and how they work, please check out this detailed post about codemods.</description>
+    </item>
+    
+    <item>
+      <title>AST Finder - Finding AST nodes from code</title>
+      <link>http://hangaroundtheweb.com/posts/ast-finder-finding-ast-nodes-from-code/</link>
+      <pubDate>Tue, 10 Dec 2019 02:27:46 +0000</pubDate>
+      
+      <guid>http://hangaroundtheweb.com/posts/ast-finder-finding-ast-nodes-from-code/</guid>
+      <description>In this article, we are going to take a look at a tool called &amp;lsquo;AST Finder&amp;rsquo; which will significantly improve the developer experience for writing codemods.
+This is a continuation post for AST Builder which is a tool to generate AST nodes automatically from source code.
+If you want to know more about codemods, their building blocks and how they work, please check out this detailed post about codemods.
+What? AST Finder is actually a playground for finding AST nodes using source code.</description>
+    </item>
+    
+    <item>
+      <title>AST Builder - Building AST nodes from code</title>
+      <link>http://hangaroundtheweb.com/posts/ast-builder-building-ast-nodes-from-code/</link>
+      <pubDate>Sun, 08 Dec 2019 23:01:09 +0000</pubDate>
+      
+      <guid>http://hangaroundtheweb.com/posts/ast-builder-building-ast-nodes-from-code/</guid>
+      <description>In this article, we are going to take a look at a tool called &amp;lsquo;AST Builder&amp;rsquo; which will significantly improve the developer experience for writing codemods.
+Codemod is a tool/library to assist you with large-scale codebase refactors that can be partially automated but still require human oversight and occasional intervention. Codemod was developed at Facebook and released as open source.
+If you want to know more about codemods, their building blocks and how they work, please check out this detailed post about codemods.</description>
+    </item>
+    
+    <item>
+      <title>Creating runtime assisted Codemods using Telemetry helpers</title>
+      <link>http://hangaroundtheweb.com/posts/creating-runtime-assisted-codemods-using-telemetry-helpers/</link>
+      <pubDate>Thu, 31 Oct 2019 22:30:28 +0000</pubDate>
+      
+      <guid>http://hangaroundtheweb.com/posts/creating-runtime-assisted-codemods-using-telemetry-helpers/</guid>
+      <description>In this article, we are going to take a glimpse at the ember-codemods-telemetry-helpers package and how it helps to create more advanced codemods for Ember.js.
+If you want a more in-depth introduction to codemods, you can checkout this post detailing the why&amp;rsquo;s and how&amp;rsquo;s of codemods.
+Telemetry for layman First we will take a look at what Telemetry is all about. According to Wikipedia,
+ Telemetry is the collection of measurements or other data at remote or inaccessible points and their automatic transmission to receiving equipment for monitoring.</description>
+    </item>
+    
+    <item>
+      <title>Codemods - The New Age Saviors for JS Developers</title>
+      <link>http://hangaroundtheweb.com/posts/codemods-the-new-age-saviors-for-js-developers/</link>
+      <pubDate>Fri, 22 Mar 2019 23:13:17 +0000</pubDate>
+      
+      <guid>http://hangaroundtheweb.com/posts/codemods-the-new-age-saviors-for-js-developers/</guid>
+      <description>In this article, we take a look at Codemods, a tool for making sweeping changes across your code with ease and effectiveness. Codemods are invented by a team of developers from Facebook to assist large-scale migrations in code-base, and we are going to take a deep look into a particular codemod tool called jscodeshift.
+Refactoring Before we dive into the codemod tools like jscodeshift, we need to understand why we need to do large-scale refactorings and what is really meant by refactoring.</description>
+    </item>
+    
+  </channel>
+</rss>

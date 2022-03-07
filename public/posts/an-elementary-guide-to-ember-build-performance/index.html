@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    
+    <title>An Elementary Guide to Ember Build Performance | hangaroundtheweb</title>
+    <meta name="viewport" content="width=device-width,minimum-scale=1">
+    <meta name="description" content="An Elementary Guide to Ember Build Performance When we talk about build performance, it is important to understand that there are several build phases:
+ Cold build Warm build Rebuild  Cold build Cold build is the build which happens when you boot your app up for the first time. This build is the slowest because the cache is not yet populated and the application is booting for the first time.">
+    <meta name="generator" content="Hugo 0.83.1" />
+    
+    
+      <META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
+    
+
+    
+<link rel="stylesheet" href="/ananke/css/main.min.css" >
+
+
+
+
+    
+      
+
+    
+
+    
+    
+    <meta property="og:title" content="An Elementary Guide to Ember Build Performance" />
+<meta property="og:description" content="An Elementary Guide to Ember Build Performance When we talk about build performance, it is important to understand that there are several build phases:
+ Cold build Warm build Rebuild  Cold build Cold build is the build which happens when you boot your app up for the first time. This build is the slowest because the cache is not yet populated and the application is booting for the first time." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://hangaroundtheweb.com/posts/an-elementary-guide-to-ember-build-performance/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2018-02-23T03:32:25&#43;00:00" />
+<meta property="article:modified_time" content="2018-02-23T03:32:25&#43;00:00" />
+
+<meta itemprop="name" content="An Elementary Guide to Ember Build Performance">
+<meta itemprop="description" content="An Elementary Guide to Ember Build Performance When we talk about build performance, it is important to understand that there are several build phases:
+ Cold build Warm build Rebuild  Cold build Cold build is the build which happens when you boot your app up for the first time. This build is the slowest because the cache is not yet populated and the application is booting for the first time."><meta itemprop="datePublished" content="2018-02-23T03:32:25&#43;00:00" />
+<meta itemprop="dateModified" content="2018-02-23T03:32:25&#43;00:00" />
+<meta itemprop="wordCount" content="1383">
+<meta itemprop="keywords" content="Articles,ember,emberjs,EmberJS,performance,tips," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="An Elementary Guide to Ember Build Performance"/>
+<meta name="twitter:description" content="An Elementary Guide to Ember Build Performance When we talk about build performance, it is important to understand that there are several build phases:
+ Cold build Warm build Rebuild  Cold build Cold build is the build which happens when you boot your app up for the first time. This build is the slowest because the cache is not yet populated and the application is booting for the first time."/>
+
+	
+  </head>
+
+  <body class="ma0 avenir bg-near-white">
+
+    
+   
+  
+
+  <header>
+    <div class="bg-black">
+      <nav class="pv3 ph3 ph4-ns" role="navigation">
+  <div class="flex-l justify-between items-center center">
+    <a href="/" class="f3 fw2 hover-white no-underline white-90 dib">
+      
+        hangaroundtheweb
+      
+    </a>
+    <div class="flex-l items-center">
+      
+
+      
+      
+
+
+
+
+<a href="https://twitter.com/rajasegar_c" target="_blank" class="link-transition twitter link dib z-999 pt3 pt0-l mr1" title="Twitter link" rel="noopener" aria-label="follow on Twitter——Opens in a new window">
+  <svg height="32px"  style="enable-background:new 0 0 67 67;" version="1.1" viewBox="0 0 67 67" width="32px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M37.167,22.283c-2.619,0.953-4.274,3.411-4.086,6.101  l0.063,1.038l-1.048-0.127c-3.813-0.487-7.145-2.139-9.974-4.915l-1.383-1.377l-0.356,1.017c-0.754,2.267-0.272,4.661,1.299,6.271  c0.838,0.89,0.649,1.017-0.796,0.487c-0.503-0.169-0.943-0.296-0.985-0.233c-0.146,0.149,0.356,2.076,0.754,2.839  c0.545,1.06,1.655,2.097,2.871,2.712l1.027,0.487l-1.215,0.021c-1.173,0-1.215,0.021-1.089,0.467  c0.419,1.377,2.074,2.839,3.918,3.475l1.299,0.444l-1.131,0.678c-1.676,0.976-3.646,1.526-5.616,1.568  C19.775,43.256,19,43.341,19,43.405c0,0.211,2.557,1.397,4.044,1.864c4.463,1.377,9.765,0.783,13.746-1.568  c2.829-1.673,5.657-5,6.978-8.221c0.713-1.716,1.425-4.851,1.425-6.354c0-0.975,0.063-1.102,1.236-2.267  c0.692-0.678,1.341-1.419,1.467-1.631c0.21-0.403,0.188-0.403-0.88-0.043c-1.781,0.636-2.033,0.551-1.152-0.402  c0.649-0.678,1.425-1.907,1.425-2.267c0-0.063-0.314,0.042-0.671,0.233c-0.377,0.212-1.215,0.53-1.844,0.72l-1.131,0.361l-1.027-0.7  c-0.566-0.381-1.361-0.805-1.781-0.932C39.766,21.902,38.131,21.944,37.167,22.283z M33,64C16.432,64,3,50.569,3,34S16.432,4,33,4  s30,13.431,30,30S49.568,64,33,64z" style="fill-rule:evenodd;clip-rule:evenodd;fill:;"/></svg>
+
+<span class="new-window"><svg  height="8px"  style="enable-background:new 0 0 1000 1000;" version="1.1" viewBox="0 0 1000 1000" width="8px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" >
+<path d="M598 128h298v298h-86v-152l-418 418-60-60 418-418h-152v-86zM810 810v-298h86v298c0 46-40 86-86 86h-596c-48 0-86-40-86-86v-596c0-46 38-86 86-86h298v86h-298v596h596z" style="fill-rule:evenodd;clip-rule:evenodd;fill:;"/>
+</svg>
+</span></a>
+
+
+
+
+
+<a href="https://github.com/rajasegar" target="_blank" class="link-transition github link dib z-999 pt3 pt0-l mr1" title="Github link" rel="noopener" aria-label="follow on Github——Opens in a new window">
+  <svg  height="32px"  style="enable-background:new 0 0 512 512;" version="1.1" viewBox="0 0 512 512" width="32px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" >
+  <path d="M256,32C132.3,32,32,134.8,32,261.7c0,101.5,64.2,187.5,153.2,217.9c11.2,2.1,15.3-5,15.3-11.1   c0-5.5-0.2-19.9-0.3-39.1c-62.3,13.9-75.5-30.8-75.5-30.8c-10.2-26.5-24.9-33.6-24.9-33.6c-20.3-14.3,1.5-14,1.5-14   c22.5,1.6,34.3,23.7,34.3,23.7c20,35.1,52.4,25,65.2,19.1c2-14.8,7.8-25,14.2-30.7c-49.7-5.8-102-25.5-102-113.5   c0-25.1,8.7-45.6,23-61.6c-2.3-5.8-10-29.2,2.2-60.8c0,0,18.8-6.2,61.6,23.5c17.9-5.1,37-7.6,56.1-7.7c19,0.1,38.2,2.6,56.1,7.7   c42.8-29.7,61.5-23.5,61.5-23.5c12.2,31.6,4.5,55,2.2,60.8c14.3,16.1,23,36.6,23,61.6c0,88.2-52.4,107.6-102.3,113.3   c8,7.1,15.2,21.1,15.2,42.5c0,30.7-0.3,55.5-0.3,63c0,6.1,4,13.3,15.4,11C415.9,449.1,480,363.1,480,261.7   C480,134.8,379.7,32,256,32z"/>
+</svg>
+
+<span class="new-window"><svg  height="8px"  style="enable-background:new 0 0 1000 1000;" version="1.1" viewBox="0 0 1000 1000" width="8px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" >
+<path d="M598 128h298v298h-86v-152l-418 418-60-60 418-418h-152v-86zM810 810v-298h86v298c0 46-40 86-86 86h-596c-48 0-86-40-86-86v-596c0-46 38-86 86-86h298v86h-298v596h596z" style="fill-rule:evenodd;clip-rule:evenodd;fill:;"/>
+</svg>
+</span></a>
+
+
+
+
+
+
+
+
+    </div>
+  </div>
+</nav>
+
+    </div>
+  </header>
+
+
+
+    <main class="pb7" role="main">
+      
+  
+  <article class="flex-l flex-wrap justify-between mw8 center ph3">
+    <header class="mt4 w-100">
+      <aside class="instapaper_ignoref b helvetica tracked">
+          
+        POSTS
+      </aside>
+      
+
+
+
+
+  <div id="sharing" class="mt3">
+
+    
+    <a href="https://www.facebook.com/sharer.php?u=http://hangaroundtheweb.com/posts/an-elementary-guide-to-ember-build-performance/" class="facebook no-underline" aria-label="share on Facebook">
+      <svg height="32px"  style="enable-background:new 0 0 67 67;" version="1.1" viewBox="0 0 67 67" width="32px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M28.765,50.32h6.744V33.998h4.499l0.596-5.624h-5.095  l0.007-2.816c0-1.466,0.14-2.253,2.244-2.253h2.812V17.68h-4.5c-5.405,0-7.307,2.729-7.307,7.317v3.377h-3.369v5.625h3.369V50.32z   M33,64C16.432,64,3,50.569,3,34S16.432,4,33,4s30,13.431,30,30S49.568,64,33,64z" style="fill-rule:evenodd;clip-rule:evenodd;"/></svg>
+
+    </a>
+
+    
+    
+    <a href="https://twitter.com/share?url=http://hangaroundtheweb.com/posts/an-elementary-guide-to-ember-build-performance/&amp;text=An%20Elementary%20Guide%20to%20Ember%20Build%20Performance" class="twitter no-underline" aria-label="share on Twitter">
+      <svg height="32px"  style="enable-background:new 0 0 67 67;" version="1.1" viewBox="0 0 67 67" width="32px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M37.167,22.283c-2.619,0.953-4.274,3.411-4.086,6.101  l0.063,1.038l-1.048-0.127c-3.813-0.487-7.145-2.139-9.974-4.915l-1.383-1.377l-0.356,1.017c-0.754,2.267-0.272,4.661,1.299,6.271  c0.838,0.89,0.649,1.017-0.796,0.487c-0.503-0.169-0.943-0.296-0.985-0.233c-0.146,0.149,0.356,2.076,0.754,2.839  c0.545,1.06,1.655,2.097,2.871,2.712l1.027,0.487l-1.215,0.021c-1.173,0-1.215,0.021-1.089,0.467  c0.419,1.377,2.074,2.839,3.918,3.475l1.299,0.444l-1.131,0.678c-1.676,0.976-3.646,1.526-5.616,1.568  C19.775,43.256,19,43.341,19,43.405c0,0.211,2.557,1.397,4.044,1.864c4.463,1.377,9.765,0.783,13.746-1.568  c2.829-1.673,5.657-5,6.978-8.221c0.713-1.716,1.425-4.851,1.425-6.354c0-0.975,0.063-1.102,1.236-2.267  c0.692-0.678,1.341-1.419,1.467-1.631c0.21-0.403,0.188-0.403-0.88-0.043c-1.781,0.636-2.033,0.551-1.152-0.402  c0.649-0.678,1.425-1.907,1.425-2.267c0-0.063-0.314,0.042-0.671,0.233c-0.377,0.212-1.215,0.53-1.844,0.72l-1.131,0.361l-1.027-0.7  c-0.566-0.381-1.361-0.805-1.781-0.932C39.766,21.902,38.131,21.944,37.167,22.283z M33,64C16.432,64,3,50.569,3,34S16.432,4,33,4  s30,13.431,30,30S49.568,64,33,64z" style="fill-rule:evenodd;clip-rule:evenodd;fill:;"/></svg>
+
+    </a>
+
+    
+    <a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=http://hangaroundtheweb.com/posts/an-elementary-guide-to-ember-build-performance/&amp;title=An%20Elementary%20Guide%20to%20Ember%20Build%20Performance" class="linkedin no-underline" aria-label="share on LinkedIn">
+      <svg  height="32px"  style="enable-background:new 0 0 65 65;" version="1.1" viewBox="0 0 65 65" width="32px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <path d="M50.837,48.137V36.425c0-6.275-3.35-9.195-7.816-9.195  c-3.604,0-5.219,1.983-6.119,3.374V27.71h-6.79c0.09,1.917,0,20.427,0,20.427h6.79V36.729c0-0.609,0.044-1.219,0.224-1.655  c0.49-1.22,1.607-2.483,3.482-2.483c2.458,0,3.44,1.873,3.44,4.618v10.929H50.837z M22.959,24.922c2.367,0,3.842-1.57,3.842-3.531  c-0.044-2.003-1.475-3.528-3.797-3.528s-3.841,1.524-3.841,3.528c0,1.961,1.474,3.531,3.753,3.531H22.959z M34,64  C17.432,64,4,50.568,4,34C4,17.431,17.432,4,34,4s30,13.431,30,30C64,50.568,50.568,64,34,64z M26.354,48.137V27.71h-6.789v20.427  H26.354z" style="fill-rule:evenodd;clip-rule:evenodd;fill:;"/>
+</svg>
+
+    </a>
+  </div>
+
+
+      <h1 class="f1 athelas mt3 mb1">An Elementary Guide to Ember Build Performance</h1>
+      
+      
+      <time class="f6 mv4 dib tracked" datetime="2018-02-23T03:32:25Z">February 23, 2018</time>
+
+      
+      
+    </header>
+    <div class="nested-copy-line-height lh-copy serif f4 nested-links nested-img mid-gray pr4-l w-two-thirds-l"><h2 id="an-elementary-guide-to-ember-build-performance">An Elementary Guide to Ember Build Performance</h2>
+<p>When we talk about build performance, it is important to understand that there are several build phases:</p>
+<ul>
+<li>Cold build</li>
+<li>Warm build</li>
+<li>Rebuild</li>
+</ul>
+<h3 id="cold-build">Cold build</h3>
+<p>Cold build is the build which happens when you boot your app up for the first time. This build is the slowest because the cache is not yet populated and the application is booting for the first time.   Build time varies and depends on the number of dependencies that application has but ballpark should be around 5 seconds for small to middle size applications and around 15 seconds for large size applications.</p>
+<h3 id="warm-build">Warm build</h3>
+<p>Warm build is the build which occurs while you boot your app when cache was populated. This build is faster than cold one because the cache was populated already and it takes less time re-compute dependencies.   Build time varies but ballpark should be around 2 seconds for small to middle size applications and around 10 seconds for large size applications.</p>
+<h3 id="rebuild">Rebuild</h3>
+<p>Rebuild is the subsequent rebuilds that happen on file change. Rebuild aims to be the fastest because it happens the most often.   App/ JavaScript Rebuild time varies but ballpark should be around 200-300ms for small to middle size applications and up to 1 second for large size applications (200kloc js + 3000 modules). The Rebuild is majorly classified into three broad categories based on the asset types like:</p>
+<ul>
+<li>Rebuild of JS in app/</li>
+<li>Rebuild of CSS/Sass/Less in app/</li>
+<li>Rebuild of vendor/, bower_components/</li>
+</ul>
+<h4 id="rebuild-of-js-in-app">Rebuild of JS in app/</h4>
+<p>This is likely the most common type of rebuilds, since it concentrates mostly on the javascript assets under app/ folder and is one of the major concerns for the Core Team to improve the performance.</p>
+<h4 id="rebuild-of-css">Rebuild of CSS</h4>
+<p>This kind of rebuilds largely depends on three factors:</p>
+<ul>
+<li>the size of bower_component (the Ember Core Team have plans to largely mitigate this one)</li>
+<li>which preprocessor is being used (libsass vs ruby-sass vs less vs …)</li>
+<li>the amount of CSS</li>
+</ul>
+<h4 id="rebuild-of-vendor">Rebuild of vendor/</h4>
+<p>This kind of builds are somewhat costly still, due to how slow available sourceMap Libraries are. The Core Team have a work in progress item with a more V8/JIT friendly sourceMap lib, already showing some very nice improvements.</p>
+<h3 id="build-performance-comparison">Build Performance Comparison</h3>
+<p>The various builds are compared based on their characteristics and performance:</p>
+<p><img src="/wp-content/uploads/2018/02/ember-performance.png" alt=""></p>
+<blockquote>
+<p>These times are based on a posix box with and SSD, win32 unfortunately tends to be slower. As the Core Team continues to improve performance, both posix and win32 will improve, hopefully future work will bring these platforms build times closer together.</p>
+</blockquote>
+<p>If you see that application timings escape, there might be a problem. Addons known to cause a slow down (but have not yet been addressed):</p>
+<ul>
+<li>any old non-patch based broccoli plugin</li>
+<li>ember-cli-component-css</li>
+<li>ember-browserify</li>
+<li>… ?</li>
+</ul>
+<p>Make sure to mention which type of the build seems to be the problem so we can help identify and fix issues faster.</p>
+<h3 id="faqcommon-issues--solutions">FAQ/Common Issues &amp; Solutions:</h3>
+<h4 id="my-rebuilds-are-slow-and-i-have-anti-virus-installed">My rebuilds are slow. (And I have anti-virus installed)</h4>
+<blockquote>
+<p>The build-system assumes a relative fast/performant file system (although, Ember continue to reduce IO related work). It is quite common for a Anti-virus to slow down IO.</p>
+</blockquote>
+<p>Common issues:</p>
+<ul>
+<li>anti-virus scanning of <em>tmp</em>, oftentimes this can be avoided altogether.</li>
+<li>anti-virus on-file-access re-scanning files, oftentimes this can be disabled for the app directory. or ember can be whitelisted.</li>
+</ul>
+<h4 id="my-rebuilds-are-slow-and-i-am-using-an-encrypted-thumb-drive-to-host-my-project">My rebuilds are slow. (And I am using an encrypted thumb-drive to host my project)</h4>
+<blockquote>
+<p>These sorts of drives are notoriously slow. Although Ember continue to reduce our IO overhead, you will be running at a disadvantage. Oftentimes, a much better alternative is hardware supported full-disk encryption, like on most OSX corporate laptops use. This setup is both reasonably secure, and has negligible impact on performance.</p>
+</blockquote>
+<h4 id="my-javascript-rebuilds-are-still-slow">My JavaScript rebuilds are still slow.</h4>
+<p>Please run:</p>
+<pre><code>npm ls broccoli-funnel broccoli-merge-trees broccoli-filter broccoli-persistent-filter broccoli-concat broccoli-caching-writer
+
+</code></pre><p>and ideally the following should be true (otherwise some upgrades may be required)</p>
+<ul>
+<li>broccoli-funnel should be at ^1.0.1</li>
+<li>broccoli-merge-trees should be at ^1.1.0</li>
+<li>broccoli-persistent-filter should be at ^1.1.6</li>
+<li>broccoli-filter often needs to be replaced with broccoli-persistent-filter (we hope to re-merge the two eventually)</li>
+<li>broccoli-sourcemap-concat should be at ^2.0.2 but will soon be replace by broccoli-concat (we have just re-merged the two)</li>
+<li>broccoli-caching-writer should be at ^2.2.1</li>
+<li>broccoli-concat should be at ^2.0.3</li>
+<li>broccoli-stew should be at ^1.2.0</li>
+<li>likely more…</li>
+</ul>
+<p>Up next we should check for old and deprecate plugins</p>
+<pre><code>npm ls broccoli-static-compiler
+
+</code></pre><p>this should no longer be used, rather broccoli-funnel at v1.0.1 should be used Up next we should look for not-yet-fixed plugins</p>
+<pre><code>npm ls ember-component-css
+
+</code></pre><h4 id="npm-v3-made-my-build-slow">npm v3 made my build slow</h4>
+<p>Well what happened is npm v3 changed the module topology, this coupled with a misbehaving plugin may result in extra files (maybe all of node_modules) being pulled into the build. This is going to be slow.., the solution is to find the offending plugin, and upgrade (or report the issue if it is not yet fixed). One such plugin is ember-cli-ic-ajax, which has been fixed. So please be sure to upgrade. Finding such plugins, we can use a series of DEBUG flags, to gain more insight</p>
+<pre><code>DEBUG=broccoli-funnel:Funnel\*Addon\* ember s
+
+</code></pre><blockquote>
+<p>Despite of all the above scenarios and possible solutions, if the issue still persists, please report an issue in Github with ember-cli project.</p>
+</blockquote>
+<p>Be sure to include:</p>
+<ul>
+<li>npm version</li>
+<li>npm ls (as a gist)</li>
+<li>ideally a reproduction</li>
+</ul>
+<h3 id="how-to-exploredebug-and-hopefully-address-performance-issues">How to explore/debug and hopefully address performance issues</h3>
+<h4 id="debug-logging">DEBUG logging</h4>
+<p>We can use <a href="https://github.com/heimdalljs/heimdalljs-logger">heimdalljs-logger</a> for logging, which supports the same usage as the de-facto standard <a href="https://github.com/visionmedia/debug">debug</a>. Quite often this can be used to quickly discover obviously wrong things. <strong>Usage</strong>:</p>
+<pre><code>DEBUG= ember s
+
+</code></pre><p>For all logging (this will be very verbose):</p>
+<pre><code>DEBUG=\* ember s 
+
+</code></pre><p>For all ember-cli logging:</p>
+<pre><code>DEBUG=ember-cli\* ember s 
+
+</code></pre><p>For all broccoli logging:</p>
+<pre><code>DEBUG=broccoli\* ember s 
+
+</code></pre><p>For both broccoli and ember-cli logging:</p>
+<pre><code>DEBUG=broccoli\*,ember-cli\* ember s 
+
+</code></pre><p>The above patterns will be very verbose. But to make them even more verbose you can set the log level via DEBUGLEVEL</p>
+<pre><code>DEBUG=\* DEBUG\_LEVEL=debug ember s
+
+</code></pre><p>To make them a bit less verbose, a curated set of performance related logging flags are:</p>
+<pre><code>DEBUG=broccoli-caching-writer:\* ember s
+DEBUG=broccoli-funnel:\* ember s
+DEBUG=broccoli-funnel:Funnel\*Addon\* ember s
+DEBUG=broccoli-merge-trees:ember s
+DEBUG=broccoli-merge-trees:TreeMerger\* ember s
+DEBUG=broccoli-merge-trees:Addon\* ember s
+DEBUG=broccoli-merge-trees:styles ember s
+DEBUG=broccoli-merge-trees:compileTemplates\* ember s
+DEBUG=broccoli-merge-trees:compileTemplates\* ember s
+
+</code></pre><p>Because many plugins are used repeatedly it may be difficult to see the context for log entries. By default, 3 nodes of context are shown.</p>
+<pre><code>DEBUG\_LEVEL=debug DEBUG=broccoli-merge-trees: ember build
+broccoli-merge-trees: \[TreeMerger (testFiles)#777 -&gt; ConcatWithMaps#782 -&gt; BroccoliMergeTrees#783\] deriving patches
+
+</code></pre><p>To show more (or fewer) lines of context, specify the environment variable DEBUG_DEPTH```
+DEBUG_DEPTH=5 DEBUG_LEVEL=debug DEBUG=broccoli-merge-trees: ember build</p>
+<h1 id="-broccoli-merge-trees-treemerger-alltrees1---broccolimergetrees668---treemerger-testfiles777---concatwithmaps782---broccolimergetrees783">=&gt; broccoli-merge-trees: [TreeMerger (allTrees)#1 -&gt; BroccoliMergeTrees#668 -&gt; TreeMerger (testFiles)#777 -&gt; ConcatWithMaps#782 -&gt; BroccoliMergeTrees#783]</h1>
+<pre><code class="language-\[…" data-lang="\[…">
+#### broccoli-viz
+
+*   Visualization
+    
+    To visualize build tree, we can use [graphviz](http://www.graphviz.org/). Graphviz is an open source graph visualization program. Graph visualization is a way of representing structural information as diagrams of abstract graphs and networks. It has important applications in networking, bioinformatics, software engineering, database and web design, machine learning, and in visual interfaces for other technical domains. To install it run
+    
+    ```
+    brew install graphviz 
+    
+    ```
+    
+    or download it directly from [here](http://www.graphviz.org/Download.php). You will also need to install [broccoli-viz](https://github.com/ember-cli/broccoli-viz) version 3.0.3 or higher. broccoli-viz is a library to read/parse and produce various visualizations of broccoli.
+    
+    ```
+    npm install -g broccoli-viz@^3.0.3.
+    
+    ```
+    
+    To generate visualization:
+    
+    ```
+    BROCCOLI\_VIZ=1 ember build
+    
+    broccoli-viz instrumentation.build.0.json &gt; instrumentation.build.0.dot
+    
+    dot -Tpng instrumentation.build.0.dot &gt; instrumentation.build.0.png
+    
+    ```
+    
+    To get a better understanding, you can watch this talk: **Dissecting an ember-cli build by Estelle Deblois**   An example visualization graph should look like this, with only a subset of the whole graph cropped for clear understanding.
+    
+    ![](/wp-content/uploads/2018/02/broccoli-viz.jpg)
+    
+    Each build will generate an additional graph, instrumentation.build..json
+    
+*   in-depth look
+    
+    in-depth tooling, aimed to provide much deeper insight into the given build
+    
+    *   **dot**: is the input to graphviz, allowing tree visualization
+    *   **json**: more detailed counts and timings related to the corresponding build
+    
+
+### References:
+
+*   [https://github.com/ember-cli/ember-cli/blob/master/PERF\_GUIDE.md](https://github.com/ember-cli/ember-cli/blob/master/PERF_GUIDE.md)
+*   [https://www.youtube.com/watch?v=hNwgp9alwKg](https://www.youtube.com/watch?v=hNwgp9alwKg)
+*   [http://www.oligriffiths.com/2017/01/26/Eat-your-greens-A-beginners-guide-to-Broccoli-js/](http://www.oligriffiths.com/2017/01/26/Eat-your-greens-A-beginners-guide-to-Broccoli-js/)
+*   [https://github.com/broccolijs/broccoli](https://github.com/broccolijs/broccoli)
+*   [https://github.com/broccolijs/broccoli-cli](https://github.com/broccolijs/broccoli-cli)
+*   [https://www.solitr.com/blog/2014/02/broccoli-first-release/](https://www.solitr.com/blog/2014/02/broccoli-first-release/)
+*   [http://blog.bguiz.com/2014/06/16/broccolijs-plugin-how-to-write/](http://blog.bguiz.com/2014/06/16/broccolijs-plugin-how-to-write/)
+*   [https://hashrocket.com/blog/posts/broccoli-the-build-tool-not-the-vegetable](https://hashrocket.com/blog/posts/broccoli-the-build-tool-not-the-vegetable)
+*   [http://moduscreate.com/better-builds-begin-with-broccoli/](http://moduscreate.com/better-builds-begin-with-broccoli/)
+*   [https://givan.se/broccolijs-from-scratch/](https://givan.se/broccolijs-from-scratch/)
+*   [http://ampersate.com/getting-started-with-broccoli-and-emberjs](http://ampersate.com/getting-started-with-broccoli-and-emberjs)
+*   [http://simonwade.me/intro-to-broccoli/](http://simonwade.me/intro-to-broccoli/)
+*   [https://dockyard.com/blog/2015/02/02/debugging-a-broccoli-tree](https://dockyard.com/blog/2015/02/02/debugging-a-broccoli-tree)
+*   [https://ember-cli.com/user-guide/#asset-compilation](https://ember-cli.com/user-guide/#asset-compilation)
+*   [https://github.com/ember-cli/ember-cli](https://github.com/ember-cli/ember-cli)
+*   [http://toranbillups.com/blog/archive/2016/09/28/hot-reloading-in-the-ember-ecosystem/](http://toranbillups.com/blog/archive/2016/09/28/hot-reloading-in-the-ember-ecosystem/)
+*   [https://dockyard.com/blog/2016/08/12/pieces-of-ember-part1](https://dockyard.com/blog/2016/08/12/pieces-of-ember-part1)
+
+### Videos:
+
+*   [https://www.youtube.com/watch?v=JTzvYJBxwyI](https://www.youtube.com/watch?v=JTzvYJBxwyI)
+*   [https://vimeo.com/channels/emberlondon/96431267](https://vimeo.com/channels/emberlondon/96431267)
+*   [https://www.youtube.com/watch?v=hNwgp9alwKg](https://www.youtube.com/watch?v=hNwgp9alwKg)
+*   [https://www.youtube.com/watch?v=9JZ9gEVgoX4](https://www.youtube.com/watch?v=9JZ9gEVgoX4)
+*   [https://www.youtube.com/watch?v=OpTQ5QeFYys](https://www.youtube.com/watch?v=OpTQ5QeFYys)
+*   [https://www.youtube.com/watch?v=uJ1p6U1D800](https://www.youtube.com/watch?v=uJ1p6U1D800)
+
+### Writing your own Broccoli plugins:
+
+*   [https://github.com/broccolijs/broccoli-plugin](https://github.com/broccolijs/broccoli-plugin)
+*   [http://blog.bguiz.com/2014/06/16/broccolijs-plugin-how-to-write/](http://blog.bguiz.com/2014/06/16/broccolijs-plugin-how-to-write/)
+*   [https://github.com/stefanpenner/broccoli-plugin-kit](https://github.com/stefanpenner/broccoli-plugin-kit)
+
+**Cover Image from Unsplash by:**
+
+[ANDRIK LANGFIELD PETRIDES](https://unsplash.com/@the_alp_photography?utm_medium=referral&amp;utm_campaign=photographer-credit&amp;utm_content=creditBadge &quot;Download free do whatever you want high-resolution photos from ANDRIK LANGFIELD PETRIDES&quot;)
+</code></pre><ul class="pa0">
+  
+   <li class="list">
+     <a href="/tags/articles" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">Articles</a>
+   </li>
+  
+   <li class="list">
+     <a href="/tags/ember" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">ember</a>
+   </li>
+  
+   <li class="list">
+     <a href="/tags/emberjs" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">emberjs</a>
+   </li>
+  
+   <li class="list">
+     <a href="/tags/emberjs" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">EmberJS</a>
+   </li>
+  
+   <li class="list">
+     <a href="/tags/performance" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">performance</a>
+   </li>
+  
+   <li class="list">
+     <a href="/tags/tips" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">tips</a>
+   </li>
+  
+</ul>
+<div class="mt6 instapaper_ignoref">
+      
+      
+      </div>
+    </div>
+
+    <aside class="w-30-l mt6-l">
+
+
+
+
+  <div class="bg-light-gray pa3 nested-list-reset nested-copy-line-height nested-links">
+    <p class="f5 b mb3">Related</p>
+    <ul class="pa0 list">
+	   
+	     <li  class="mb2">
+          <a href="/posts/how-to-create-an-accessible-checkbox-component-in-ember/">How to create an accessible checkbox component in Ember?</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/posts/how-to-create-an-accessible-slider-component-in-ember/">How to create an accessible slider component in Ember?</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/posts/the-twelve-roadblocks-to-healthy-conversations/">The Twelve Roadblocks to Healthy Conversations</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/posts/javascript-refactoring-series-inline-temp/">Javascript Refactoring Series: Inline Temp</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/posts/javascript-refactoring-series-inline-function/">Javascript Refactoring Series: Inline Function</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/posts/javascript-refactoring-series-extract-function/">Javascript Refactoring Series: Extract Function</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/posts/refactoring-a-simple-loop-into-a-pipeline-in-javascript/">Refactoring a simple loop into a pipeline in Javascript</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/posts/do-you-care-about-cohesion-in-javascript-functions/">Do you care about Cohesion in Javascript functions?</a>
+        </li>
+	    
+    </ul>
+</div>
+
+</aside>
+
+  </article>
+
+    </main>
+    <footer class="bg-black bottom-0 w-100 pa3" role="contentinfo">
+  <div class="flex justify-between">
+  <a class="f4 fw4 hover-white no-underline white-70 dn dib-ns pv2 ph3" href="http://hangaroundtheweb.com/" >
+    &copy;  hangaroundtheweb 2022 
+  </a>
+    <div>
+
+
+
+
+<a href="https://twitter.com/rajasegar_c" target="_blank" class="link-transition twitter link dib z-999 pt3 pt0-l mr1" title="Twitter link" rel="noopener" aria-label="follow on Twitter——Opens in a new window">
+  <svg height="32px"  style="enable-background:new 0 0 67 67;" version="1.1" viewBox="0 0 67 67" width="32px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M37.167,22.283c-2.619,0.953-4.274,3.411-4.086,6.101  l0.063,1.038l-1.048-0.127c-3.813-0.487-7.145-2.139-9.974-4.915l-1.383-1.377l-0.356,1.017c-0.754,2.267-0.272,4.661,1.299,6.271  c0.838,0.89,0.649,1.017-0.796,0.487c-0.503-0.169-0.943-0.296-0.985-0.233c-0.146,0.149,0.356,2.076,0.754,2.839  c0.545,1.06,1.655,2.097,2.871,2.712l1.027,0.487l-1.215,0.021c-1.173,0-1.215,0.021-1.089,0.467  c0.419,1.377,2.074,2.839,3.918,3.475l1.299,0.444l-1.131,0.678c-1.676,0.976-3.646,1.526-5.616,1.568  C19.775,43.256,19,43.341,19,43.405c0,0.211,2.557,1.397,4.044,1.864c4.463,1.377,9.765,0.783,13.746-1.568  c2.829-1.673,5.657-5,6.978-8.221c0.713-1.716,1.425-4.851,1.425-6.354c0-0.975,0.063-1.102,1.236-2.267  c0.692-0.678,1.341-1.419,1.467-1.631c0.21-0.403,0.188-0.403-0.88-0.043c-1.781,0.636-2.033,0.551-1.152-0.402  c0.649-0.678,1.425-1.907,1.425-2.267c0-0.063-0.314,0.042-0.671,0.233c-0.377,0.212-1.215,0.53-1.844,0.72l-1.131,0.361l-1.027-0.7  c-0.566-0.381-1.361-0.805-1.781-0.932C39.766,21.902,38.131,21.944,37.167,22.283z M33,64C16.432,64,3,50.569,3,34S16.432,4,33,4  s30,13.431,30,30S49.568,64,33,64z" style="fill-rule:evenodd;clip-rule:evenodd;fill:;"/></svg>
+
+<span class="new-window"><svg  height="8px"  style="enable-background:new 0 0 1000 1000;" version="1.1" viewBox="0 0 1000 1000" width="8px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" >
+<path d="M598 128h298v298h-86v-152l-418 418-60-60 418-418h-152v-86zM810 810v-298h86v298c0 46-40 86-86 86h-596c-48 0-86-40-86-86v-596c0-46 38-86 86-86h298v86h-298v596h596z" style="fill-rule:evenodd;clip-rule:evenodd;fill:;"/>
+</svg>
+</span></a>
+
+
+
+
+
+<a href="https://github.com/rajasegar" target="_blank" class="link-transition github link dib z-999 pt3 pt0-l mr1" title="Github link" rel="noopener" aria-label="follow on Github——Opens in a new window">
+  <svg  height="32px"  style="enable-background:new 0 0 512 512;" version="1.1" viewBox="0 0 512 512" width="32px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" >
+  <path d="M256,32C132.3,32,32,134.8,32,261.7c0,101.5,64.2,187.5,153.2,217.9c11.2,2.1,15.3-5,15.3-11.1   c0-5.5-0.2-19.9-0.3-39.1c-62.3,13.9-75.5-30.8-75.5-30.8c-10.2-26.5-24.9-33.6-24.9-33.6c-20.3-14.3,1.5-14,1.5-14   c22.5,1.6,34.3,23.7,34.3,23.7c20,35.1,52.4,25,65.2,19.1c2-14.8,7.8-25,14.2-30.7c-49.7-5.8-102-25.5-102-113.5   c0-25.1,8.7-45.6,23-61.6c-2.3-5.8-10-29.2,2.2-60.8c0,0,18.8-6.2,61.6,23.5c17.9-5.1,37-7.6,56.1-7.7c19,0.1,38.2,2.6,56.1,7.7   c42.8-29.7,61.5-23.5,61.5-23.5c12.2,31.6,4.5,55,2.2,60.8c14.3,16.1,23,36.6,23,61.6c0,88.2-52.4,107.6-102.3,113.3   c8,7.1,15.2,21.1,15.2,42.5c0,30.7-0.3,55.5-0.3,63c0,6.1,4,13.3,15.4,11C415.9,449.1,480,363.1,480,261.7   C480,134.8,379.7,32,256,32z"/>
+</svg>
+
+<span class="new-window"><svg  height="8px"  style="enable-background:new 0 0 1000 1000;" version="1.1" viewBox="0 0 1000 1000" width="8px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" >
+<path d="M598 128h298v298h-86v-152l-418 418-60-60 418-418h-152v-86zM810 810v-298h86v298c0 46-40 86-86 86h-596c-48 0-86-40-86-86v-596c0-46 38-86 86-86h298v86h-298v596h596z" style="fill-rule:evenodd;clip-rule:evenodd;fill:;"/>
+</svg>
+</span></a>
+
+
+
+
+
+
+
+</div>
+  </div>
+</footer>
+
+  </body>
+</html>

@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    
+    <title>Conceptual Integrity - Revisited | hangaroundtheweb</title>
+    <meta name="viewport" content="width=device-width,minimum-scale=1">
+    <meta name="description" content="Conceptual integrity is the principle that anywhere you look in your system, you can tell that the design is part of the same overall design. This includes low-level issues such as formatting and identifier naming, but also issues such as how modules and classes are designed, etc. This is vitally important, because inevitably, unanticipated issues come up that must be resolved quickly. If there is a coherent design to the system, it can be much easier to resolve these issues by determining what would be consistent with the overall design, especially if the other designers are not present.">
+    <meta name="generator" content="Hugo 0.83.1" />
+    
+    
+      <META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
+    
+
+    
+<link rel="stylesheet" href="/ananke/css/main.min.css" >
+
+
+
+
+    
+      
+
+    
+
+    
+    
+    <meta property="og:title" content="Conceptual Integrity - Revisited" />
+<meta property="og:description" content="Conceptual integrity is the principle that anywhere you look in your system, you can tell that the design is part of the same overall design. This includes low-level issues such as formatting and identifier naming, but also issues such as how modules and classes are designed, etc. This is vitally important, because inevitably, unanticipated issues come up that must be resolved quickly. If there is a coherent design to the system, it can be much easier to resolve these issues by determining what would be consistent with the overall design, especially if the other designers are not present." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://hangaroundtheweb.com/posts/conceptual-integrity-revisited/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2018-08-06T02:04:26&#43;00:00" />
+<meta property="article:modified_time" content="2018-08-06T02:04:26&#43;00:00" />
+
+<meta itemprop="name" content="Conceptual Integrity - Revisited">
+<meta itemprop="description" content="Conceptual integrity is the principle that anywhere you look in your system, you can tell that the design is part of the same overall design. This includes low-level issues such as formatting and identifier naming, but also issues such as how modules and classes are designed, etc. This is vitally important, because inevitably, unanticipated issues come up that must be resolved quickly. If there is a coherent design to the system, it can be much easier to resolve these issues by determining what would be consistent with the overall design, especially if the other designers are not present."><meta itemprop="datePublished" content="2018-08-06T02:04:26&#43;00:00" />
+<meta itemprop="dateModified" content="2018-08-06T02:04:26&#43;00:00" />
+<meta itemprop="wordCount" content="2750">
+<meta itemprop="keywords" content="Articles,conceptualintegrity,programming,software," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Conceptual Integrity - Revisited"/>
+<meta name="twitter:description" content="Conceptual integrity is the principle that anywhere you look in your system, you can tell that the design is part of the same overall design. This includes low-level issues such as formatting and identifier naming, but also issues such as how modules and classes are designed, etc. This is vitally important, because inevitably, unanticipated issues come up that must be resolved quickly. If there is a coherent design to the system, it can be much easier to resolve these issues by determining what would be consistent with the overall design, especially if the other designers are not present."/>
+
+	
+  </head>
+
+  <body class="ma0 avenir bg-near-white">
+
+    
+   
+  
+
+  <header>
+    <div class="bg-black">
+      <nav class="pv3 ph3 ph4-ns" role="navigation">
+  <div class="flex-l justify-between items-center center">
+    <a href="/" class="f3 fw2 hover-white no-underline white-90 dib">
+      
+        hangaroundtheweb
+      
+    </a>
+    <div class="flex-l items-center">
+      
+
+      
+      
+
+
+
+
+<a href="https://twitter.com/rajasegar_c" target="_blank" class="link-transition twitter link dib z-999 pt3 pt0-l mr1" title="Twitter link" rel="noopener" aria-label="follow on Twitter——Opens in a new window">
+  <svg height="32px"  style="enable-background:new 0 0 67 67;" version="1.1" viewBox="0 0 67 67" width="32px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M37.167,22.283c-2.619,0.953-4.274,3.411-4.086,6.101  l0.063,1.038l-1.048-0.127c-3.813-0.487-7.145-2.139-9.974-4.915l-1.383-1.377l-0.356,1.017c-0.754,2.267-0.272,4.661,1.299,6.271  c0.838,0.89,0.649,1.017-0.796,0.487c-0.503-0.169-0.943-0.296-0.985-0.233c-0.146,0.149,0.356,2.076,0.754,2.839  c0.545,1.06,1.655,2.097,2.871,2.712l1.027,0.487l-1.215,0.021c-1.173,0-1.215,0.021-1.089,0.467  c0.419,1.377,2.074,2.839,3.918,3.475l1.299,0.444l-1.131,0.678c-1.676,0.976-3.646,1.526-5.616,1.568  C19.775,43.256,19,43.341,19,43.405c0,0.211,2.557,1.397,4.044,1.864c4.463,1.377,9.765,0.783,13.746-1.568  c2.829-1.673,5.657-5,6.978-8.221c0.713-1.716,1.425-4.851,1.425-6.354c0-0.975,0.063-1.102,1.236-2.267  c0.692-0.678,1.341-1.419,1.467-1.631c0.21-0.403,0.188-0.403-0.88-0.043c-1.781,0.636-2.033,0.551-1.152-0.402  c0.649-0.678,1.425-1.907,1.425-2.267c0-0.063-0.314,0.042-0.671,0.233c-0.377,0.212-1.215,0.53-1.844,0.72l-1.131,0.361l-1.027-0.7  c-0.566-0.381-1.361-0.805-1.781-0.932C39.766,21.902,38.131,21.944,37.167,22.283z M33,64C16.432,64,3,50.569,3,34S16.432,4,33,4  s30,13.431,30,30S49.568,64,33,64z" style="fill-rule:evenodd;clip-rule:evenodd;fill:;"/></svg>
+
+<span class="new-window"><svg  height="8px"  style="enable-background:new 0 0 1000 1000;" version="1.1" viewBox="0 0 1000 1000" width="8px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" >
+<path d="M598 128h298v298h-86v-152l-418 418-60-60 418-418h-152v-86zM810 810v-298h86v298c0 46-40 86-86 86h-596c-48 0-86-40-86-86v-596c0-46 38-86 86-86h298v86h-298v596h596z" style="fill-rule:evenodd;clip-rule:evenodd;fill:;"/>
+</svg>
+</span></a>
+
+
+
+
+
+<a href="https://github.com/rajasegar" target="_blank" class="link-transition github link dib z-999 pt3 pt0-l mr1" title="Github link" rel="noopener" aria-label="follow on Github——Opens in a new window">
+  <svg  height="32px"  style="enable-background:new 0 0 512 512;" version="1.1" viewBox="0 0 512 512" width="32px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" >
+  <path d="M256,32C132.3,32,32,134.8,32,261.7c0,101.5,64.2,187.5,153.2,217.9c11.2,2.1,15.3-5,15.3-11.1   c0-5.5-0.2-19.9-0.3-39.1c-62.3,13.9-75.5-30.8-75.5-30.8c-10.2-26.5-24.9-33.6-24.9-33.6c-20.3-14.3,1.5-14,1.5-14   c22.5,1.6,34.3,23.7,34.3,23.7c20,35.1,52.4,25,65.2,19.1c2-14.8,7.8-25,14.2-30.7c-49.7-5.8-102-25.5-102-113.5   c0-25.1,8.7-45.6,23-61.6c-2.3-5.8-10-29.2,2.2-60.8c0,0,18.8-6.2,61.6,23.5c17.9-5.1,37-7.6,56.1-7.7c19,0.1,38.2,2.6,56.1,7.7   c42.8-29.7,61.5-23.5,61.5-23.5c12.2,31.6,4.5,55,2.2,60.8c14.3,16.1,23,36.6,23,61.6c0,88.2-52.4,107.6-102.3,113.3   c8,7.1,15.2,21.1,15.2,42.5c0,30.7-0.3,55.5-0.3,63c0,6.1,4,13.3,15.4,11C415.9,449.1,480,363.1,480,261.7   C480,134.8,379.7,32,256,32z"/>
+</svg>
+
+<span class="new-window"><svg  height="8px"  style="enable-background:new 0 0 1000 1000;" version="1.1" viewBox="0 0 1000 1000" width="8px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" >
+<path d="M598 128h298v298h-86v-152l-418 418-60-60 418-418h-152v-86zM810 810v-298h86v298c0 46-40 86-86 86h-596c-48 0-86-40-86-86v-596c0-46 38-86 86-86h298v86h-298v596h596z" style="fill-rule:evenodd;clip-rule:evenodd;fill:;"/>
+</svg>
+</span></a>
+
+
+
+
+
+
+
+
+    </div>
+  </div>
+</nav>
+
+    </div>
+  </header>
+
+
+
+    <main class="pb7" role="main">
+      
+  
+  <article class="flex-l flex-wrap justify-between mw8 center ph3">
+    <header class="mt4 w-100">
+      <aside class="instapaper_ignoref b helvetica tracked">
+          
+        POSTS
+      </aside>
+      
+
+
+
+
+  <div id="sharing" class="mt3">
+
+    
+    <a href="https://www.facebook.com/sharer.php?u=http://hangaroundtheweb.com/posts/conceptual-integrity-revisited/" class="facebook no-underline" aria-label="share on Facebook">
+      <svg height="32px"  style="enable-background:new 0 0 67 67;" version="1.1" viewBox="0 0 67 67" width="32px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M28.765,50.32h6.744V33.998h4.499l0.596-5.624h-5.095  l0.007-2.816c0-1.466,0.14-2.253,2.244-2.253h2.812V17.68h-4.5c-5.405,0-7.307,2.729-7.307,7.317v3.377h-3.369v5.625h3.369V50.32z   M33,64C16.432,64,3,50.569,3,34S16.432,4,33,4s30,13.431,30,30S49.568,64,33,64z" style="fill-rule:evenodd;clip-rule:evenodd;"/></svg>
+
+    </a>
+
+    
+    
+    <a href="https://twitter.com/share?url=http://hangaroundtheweb.com/posts/conceptual-integrity-revisited/&amp;text=Conceptual%20Integrity%20-%20Revisited" class="twitter no-underline" aria-label="share on Twitter">
+      <svg height="32px"  style="enable-background:new 0 0 67 67;" version="1.1" viewBox="0 0 67 67" width="32px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M37.167,22.283c-2.619,0.953-4.274,3.411-4.086,6.101  l0.063,1.038l-1.048-0.127c-3.813-0.487-7.145-2.139-9.974-4.915l-1.383-1.377l-0.356,1.017c-0.754,2.267-0.272,4.661,1.299,6.271  c0.838,0.89,0.649,1.017-0.796,0.487c-0.503-0.169-0.943-0.296-0.985-0.233c-0.146,0.149,0.356,2.076,0.754,2.839  c0.545,1.06,1.655,2.097,2.871,2.712l1.027,0.487l-1.215,0.021c-1.173,0-1.215,0.021-1.089,0.467  c0.419,1.377,2.074,2.839,3.918,3.475l1.299,0.444l-1.131,0.678c-1.676,0.976-3.646,1.526-5.616,1.568  C19.775,43.256,19,43.341,19,43.405c0,0.211,2.557,1.397,4.044,1.864c4.463,1.377,9.765,0.783,13.746-1.568  c2.829-1.673,5.657-5,6.978-8.221c0.713-1.716,1.425-4.851,1.425-6.354c0-0.975,0.063-1.102,1.236-2.267  c0.692-0.678,1.341-1.419,1.467-1.631c0.21-0.403,0.188-0.403-0.88-0.043c-1.781,0.636-2.033,0.551-1.152-0.402  c0.649-0.678,1.425-1.907,1.425-2.267c0-0.063-0.314,0.042-0.671,0.233c-0.377,0.212-1.215,0.53-1.844,0.72l-1.131,0.361l-1.027-0.7  c-0.566-0.381-1.361-0.805-1.781-0.932C39.766,21.902,38.131,21.944,37.167,22.283z M33,64C16.432,64,3,50.569,3,34S16.432,4,33,4  s30,13.431,30,30S49.568,64,33,64z" style="fill-rule:evenodd;clip-rule:evenodd;fill:;"/></svg>
+
+    </a>
+
+    
+    <a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=http://hangaroundtheweb.com/posts/conceptual-integrity-revisited/&amp;title=Conceptual%20Integrity%20-%20Revisited" class="linkedin no-underline" aria-label="share on LinkedIn">
+      <svg  height="32px"  style="enable-background:new 0 0 65 65;" version="1.1" viewBox="0 0 65 65" width="32px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <path d="M50.837,48.137V36.425c0-6.275-3.35-9.195-7.816-9.195  c-3.604,0-5.219,1.983-6.119,3.374V27.71h-6.79c0.09,1.917,0,20.427,0,20.427h6.79V36.729c0-0.609,0.044-1.219,0.224-1.655  c0.49-1.22,1.607-2.483,3.482-2.483c2.458,0,3.44,1.873,3.44,4.618v10.929H50.837z M22.959,24.922c2.367,0,3.842-1.57,3.842-3.531  c-0.044-2.003-1.475-3.528-3.797-3.528s-3.841,1.524-3.841,3.528c0,1.961,1.474,3.531,3.753,3.531H22.959z M34,64  C17.432,64,4,50.568,4,34C4,17.431,17.432,4,34,4s30,13.431,30,30C64,50.568,50.568,64,34,64z M26.354,48.137V27.71h-6.789v20.427  H26.354z" style="fill-rule:evenodd;clip-rule:evenodd;fill:;"/>
+</svg>
+
+    </a>
+  </div>
+
+
+      <h1 class="f1 athelas mt3 mb1">Conceptual Integrity - Revisited</h1>
+      
+      
+      <time class="f6 mv4 dib tracked" datetime="2018-08-06T02:04:26Z">August 6, 2018</time>
+
+      
+      
+    </header>
+    <div class="nested-copy-line-height lh-copy serif f4 nested-links nested-img mid-gray pr4-l w-two-thirds-l"><p>Conceptual integrity is the principle that anywhere you look in your system, you can tell that the design is part of the same overall design. This includes low-level issues such as formatting and identifier naming, but also issues such as how modules and classes are designed, etc. This is vitally important, because inevitably, unanticipated issues come up that must be resolved quickly. If there is a coherent design to the system, it can be much easier to resolve these issues by determining what would be consistent with the overall design, especially if the other designers are not present.</p>
+<p><img src="/wp-content/uploads/2018/08/conceptual-disunity.png" alt=""></p>
+<p>Conceptual Integrity is a required ingredient for achieving the principle that <strong>a system must have a powerful metaphor that is uniformly applied throughout a system</strong>.</p>
+<blockquote>
+<p>Conceptual integrity is the most important consideration in system design. It is better to have a system omit certain anomalous features and improvements, but to reflect one set of design ideas, than to have one that contains many good but independent and uncoordinated ideas.</p>
+</blockquote>
+<p>Conceptual integrity does not mean one shouldn&rsquo;t include many minds (or even the entire team for that matter) in the Analysis &amp; Design process. This is a very important detail that shouldn&rsquo;t be discounted by those who wish to do away with the role of architect. Team input in Analysis and Design is absolutely essential for:</p>
+<p>(1) establishing Team Gel,</p>
+<p>(2) ensuring the soundness and quality of the analysis, and</p>
+<p>(3) refactoring the design into something more polished.</p>
+<p>In fact, the earlier the architect or design-team can include the entire team (or domain-team leads for very large teams), the higher quality the design will be. The Design Team must be open to and accept criticism, the architect(s) must be egoless (see <a href="/2018/03/egoless-programming/">Egoless Programming</a>).</p>
+<p>In this article, we will examine the consequences of this theme for programming system design:</p>
+<p>• How is conceptual integrity to be achieved?</p>
+<p>• Does not this argument imply an elite, or high society of architects, and a group of ordinary implementers whose creative talents and ideas are suppressed?</p>
+<p>• How does one keep the architects from drifting off into the blue with unimplementable or costly specifications?</p>
+<p>• How does one ensure that every trifling detail of an architectural specification gets communicated to the implementer, properly understood by him, and accurately incorporated into the product?</p>
+<h3 id="deciphering-conceptual-integrity">Deciphering Conceptual Integrity</h3>
+<p>To appreciate the importance of conceptual integrity, we need to take a closer look at its meaning. The word <strong>conceptual</strong> is associated with the cognitive process of concept forming that involves the conscious recognition and identification of elements of our experience; and the word <strong>integrity</strong> is associated with the idea of <strong>being integrated</strong> or <strong>being one</strong>. The idea of a coherent whole is reflected in the way that <strong>having integrity</strong> is used to describe something that always conforms to one’s expectations – there is an implicit reference to future events. We describe something as having conceptual integrity, if the concepts formed from our experience of the thing can reliably determine the future events which are associated with the thing (there is no surprise).</p>
+<p>In obtaining conceptual integrity, we are concerned with the emergence of concepts (representing the rational world) from experience (representing the empirical world). As the American philosopher, <a href="https://en.wikipedia.org/wiki/William_James">William James</a>, points out in his Essays on <a href="https://en.wikipedia.org/wiki/Radical_empiricism">Radical Empiricism</a>, first published in 1902:</p>
+<blockquote>
+<p>“Experiences come on an enormous scale, and if we take them all together, they come in a chaos of incommensurable relations that we cannot straighten out. We have to abstract different groups of them and handle these separately if we are to talk of them at all.”</p>
+</blockquote>
+<p>Raw experiences are potentially confusing or incoherent as <strong>“they come in a chaos of incommensurable relations”</strong>. To make sense of them, we need to abstract groups of relations between them and study them separately. Abstracting groups of relations from experiences is the embryonic concept-forming activity. The concepts formed may conflict each other. Obtaining conceptual integrity is a process of removing conflict. To remove conflict, we need to access the raw experiences that originally informed our concepts – to explore them, to understand, to compare and to analyze. This idea is depicted in the following figure. At the left-hand-side of the figure, two groups of concepts are formed by abstracting relations from raw experiences. To obtain conceptual integrity, we need to combine the concepts into one group of unified concepts. This involves the resolution of potential conflict between concepts so that they acquire coherence.</p>
+<p><img src="/wp-content/uploads/2018/08/conceptual-integrity.png" alt=""></p>
+<p>Significant features of the above observations that relate to the nature of conceptual integrity include:</p>
+<ol>
+<li>Conceptual integrity is something appreciated by an observer. This is because we cannot talk about experience without reference to the observer.</li>
+<li>To obtain conceptual integrity, we need to resolve conflicts between concepts. This involves access to the raw experiences that inform these concepts.</li>
+<li>A central issue in obtaining conceptual integrity is the potential incoherence of raw experiences.</li>
+</ol>
+<h3 id="achieving-conceptual-integrity">Achieving Conceptual Integrity</h3>
+<blockquote>
+<p>The purpose of a programming system is to make a computer easy to use.</p>
+</blockquote>
+<p>To do this, it furnishes languages and various facilities that are in fact programs invoked and controlled by language features. But these facilities are bought at a price: the external description of a programming system is ten to twenty times as large as the external description of the computer system itself. The user finds it far easier to specify any particular function, but there are far more to choose from, and far more options and formats to remember.</p>
+<p>Ease of use is enhanced only if the time gained in functional specification exceeds the time lost in learning, remembering, and searching manuals. With modern programming systems this gain does exceed the cost, but in recent years the ratio of gain to cost seems to have fallen as more and more complex functions have been added.</p>
+<p>Because ease of use is the purpose, this ratio of function to conceptual complexity is the ultimate test of system design.</p>
+<blockquote>
+<p>Neither function alone nor simplicity alone defines a good design.</p>
+</blockquote>
+<p>This point is widely misunderstood.</p>
+<p>For a given level of function, however, that system is best in which one can specify things with the most simplicity aid straightforwardness. Simplicity is not enough.</p>
+<p><img src="/wp-content/uploads/2018/08/simplicity-straightforward.png" alt=""></p>
+<p>The expression of the things one wants to do often requires involuted and unexpected combinations of the basic facilities. It is not enough to learn the elements and rules of combination; one must also learn the idiomatic usage, a whole lore of how the elements are combined in practice. Simplicity and straightforwardness proceed from conceptual integrity. Every part must reflect the same philosophies and the same balancing of desiderata. Every part must even use the same techniques in syntax and analogous notions in semantics. Ease of use, then, dictates unity of design, conceptual integrity.</p>
+<p><img src="/wp-content/uploads/2018/08/ci-unity-of-design.png" alt=""></p>
+<h3 id="aristocracy-and-democracy">Aristocracy and Democracy</h3>
+<p>Conceptual integrity in turn dictates that the design must proceed from one mind, or from a very small number of agreeing resonant minds.</p>
+<p>Schedule pressures, however, dictate that system building needs many hands. Two techniques are available for resolving this dilemma. The first is a careful division of labor between architecture and implementation. The second is the new way of structuring programming implementation teams.</p>
+<p>The separation of architectural effort from implementation is a very powerful way of getting conceptual integrity on very large projects.</p>
+<p>By the architecture of a system, I mean the complete and detailed specification of the user interface. For a computer this is the programming manual. For a compiler it is the language manual. For a control program it is the manuals for the language or languages used to invoke its functions. For the entire system it is the union of the manuals the user must consult to do his entire job.</p>
+<p>The architect of a system, like the architect of a building, is the user&rsquo;s agent. It is his job to bring professional and technical knowledge to bear in the unalloyed interest of the user, as opposed to the interests of the salesman, the fabricator, etc.</p>
+<p>Architecture must be carefully distinguished from implementation.</p>
+<blockquote>
+<p>&ldquo;Where architecture tells what happens, implementation tells how it is made to happen.&rdquo;</p>
+<p>– Blaauw</p>
+</blockquote>
+<p>Let&rsquo;s take a simple example a clock, whose architecture consists of the face, the hands, and the winding knob. When a child has learned this architecture, he can tell time as easily from a wristwatch as from a church tower. The implementation, however, and its realization, describe what goes on inside the case—powering by any of many mechanisms and accuracy control by any of many.</p>
+<p>Now we can deal with the deeply emotional question of aristocracy versus democracy. Are not the architects a new aristocracy, an intellectual elite, set up to tell the poor dumb implementers what to do? Has not all the creative work been sequestered for this elite, leaving the implementers as cogs in the machine? Won&rsquo;t one get a better product by getting the good ideas from all the team, following a democratic philosophy, rather than by restricting the development of specifications to a few?</p>
+<p>As to the last question, it is the easiest. Only the architects seldom have good architectural ideas. Often the fresh concept does come from an implementer or from a user. However, all my own experience convinces me, and I have tried to show, that the conceptual integrity of a system determines its ease of use. Good features and ideas that do not integrate with a system&rsquo;s basic concepts are best left out. If there appear many such important but incompatible ideas, one scraps the whole system and starts again on an integrated system with different basic concepts.</p>
+<p>As to the aristocracy charge, the answer must be yes and no. Yes, in the sense that there must be few architects, their product must endure longer than that of an implementer, and the architect sits at the focus of forces which he must ultimately resolve in the user&rsquo;s interest. If a system is to have conceptual integrity, someone must control the concepts. That is an aristocracy that needs no apology.</p>
+<p>No, because the setting of external specifications is not more creative work than the designing of implementations. It is just different creative work. The design of an implementation, given an architecture, requires and allows as much design creativity, as many new ideas, and as much technical brilliance as the design of the external specifications. Indeed, the cost-performance ratio of the product will depend most heavily on the implementer, just as ease of use depends most heavily on the architect.</p>
+<p>There are many examples from other arts and crafts that lead one to believe that discipline is good for art. Indeed, an artist&rsquo;s aphorism asserts, <strong>&ldquo;Form is liberating.&quot;</strong> The worst buildings are those whose budget was too great for the purposes to be served.</p>
+<blockquote>
+<p>The external provision of an architecture enhances, not cramps, the creative style of an implementing group.</p>
+</blockquote>
+<p>They focus at once on the part of the problem no one has addressed, and inventions begin to flow. In an unconstrained implementing group, most thought and debate goes into architectural decisions, and implementation proper gets short shrift.</p>
+<p>However, if there is no final word, no one-mind fighting off the democratic compromises that can reduce a vision to its lowest common denominator, then it will be difficult to achieve conceptual integrity and the system may run the risk of becoming an amorphous blob of human insensitivity. It is important to realize that you can be inclusive (or team-oriented) without being everyone-designs or anti-architect. Said another way, it is possible to have an architect and have team collaboration on a design at the same time.</p>
+<p>It is also important to note that on a small team, the design-team may in fact be the whole product team. Another approach would have the architect role and the coach or technical/team lead role (i.e. the final say or tie-breaker) be filled by a single individual in order to ensure conceptual integrity. As is mentioned in much of the <a href="https://en.wikipedia.org/wiki/Rational_Unified_Process">Rational Unified Process</a> literature, there is no requirement for a 1 to 1 or even a 1 to N cardinality between roles and people. A single person could hold many roles just as a single role could be held by many people.</p>
+<h3 id="what-does-the-implementer-do-while-waiting">What Does the Implementer Do While Waiting?</h3>
+<blockquote>
+<p>The lack of conceptual integrity makes the system far more costly to build and change.</p>
+</blockquote>
+<p>When it is proposed that a small architecture team in fact write all the external specifications for a computer or a programming system, the implementers raise three objections:</p>
+<p>• The specifications will be too rich in function and will not reflect practical cost considerations.</p>
+<p>• The architects will get all the creative fun and shut out the inventiveness of the implementers.</p>
+<p>• The many implementers will have to sit idly by while the specifications come through the narrow funnel that is the architecture team.</p>
+<p>The first of these is a real danger, and it will be treated in the next chapter. The other two are illusions, pure and simple. As we have seen above, implementation is also a creative activity of the first order. The opportunity to be creative and inventive in implementation is not significantly diminished by working within a given external specification, and the order of creativity may even be enhanced by that discipline. The total product will surely be.</p>
+<p>The last objection is one of timing and phasing. A quick answer is to refrain from hiring implementers until the specifications are complete. This is what is done when a building is constructed. In the computer systems business, however, the pace is quicker, and one wants to compress the schedule as much as possible. How much can specification and building be overlapped? As Blaauw points out, the total creative effort involves three distinct phases: architecture, implementation, and realization. It turns out that these can in fact be begun in parallel and proceed simultaneously.</p>
+<p><img src="/wp-content/uploads/2018/08/creative-effort-3-phases.png" alt=""></p>
+<p>In computer design, for example, the implementer can start as soon as he has relatively vague assumptions about the manual, somewhat clearer ideas about the technology, and well-defined cost and performance objectives. He can begin designing data flows, control sequences, gross packaging concepts, and so on. He devises or adapts the tools he will need, especially the recordkeeping system, including the design automation system.</p>
+<p>Meanwhile, at the realization level, circuits, cards, cables, frames, power supplies, and memories must each be designed, refined, and documented. This work proceeds in parallel with architecture and implementation.</p>
+<p>The same thing is true in programming system design. Long before the external specifications are complete, the implementer has plenty to do. Given some rough approximations as to the function of the system that will be ultimately embodied in the external specifications, he can proceed. He must have well-defined space and time objectives. He must know the system configuration on which his product must run. Then he can begin designing module boundaries, table structures, pass or phase breakdowns, algorithms, and all kinds of tools. Some time, too, must be spent in communicating with the architect.</p>
+<p>Meanwhile, on the realization level there is much to be done also. Programming has a technology, too. If the machine is a new one, much work must be done on subroutine conventions, supervisory techniques, searching and sorting algorithms.</p>
+<blockquote>
+<p>Conceptual integrity does require that a system reflect a single philosophy and that the specification as seen by the user flow from a few minds.</p>
+</blockquote>
+<p>Because of the real division of labor into architecture, implementation, and realization, however, this does not imply that a system so designed will take longer to build. Experience shows the opposite, that the integral system goes together faster and takes less time to test. In effect, a widespread horizontal division of labor has been sharply reduced by a vertical division of labor, and the result is radically simplified communications and improved conceptual integrity.</p>
+<p>Conceptual integrity is central to product quality. Having a system architect is the most important single step toward conceptual integrity.</p>
+<p>The following are some of the well-known examples of Conceptual Integrity:</p>
+<ul>
+<li>Unix (based on the notion of a &ldquo;file&rdquo; (e.g. directories, devices, filesystems, named pipes and sockets are all sort-of files)</li>
+<li>Smalltalk (&ldquo;everything is an object&rdquo;, and the small set of other accompanying principles)</li>
+<li>SQL (&ldquo;all data is in tables&rdquo;, with keys and constraints)</li>
+<li>Lisp (&ldquo;everything is a list&rdquo;)</li>
+</ul>
+<p>If you feel you can quote any more examples of conceptual integrity, please share your views in the comments.</p>
+<h3 id="references">References:</h3>
+<ul>
+<li><a href="http://amzn.in/26YbgNv%20">The Mythical Man-Month by Frederick P. Brooks, Jr.</a></li>
+<li><a href="https://cseweb.ucsd.edu/~wgg/CSE131B/Design/node6.html">https://cseweb.ucsd.edu/~wgg/CSE131B/Design/node6.html</a></li>
+<li><a href="http://wiki.c2.com/?ConceptualIntegrity">http://wiki.c2.com/?ConceptualIntegrity</a></li>
+<li><a href="http://architecture.typepad.com/architecture_blog/2011/10/the-importance-of-conceptual-integrity.html">http://architecture.typepad.com/architecture_blog/2011/10/the-importance-of-conceptual-integrity.html</a></li>
+<li><a href="https://en.wikipedia.org/wiki/The_Mythical_Man-Month#Conceptual_integrity">https://en.wikipedia.org/wiki/The_Mythical_Man-Month#Conceptual_integrity</a></li>
+<li><a href="https://en.wikipedia.org/wiki/Software_Peter_principle">https://en.wikipedia.org/wiki/Software_Peter_principle</a></li>
+<li><a href="https://dzone.com/articles/lean-tools-conceptual-0">https://dzone.com/articles/lean-tools-conceptual-0</a></li>
+<li><a href="https://www.dcs.warwick.ac.uk/oldmodelling/hi/theses/allan/chapter5.pdf">https://www.dcs.warwick.ac.uk/oldmodelling/hi/theses/allan/chapter5.pdf</a></li>
+</ul>
+<p>Image Credits</p>
+<p>Photo by <a href="https://unsplash.com/photos/cAtzHUz7Z8g?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Tim Marshall</a> on <a href="https://unsplash.com/search/photos/integrity?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Unsplash</a></p>
+<ul class="pa0">
+  
+   <li class="list">
+     <a href="/tags/articles" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">Articles</a>
+   </li>
+  
+   <li class="list">
+     <a href="/tags/conceptualintegrity" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">conceptualintegrity</a>
+   </li>
+  
+   <li class="list">
+     <a href="/tags/programming" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">programming</a>
+   </li>
+  
+   <li class="list">
+     <a href="/tags/software" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">software</a>
+   </li>
+  
+</ul>
+<div class="mt6 instapaper_ignoref">
+      
+      
+      </div>
+    </div>
+
+    <aside class="w-30-l mt6-l">
+
+
+
+
+  <div class="bg-light-gray pa3 nested-list-reset nested-copy-line-height nested-links">
+    <p class="f5 b mb3">Related</p>
+    <ul class="pa0 list">
+	   
+	     <li  class="mb2">
+          <a href="/posts/classical-quotations-and-words-of-wisdom-on-managing-software/">Classical quotations and words of wisdom on managing software</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/posts/cognitive-dissonance-in-programming/">Cognitive Dissonance in Programming</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/posts/seven-principles-of-software-development-revisited/">Seven Principles of Software Development - Revisited</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/posts/the-four-factors-of-a-good-program/">The Four Factors of a Good Program</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/posts/egoless-programming/">Egoless Programming</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/posts/nine-illuminating-quotes-on-debugging/">Nine Illuminating Quotes on Debugging</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/posts/six-sensible-quotes-on-user-interface/">Six Sensible Quotes on User Interface</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/posts/eight-elegant-quotes-on-coding-best-practices/">Eight Elegant Quotes on Coding best practices</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/posts/eight-corporate-laws-of-gravity/">Eight Corporate Laws of Gravity</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/posts/why-experience-and-intuition-can-ruin-decision-making/">Why experience and intuition can ruin decision making?</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/posts/a-refreshing-guide-to-object-freeze-in-javascript-by-dr-victor-fries/">A Refreshing Guide to Object.freeze in Javascript by Dr.Victor Fries</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/posts/consensus-and-compromise/">Consensus and Compromise</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/posts/the-quasi-forgotten-software-scribe/">The Quasi-Forgotten Software Scribe</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/posts/two-simple-ways-to-negotiate-consensus-in-a-software-development-group/">Two simple ways to negotiate consensus in a software development group</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/posts/the-10-typical-sources-of-uncertainty-in-software-projects/">The 10 typical sources of uncertainty in Software projects</a>
+        </li>
+	    
+    </ul>
+</div>
+
+</aside>
+
+  </article>
+
+    </main>
+    <footer class="bg-black bottom-0 w-100 pa3" role="contentinfo">
+  <div class="flex justify-between">
+  <a class="f4 fw4 hover-white no-underline white-70 dn dib-ns pv2 ph3" href="http://hangaroundtheweb.com/" >
+    &copy;  hangaroundtheweb 2022 
+  </a>
+    <div>
+
+
+
+
+<a href="https://twitter.com/rajasegar_c" target="_blank" class="link-transition twitter link dib z-999 pt3 pt0-l mr1" title="Twitter link" rel="noopener" aria-label="follow on Twitter——Opens in a new window">
+  <svg height="32px"  style="enable-background:new 0 0 67 67;" version="1.1" viewBox="0 0 67 67" width="32px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M37.167,22.283c-2.619,0.953-4.274,3.411-4.086,6.101  l0.063,1.038l-1.048-0.127c-3.813-0.487-7.145-2.139-9.974-4.915l-1.383-1.377l-0.356,1.017c-0.754,2.267-0.272,4.661,1.299,6.271  c0.838,0.89,0.649,1.017-0.796,0.487c-0.503-0.169-0.943-0.296-0.985-0.233c-0.146,0.149,0.356,2.076,0.754,2.839  c0.545,1.06,1.655,2.097,2.871,2.712l1.027,0.487l-1.215,0.021c-1.173,0-1.215,0.021-1.089,0.467  c0.419,1.377,2.074,2.839,3.918,3.475l1.299,0.444l-1.131,0.678c-1.676,0.976-3.646,1.526-5.616,1.568  C19.775,43.256,19,43.341,19,43.405c0,0.211,2.557,1.397,4.044,1.864c4.463,1.377,9.765,0.783,13.746-1.568  c2.829-1.673,5.657-5,6.978-8.221c0.713-1.716,1.425-4.851,1.425-6.354c0-0.975,0.063-1.102,1.236-2.267  c0.692-0.678,1.341-1.419,1.467-1.631c0.21-0.403,0.188-0.403-0.88-0.043c-1.781,0.636-2.033,0.551-1.152-0.402  c0.649-0.678,1.425-1.907,1.425-2.267c0-0.063-0.314,0.042-0.671,0.233c-0.377,0.212-1.215,0.53-1.844,0.72l-1.131,0.361l-1.027-0.7  c-0.566-0.381-1.361-0.805-1.781-0.932C39.766,21.902,38.131,21.944,37.167,22.283z M33,64C16.432,64,3,50.569,3,34S16.432,4,33,4  s30,13.431,30,30S49.568,64,33,64z" style="fill-rule:evenodd;clip-rule:evenodd;fill:;"/></svg>
+
+<span class="new-window"><svg  height="8px"  style="enable-background:new 0 0 1000 1000;" version="1.1" viewBox="0 0 1000 1000" width="8px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" >
+<path d="M598 128h298v298h-86v-152l-418 418-60-60 418-418h-152v-86zM810 810v-298h86v298c0 46-40 86-86 86h-596c-48 0-86-40-86-86v-596c0-46 38-86 86-86h298v86h-298v596h596z" style="fill-rule:evenodd;clip-rule:evenodd;fill:;"/>
+</svg>
+</span></a>
+
+
+
+
+
+<a href="https://github.com/rajasegar" target="_blank" class="link-transition github link dib z-999 pt3 pt0-l mr1" title="Github link" rel="noopener" aria-label="follow on Github——Opens in a new window">
+  <svg  height="32px"  style="enable-background:new 0 0 512 512;" version="1.1" viewBox="0 0 512 512" width="32px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" >
+  <path d="M256,32C132.3,32,32,134.8,32,261.7c0,101.5,64.2,187.5,153.2,217.9c11.2,2.1,15.3-5,15.3-11.1   c0-5.5-0.2-19.9-0.3-39.1c-62.3,13.9-75.5-30.8-75.5-30.8c-10.2-26.5-24.9-33.6-24.9-33.6c-20.3-14.3,1.5-14,1.5-14   c22.5,1.6,34.3,23.7,34.3,23.7c20,35.1,52.4,25,65.2,19.1c2-14.8,7.8-25,14.2-30.7c-49.7-5.8-102-25.5-102-113.5   c0-25.1,8.7-45.6,23-61.6c-2.3-5.8-10-29.2,2.2-60.8c0,0,18.8-6.2,61.6,23.5c17.9-5.1,37-7.6,56.1-7.7c19,0.1,38.2,2.6,56.1,7.7   c42.8-29.7,61.5-23.5,61.5-23.5c12.2,31.6,4.5,55,2.2,60.8c14.3,16.1,23,36.6,23,61.6c0,88.2-52.4,107.6-102.3,113.3   c8,7.1,15.2,21.1,15.2,42.5c0,30.7-0.3,55.5-0.3,63c0,6.1,4,13.3,15.4,11C415.9,449.1,480,363.1,480,261.7   C480,134.8,379.7,32,256,32z"/>
+</svg>
+
+<span class="new-window"><svg  height="8px"  style="enable-background:new 0 0 1000 1000;" version="1.1" viewBox="0 0 1000 1000" width="8px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" >
+<path d="M598 128h298v298h-86v-152l-418 418-60-60 418-418h-152v-86zM810 810v-298h86v298c0 46-40 86-86 86h-596c-48 0-86-40-86-86v-596c0-46 38-86 86-86h298v86h-298v596h596z" style="fill-rule:evenodd;clip-rule:evenodd;fill:;"/>
+</svg>
+</span></a>
+
+
+
+
+
+
+
+</div>
+  </div>
+</footer>
+
+  </body>
+</html>

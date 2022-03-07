@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Javascript on hangaroundtheweb</title>
+    <link>http://hangaroundtheweb.com/tags/javascript/</link>
+    <description>Recent content in Javascript on hangaroundtheweb</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 26 Mar 2020 19:22:01 +0000</lastBuildDate><atom:link href="http://hangaroundtheweb.com/tags/javascript/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Snowpack - How it works?</title>
+      <link>http://hangaroundtheweb.com/posts/snowpack-how-it-works/</link>
+      <pubDate>Thu, 26 Mar 2020 19:22:01 +0000</pubDate>
+      
+      <guid>http://hangaroundtheweb.com/posts/snowpack-how-it-works/</guid>
+      <description>Snowpack is a post-install tool. It runs after npm install, and it essentially exists to convert your npm packages (in your &amp;ldquo;nodemodules/&amp;rdquo; directory) into JS files that run in the browser without a bundler (written to a &amp;ldquo;webmodules/&amp;rdquo; directory).
+Creating a sample app In this tutorial we are going to create a simple demo app which is going to make use of a library called finance. We are going to create an app to calculate simple interest from principal, rate and time.</description>
+    </item>
+    
+    <item>
+      <title>JARVIS - Write me a Codemod</title>
+      <link>http://hangaroundtheweb.com/posts/jarvis-write-me-a-codemod/</link>
+      <pubDate>Wed, 18 Dec 2019 05:08:13 +0000</pubDate>
+      
+      <guid>http://hangaroundtheweb.com/posts/jarvis-write-me-a-codemod/</guid>
+      <description>In this article, we are going to take a look at a tool called JARVIS which will profoundly transform the way how you write codemods.
+This is a continuation post for AST Finder which is a tool to generate an api to find AST nodes automatically from source code.
+If you want to know more about codemods, their building blocks and how they work, please check out this detailed post about codemods.</description>
+    </item>
+    
+    <item>
+      <title>AST Finder - Finding AST nodes from code</title>
+      <link>http://hangaroundtheweb.com/posts/ast-finder-finding-ast-nodes-from-code/</link>
+      <pubDate>Tue, 10 Dec 2019 02:27:46 +0000</pubDate>
+      
+      <guid>http://hangaroundtheweb.com/posts/ast-finder-finding-ast-nodes-from-code/</guid>
+      <description>In this article, we are going to take a look at a tool called &amp;lsquo;AST Finder&amp;rsquo; which will significantly improve the developer experience for writing codemods.
+This is a continuation post for AST Builder which is a tool to generate AST nodes automatically from source code.
+If you want to know more about codemods, their building blocks and how they work, please check out this detailed post about codemods.
+What? AST Finder is actually a playground for finding AST nodes using source code.</description>
+    </item>
+    
+    <item>
+      <title>AST Builder - Building AST nodes from code</title>
+      <link>http://hangaroundtheweb.com/posts/ast-builder-building-ast-nodes-from-code/</link>
+      <pubDate>Sun, 08 Dec 2019 23:01:09 +0000</pubDate>
+      
+      <guid>http://hangaroundtheweb.com/posts/ast-builder-building-ast-nodes-from-code/</guid>
+      <description>In this article, we are going to take a look at a tool called &amp;lsquo;AST Builder&amp;rsquo; which will significantly improve the developer experience for writing codemods.
+Codemod is a tool/library to assist you with large-scale codebase refactors that can be partially automated but still require human oversight and occasional intervention. Codemod was developed at Facebook and released as open source.
+If you want to know more about codemods, their building blocks and how they work, please check out this detailed post about codemods.</description>
+    </item>
+    
+    <item>
+      <title>Codemods - The New Age Saviors for JS Developers</title>
+      <link>http://hangaroundtheweb.com/posts/codemods-the-new-age-saviors-for-js-developers/</link>
+      <pubDate>Fri, 22 Mar 2019 23:13:17 +0000</pubDate>
+      
+      <guid>http://hangaroundtheweb.com/posts/codemods-the-new-age-saviors-for-js-developers/</guid>
+      <description>In this article, we take a look at Codemods, a tool for making sweeping changes across your code with ease and effectiveness. Codemods are invented by a team of developers from Facebook to assist large-scale migrations in code-base, and we are going to take a deep look into a particular codemod tool called jscodeshift.
+Refactoring Before we dive into the codemod tools like jscodeshift, we need to understand why we need to do large-scale refactorings and what is really meant by refactoring.</description>
+    </item>
+    
+    <item>
+      <title>A Refreshing Guide to Object.freeze in Javascript by Dr.Victor Fries</title>
+      <link>http://hangaroundtheweb.com/posts/a-refreshing-guide-to-object-freeze-in-javascript-by-dr-victor-fries/</link>
+      <pubDate>Thu, 21 Jun 2018 23:58:52 +0000</pubDate>
+      
+      <guid>http://hangaroundtheweb.com/posts/a-refreshing-guide-to-object-freeze-in-javascript-by-dr-victor-fries/</guid>
+      <description>A Refreshing Guide to Object.freeze in Javascript by Dr.Victor Fries What killed the dinosaurs? The Ice Age! In JavaScript, objects are used to store keyed collections of various data and more complex entities. Objects penetrate almost every aspect of the JavaScript language. The object might be accessed as global or passed as an argument. Functions that have access to the object can modify the object, whether intentionally or accidentally. To prevent modification of our objects, one of the techniques is to use Object.</description>
+    </item>
+    
+    <item>
+      <title>Arguing for the sake of arguments in JavaScript</title>
+      <link>http://hangaroundtheweb.com/posts/arguing-for-the-sake-of-arguments-in-javascript/</link>
+      <pubDate>Thu, 29 Mar 2018 03:52:42 +0000</pubDate>
+      
+      <guid>http://hangaroundtheweb.com/posts/arguing-for-the-sake-of-arguments-in-javascript/</guid>
+      <description>Arguing for the sake of arguments in JavaScript This article deals with some intricacies revolving around the arguments object, a magical and mysterious creature residing in the functional realms of the Javascript world, which can be summoned anytime in your code by the programming wizards without any spells, incantations or sorcery. The arguments object is an Array-like object corresponding to the arguments passed to a function. It is a local variable available within all (non-arrow) functions.</description>
+    </item>
+    
+    <item>
+      <title>How to create an accessible slider component in Ember?</title>
+      <link>http://hangaroundtheweb.com/posts/how-to-create-an-accessible-slider-component-in-ember/</link>
+      <pubDate>Mon, 29 Jan 2018 05:10:32 +0000</pubDate>
+      
+      <guid>http://hangaroundtheweb.com/posts/how-to-create-an-accessible-slider-component-in-ember/</guid>
+      <description>Table of Contents  1. How to create an accessible slider component in Ember?  1.1. Class diagram 1.2. Component Interface 1.3. aria-slider -&amp;gt; template 1.4. aria-slider -&amp;gt; component 1.5. aria-slider-thumb -&amp;gt; component 1.6. Source Code 1.7. Demo 1.8. References     1 How to create an accessible slider component in Ember? In this tutorial we will see how to create an accessible slider component in Ember based on the WAI-ARIA authoring practices.</description>
+    </item>
+    
+    <item>
+      <title>Javascript Refactoring Series: Inline Temp</title>
+      <link>http://hangaroundtheweb.com/posts/javascript-refactoring-series-inline-temp/</link>
+      <pubDate>Tue, 21 Nov 2017 22:50:33 +0000</pubDate>
+      
+      <guid>http://hangaroundtheweb.com/posts/javascript-refactoring-series-inline-temp/</guid>
+      <description>Table of Contents  Inline Temp  Motivation Mechanics  Declare the temp as const if it isn&amp;rsquo;t already, and compile. Find all references to the temp and replace them with the right-hand side of the assignment. Compile and test after each change. Remove the declaration and the assignment of the temp. Compile and test.      Inline Temp You have a temp that is assigned to once with a simple expression, and the temp is getting in the way of other refactorings.</description>
+    </item>
+    
+    <item>
+      <title>Javascript Refactoring Series: Inline Function</title>
+      <link>http://hangaroundtheweb.com/posts/javascript-refactoring-series-inline-function/</link>
+      <pubDate>Sun, 22 Oct 2017 17:56:10 +0000</pubDate>
+      
+      <guid>http://hangaroundtheweb.com/posts/javascript-refactoring-series-inline-function/</guid>
+      <description>In this article we take a look at one of the refactoring techniques named as Inline Function originally known as Inline Method. We will see how to apply these techniques in Javascript code since the original methodology is language agnostic. This is second in the series of articles exploring various refactoring techniques by Martin Fowler.
+ Table of Contents  Javascript Refactoring Series: Inline Function  Motivation Mechanics  Check that the function is not polymorphic Find all calls to the function Replace each call with the function body.</description>
+    </item>
+    
+    <item>
+      <title>Javascript Refactoring Series: Extract Function</title>
+      <link>http://hangaroundtheweb.com/posts/javascript-refactoring-series-extract-function/</link>
+      <pubDate>Fri, 20 Oct 2017 19:13:19 +0000</pubDate>
+      
+      <guid>http://hangaroundtheweb.com/posts/javascript-refactoring-series-extract-function/</guid>
+      <description>In this article we take a look at one of the refactoring techniques named as Extract Function originally known as Extract Method. We will see how to apply these techniques in Javascript code since the original methodology is language agnostic. This is first in the series of articles exploring various refactoring techniques by Martin Fowler. Table of Contents  Extract Function (aka Extract Method)  Motivation Example: No local variables Example: Using Local Variables Example: Reassigning a Local Variable    Extract Function (aka Extract Method) You have a code fragment that can be grouped together.</description>
+    </item>
+    
+    <item>
+      <title>Refactoring a simple loop into a pipeline in Javascript</title>
+      <link>http://hangaroundtheweb.com/posts/refactoring-a-simple-loop-into-a-pipeline-in-javascript/</link>
+      <pubDate>Thu, 07 Sep 2017 00:28:31 +0000</pubDate>
+      
+      <guid>http://hangaroundtheweb.com/posts/refactoring-a-simple-loop-into-a-pipeline-in-javascript/</guid>
+      <description>The loop is the typical way of processing collections, but with the greater adoption of first-class functions in Javascript the collection pipeline is an appealing alternative. In this article we look at refactoring loops to collection pipelines with a small example.
+Table of Contents  Refactoring a simple loop into a pipeline in Javascript  Defining our Author data type Simple and plain For loop Using ES5 forEach Using a Collection Pipeline Refactor - Moving filter before map Refactor - Combine filters Reference Credits    Refactoring a simple loop into a pipeline in Javascript The loop is the typical way of processing collections, but with the greater adoption of first-class functions in Javascript the collection pipeline is an appealing alternative.</description>
+    </item>
+    
+    <item>
+      <title>Do you care about Cohesion in Javascript functions?</title>
+      <link>http://hangaroundtheweb.com/posts/do-you-care-about-cohesion-in-javascript-functions/</link>
+      <pubDate>Sun, 03 Sep 2017 21:37:51 +0000</pubDate>
+      
+      <guid>http://hangaroundtheweb.com/posts/do-you-care-about-cohesion-in-javascript-functions/</guid>
+      <description>Cohesion is the measure of strength of the association of elements within a module. Modules whose elements are strongly and genuinely related to each other are desired. A module should be highly cohesive.
+Table of Contents  1. Do you care about Cohesion in Javascript Functions?  1.1. Functional Cohesion  1.1.1. Sequential Cohesion 1.1.2. Communicational Cohesion 1.1.3. Temporal Cohesion   1.2. Sequential Cohesion 1.3. Communicational Cohesion 1.4. Temporal Cohesion  1.</description>
+    </item>
+    
+    <item>
+      <title>Refactor your Javascript like a Pro with js2-refactor</title>
+      <link>http://hangaroundtheweb.com/posts/refactor-your-javascript-like-a-pro-with-js2-refactor/</link>
+      <pubDate>Mon, 17 Jul 2017 03:25:15 +0000</pubDate>
+      
+      <guid>http://hangaroundtheweb.com/posts/refactor-your-javascript-like-a-pro-with-js2-refactor/</guid>
+      <description>In this article i will show you how to use the js2-refactor tool in Spacemacs which is a community built version of Emacs using Space key as the leader key. Table of Contents  1. Refactor your Javascript like a Pro with js2-refactor  1.1. Installation - Emacs 1.2. Installation - Spacemacs 1.3. Usage 1.4. Refactorings  1.4.1. js2r-expand-array 1.4.2. js2r-expand-object 1.4.3. js2r-expand-function 1.4.4. js2r-extract-function 1.4.5. js2r-extract-method 1.4.6. js2r-extract-var 1.4.7. js2r-contract-array 1.</description>
+    </item>
+    
+  </channel>
+</rss>

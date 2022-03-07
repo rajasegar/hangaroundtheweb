@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    
+    <title>Do you care about Cohesion in Javascript functions? | hangaroundtheweb</title>
+    <meta name="viewport" content="width=device-width,minimum-scale=1">
+    <meta name="description" content="Cohesion is the measure of strength of the association of elements within a module. Modules whose elements are strongly and genuinely related to each other are desired. A module should be highly cohesive.
+Table of Contents  1. Do you care about Cohesion in Javascript Functions?  1.1. Functional Cohesion  1.1.1. Sequential Cohesion 1.1.2. Communicational Cohesion 1.1.3. Temporal Cohesion   1.2. Sequential Cohesion 1.3. Communicational Cohesion 1.4. Temporal Cohesion  1.">
+    <meta name="generator" content="Hugo 0.83.1" />
+    
+    
+      <META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
+    
+
+    
+<link rel="stylesheet" href="/ananke/css/main.min.css" >
+
+
+
+
+    
+      
+
+    
+
+    
+    
+    <meta property="og:title" content="Do you care about Cohesion in Javascript functions?" />
+<meta property="og:description" content="Cohesion is the measure of strength of the association of elements within a module. Modules whose elements are strongly and genuinely related to each other are desired. A module should be highly cohesive.
+Table of Contents  1. Do you care about Cohesion in Javascript Functions?  1.1. Functional Cohesion  1.1.1. Sequential Cohesion 1.1.2. Communicational Cohesion 1.1.3. Temporal Cohesion   1.2. Sequential Cohesion 1.3. Communicational Cohesion 1.4. Temporal Cohesion  1." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://hangaroundtheweb.com/posts/do-you-care-about-cohesion-in-javascript-functions/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2017-09-03T21:37:51&#43;00:00" />
+<meta property="article:modified_time" content="2017-09-03T21:37:51&#43;00:00" />
+
+<meta itemprop="name" content="Do you care about Cohesion in Javascript functions?">
+<meta itemprop="description" content="Cohesion is the measure of strength of the association of elements within a module. Modules whose elements are strongly and genuinely related to each other are desired. A module should be highly cohesive.
+Table of Contents  1. Do you care about Cohesion in Javascript Functions?  1.1. Functional Cohesion  1.1.1. Sequential Cohesion 1.1.2. Communicational Cohesion 1.1.3. Temporal Cohesion   1.2. Sequential Cohesion 1.3. Communicational Cohesion 1.4. Temporal Cohesion  1."><meta itemprop="datePublished" content="2017-09-03T21:37:51&#43;00:00" />
+<meta itemprop="dateModified" content="2017-09-03T21:37:51&#43;00:00" />
+<meta itemprop="wordCount" content="1720">
+<meta itemprop="keywords" content="Articles,javascript,Javascript,web development," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Do you care about Cohesion in Javascript functions?"/>
+<meta name="twitter:description" content="Cohesion is the measure of strength of the association of elements within a module. Modules whose elements are strongly and genuinely related to each other are desired. A module should be highly cohesive.
+Table of Contents  1. Do you care about Cohesion in Javascript Functions?  1.1. Functional Cohesion  1.1.1. Sequential Cohesion 1.1.2. Communicational Cohesion 1.1.3. Temporal Cohesion   1.2. Sequential Cohesion 1.3. Communicational Cohesion 1.4. Temporal Cohesion  1."/>
+
+	
+  </head>
+
+  <body class="ma0 avenir bg-near-white">
+
+    
+   
+  
+
+  <header>
+    <div class="bg-black">
+      <nav class="pv3 ph3 ph4-ns" role="navigation">
+  <div class="flex-l justify-between items-center center">
+    <a href="/" class="f3 fw2 hover-white no-underline white-90 dib">
+      
+        hangaroundtheweb
+      
+    </a>
+    <div class="flex-l items-center">
+      
+
+      
+      
+
+
+
+
+<a href="https://twitter.com/rajasegar_c" target="_blank" class="link-transition twitter link dib z-999 pt3 pt0-l mr1" title="Twitter link" rel="noopener" aria-label="follow on Twitter——Opens in a new window">
+  <svg height="32px"  style="enable-background:new 0 0 67 67;" version="1.1" viewBox="0 0 67 67" width="32px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M37.167,22.283c-2.619,0.953-4.274,3.411-4.086,6.101  l0.063,1.038l-1.048-0.127c-3.813-0.487-7.145-2.139-9.974-4.915l-1.383-1.377l-0.356,1.017c-0.754,2.267-0.272,4.661,1.299,6.271  c0.838,0.89,0.649,1.017-0.796,0.487c-0.503-0.169-0.943-0.296-0.985-0.233c-0.146,0.149,0.356,2.076,0.754,2.839  c0.545,1.06,1.655,2.097,2.871,2.712l1.027,0.487l-1.215,0.021c-1.173,0-1.215,0.021-1.089,0.467  c0.419,1.377,2.074,2.839,3.918,3.475l1.299,0.444l-1.131,0.678c-1.676,0.976-3.646,1.526-5.616,1.568  C19.775,43.256,19,43.341,19,43.405c0,0.211,2.557,1.397,4.044,1.864c4.463,1.377,9.765,0.783,13.746-1.568  c2.829-1.673,5.657-5,6.978-8.221c0.713-1.716,1.425-4.851,1.425-6.354c0-0.975,0.063-1.102,1.236-2.267  c0.692-0.678,1.341-1.419,1.467-1.631c0.21-0.403,0.188-0.403-0.88-0.043c-1.781,0.636-2.033,0.551-1.152-0.402  c0.649-0.678,1.425-1.907,1.425-2.267c0-0.063-0.314,0.042-0.671,0.233c-0.377,0.212-1.215,0.53-1.844,0.72l-1.131,0.361l-1.027-0.7  c-0.566-0.381-1.361-0.805-1.781-0.932C39.766,21.902,38.131,21.944,37.167,22.283z M33,64C16.432,64,3,50.569,3,34S16.432,4,33,4  s30,13.431,30,30S49.568,64,33,64z" style="fill-rule:evenodd;clip-rule:evenodd;fill:;"/></svg>
+
+<span class="new-window"><svg  height="8px"  style="enable-background:new 0 0 1000 1000;" version="1.1" viewBox="0 0 1000 1000" width="8px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" >
+<path d="M598 128h298v298h-86v-152l-418 418-60-60 418-418h-152v-86zM810 810v-298h86v298c0 46-40 86-86 86h-596c-48 0-86-40-86-86v-596c0-46 38-86 86-86h298v86h-298v596h596z" style="fill-rule:evenodd;clip-rule:evenodd;fill:;"/>
+</svg>
+</span></a>
+
+
+
+
+
+<a href="https://github.com/rajasegar" target="_blank" class="link-transition github link dib z-999 pt3 pt0-l mr1" title="Github link" rel="noopener" aria-label="follow on Github——Opens in a new window">
+  <svg  height="32px"  style="enable-background:new 0 0 512 512;" version="1.1" viewBox="0 0 512 512" width="32px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" >
+  <path d="M256,32C132.3,32,32,134.8,32,261.7c0,101.5,64.2,187.5,153.2,217.9c11.2,2.1,15.3-5,15.3-11.1   c0-5.5-0.2-19.9-0.3-39.1c-62.3,13.9-75.5-30.8-75.5-30.8c-10.2-26.5-24.9-33.6-24.9-33.6c-20.3-14.3,1.5-14,1.5-14   c22.5,1.6,34.3,23.7,34.3,23.7c20,35.1,52.4,25,65.2,19.1c2-14.8,7.8-25,14.2-30.7c-49.7-5.8-102-25.5-102-113.5   c0-25.1,8.7-45.6,23-61.6c-2.3-5.8-10-29.2,2.2-60.8c0,0,18.8-6.2,61.6,23.5c17.9-5.1,37-7.6,56.1-7.7c19,0.1,38.2,2.6,56.1,7.7   c42.8-29.7,61.5-23.5,61.5-23.5c12.2,31.6,4.5,55,2.2,60.8c14.3,16.1,23,36.6,23,61.6c0,88.2-52.4,107.6-102.3,113.3   c8,7.1,15.2,21.1,15.2,42.5c0,30.7-0.3,55.5-0.3,63c0,6.1,4,13.3,15.4,11C415.9,449.1,480,363.1,480,261.7   C480,134.8,379.7,32,256,32z"/>
+</svg>
+
+<span class="new-window"><svg  height="8px"  style="enable-background:new 0 0 1000 1000;" version="1.1" viewBox="0 0 1000 1000" width="8px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" >
+<path d="M598 128h298v298h-86v-152l-418 418-60-60 418-418h-152v-86zM810 810v-298h86v298c0 46-40 86-86 86h-596c-48 0-86-40-86-86v-596c0-46 38-86 86-86h298v86h-298v596h596z" style="fill-rule:evenodd;clip-rule:evenodd;fill:;"/>
+</svg>
+</span></a>
+
+
+
+
+
+
+
+
+    </div>
+  </div>
+</nav>
+
+    </div>
+  </header>
+
+
+
+    <main class="pb7" role="main">
+      
+  
+  <article class="flex-l flex-wrap justify-between mw8 center ph3">
+    <header class="mt4 w-100">
+      <aside class="instapaper_ignoref b helvetica tracked">
+          
+        POSTS
+      </aside>
+      
+
+
+
+
+  <div id="sharing" class="mt3">
+
+    
+    <a href="https://www.facebook.com/sharer.php?u=http://hangaroundtheweb.com/posts/do-you-care-about-cohesion-in-javascript-functions/" class="facebook no-underline" aria-label="share on Facebook">
+      <svg height="32px"  style="enable-background:new 0 0 67 67;" version="1.1" viewBox="0 0 67 67" width="32px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M28.765,50.32h6.744V33.998h4.499l0.596-5.624h-5.095  l0.007-2.816c0-1.466,0.14-2.253,2.244-2.253h2.812V17.68h-4.5c-5.405,0-7.307,2.729-7.307,7.317v3.377h-3.369v5.625h3.369V50.32z   M33,64C16.432,64,3,50.569,3,34S16.432,4,33,4s30,13.431,30,30S49.568,64,33,64z" style="fill-rule:evenodd;clip-rule:evenodd;"/></svg>
+
+    </a>
+
+    
+    
+    <a href="https://twitter.com/share?url=http://hangaroundtheweb.com/posts/do-you-care-about-cohesion-in-javascript-functions/&amp;text=Do%20you%20care%20about%20Cohesion%20in%20Javascript%20functions?" class="twitter no-underline" aria-label="share on Twitter">
+      <svg height="32px"  style="enable-background:new 0 0 67 67;" version="1.1" viewBox="0 0 67 67" width="32px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M37.167,22.283c-2.619,0.953-4.274,3.411-4.086,6.101  l0.063,1.038l-1.048-0.127c-3.813-0.487-7.145-2.139-9.974-4.915l-1.383-1.377l-0.356,1.017c-0.754,2.267-0.272,4.661,1.299,6.271  c0.838,0.89,0.649,1.017-0.796,0.487c-0.503-0.169-0.943-0.296-0.985-0.233c-0.146,0.149,0.356,2.076,0.754,2.839  c0.545,1.06,1.655,2.097,2.871,2.712l1.027,0.487l-1.215,0.021c-1.173,0-1.215,0.021-1.089,0.467  c0.419,1.377,2.074,2.839,3.918,3.475l1.299,0.444l-1.131,0.678c-1.676,0.976-3.646,1.526-5.616,1.568  C19.775,43.256,19,43.341,19,43.405c0,0.211,2.557,1.397,4.044,1.864c4.463,1.377,9.765,0.783,13.746-1.568  c2.829-1.673,5.657-5,6.978-8.221c0.713-1.716,1.425-4.851,1.425-6.354c0-0.975,0.063-1.102,1.236-2.267  c0.692-0.678,1.341-1.419,1.467-1.631c0.21-0.403,0.188-0.403-0.88-0.043c-1.781,0.636-2.033,0.551-1.152-0.402  c0.649-0.678,1.425-1.907,1.425-2.267c0-0.063-0.314,0.042-0.671,0.233c-0.377,0.212-1.215,0.53-1.844,0.72l-1.131,0.361l-1.027-0.7  c-0.566-0.381-1.361-0.805-1.781-0.932C39.766,21.902,38.131,21.944,37.167,22.283z M33,64C16.432,64,3,50.569,3,34S16.432,4,33,4  s30,13.431,30,30S49.568,64,33,64z" style="fill-rule:evenodd;clip-rule:evenodd;fill:;"/></svg>
+
+    </a>
+
+    
+    <a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=http://hangaroundtheweb.com/posts/do-you-care-about-cohesion-in-javascript-functions/&amp;title=Do%20you%20care%20about%20Cohesion%20in%20Javascript%20functions?" class="linkedin no-underline" aria-label="share on LinkedIn">
+      <svg  height="32px"  style="enable-background:new 0 0 65 65;" version="1.1" viewBox="0 0 65 65" width="32px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <path d="M50.837,48.137V36.425c0-6.275-3.35-9.195-7.816-9.195  c-3.604,0-5.219,1.983-6.119,3.374V27.71h-6.79c0.09,1.917,0,20.427,0,20.427h6.79V36.729c0-0.609,0.044-1.219,0.224-1.655  c0.49-1.22,1.607-2.483,3.482-2.483c2.458,0,3.44,1.873,3.44,4.618v10.929H50.837z M22.959,24.922c2.367,0,3.842-1.57,3.842-3.531  c-0.044-2.003-1.475-3.528-3.797-3.528s-3.841,1.524-3.841,3.528c0,1.961,1.474,3.531,3.753,3.531H22.959z M34,64  C17.432,64,4,50.568,4,34C4,17.431,17.432,4,34,4s30,13.431,30,30C64,50.568,50.568,64,34,64z M26.354,48.137V27.71h-6.789v20.427  H26.354z" style="fill-rule:evenodd;clip-rule:evenodd;fill:;"/>
+</svg>
+
+    </a>
+  </div>
+
+
+      <h1 class="f1 athelas mt3 mb1">Do you care about Cohesion in Javascript functions?</h1>
+      
+      
+      <time class="f6 mv4 dib tracked" datetime="2017-09-03T21:37:51Z">September 3, 2017</time>
+
+      
+      
+    </header>
+    <div class="nested-copy-line-height lh-copy serif f4 nested-links nested-img mid-gray pr4-l w-two-thirds-l"><p>Cohesion is the measure of strength of the association of elements within a module. Modules whose elements are strongly and genuinely related to each other are desired. A module should be highly cohesive.</p>
+<h2 id="table-of-contents">Table of Contents</h2>
+<ul>
+<li><a href="#org2d38612">1. Do you care about Cohesion in Javascript Functions?</a>
+<ul>
+<li><a href="#org1105340">1.1. Functional Cohesion</a>
+<ul>
+<li><a href="#org007c11e">1.1.1. Sequential Cohesion</a></li>
+<li><a href="#org85e4c3c">1.1.2. Communicational Cohesion</a></li>
+<li><a href="#orge1f12d0">1.1.3. Temporal Cohesion</a></li>
+</ul>
+</li>
+<li><a href="#org22b1fc8">1.2. Sequential Cohesion</a></li>
+<li><a href="#orgd78fb8a">1.3. Communicational Cohesion</a></li>
+<li><a href="#orgb71ff13">1.4. Temporal Cohesion</a>
+<ul>
+<li><a href="#org488a460">1.4.1. Procedural Cohesion</a></li>
+<li><a href="#org9b6da46">1.4.2. Logical Cohesion</a></li>
+<li><a href="#org8b05a21">1.4.3. Coincidental Cohesion</a></li>
+</ul>
+</li>
+<li><a href="#orga164dd3">1.5. Procedural Cohesion</a></li>
+<li><a href="#org2456782">1.6. Logical Cohesion</a></li>
+<li><a href="#org95fcb0e">1.7. Coincidental Cohesion</a></li>
+</ul>
+</li>
+</ul>
+<h2 id="1do-you-care-about-cohesion-in-javascript-functions">1 Do you care about Cohesion in Javascript Functions?</h2>
+<p>The concept of cohesion has been largely superceded by the concept of abstraction at the class level, but cohesion is still alive and well as the workhorse design heuristic at the individual-function level. For functions, cohesion refers to how closely the operations in a function are related. Some programmers prefer the term “strength”: How strongly related are the operations in a function? A function like <strong>cosine()</strong> is perfectly cohesive because the whole function is dedicated to performing one task. A function like <strong>cosinetan()</strong> has lower cohesion because it tries to do more than one thing. The goal is to have each function do one thing well and not do anything else. <a href="https://giphy.com/gifs/kim-kardashian-kris-jenner-gif-cRiSo5a7kVyww">via GIPHY</a> The idea of cohesion was introduced in a paper by Wayne Stevens, Glenford Myers, and Larry Constantine (1974). Other, more modern concepts including abstraction and encapsulation tend to yield more insight at the class level, but cohesion is still a workhorse concept for the design of functions. Discussions about cohesion typically refer to several levels of cohesion. Understanding the concepts is more important than remembering specific terms. Use the concepts as aids in thinking about how to make functions as cohesive as possible.</p>
+<h3 id="11functional-cohesion">1.1 Functional Cohesion</h3>
+<p>Functional cohesion is the strongest and best kind of cohesion, occurring when a function performs one and only one operation. Examples of highly cohesive functions include <strong>sin()</strong>, <strong>getCustomerName()</strong>, <strong>eraseFile()</strong>, <strong>calculateLoanPayment()</strong>, and <strong>ageFromBirthday()</strong>. Of course, this evaluation of their cohesion assumes that the functions do what their names say they do—if they do anything else, they are less cohesive and poorly named. <a href="https://giphy.com/gifs/realitytvgifs-real-housewives-rhonj-of-new-jersey-10tVhjcavACiBi">via GIPHY</a> Several other kinds of cohesion are normally considered to be less than ideal:</p>
+<h4 id="111sequential-cohesion">1.1.1 Sequential Cohesion</h4>
+<h4 id="112communicational-cohesion">1.1.2 Communicational Cohesion</h4>
+<h4 id="113temporal-cohesion">1.1.3 Temporal Cohesion</h4>
+<h3 id="12sequential-cohesion">1.2 Sequential Cohesion</h3>
+<p>Sequential cohesion exists when a function contains operations that must be performed in a specific order, that share data from step to step, and that don’t make up a complete function when done together. An example of sequential cohesion is a function that calculates an employee’s age and time to retirement, given a birth date. If the function calculates the age and then uses that result to calculate the employee’s time to retirement, it has <strong>sequential</strong> cohesion. If the function calculates the age and then calculates the time to retirement in a completely separate computation that happens to use the same birth-date data, it has only <strong>communicational</strong> cohesion.</p>
+<pre><code>function timeToRetire(birthday) { // birthday is a date
+  const RETIREMENT\_AGE = 65;
+  let ageDifMs = Date.now() - birthday.getTime();
+  let ageDate = new Date(ageDifMs); // miliseconds from epoch
+  let age = Math.abs(ageDate.getUTCFullYear() - 1970)
+  let \_timeToRetire = RETIREMENT\_AGE - age;
+  return \_timeToRetire;
+}
+
+</code></pre><p>How would you make the function functionally cohesive? You’d create separate functions to compute an employee’s age given a birth date, and time to retirement given a birth date. The time-to-retirement function could call the age function. They’d both have functional cohesion. Other functions could call either function or both functions.</p>
+<pre><code>const RETIREMENT\_AGE = 65;
+
+function calculateAge(birthday) {
+  let ageDifMs = Date.now() - birthday.getTime();
+  let ageDate = new Date(ageDifMs); // miliseconds from epoch
+  return Math.abs(ageDate.getUTCFullYear() - 1970)
+}
+
+function calcRetirementTime(age) {
+  return RETIREMENT\_AGE - age;
+}
+
+function timeToRetire(birthday) { // birthday is a date
+  let age = calculateAge(birthday);
+  let \_timeToRetire = calcRetirementTime(age);
+  return \_timeToRetire;
+}
+
+</code></pre><h3 id="13communicational-cohesion">1.3 Communicational Cohesion</h3>
+<p>Communicational cohesion occurs when operations in a function make use of the same data and aren’t related in any other way. If a function prints a summary report and then reinitializes the summary data passed into it, the function has communicational cohesion; the two operations are related only by the fact that they use the same data.</p>
+<pre><code>function printSummary(summary) {
+  // Print the summary data
+  // Re-initialize the summary data
+}
+
+</code></pre><p>To give this function better cohesion, the summary data should be reinitialized close to where it’s created, which shouldn’t be in the report-printing function. <a href="https://giphy.com/gifs/communication-dFO1dMLwswMfu">via GIPHY</a> Split the operations into individual functions. The first prints the report. The second reinitializes the data, close to the code that creates or modifies the data. Call both functions from the higher-level function that originally called the communicationally cohesive function.</p>
+<pre><code>function printReport(summary) {
+}
+
+function initialize(summary) {
+}
+
+function printSummary(summary) {
+  printReport(summary);
+  initialize(summary);
+}
+
+</code></pre><h3 id="14temporal-cohesion">1.4 Temporal Cohesion</h3>
+<p>Temporal cohesion occurs when operations are combined into a function because they are all done at the same time. Typical examples would be <strong>startup()</strong>, <strong>completeNewEmployee()</strong>, and <strong>shutdown()</strong>. Some programmers consider temporal cohesion to be unacceptable because it’s sometimes associated with bad programming practices such as having a hodgepodge of code in a <strong>startup()</strong> function. <a href="https://giphy.com/gifs/j1Lb0pDlYmSuQ">via GIPHY</a> To avoid this problem, think of temporal functions as organizers of other events. The <strong>startup()</strong> function, for example, might read a configuration file, initialize a scratch file, set up a memory manager, and show an initial screen. To make it most effective, have the temporally cohesive function call other functions to perform specific activities rather than performing the operations directly itself. That way, it will be clear that the point of the function is to orchestrate activities rather than to do them directly.</p>
+<pre><code>function completeNewEmployee() {
+  // startup logic here
+  // Read configuration file
+
+  // Init scratch file
+  // etc
+  // shutdown logic here
+}
+
+function startup() {
+  // Read configuration file
+  // Init scratch file
+  // etc
+}
+
+function shutdown() {
+}
+
+function completeNewEmployee() {
+  startup();
+  // completeNewEmployee logic here
+  shutdown();
+}
+
+
+
+</code></pre><p>This example raises the issue of choosing a name that describes the function at the right level of abstraction. You could decide to name the function <strong>readConfigFileInitScratchFileEtc()</strong>, which would imply that the function had only coincidental cohesion. If you name it <strong>startup()</strong>, however, it would be clear that it had a single purpose and clear that it had functional cohesion.</p>
+<p><img src="/wp-content/uploads/2017/09/functional-cohesion.png" alt="functional-cohesion.png"></p>
+<p>The remaining kinds of cohesion are generally unacceptable. They result in code that’s poorly organized, hard to debug, and hard to modify. If a function has bad cohesion, it’s better to put effort into a rewrite to have better cohesion than investing in a pinpoint diagnosis of the problem. Knowing what to avoid can be useful, however, so here are the unacceptable kinds of cohesion:</p>
+<h4 id="141procedural-cohesion">1.4.1 Procedural Cohesion</h4>
+<h4 id="142logical-cohesion">1.4.2 Logical Cohesion</h4>
+<h4 id="143coincidental-cohesion">1.4.3 Coincidental Cohesion</h4>
+<h3 id="15procedural-cohesion">1.5 Procedural Cohesion</h3>
+<p>Procedural cohesion occurs when operations in a function are done in a specified order. An example is a function that gets an employee name, then an address, and then a phone number. The order of these operations is important only because it matches the order in which the user is asked for the data on the input screen. Another function gets the rest of the employee data. The function has procedural cohesion because it puts a set of operations in a specified order and the operations don’t need to be combined for any other reason. <a href="https://giphy.com/gifs/i5XuNwrlG2jRK">via GIPHY</a> To achieve better cohesion, put the separate operations into their own functions. Make sure that the calling function has a single, complete job: <strong>getEmployeeData()</strong> rather than <strong>getFirstPartOfEmployeeData()</strong>. You’ll probably need to modify the functions that get the rest of the data too. It’s common to modify two or more original functions before you achieve functional cohesion in any of them.</p>
+<h3 id="16logical-cohesion">1.6 Logical Cohesion</h3>
+<p>Logical cohesion occurs when several operations are stuffed into the same function and one of the operations is selected by a control flag that’s passed in. It’s called logical cohesion because the control flow or “logic” of the function is the only thing that ties the operations together—they’re all in a big if statement or case statement together. It isn’t because the operations are logically related in any other sense. Considering that the defining attribute of logical cohesion is that the operations are unrelated, a better name might illogical cohesion. One example would be an <strong>inputAll()</strong> function that input customer names, employee time-card information, or inventory data depending on a flag passed to the function. Other examples would be <strong>computeAll()</strong>, <strong>editAll()</strong>, <strong>printAll()</strong>, and <strong>saveAll()</strong>. The main problem with such functions is that you shouldn’t need to pass in a flag to control another function’s processing.</p>
+<pre><code>function inputAll(opFlag) {
+  switch(opFlag) {
+    case 'TIME\_CARD':
+      // Input all the employee time-card information
+      break;
+    case 'INVENTORY':
+      // Input all the inventory data
+      break;
+    case 'CUSTOMER':
+      // Input all the customer names
+      break;
+  }
+}
+
+
+</code></pre><p>Instead of having a function that does one of three distinct operations, depending on a flag passed to it, it’s cleaner to have three functions, each of which does one distinct operation. If the operations use some of the same code or share data, the code should be moved into a lower-level function and the functions should be packaged into a class.</p>
+<pre><code>function inputTimeCard(timeCard) {
+  // Input all the employee time-card information
+}
+
+function inputInventory(inventory) {
+  // Input all the inventory data
+}
+
+function inputCustomer(customer) {
+  // Input all the customer names
+}
+
+
+</code></pre><p>It’s usually all right, however, to create a logically cohesive function if its code consists solely of a series of if or case statements and calls to other functions. In such a case, if the function’s only function is to dispatch commands and it doesn’t do any of the processing itself, that’s usually a good design. The technical term for this kind of function is “event handler.”</p>
+<h3 id="17coincidental-cohesion">1.7 Coincidental Cohesion</h3>
+<p>Coincidental cohesion occurs when the operations in a function have no discernible relationship to each other. Other good names are “no cohesion” or “chaotic cohesion.” It’s hard to convert coincidental cohesion to any better kind of cohesion—you usually need to do a deeper redesign and reimplementation.</p>
+<p><img src="/wp-content/uploads/2017/09/cohesion-table.png" alt="cohesion-table.png"></p>
+<p>None of these terms are magical or sacred. Learn the ideas rather than the terminology. It’s nearly always possible to write functions with functional cohesion, so focus your attention on functional cohesion for maximum benefit.</p>
+<p><strong>References:</strong></p>
+<ol>
+<li><a href="http://amzn.in/fKvTdgU">Code Complete 2 by Steve McConnell</a></li>
+<li><a href="http://www.cs.unc.edu/~stotts/COMP145/cohesion.html">Intramodule Cohesion</a></li>
+<li><a href="https://wlazuardi.wordpress.com/2013/05/13/communication-between-modules-cohesion-and-coupling/">Communication between modules: Cohesion</a></li>
+</ol>
+<p><strong>Cover Image by:</strong></p>
+<p><a href="https://unsplash.com/@tryshphoto?utm_medium=referral&amp;utm_campaign=photographer-credit&amp;utm_content=creditBadge" title="Download free do whatever you want high-resolution photos from Keit Trysh">Keit Trysh</a></p>
+<ul class="pa0">
+  
+   <li class="list">
+     <a href="/tags/articles" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">Articles</a>
+   </li>
+  
+   <li class="list">
+     <a href="/tags/javascript" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">javascript</a>
+   </li>
+  
+   <li class="list">
+     <a href="/tags/javascript" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">Javascript</a>
+   </li>
+  
+   <li class="list">
+     <a href="/tags/web-development" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">web development</a>
+   </li>
+  
+</ul>
+<div class="mt6 instapaper_ignoref">
+      
+      
+      </div>
+    </div>
+
+    <aside class="w-30-l mt6-l">
+
+
+
+
+  <div class="bg-light-gray pa3 nested-list-reset nested-copy-line-height nested-links">
+    <p class="f5 b mb3">Related</p>
+    <ul class="pa0 list">
+	   
+	     <li  class="mb2">
+          <a href="/posts/refactor-your-javascript-like-a-pro-with-js2-refactor/">Refactor your Javascript like a Pro with js2-refactor</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/posts/build-a-wikipedia-search-engine-using-rxjs/">Build a Wikipedia search engine using RxJS</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/posts/cycle-js-tutorial-registration-form-part-2/">Cycle.js tutorial: Registration Form - Part 2</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/posts/cycle-js-tutorial-create-a-simple-registration-form-and-track-the-application-state/">Cycle.js tutorial: Create a simple registration form and track the application state</a>
+        </li>
+	    
+    </ul>
+</div>
+
+</aside>
+
+  </article>
+
+    </main>
+    <footer class="bg-black bottom-0 w-100 pa3" role="contentinfo">
+  <div class="flex justify-between">
+  <a class="f4 fw4 hover-white no-underline white-70 dn dib-ns pv2 ph3" href="http://hangaroundtheweb.com/" >
+    &copy;  hangaroundtheweb 2022 
+  </a>
+    <div>
+
+
+
+
+<a href="https://twitter.com/rajasegar_c" target="_blank" class="link-transition twitter link dib z-999 pt3 pt0-l mr1" title="Twitter link" rel="noopener" aria-label="follow on Twitter——Opens in a new window">
+  <svg height="32px"  style="enable-background:new 0 0 67 67;" version="1.1" viewBox="0 0 67 67" width="32px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M37.167,22.283c-2.619,0.953-4.274,3.411-4.086,6.101  l0.063,1.038l-1.048-0.127c-3.813-0.487-7.145-2.139-9.974-4.915l-1.383-1.377l-0.356,1.017c-0.754,2.267-0.272,4.661,1.299,6.271  c0.838,0.89,0.649,1.017-0.796,0.487c-0.503-0.169-0.943-0.296-0.985-0.233c-0.146,0.149,0.356,2.076,0.754,2.839  c0.545,1.06,1.655,2.097,2.871,2.712l1.027,0.487l-1.215,0.021c-1.173,0-1.215,0.021-1.089,0.467  c0.419,1.377,2.074,2.839,3.918,3.475l1.299,0.444l-1.131,0.678c-1.676,0.976-3.646,1.526-5.616,1.568  C19.775,43.256,19,43.341,19,43.405c0,0.211,2.557,1.397,4.044,1.864c4.463,1.377,9.765,0.783,13.746-1.568  c2.829-1.673,5.657-5,6.978-8.221c0.713-1.716,1.425-4.851,1.425-6.354c0-0.975,0.063-1.102,1.236-2.267  c0.692-0.678,1.341-1.419,1.467-1.631c0.21-0.403,0.188-0.403-0.88-0.043c-1.781,0.636-2.033,0.551-1.152-0.402  c0.649-0.678,1.425-1.907,1.425-2.267c0-0.063-0.314,0.042-0.671,0.233c-0.377,0.212-1.215,0.53-1.844,0.72l-1.131,0.361l-1.027-0.7  c-0.566-0.381-1.361-0.805-1.781-0.932C39.766,21.902,38.131,21.944,37.167,22.283z M33,64C16.432,64,3,50.569,3,34S16.432,4,33,4  s30,13.431,30,30S49.568,64,33,64z" style="fill-rule:evenodd;clip-rule:evenodd;fill:;"/></svg>
+
+<span class="new-window"><svg  height="8px"  style="enable-background:new 0 0 1000 1000;" version="1.1" viewBox="0 0 1000 1000" width="8px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" >
+<path d="M598 128h298v298h-86v-152l-418 418-60-60 418-418h-152v-86zM810 810v-298h86v298c0 46-40 86-86 86h-596c-48 0-86-40-86-86v-596c0-46 38-86 86-86h298v86h-298v596h596z" style="fill-rule:evenodd;clip-rule:evenodd;fill:;"/>
+</svg>
+</span></a>
+
+
+
+
+
+<a href="https://github.com/rajasegar" target="_blank" class="link-transition github link dib z-999 pt3 pt0-l mr1" title="Github link" rel="noopener" aria-label="follow on Github——Opens in a new window">
+  <svg  height="32px"  style="enable-background:new 0 0 512 512;" version="1.1" viewBox="0 0 512 512" width="32px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" >
+  <path d="M256,32C132.3,32,32,134.8,32,261.7c0,101.5,64.2,187.5,153.2,217.9c11.2,2.1,15.3-5,15.3-11.1   c0-5.5-0.2-19.9-0.3-39.1c-62.3,13.9-75.5-30.8-75.5-30.8c-10.2-26.5-24.9-33.6-24.9-33.6c-20.3-14.3,1.5-14,1.5-14   c22.5,1.6,34.3,23.7,34.3,23.7c20,35.1,52.4,25,65.2,19.1c2-14.8,7.8-25,14.2-30.7c-49.7-5.8-102-25.5-102-113.5   c0-25.1,8.7-45.6,23-61.6c-2.3-5.8-10-29.2,2.2-60.8c0,0,18.8-6.2,61.6,23.5c17.9-5.1,37-7.6,56.1-7.7c19,0.1,38.2,2.6,56.1,7.7   c42.8-29.7,61.5-23.5,61.5-23.5c12.2,31.6,4.5,55,2.2,60.8c14.3,16.1,23,36.6,23,61.6c0,88.2-52.4,107.6-102.3,113.3   c8,7.1,15.2,21.1,15.2,42.5c0,30.7-0.3,55.5-0.3,63c0,6.1,4,13.3,15.4,11C415.9,449.1,480,363.1,480,261.7   C480,134.8,379.7,32,256,32z"/>
+</svg>
+
+<span class="new-window"><svg  height="8px"  style="enable-background:new 0 0 1000 1000;" version="1.1" viewBox="0 0 1000 1000" width="8px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" >
+<path d="M598 128h298v298h-86v-152l-418 418-60-60 418-418h-152v-86zM810 810v-298h86v298c0 46-40 86-86 86h-596c-48 0-86-40-86-86v-596c0-46 38-86 86-86h298v86h-298v596h596z" style="fill-rule:evenodd;clip-rule:evenodd;fill:;"/>
+</svg>
+</span></a>
+
+
+
+
+
+
+
+</div>
+  </div>
+</footer>
+
+  </body>
+</html>

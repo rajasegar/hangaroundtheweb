@@ -1,0 +1,717 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    
+    <title>Searching, Sorting and Pagination in a Common Lisp web application | hangaroundtheweb</title>
+    <meta name="viewport" content="width=device-width,minimum-scale=1">
+    <meta name="description" content="In this post, we are going to build a demo web application in Common Lisp with search, sort and pagination functionalities with a tabular data.">
+    <meta name="generator" content="Hugo 0.83.1" />
+    
+    
+      <META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
+    
+
+    
+<link rel="stylesheet" href="/ananke/css/main.min.css" >
+
+
+
+
+    
+      
+
+    
+
+    
+    
+    <meta property="og:title" content="Searching, Sorting and Pagination in a Common Lisp web application" />
+<meta property="og:description" content="In this post, we are going to build a demo web application in Common Lisp with search, sort and pagination functionalities with a tabular data." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://hangaroundtheweb.com/posts/searching-sorting-pagination-cl-web-app/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2021-07-13T09:00:00&#43;00:00" />
+<meta property="article:modified_time" content="2021-07-13T09:00:00&#43;00:00" />
+
+<meta itemprop="name" content="Searching, Sorting and Pagination in a Common Lisp web application">
+<meta itemprop="description" content="In this post, we are going to build a demo web application in Common Lisp with search, sort and pagination functionalities with a tabular data."><meta itemprop="datePublished" content="2021-07-13T09:00:00&#43;00:00" />
+<meta itemprop="dateModified" content="2021-07-13T09:00:00&#43;00:00" />
+<meta itemprop="wordCount" content="2060">
+<meta itemprop="keywords" content="common-lisp,lisp," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Searching, Sorting and Pagination in a Common Lisp web application"/>
+<meta name="twitter:description" content="In this post, we are going to build a demo web application in Common Lisp with search, sort and pagination functionalities with a tabular data."/>
+
+	
+  </head>
+
+  <body class="ma0 avenir bg-near-white">
+
+    
+   
+  
+
+  <header>
+    <div class="bg-black">
+      <nav class="pv3 ph3 ph4-ns" role="navigation">
+  <div class="flex-l justify-between items-center center">
+    <a href="/" class="f3 fw2 hover-white no-underline white-90 dib">
+      
+        hangaroundtheweb
+      
+    </a>
+    <div class="flex-l items-center">
+      
+
+      
+      
+
+
+
+
+<a href="https://twitter.com/rajasegar_c" target="_blank" class="link-transition twitter link dib z-999 pt3 pt0-l mr1" title="Twitter link" rel="noopener" aria-label="follow on Twitter——Opens in a new window">
+  <svg height="32px"  style="enable-background:new 0 0 67 67;" version="1.1" viewBox="0 0 67 67" width="32px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M37.167,22.283c-2.619,0.953-4.274,3.411-4.086,6.101  l0.063,1.038l-1.048-0.127c-3.813-0.487-7.145-2.139-9.974-4.915l-1.383-1.377l-0.356,1.017c-0.754,2.267-0.272,4.661,1.299,6.271  c0.838,0.89,0.649,1.017-0.796,0.487c-0.503-0.169-0.943-0.296-0.985-0.233c-0.146,0.149,0.356,2.076,0.754,2.839  c0.545,1.06,1.655,2.097,2.871,2.712l1.027,0.487l-1.215,0.021c-1.173,0-1.215,0.021-1.089,0.467  c0.419,1.377,2.074,2.839,3.918,3.475l1.299,0.444l-1.131,0.678c-1.676,0.976-3.646,1.526-5.616,1.568  C19.775,43.256,19,43.341,19,43.405c0,0.211,2.557,1.397,4.044,1.864c4.463,1.377,9.765,0.783,13.746-1.568  c2.829-1.673,5.657-5,6.978-8.221c0.713-1.716,1.425-4.851,1.425-6.354c0-0.975,0.063-1.102,1.236-2.267  c0.692-0.678,1.341-1.419,1.467-1.631c0.21-0.403,0.188-0.403-0.88-0.043c-1.781,0.636-2.033,0.551-1.152-0.402  c0.649-0.678,1.425-1.907,1.425-2.267c0-0.063-0.314,0.042-0.671,0.233c-0.377,0.212-1.215,0.53-1.844,0.72l-1.131,0.361l-1.027-0.7  c-0.566-0.381-1.361-0.805-1.781-0.932C39.766,21.902,38.131,21.944,37.167,22.283z M33,64C16.432,64,3,50.569,3,34S16.432,4,33,4  s30,13.431,30,30S49.568,64,33,64z" style="fill-rule:evenodd;clip-rule:evenodd;fill:;"/></svg>
+
+<span class="new-window"><svg  height="8px"  style="enable-background:new 0 0 1000 1000;" version="1.1" viewBox="0 0 1000 1000" width="8px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" >
+<path d="M598 128h298v298h-86v-152l-418 418-60-60 418-418h-152v-86zM810 810v-298h86v298c0 46-40 86-86 86h-596c-48 0-86-40-86-86v-596c0-46 38-86 86-86h298v86h-298v596h596z" style="fill-rule:evenodd;clip-rule:evenodd;fill:;"/>
+</svg>
+</span></a>
+
+
+
+
+
+<a href="https://github.com/rajasegar" target="_blank" class="link-transition github link dib z-999 pt3 pt0-l mr1" title="Github link" rel="noopener" aria-label="follow on Github——Opens in a new window">
+  <svg  height="32px"  style="enable-background:new 0 0 512 512;" version="1.1" viewBox="0 0 512 512" width="32px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" >
+  <path d="M256,32C132.3,32,32,134.8,32,261.7c0,101.5,64.2,187.5,153.2,217.9c11.2,2.1,15.3-5,15.3-11.1   c0-5.5-0.2-19.9-0.3-39.1c-62.3,13.9-75.5-30.8-75.5-30.8c-10.2-26.5-24.9-33.6-24.9-33.6c-20.3-14.3,1.5-14,1.5-14   c22.5,1.6,34.3,23.7,34.3,23.7c20,35.1,52.4,25,65.2,19.1c2-14.8,7.8-25,14.2-30.7c-49.7-5.8-102-25.5-102-113.5   c0-25.1,8.7-45.6,23-61.6c-2.3-5.8-10-29.2,2.2-60.8c0,0,18.8-6.2,61.6,23.5c17.9-5.1,37-7.6,56.1-7.7c19,0.1,38.2,2.6,56.1,7.7   c42.8-29.7,61.5-23.5,61.5-23.5c12.2,31.6,4.5,55,2.2,60.8c14.3,16.1,23,36.6,23,61.6c0,88.2-52.4,107.6-102.3,113.3   c8,7.1,15.2,21.1,15.2,42.5c0,30.7-0.3,55.5-0.3,63c0,6.1,4,13.3,15.4,11C415.9,449.1,480,363.1,480,261.7   C480,134.8,379.7,32,256,32z"/>
+</svg>
+
+<span class="new-window"><svg  height="8px"  style="enable-background:new 0 0 1000 1000;" version="1.1" viewBox="0 0 1000 1000" width="8px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" >
+<path d="M598 128h298v298h-86v-152l-418 418-60-60 418-418h-152v-86zM810 810v-298h86v298c0 46-40 86-86 86h-596c-48 0-86-40-86-86v-596c0-46 38-86 86-86h298v86h-298v596h596z" style="fill-rule:evenodd;clip-rule:evenodd;fill:;"/>
+</svg>
+</span></a>
+
+
+
+
+
+
+
+
+    </div>
+  </div>
+</nav>
+
+    </div>
+  </header>
+
+
+
+    <main class="pb7" role="main">
+      
+  
+  <article class="flex-l flex-wrap justify-between mw8 center ph3">
+    <header class="mt4 w-100">
+      <aside class="instapaper_ignoref b helvetica tracked">
+          
+        POSTS
+      </aside>
+      
+
+
+
+
+  <div id="sharing" class="mt3">
+
+    
+    <a href="https://www.facebook.com/sharer.php?u=http://hangaroundtheweb.com/posts/searching-sorting-pagination-cl-web-app/" class="facebook no-underline" aria-label="share on Facebook">
+      <svg height="32px"  style="enable-background:new 0 0 67 67;" version="1.1" viewBox="0 0 67 67" width="32px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M28.765,50.32h6.744V33.998h4.499l0.596-5.624h-5.095  l0.007-2.816c0-1.466,0.14-2.253,2.244-2.253h2.812V17.68h-4.5c-5.405,0-7.307,2.729-7.307,7.317v3.377h-3.369v5.625h3.369V50.32z   M33,64C16.432,64,3,50.569,3,34S16.432,4,33,4s30,13.431,30,30S49.568,64,33,64z" style="fill-rule:evenodd;clip-rule:evenodd;"/></svg>
+
+    </a>
+
+    
+    
+    <a href="https://twitter.com/share?url=http://hangaroundtheweb.com/posts/searching-sorting-pagination-cl-web-app/&amp;text=Searching,%20Sorting%20and%20Pagination%20in%20a%20Common%20Lisp%20web%20application" class="twitter no-underline" aria-label="share on Twitter">
+      <svg height="32px"  style="enable-background:new 0 0 67 67;" version="1.1" viewBox="0 0 67 67" width="32px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M37.167,22.283c-2.619,0.953-4.274,3.411-4.086,6.101  l0.063,1.038l-1.048-0.127c-3.813-0.487-7.145-2.139-9.974-4.915l-1.383-1.377l-0.356,1.017c-0.754,2.267-0.272,4.661,1.299,6.271  c0.838,0.89,0.649,1.017-0.796,0.487c-0.503-0.169-0.943-0.296-0.985-0.233c-0.146,0.149,0.356,2.076,0.754,2.839  c0.545,1.06,1.655,2.097,2.871,2.712l1.027,0.487l-1.215,0.021c-1.173,0-1.215,0.021-1.089,0.467  c0.419,1.377,2.074,2.839,3.918,3.475l1.299,0.444l-1.131,0.678c-1.676,0.976-3.646,1.526-5.616,1.568  C19.775,43.256,19,43.341,19,43.405c0,0.211,2.557,1.397,4.044,1.864c4.463,1.377,9.765,0.783,13.746-1.568  c2.829-1.673,5.657-5,6.978-8.221c0.713-1.716,1.425-4.851,1.425-6.354c0-0.975,0.063-1.102,1.236-2.267  c0.692-0.678,1.341-1.419,1.467-1.631c0.21-0.403,0.188-0.403-0.88-0.043c-1.781,0.636-2.033,0.551-1.152-0.402  c0.649-0.678,1.425-1.907,1.425-2.267c0-0.063-0.314,0.042-0.671,0.233c-0.377,0.212-1.215,0.53-1.844,0.72l-1.131,0.361l-1.027-0.7  c-0.566-0.381-1.361-0.805-1.781-0.932C39.766,21.902,38.131,21.944,37.167,22.283z M33,64C16.432,64,3,50.569,3,34S16.432,4,33,4  s30,13.431,30,30S49.568,64,33,64z" style="fill-rule:evenodd;clip-rule:evenodd;fill:;"/></svg>
+
+    </a>
+
+    
+    <a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=http://hangaroundtheweb.com/posts/searching-sorting-pagination-cl-web-app/&amp;title=Searching,%20Sorting%20and%20Pagination%20in%20a%20Common%20Lisp%20web%20application" class="linkedin no-underline" aria-label="share on LinkedIn">
+      <svg  height="32px"  style="enable-background:new 0 0 65 65;" version="1.1" viewBox="0 0 65 65" width="32px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <path d="M50.837,48.137V36.425c0-6.275-3.35-9.195-7.816-9.195  c-3.604,0-5.219,1.983-6.119,3.374V27.71h-6.79c0.09,1.917,0,20.427,0,20.427h6.79V36.729c0-0.609,0.044-1.219,0.224-1.655  c0.49-1.22,1.607-2.483,3.482-2.483c2.458,0,3.44,1.873,3.44,4.618v10.929H50.837z M22.959,24.922c2.367,0,3.842-1.57,3.842-3.531  c-0.044-2.003-1.475-3.528-3.797-3.528s-3.841,1.524-3.841,3.528c0,1.961,1.474,3.531,3.753,3.531H22.959z M34,64  C17.432,64,4,50.568,4,34C4,17.431,17.432,4,34,4s30,13.431,30,30C64,50.568,50.568,64,34,64z M26.354,48.137V27.71h-6.789v20.427  H26.354z" style="fill-rule:evenodd;clip-rule:evenodd;fill:;"/>
+</svg>
+
+    </a>
+  </div>
+
+
+      <h1 class="f1 athelas mt3 mb1">Searching, Sorting and Pagination in a Common Lisp web application</h1>
+      
+      
+      <time class="f6 mv4 dib tracked" datetime="2021-07-13T09:00:00Z">July 13, 2021</time>
+
+      
+      
+    </header>
+    <div class="nested-copy-line-height lh-copy serif f4 nested-links nested-img mid-gray pr4-l w-two-thirds-l"><p>
+In this post, we are going to build a demo web application in Common Lisp with search, sort and pagination functionalities with a tabular data 
+of randomly generated food dish names, ratings, price and cuisines.</p>
+<div id="outline-container-headline-1" class="outline-3">
+<h3 id="headline-1">
+Project bootstraping
+</h3>
+<div id="outline-text-headline-1" class="outline-text-3">
+<p>As usual we are going to use <a href="https://github.com/fukamachi/caveman">Caveman</a> for scaffolding our web application.
+   If you want to know more about Caveman or why Caveman, you might want to take a look at my previous <a href="https://hangaroundtheweb.com/posts/lisp-for-the-web-5">post</a>
+   about Common Lisp and web development. Caveman is available in quicklisp, so you can install it with:</p>
+<div class="src src-lisp">
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-lisp" data-lang="lisp">(ql:quickload <span style="color:#e6db74">:caveman2</span>)</code></pre></div>
+</div>
+<p>
+And you can start a create a new project with Caveman like this:</p>
+<div class="src src-lisp">
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-lisp" data-lang="lisp">(caveman2:make-project <span style="color:#ae81ff">#P&#34;~/quicklisp/local-projects/cl-tabular&#34;</span> <span style="color:#e6db74">:author</span> <span style="color:#e6db74">&#34;Rajasegar&#34;</span>)</code></pre></div>
+</div>
+</div>
+</div>
+<div id="outline-container-headline-2" class="outline-3">
+<h3 id="headline-2">
+Index route
+</h3>
+<div id="outline-text-headline-2" class="outline-text-3">
+<p>
+   Now take a look at our <code>index</code> route. Our index route is going to use some query params for sorting and pagination.
+With Caveman you can parse the query params using the <code>_parsed</code> key and we are using custom defined function to 
+take the query parameter values from it like below:</p>
+<div class="src src-lisp">
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-lisp" data-lang="lisp">(defun query-param (name parsed)
+  (<span style="color:#a6e22e">cdr</span> (<span style="color:#a6e22e">assoc</span> name parsed <span style="color:#e6db74">:test</span> <span style="color:#a6e22e">#&#39;string=</span>)))</code></pre></div>
+</div>
+<p>
+So for our route logic, we need the values of the following query parameters, start which is the starting offset
+of the records for the page, direction which is either ascending or descending and the sort-by key based on which
+column we are currently sorting the list.</p>
+<div class="src src-lisp">
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-lisp" data-lang="lisp">(defroute <span style="color:#e6db74">&#34;/&#34;</span> (<span style="color:#66d9ef">&amp;key</span> _parsed)
+  (<span style="color:#a6e22e">format</span> <span style="color:#66d9ef">t</span> <span style="color:#e6db74">&#34;_parsed = ~a~%&#34;</span> _parsed)
+  (<span style="color:#66d9ef">let</span> ((start (<span style="color:#a6e22e">parse-integer</span> (or (query-param <span style="color:#e6db74">&#34;start&#34;</span> _parsed) <span style="color:#e6db74">&#34;0&#34;</span>)))
+        (direction (or (query-param <span style="color:#e6db74">&#34;direction&#34;</span> _parsed) <span style="color:#e6db74">&#34;asc&#34;</span>))
+        (sort-by (or (query-param <span style="color:#e6db74">&#34;sort-by&#34;</span> _parsed) <span style="color:#e6db74">&#34;name&#34;</span>)))
+    (render <span style="color:#ae81ff">#P&#34;index.html&#34;</span>
+            (<span style="color:#a6e22e">list</span>
+             <span style="color:#e6db74">:foods</span> (slice-list start (sort-list direction sort-by))
+             <span style="color:#e6db74">:total</span> (<span style="color:#a6e22e">length</span> *foods*)
+	     <span style="color:#e6db74">:pages</span> (generate-pages)
+	     <span style="color:#e6db74">:start</span> start
+	     <span style="color:#e6db74">:direction</span> direction
+	     <span style="color:#e6db74">:sort-by</span> sort-by
+	     <span style="color:#e6db74">:opposite-direction</span> (get-opposite-direction direction)))))</code></pre></div>
+</div>
+<p>
+One thing important to note in the above code snippet is how we are sending data to 
+the templates via the <code>render</code> function. We can construct our data using a list and 
+the templates can easily access them via the keyword mapped to the data. </p>
+<p>
+Say, for example, in the template you can loop through the list of foods like</p>
+<div class="src src-html">
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">{% for food in foods}
+&lt;<span style="color:#f92672">p</span>&gt;{{food.name}}&lt;/<span style="color:#f92672">p</span>&gt;
+{% endfor %}</code></pre></div>
+</div>
+<p>
+So how are we sending the paginated list of foods to our home page. If you take a closer 
+look, we are first sorting the entire list of foods using the <code>sort-by</code> parameter and then 
+we are slicing the list based on the <code>start</code> offset and returning them to the template.</p>
+<div class="src src-lisp">
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-lisp" data-lang="lisp"><span style="color:#e6db74">:foods</span> (slice-list start (sort-list direction sort-by))</code></pre></div>
+</div>
+<p>
+Let&#39;s take a look at our <code>slice-list</code> function on how we are slicing our list.</p>
+<div class="src src-lisp">
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-lisp" data-lang="lisp">(defun slice-list (start)
+  (<span style="color:#66d9ef">let</span> ((new-list <span style="color:#66d9ef">nil</span>))
+    (dotimes (i <span style="color:#ae81ff">10</span>)
+      (push (<span style="color:#a6e22e">elt</span> *foods* (<span style="color:#a6e22e">+</span> i start)) new-list))
+    new-list))</code></pre></div>
+</div>
+<p>
+We construct a new temporary list by pushing the 10 items from the original list, starting from the <code>start</code> offset
+and then returning the new list to the page. The <code>sort-list</code> function is discussed in the later part of the post under Sorting.</p>
+</div>
+</div>
+<div id="outline-container-headline-3" class="outline-3">
+<h3 id="headline-3">
+Index template
+</h3>
+<div id="outline-text-headline-3" class="outline-text-3">
+<p>Our index template is very big and has got three sections, the search form, the table and the pagination.</p>
+<div id="outline-container-headline-4" class="outline-4">
+<h4 id="headline-4">
+Search Form
+</h4>
+<div id="outline-text-headline-4" class="outline-text-4">
+<p>
+   First we will take a look at the search form.
+So this is a simple form with an input field with the name <code>query</code>.</p>
+<div class="src src-html">
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">  &lt;<span style="color:#f92672">form</span>&gt;
+    &lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;mb-4&#34;</span>&gt;
+      &lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;col-6&#34;</span>&gt;
+        &lt;<span style="color:#f92672">input</span> 
+            <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;form-control form-control-lg&#34;</span> 
+            <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;text&#34;</span> 
+            <span style="color:#a6e22e">placeholder</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;Search dish name...&#34;</span>  
+            <span style="color:#a6e22e">name</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;query&#34;</span> 
+            <span style="color:#a6e22e">hx-post</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;/search?start=0&amp;direction=asc&amp;sort-by=name&#34;</span> 
+            <span style="color:#a6e22e">hx-trigger</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;keyup changed delay:500ms&#34;</span> 
+            <span style="color:#a6e22e">hx-target</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;#results&#34;</span>&gt;
+      &lt;/<span style="color:#f92672">div</span>&gt;
+    &lt;/<span style="color:#f92672">div</span>&gt;
+  &lt;/<span style="color:#f92672">form</span>&gt;</code></pre></div>
+</div>
+<p>
+We are adding some custom attributes starting with <code>hx-</code> , these are actually some enhanced
+attributes for HTML using a library called <a href="https://htmx.org">htmx</a> which  allows you to access AJAX, 
+CSS Transitions, WebSockets and Server Sent Events directly in HTML, using attributes, 
+so you can build modern user interfaces with the simplicity and power of hypertext</p>
+<p>
+<img src="/images/lisp-ssp-search.png" alt="/images/lisp-ssp-search.png" title="/images/lisp-ssp-search.png" /></p>
+<p>
+Using htmx, we are sending a POST request to the url <code>/search</code> and the response will be 
+swapped with the element with an id <code>#results</code>. Hence as soon as you 
+start typing the search keywords the client will start sending the request to the server with a
+delay of 500 milli seconds and you get to see the results populated in the table.</p>
+</div>
+</div>
+<div id="outline-container-headline-5" class="outline-4">
+<h4 id="headline-5">
+Table
+</h4>
+<div id="outline-text-headline-5" class="outline-text-4">
+<p>Next comes our important UI component the table itself. The table will have four columns
+like Name, Rating, Price and Cuisine. When you click on the table headers, it will toggle the sort 
+direction automatically from ascending to descending and vice-versa for a particular column value.
+We will show some up and down arrows to indicate the sorting direction.</p>
+<p>
+<img src="/images/lisp-ssp-table.png" alt="/images/lisp-ssp-table.png" title="/images/lisp-ssp-table.png" /></p>
+<div class="src src-html">
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">  &lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;results&#34;</span>&gt;
+    &lt;<span style="color:#f92672">p</span>&gt;{{total}} results found&lt;/<span style="color:#f92672">p</span>&gt;
+    &lt;<span style="color:#f92672">table</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;table table-striped&#34;</span>&gt;
+      &lt;<span style="color:#f92672">thead</span>&gt;
+        &lt;<span style="color:#f92672">tr</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;table-dark&#34;</span>&gt;
+          &lt;<span style="color:#f92672">th</span>&gt;&lt;<span style="color:#f92672">a</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;/?start=0&amp;sort-by=name&amp;amp;direction={{opposite-direction}}&#34;</span>&gt;Name
+	      {% if sort-by == &#34;name&#34; and  direction == &#34;asc&#34; %} &amp;uarr; {% endif %}
+	      {% if sort-by == &#34;name&#34; and  direction == &#34;desc&#34; %} &amp;darr; {% endif %}
+	  &lt;/<span style="color:#f92672">a</span>&gt;&lt;/<span style="color:#f92672">th</span>&gt;
+          &lt;<span style="color:#f92672">th</span>&gt;&lt;<span style="color:#f92672">a</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;/?start=0&amp;sort-by=rating&amp;amp;direction={{opposite-direction}}&#34;</span>&gt;Rating
+	      {% if sort-by == &#34;rating&#34; and  direction == &#34;asc&#34; %} &amp;uarr; {% endif %}
+	      {% if sort-by == &#34;rating&#34; and  direction == &#34;desc&#34; %} &amp;darr; {% endif %}
+	  &lt;/<span style="color:#f92672">a</span>&gt;&lt;/<span style="color:#f92672">th</span>&gt;
+          &lt;<span style="color:#f92672">th</span>&gt;&lt;<span style="color:#f92672">a</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;/?start=0&amp;sort-by=price&amp;amp;direction={{opposite-direction}}&#34;</span>&gt; Price
+	      {% if sort-by == &#34;price&#34; and  direction == &#34;asc&#34; %} &amp;uarr; {% endif %}
+	      {% if sort-by == &#34;price&#34; and  direction == &#34;desc&#34; %} &amp;darr; {% endif %}
+	  &lt;/<span style="color:#f92672">a</span>&gt;&lt;/<span style="color:#f92672">th</span>&gt;
+          &lt;<span style="color:#f92672">th</span>&gt;&lt;<span style="color:#f92672">a</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;/?start=0&amp;sort-by=cuisine&amp;amp;direction={{opposite-direction}}&#34;</span>&gt;Cuisine
+	      {% if sort-by == &#34;cuisine&#34; and  direction == &#34;asc&#34; %} &amp;uarr; {% endif %}
+	      {% if sort-by == &#34;cuisine&#34; and  direction == &#34;desc&#34; %} &amp;darr; {% endif %}
+	  &lt;/<span style="color:#f92672">a</span>&gt;&lt;/<span style="color:#f92672">th</span>&gt;
+        &lt;/<span style="color:#f92672">tr</span>&gt;
+      &lt;/<span style="color:#f92672">thead</span>&gt;
+      &lt;<span style="color:#f92672">tbody</span>&gt;
+        {% for food in foods %}
+        &lt;<span style="color:#f92672">tr</span>&gt;
+          &lt;<span style="color:#f92672">td</span>&gt;{{food.name}}&lt;/<span style="color:#f92672">td</span>&gt;
+          &lt;<span style="color:#f92672">td</span>&gt;
+	    {% ifequal food.rating 1 %}&amp;starf;{% endifequal %}
+	    {% ifequal food.rating 2 %}&amp;starf;&amp;starf;{% endifequal %}
+	    {% ifequal food.rating 3 %}&amp;starf;&amp;starf;&amp;starf;{% endifequal %}
+	    {% ifequal food.rating 4 %}&amp;starf;&amp;starf;&amp;starf;&amp;starf;{% endifequal %}
+	    {% ifequal food.rating 5 %}&amp;starf;&amp;starf;&amp;starf;&amp;starf;&amp;starf;{% endifequal %}
+	  &lt;/<span style="color:#f92672">td</span>&gt;
+          &lt;<span style="color:#f92672">td</span>&gt;
+	    ${{food.price}}
+	  &lt;/<span style="color:#f92672">td</span>&gt;
+          &lt;<span style="color:#f92672">td</span>&gt;{{food.cuisine}}&lt;/<span style="color:#f92672">td</span>&gt;
+        &lt;/<span style="color:#f92672">tr</span>&gt;
+        {% endfor %}
+      &lt;/<span style="color:#f92672">tbody</span>&gt;
+    &lt;/<span style="color:#f92672">table</span>&gt;
+  &lt;/<span style="color:#f92672">div</span>&gt;</code></pre></div>
+</div>
+</div>
+</div>
+<div id="outline-container-headline-6" class="outline-4">
+<h4 id="headline-6">
+Pagination
+</h4>
+<div id="outline-text-headline-6" class="outline-text-4">
+<p>Now we will take a look at our pagination component. This will be placed at the bottom of the table.
+We will also indicate the active page with a different background highlight if the record offset 
+values are matching with the page and the url value. We will construct the links based on the pagination
+data sent by the server for the route along with other things like direction and sort-by values.</p>
+<div class="src src-html">
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">    &lt;<span style="color:#f92672">nav</span> <span style="color:#a6e22e">aria-label</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;Page navigation example&#34;</span>&gt;
+      &lt;<span style="color:#f92672">ul</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;pagination&#34;</span>&gt;
+	{% for page in pages %}
+        &lt;<span style="color:#f92672">li</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;page-item {% ifequal start page.start %} active {% endifequal %}&#34;</span> &gt;
+	  &lt;<span style="color:#f92672">a</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;page-link&#34;</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;/?start={{page.start}}&amp;amp;direction={{direction}}&amp;amp;sort-by={{sort-by}}&#34;</span>&gt;{{page.id}}&lt;/<span style="color:#f92672">a</span>&gt;
+	&lt;/<span style="color:#f92672">li</span>&gt;
+	{% endfor %}
+      &lt;/<span style="color:#f92672">ul</span>&gt;
+    &lt;/<span style="color:#f92672">nav</span>&gt;</code></pre></div>
+</div>
+</div>
+</div>
+<div id="outline-container-headline-7" class="outline-4">
+<h4 id="headline-7">
+Generating pagination data
+</h4>
+<div id="outline-text-headline-7" class="outline-text-4">
+<p>Next we are going to take a look at our utility function to generate our
+pagination data. We are going to use a loop with 10 iterations to create 
+the respective pagination data for the page and the start offset value for 
+the table data.  It will be something like for page 2, we will start with
+the record offset 10 and for page 3, it will be 20 and so on. Please make 
+note that our records for the first page start from 0 to 9, so the second
+page starts from 10 and so on. </p>
+<p>
+<img src="/images/lisp-ssp-pagination.png" alt="/images/lisp-ssp-pagination.png" title="/images/lisp-ssp-pagination.png" /></p>
+<p>
+We are also ensuring that the pagination 
+data is in ascending order using the <code>reverse</code> function at the end while 
+returning the output from the function, otherwise we will end up with pages 
+in the descending order.</p>
+<div class="src src-lisp">
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-lisp" data-lang="lisp">(defun generate-pages ()
+  <span style="color:#e6db74">&#34;Generate pagination&#34;</span>
+  (<span style="color:#66d9ef">let</span> ((pages <span style="color:#66d9ef">nil</span>))
+    (dotimes (i <span style="color:#ae81ff">10</span>)
+      (push (<span style="color:#a6e22e">list</span> <span style="color:#e6db74">:id</span> (<span style="color:#a6e22e">+</span> <span style="color:#ae81ff">1</span> i) <span style="color:#e6db74">:start</span> (<span style="color:#a6e22e">*</span> <span style="color:#ae81ff">10</span> i)) pages))
+    (<span style="color:#a6e22e">reverse</span> pages)))</code></pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="outline-container-headline-8" class="outline-3">
+<h3 id="headline-8">
+Building our data
+</h3>
+<div id="outline-text-headline-8" class="outline-text-3">
+<p>The data for our table is just a random list of dishes, ratings, price and the cuisine. 
+First we declare a global variable called <code>*foods*</code> and initialize the value to <code>nil</code>.</p>
+<div class="src src-lisp">
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-lisp" data-lang="lisp">(defvar *foods* <span style="color:#66d9ef">nil</span>)</code></pre></div>
+</div>
+<div id="outline-container-headline-9" class="outline-4">
+<h4 id="headline-9">
+Dishes
+</h4>
+<div id="outline-text-headline-9" class="outline-text-4">
+<p>Next we will create a list of dish names in a separate variable called <code>*dishes*</code>.</p>
+<div class="src src-lisp">
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-lisp" data-lang="lisp">(defvar *dishes* <span style="color:#f92672">&#39;</span>(<span style="color:#e6db74">&#34;Pizza&#34;</span>
+		   <span style="color:#e6db74">&#34;Noodles&#34;</span>
+		   <span style="color:#e6db74">&#34;Fried Rice&#34;</span>
+		   <span style="color:#e6db74">&#34;Roti&#34;</span>
+		   <span style="color:#e6db74">&#34;Lasagna&#34;</span>
+		   <span style="color:#e6db74">&#34;Churros&#34;</span>
+		   <span style="color:#e6db74">&#34;Tea&#34;</span>
+		   <span style="color:#e6db74">&#34;Soup&#34;</span>
+		   <span style="color:#e6db74">&#34;Egg roll&#34;</span>
+		   <span style="color:#e6db74">&#34;Salad&#34;</span>
+		   <span style="color:#e6db74">&#34;Burger&#34;</span>
+		   <span style="color:#e6db74">&#34;Rice&#34;</span>
+		   <span style="color:#e6db74">&#34;Curry&#34;</span>
+		   <span style="color:#e6db74">&#34;Bread&#34;</span>))</code></pre></div>
+</div>
+</div>
+</div>
+<div id="outline-container-headline-10" class="outline-4">
+<h4 id="headline-10">
+Cuisines
+</h4>
+<div id="outline-text-headline-10" class="outline-text-4">
+<p>Then, we will create a list of cuisine names in a variable called <code>*cuisines*</code>.</p>
+<div class="src src-lisp">
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-lisp" data-lang="lisp">(defvar *cuisines* <span style="color:#f92672">&#39;</span>(<span style="color:#e6db74">&#34;Indian&#34;</span>
+		     <span style="color:#e6db74">&#34;Chinese&#34;</span>
+		     <span style="color:#e6db74">&#34;Thai&#34;</span>
+		     <span style="color:#e6db74">&#34;Continental&#34;</span>
+		     <span style="color:#e6db74">&#34;Mexican&#34;</span>
+		     <span style="color:#e6db74">&#34;Indonesian&#34;</span>
+		     <span style="color:#e6db74">&#34;Japanese&#34;</span>
+		     <span style="color:#e6db74">&#34;Spanish&#34;</span>
+		     <span style="color:#e6db74">&#34;Italian&#34;</span>
+		     <span style="color:#e6db74">&#34;Greek&#34;</span>))</code></pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="outline-container-headline-11" class="outline-3">
+<h3 id="headline-11">
+Generating random data
+</h3>
+<div id="outline-text-headline-11" class="outline-text-3">
+<p>Now it&#39;s time to combine all our dish names and cuisines to generate a list of
+dishes with random rating values and prices. So before pushing the generated values
+into our global <strong>foods</strong> variable, let&#39;s be sure to reset the variable to nil.</p>
+<p>
+Then using a <code>dotimes</code> loop for 100 iterations we are going to generate a random
+record for dish. We are getting a random dish and cuisine form the previously created 
+lists called <strong>dishes</strong> and <strong>cuisines</strong> respectively. </p>
+<div class="src src-lisp">
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-lisp" data-lang="lisp"><span style="color:#75715e">;; Clear the list</span>
+(setf *foods* <span style="color:#66d9ef">nil</span>)
+
+<span style="color:#75715e">;; Push 100 items into foods with random values</span>
+(dotimes (i <span style="color:#ae81ff">100</span>)
+  (push (<span style="color:#a6e22e">list</span> <span style="color:#e6db74">:name</span> (random-elt *dishes*)
+	      <span style="color:#e6db74">:cuisine</span> (random-elt *cuisines*)
+	      <span style="color:#e6db74">:rating</span> (<span style="color:#a6e22e">+</span> <span style="color:#ae81ff">1</span> (<span style="color:#a6e22e">random</span> <span style="color:#ae81ff">5</span>))
+	      <span style="color:#e6db74">:price</span> (<span style="color:#a6e22e">+</span> <span style="color:#ae81ff">1</span> (<span style="color:#a6e22e">random</span> <span style="color:#ae81ff">100</span>))) *foods*))</code></pre></div>
+</div>
+<p>
+For that we are using a custom defined function
+called <code>random-elt</code> which will pick a random element from a list.</p>
+<div class="src src-lisp">
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-lisp" data-lang="lisp">(defun random-elt (mylist)
+  (<span style="color:#a6e22e">elt</span> mylist (<span style="color:#a6e22e">random</span> (<span style="color:#a6e22e">length</span> mylist))))</code></pre></div>
+</div>
+<p>
+And then for the rating and price, we are using the standard library function
+called <code>random</code> to generate random numbers within a specified range. For example,
+<code>(random 5)</code> will generate random numbers between 0 and 4 and we are adding 1 to 
+ensure we are getting a non-zero value.</p>
+</div>
+</div>
+<div id="outline-container-headline-12" class="outline-3">
+<h3 id="headline-12">
+Sorting
+</h3>
+<div id="outline-text-headline-12" class="outline-text-3">
+<p>
+Sorting data in Common Lisp is pretty easy and straight-forward when it comes
+to lists. We are using an higher-order function called <code>sort-list</code> which will take 
+two parameters, the sort direction either &#34;asc&#34; or &#34;desc&#34; and the sort-by which is
+the key based on which we sort the list. And based on the <code>sort-by</code> key we will delegate
+the sorting to the respective sort functions with the direction as an argument.</p>
+<div class="src src-lisp">
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-lisp" data-lang="lisp">(defun sort-list (direction sort-by)
+  <span style="color:#e6db74">&#34;Sort a list based on the direction and key&#34;</span>
+  (cond ((<span style="color:#a6e22e">string=</span> sort-by <span style="color:#e6db74">&#34;name&#34;</span>) (sort-list-by-name direction))
+	((<span style="color:#a6e22e">string=</span> sort-by <span style="color:#e6db74">&#34;rating&#34;</span>) (sort-list-by-rating direction))
+	((<span style="color:#a6e22e">string=</span> sort-by <span style="color:#e6db74">&#34;price&#34;</span>) (sort-list-by-price direction))
+	((<span style="color:#a6e22e">string=</span> sort-by <span style="color:#e6db74">&#34;cuisine&#34;</span>) (sort-list-by-cuisine direction))))</code></pre></div>
+</div>
+<p>
+Based on the direction,  we will figure out the sort function to use, 
+<code>#&#39;string&gt;</code> or <code>#&#39;string&lt;</code> for name and cuisine, and <code>#&#39;&gt;</code> or <code>#&#39;&lt;</code> for rating and price.
+We can still have one function for sorting all the columns if we can refactor, becuase
+this approach will not scale for large number of columns in the table.</p>
+<div class="src src-lisp">
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-lisp" data-lang="lisp">(defun sort-list-by-name (direction)
+  <span style="color:#e6db74">&#34;Sort a list by name&#34;</span>
+  (<span style="color:#66d9ef">let</span> ((sort-fn (<span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">string=</span> direction <span style="color:#e6db74">&#34;asc&#34;</span>) <span style="color:#a6e22e">#&#39;string&lt;</span> <span style="color:#a6e22e">#&#39;string&gt;</span>)))
+    (<span style="color:#a6e22e">sort</span> (<span style="color:#a6e22e">copy-list</span> *foods*) sort-fn <span style="color:#e6db74">:key</span> (lambda (plist) (<span style="color:#a6e22e">getf</span> plist <span style="color:#e6db74">:name</span>)))))
+
+(defun sort-list-by-rating (direction)
+  <span style="color:#e6db74">&#34;Sort a list by rating&#34;</span>
+  (<span style="color:#66d9ef">let</span> ((sort-fn (<span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">string=</span> direction <span style="color:#e6db74">&#34;asc&#34;</span>) <span style="color:#a6e22e">#&#39;&lt;</span> <span style="color:#a6e22e">#&#39;&gt;</span>)))
+    (<span style="color:#a6e22e">sort</span> (<span style="color:#a6e22e">copy-list</span> *foods*) sort-fn <span style="color:#e6db74">:key</span> (lambda (plist) (<span style="color:#a6e22e">getf</span> plist <span style="color:#e6db74">:rating</span>)))))
+
+(defun sort-list-by-price (direction)
+  <span style="color:#e6db74">&#34;Sort a list by price&#34;</span>
+  (<span style="color:#66d9ef">let</span> ((sort-fn (<span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">string=</span> direction <span style="color:#e6db74">&#34;asc&#34;</span>) <span style="color:#a6e22e">#&#39;&lt;</span> <span style="color:#a6e22e">#&#39;&gt;</span>)))
+    (<span style="color:#a6e22e">sort</span> (<span style="color:#a6e22e">copy-list</span> *foods*) sort-fn <span style="color:#e6db74">:key</span> (lambda (plist) (<span style="color:#a6e22e">getf</span> plist <span style="color:#e6db74">:price</span>)))))
+
+(defun sort-list-by-cuisine (direction)
+  <span style="color:#e6db74">&#34;Sort a list by price&#34;</span>
+  (<span style="color:#66d9ef">let</span> ((sort-fn (<span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">string=</span> direction <span style="color:#e6db74">&#34;asc&#34;</span>) <span style="color:#a6e22e">#&#39;string&lt;</span> <span style="color:#a6e22e">#&#39;string&gt;</span>)))
+    (<span style="color:#a6e22e">sort</span> (<span style="color:#a6e22e">copy-list</span> *foods*) sort-fn <span style="color:#e6db74">:key</span> (lambda (plist) (<span style="color:#a6e22e">getf</span> plist <span style="color:#e6db74">:cuisine</span>)))))</code></pre></div>
+</div>
+</div>
+</div>
+<div id="outline-container-headline-13" class="outline-3">
+<h3 id="headline-13">
+Search route
+</h3>
+<div id="outline-text-headline-13" class="outline-text-3">
+<p>
+Next we focus on the search route for our application.
+The search route will take a query parameter called <code>query</code> itself,
+through which we will get the search keywords for the route.
+We will perform the search only based on the names of the dishes.
+We will use a utility function called <code>filter-foods</code> for this purpose.</p>
+<div class="src src-lisp">
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-lisp" data-lang="lisp">(defroute (<span style="color:#e6db74">&#34;/search&#34;</span> <span style="color:#e6db74">:method</span> <span style="color:#e6db74">:POST</span>) (<span style="color:#66d9ef">&amp;key</span> _parsed)
+  (<span style="color:#a6e22e">format</span> <span style="color:#66d9ef">t</span> <span style="color:#e6db74">&#34;_parsed = ~a~%&#34;</span> _parsed)
+  (<span style="color:#66d9ef">let*</span> ((query (<span style="color:#a6e22e">cdr</span> (<span style="color:#a6e22e">assoc</span> <span style="color:#e6db74">&#34;query&#34;</span> _parsed <span style="color:#e6db74">:test</span> <span style="color:#a6e22e">#&#39;string=</span>)))
+        (filtered-foods (filter-foods query)))
+    (render <span style="color:#ae81ff">#P&#34;_search.html&#34;</span>
+            (<span style="color:#a6e22e">list</span>
+             <span style="color:#e6db74">:foods</span> filtered-foods
+             <span style="color:#e6db74">:total</span> (<span style="color:#a6e22e">length</span> filtered-foods)))))</code></pre></div>
+</div>
+<div id="outline-container-headline-14" class="outline-4">
+<h4 id="headline-14">
+Filtering data
+</h4>
+<div id="outline-text-headline-14" class="outline-text-4">
+<p>
+The <code>filter-foods</code> function takes the query as the parameter 
+and filter out the dishes which is not matching with the name of the dish.
+To filter out the food list we are using the <code>remove-if</code> function with a 
+lambda wherein we match the name of the food with the query string using
+the <code>search</code> function with the test as <code>#&#39;char-equal</code>. If it matches 
+return nil so that it cannot be removed from the list , otherwise we return t,
+so that it can be removed from the list and we would only get all the matching
+dish names.</p>
+<div class="src src-lisp">
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-lisp" data-lang="lisp">
+(defun filter-foods (query)
+  <span style="color:#e6db74">&#34;Filter foods based on the query with name&#34;</span>
+  (<span style="color:#a6e22e">remove-if</span> <span style="color:#a6e22e">#&#39;</span>(lambda (food)
+                 (<span style="color:#66d9ef">let</span> ((name (<span style="color:#a6e22e">getf</span> food <span style="color:#e6db74">:name</span>)))
+                   (<span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">search</span> query name <span style="color:#e6db74">:test</span> <span style="color:#a6e22e">#&#39;char-equal</span>)
+                       <span style="color:#66d9ef">nil</span>
+                       <span style="color:#66d9ef">t</span>))) *foods*))</code></pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="outline-container-headline-15" class="outline-3">
+<h3 id="headline-15">
+Search template
+</h3>
+<div id="outline-text-headline-15" class="outline-text-3">
+<div class="src src-html">
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;results&#34;</span> &gt;
+  &lt;<span style="color:#f92672">p</span>&gt;&lt;<span style="color:#f92672">a</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;/&#34;</span>&gt;Clear Search&lt;/<span style="color:#f92672">a</span>&gt;&lt;/<span style="color:#f92672">p</span>&gt;
+  &lt;<span style="color:#f92672">p</span>&gt;{{total}} results found&lt;/<span style="color:#f92672">p</span>&gt;
+  &lt;<span style="color:#f92672">table</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;table table-striped&#34;</span>&gt;
+    &lt;<span style="color:#f92672">thead</span>&gt;
+      &lt;<span style="color:#f92672">tr</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;table-dark&#34;</span>&gt;
+        &lt;<span style="color:#f92672">th</span>&gt; &lt;<span style="color:#f92672">a</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;/?sort-by=name&amp;amp;direction=desc&#34;</span>&gt; Name ↓&lt;/<span style="color:#f92672">a</span>&gt;&lt;/<span style="color:#f92672">th</span>&gt;
+        &lt;<span style="color:#f92672">th</span>&gt; &lt;<span style="color:#f92672">a</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;/?sort-by=stars&amp;amp;direction=desc&#34;</span>&gt; Stars&lt;/<span style="color:#f92672">a</span>&gt;&lt;/<span style="color:#f92672">th</span>&gt;
+        &lt;<span style="color:#f92672">th</span>&gt; &lt;<span style="color:#f92672">a</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;/?sort-by=price&amp;amp;direction=desc&#34;</span>&gt; Price&lt;/<span style="color:#f92672">a</span>&gt;&lt;/<span style="color:#f92672">th</span>&gt;
+        &lt;<span style="color:#f92672">th</span>&gt; &lt;<span style="color:#f92672">a</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;/?sort-by=category&amp;amp;direction=desc&#34;</span>&gt; Category&lt;/<span style="color:#f92672">a</span>&gt;&lt;/<span style="color:#f92672">th</span>&gt;
+      &lt;/<span style="color:#f92672">tr</span>&gt;
+    &lt;/<span style="color:#f92672">thead</span>&gt;
+    &lt;<span style="color:#f92672">tbody</span>&gt;
+      {% for food in foods %}
+      &lt;<span style="color:#f92672">tr</span>&gt;
+        &lt;<span style="color:#f92672">td</span>&gt;{{food.name}}&lt;/<span style="color:#f92672">td</span>&gt;
+        &lt;<span style="color:#f92672">td</span>&gt;{{food.rating}}&lt;/<span style="color:#f92672">td</span>&gt;
+        &lt;<span style="color:#f92672">td</span>&gt;{{food.price}}&lt;/<span style="color:#f92672">td</span>&gt;
+        &lt;<span style="color:#f92672">td</span>&gt;{{food.cuisine}}&lt;/<span style="color:#f92672">td</span>&gt;
+      &lt;/<span style="color:#f92672">tr</span>&gt;
+      {% endfor %}
+  &lt;/<span style="color:#f92672">tbody</span>&gt;&lt;/<span style="color:#f92672">table</span>&gt;
+&lt;/<span style="color:#f92672">div</span>&gt;</code></pre></div>
+</div>
+<p>
+And this is how the final app look like in action.</p>
+<p>
+<img src="https://github.com/rajasegar/cl-tabular/raw/main/cl-tabular-demo.gif" alt="https://github.com/rajasegar/cl-tabular/raw/main/cl-tabular-demo.gif" title="https://github.com/rajasegar/cl-tabular/raw/main/cl-tabular-demo.gif" /></p>
+</div>
+</div>
+<div id="outline-container-headline-16" class="outline-3">
+<h3 id="headline-16">
+Code
+</h3>
+<div id="outline-text-headline-16" class="outline-text-3">
+<p>The source code for this application is hosted in <a href="https://github.com/rajasegar/cl-tabular">Github</a>.
+If you are stuck with any step or anything is missing in this post, you can always refer to the 
+updated source code in Github.</p>
+</div>
+</div>
+<ul class="pa0">
+  
+   <li class="list">
+     <a href="/tags/common-lisp" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">common-lisp</a>
+   </li>
+  
+   <li class="list">
+     <a href="/tags/lisp" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">lisp</a>
+   </li>
+  
+</ul>
+<div class="mt6 instapaper_ignoref">
+      
+      
+      </div>
+    </div>
+
+    <aside class="w-30-l mt6-l">
+
+
+
+
+  <div class="bg-light-gray pa3 nested-list-reset nested-copy-line-height nested-links">
+    <p class="f5 b mb3">Related</p>
+    <ul class="pa0 list">
+	   
+	     <li  class="mb2">
+          <a href="/posts/building-a-rentals-listing-web-app-in-common-lisp/">Building a Rentals Listing web application in Common Lisp</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/posts/lisp-for-the-web-5/">Lisp for the web -5</a>
+        </li>
+	    
+    </ul>
+</div>
+
+</aside>
+
+  </article>
+
+    </main>
+    <footer class="bg-black bottom-0 w-100 pa3" role="contentinfo">
+  <div class="flex justify-between">
+  <a class="f4 fw4 hover-white no-underline white-70 dn dib-ns pv2 ph3" href="http://hangaroundtheweb.com/" >
+    &copy;  hangaroundtheweb 2022 
+  </a>
+    <div>
+
+
+
+
+<a href="https://twitter.com/rajasegar_c" target="_blank" class="link-transition twitter link dib z-999 pt3 pt0-l mr1" title="Twitter link" rel="noopener" aria-label="follow on Twitter——Opens in a new window">
+  <svg height="32px"  style="enable-background:new 0 0 67 67;" version="1.1" viewBox="0 0 67 67" width="32px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M37.167,22.283c-2.619,0.953-4.274,3.411-4.086,6.101  l0.063,1.038l-1.048-0.127c-3.813-0.487-7.145-2.139-9.974-4.915l-1.383-1.377l-0.356,1.017c-0.754,2.267-0.272,4.661,1.299,6.271  c0.838,0.89,0.649,1.017-0.796,0.487c-0.503-0.169-0.943-0.296-0.985-0.233c-0.146,0.149,0.356,2.076,0.754,2.839  c0.545,1.06,1.655,2.097,2.871,2.712l1.027,0.487l-1.215,0.021c-1.173,0-1.215,0.021-1.089,0.467  c0.419,1.377,2.074,2.839,3.918,3.475l1.299,0.444l-1.131,0.678c-1.676,0.976-3.646,1.526-5.616,1.568  C19.775,43.256,19,43.341,19,43.405c0,0.211,2.557,1.397,4.044,1.864c4.463,1.377,9.765,0.783,13.746-1.568  c2.829-1.673,5.657-5,6.978-8.221c0.713-1.716,1.425-4.851,1.425-6.354c0-0.975,0.063-1.102,1.236-2.267  c0.692-0.678,1.341-1.419,1.467-1.631c0.21-0.403,0.188-0.403-0.88-0.043c-1.781,0.636-2.033,0.551-1.152-0.402  c0.649-0.678,1.425-1.907,1.425-2.267c0-0.063-0.314,0.042-0.671,0.233c-0.377,0.212-1.215,0.53-1.844,0.72l-1.131,0.361l-1.027-0.7  c-0.566-0.381-1.361-0.805-1.781-0.932C39.766,21.902,38.131,21.944,37.167,22.283z M33,64C16.432,64,3,50.569,3,34S16.432,4,33,4  s30,13.431,30,30S49.568,64,33,64z" style="fill-rule:evenodd;clip-rule:evenodd;fill:;"/></svg>
+
+<span class="new-window"><svg  height="8px"  style="enable-background:new 0 0 1000 1000;" version="1.1" viewBox="0 0 1000 1000" width="8px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" >
+<path d="M598 128h298v298h-86v-152l-418 418-60-60 418-418h-152v-86zM810 810v-298h86v298c0 46-40 86-86 86h-596c-48 0-86-40-86-86v-596c0-46 38-86 86-86h298v86h-298v596h596z" style="fill-rule:evenodd;clip-rule:evenodd;fill:;"/>
+</svg>
+</span></a>
+
+
+
+
+
+<a href="https://github.com/rajasegar" target="_blank" class="link-transition github link dib z-999 pt3 pt0-l mr1" title="Github link" rel="noopener" aria-label="follow on Github——Opens in a new window">
+  <svg  height="32px"  style="enable-background:new 0 0 512 512;" version="1.1" viewBox="0 0 512 512" width="32px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" >
+  <path d="M256,32C132.3,32,32,134.8,32,261.7c0,101.5,64.2,187.5,153.2,217.9c11.2,2.1,15.3-5,15.3-11.1   c0-5.5-0.2-19.9-0.3-39.1c-62.3,13.9-75.5-30.8-75.5-30.8c-10.2-26.5-24.9-33.6-24.9-33.6c-20.3-14.3,1.5-14,1.5-14   c22.5,1.6,34.3,23.7,34.3,23.7c20,35.1,52.4,25,65.2,19.1c2-14.8,7.8-25,14.2-30.7c-49.7-5.8-102-25.5-102-113.5   c0-25.1,8.7-45.6,23-61.6c-2.3-5.8-10-29.2,2.2-60.8c0,0,18.8-6.2,61.6,23.5c17.9-5.1,37-7.6,56.1-7.7c19,0.1,38.2,2.6,56.1,7.7   c42.8-29.7,61.5-23.5,61.5-23.5c12.2,31.6,4.5,55,2.2,60.8c14.3,16.1,23,36.6,23,61.6c0,88.2-52.4,107.6-102.3,113.3   c8,7.1,15.2,21.1,15.2,42.5c0,30.7-0.3,55.5-0.3,63c0,6.1,4,13.3,15.4,11C415.9,449.1,480,363.1,480,261.7   C480,134.8,379.7,32,256,32z"/>
+</svg>
+
+<span class="new-window"><svg  height="8px"  style="enable-background:new 0 0 1000 1000;" version="1.1" viewBox="0 0 1000 1000" width="8px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" >
+<path d="M598 128h298v298h-86v-152l-418 418-60-60 418-418h-152v-86zM810 810v-298h86v298c0 46-40 86-86 86h-596c-48 0-86-40-86-86v-596c0-46 38-86 86-86h298v86h-298v596h596z" style="fill-rule:evenodd;clip-rule:evenodd;fill:;"/>
+</svg>
+</span></a>
+
+
+
+
+
+
+
+</div>
+  </div>
+</footer>
+
+  </body>
+</html>

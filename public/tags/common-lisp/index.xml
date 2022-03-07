@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>common-lisp on hangaroundtheweb</title>
+    <link>http://hangaroundtheweb.com/tags/common-lisp/</link>
+    <description>Recent content in common-lisp on hangaroundtheweb</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 14 Jul 2021 00:00:00 +0000</lastBuildDate><atom:link href="http://hangaroundtheweb.com/tags/common-lisp/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Building a Trello Clone in Common Lisp</title>
+      <link>http://hangaroundtheweb.com/posts/building-trello-clone-common-lisp/</link>
+      <pubDate>Wed, 14 Jul 2021 00:00:00 +0000</pubDate>
+      
+      <guid>http://hangaroundtheweb.com/posts/building-trello-clone-common-lisp/</guid>
+      <description>In this post we are going to build a Trello clone using Common Lisp</description>
+    </item>
+    
+    <item>
+      <title>Searching, Sorting and Pagination in a Common Lisp web application</title>
+      <link>http://hangaroundtheweb.com/posts/searching-sorting-pagination-cl-web-app/</link>
+      <pubDate>Tue, 13 Jul 2021 09:00:00 +0000</pubDate>
+      
+      <guid>http://hangaroundtheweb.com/posts/searching-sorting-pagination-cl-web-app/</guid>
+      <description>In this post, we are going to build a demo web application in Common Lisp with search, sort and pagination functionalities with a tabular data.</description>
+    </item>
+    
+    <item>
+      <title>Building a Rentals Listing web application in Common Lisp</title>
+      <link>http://hangaroundtheweb.com/posts/building-a-rentals-listing-web-app-in-common-lisp/</link>
+      <pubDate>Fri, 09 Jul 2021 09:30:14 +0000</pubDate>
+      
+      <guid>http://hangaroundtheweb.com/posts/building-a-rentals-listing-web-app-in-common-lisp/</guid>
+      <description>Building a Rentals Listing web app in Common Lisp In this post, we are going to build a simple Rentals listing web application with Common Lisp. The application lists different rentals on the home page with the photo of the property and the location of the property with a map. When you click one of the rentals you get to see the details in a separate page. It also got a couple of pages for About and Contact.</description>
+    </item>
+    
+    <item>
+      <title>Lisp for the web -5</title>
+      <link>http://hangaroundtheweb.com/posts/lisp-for-the-web-5/</link>
+      <pubDate>Thu, 08 Jul 2021 23:01:09 +0000</pubDate>
+      
+      <guid>http://hangaroundtheweb.com/posts/lisp-for-the-web-5/</guid>
+      <description>Lisp for the web - 5  This is a post about using Common Lisp for web development. Lisp is one of the oldest programming languages that has been still used today. It has been dubbed as the `programmable programming language` for it&amp;#39;s great extensible characteristics. It has pioneered many programming concepts like recursion and macros.
+ There has been many great posts about using Lisp for Web development in the past.</description>
+    </item>
+    
+  </channel>
+</rss>

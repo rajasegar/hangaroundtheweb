@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    
+    <title>24 ways for being productive with big code base | hangaroundtheweb</title>
+    <meta name="viewport" content="width=device-width,minimum-scale=1">
+    <meta name="description" content="In this article we will take a look at some of the guiding principles which are beneficial while working with large code base.
+The whole idea of this post is to collect and come up with a checklist of significant approaches and ways to deal with large and legacy code bases.
+The readers are welcome to share more tools, methods and approaches in the comments section below.
+1. Onboarding Documentation Ask if there is onboarding documentation, or someone who can give you a high-level overview of the codebase.">
+    <meta name="generator" content="Hugo 0.83.1" />
+    
+    
+      <META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
+    
+
+    
+<link rel="stylesheet" href="/ananke/css/main.min.css" >
+
+
+
+
+    
+      
+
+    
+
+    
+    
+    <meta property="og:title" content="24 ways for being productive with big code base" />
+<meta property="og:description" content="In this article we will take a look at some of the guiding principles which are beneficial while working with large code base.
+The whole idea of this post is to collect and come up with a checklist of significant approaches and ways to deal with large and legacy code bases.
+The readers are welcome to share more tools, methods and approaches in the comments section below.
+1. Onboarding Documentation Ask if there is onboarding documentation, or someone who can give you a high-level overview of the codebase." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://hangaroundtheweb.com/posts/24-ways-for-being-productive-with-big-code-base/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2019-04-21T22:30:14&#43;00:00" />
+<meta property="article:modified_time" content="2019-04-21T22:30:14&#43;00:00" />
+
+<meta itemprop="name" content="24 ways for being productive with big code base">
+<meta itemprop="description" content="In this article we will take a look at some of the guiding principles which are beneficial while working with large code base.
+The whole idea of this post is to collect and come up with a checklist of significant approaches and ways to deal with large and legacy code bases.
+The readers are welcome to share more tools, methods and approaches in the comments section below.
+1. Onboarding Documentation Ask if there is onboarding documentation, or someone who can give you a high-level overview of the codebase."><meta itemprop="datePublished" content="2019-04-21T22:30:14&#43;00:00" />
+<meta itemprop="dateModified" content="2019-04-21T22:30:14&#43;00:00" />
+<meta itemprop="wordCount" content="1939">
+<meta itemprop="keywords" content="Articles,bestpractices,productivity,Uncategorized," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="24 ways for being productive with big code base"/>
+<meta name="twitter:description" content="In this article we will take a look at some of the guiding principles which are beneficial while working with large code base.
+The whole idea of this post is to collect and come up with a checklist of significant approaches and ways to deal with large and legacy code bases.
+The readers are welcome to share more tools, methods and approaches in the comments section below.
+1. Onboarding Documentation Ask if there is onboarding documentation, or someone who can give you a high-level overview of the codebase."/>
+
+	
+  </head>
+
+  <body class="ma0 avenir bg-near-white">
+
+    
+   
+  
+
+  <header>
+    <div class="bg-black">
+      <nav class="pv3 ph3 ph4-ns" role="navigation">
+  <div class="flex-l justify-between items-center center">
+    <a href="/" class="f3 fw2 hover-white no-underline white-90 dib">
+      
+        hangaroundtheweb
+      
+    </a>
+    <div class="flex-l items-center">
+      
+
+      
+      
+
+
+
+
+<a href="https://twitter.com/rajasegar_c" target="_blank" class="link-transition twitter link dib z-999 pt3 pt0-l mr1" title="Twitter link" rel="noopener" aria-label="follow on Twitter——Opens in a new window">
+  <svg height="32px"  style="enable-background:new 0 0 67 67;" version="1.1" viewBox="0 0 67 67" width="32px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M37.167,22.283c-2.619,0.953-4.274,3.411-4.086,6.101  l0.063,1.038l-1.048-0.127c-3.813-0.487-7.145-2.139-9.974-4.915l-1.383-1.377l-0.356,1.017c-0.754,2.267-0.272,4.661,1.299,6.271  c0.838,0.89,0.649,1.017-0.796,0.487c-0.503-0.169-0.943-0.296-0.985-0.233c-0.146,0.149,0.356,2.076,0.754,2.839  c0.545,1.06,1.655,2.097,2.871,2.712l1.027,0.487l-1.215,0.021c-1.173,0-1.215,0.021-1.089,0.467  c0.419,1.377,2.074,2.839,3.918,3.475l1.299,0.444l-1.131,0.678c-1.676,0.976-3.646,1.526-5.616,1.568  C19.775,43.256,19,43.341,19,43.405c0,0.211,2.557,1.397,4.044,1.864c4.463,1.377,9.765,0.783,13.746-1.568  c2.829-1.673,5.657-5,6.978-8.221c0.713-1.716,1.425-4.851,1.425-6.354c0-0.975,0.063-1.102,1.236-2.267  c0.692-0.678,1.341-1.419,1.467-1.631c0.21-0.403,0.188-0.403-0.88-0.043c-1.781,0.636-2.033,0.551-1.152-0.402  c0.649-0.678,1.425-1.907,1.425-2.267c0-0.063-0.314,0.042-0.671,0.233c-0.377,0.212-1.215,0.53-1.844,0.72l-1.131,0.361l-1.027-0.7  c-0.566-0.381-1.361-0.805-1.781-0.932C39.766,21.902,38.131,21.944,37.167,22.283z M33,64C16.432,64,3,50.569,3,34S16.432,4,33,4  s30,13.431,30,30S49.568,64,33,64z" style="fill-rule:evenodd;clip-rule:evenodd;fill:;"/></svg>
+
+<span class="new-window"><svg  height="8px"  style="enable-background:new 0 0 1000 1000;" version="1.1" viewBox="0 0 1000 1000" width="8px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" >
+<path d="M598 128h298v298h-86v-152l-418 418-60-60 418-418h-152v-86zM810 810v-298h86v298c0 46-40 86-86 86h-596c-48 0-86-40-86-86v-596c0-46 38-86 86-86h298v86h-298v596h596z" style="fill-rule:evenodd;clip-rule:evenodd;fill:;"/>
+</svg>
+</span></a>
+
+
+
+
+
+<a href="https://github.com/rajasegar" target="_blank" class="link-transition github link dib z-999 pt3 pt0-l mr1" title="Github link" rel="noopener" aria-label="follow on Github——Opens in a new window">
+  <svg  height="32px"  style="enable-background:new 0 0 512 512;" version="1.1" viewBox="0 0 512 512" width="32px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" >
+  <path d="M256,32C132.3,32,32,134.8,32,261.7c0,101.5,64.2,187.5,153.2,217.9c11.2,2.1,15.3-5,15.3-11.1   c0-5.5-0.2-19.9-0.3-39.1c-62.3,13.9-75.5-30.8-75.5-30.8c-10.2-26.5-24.9-33.6-24.9-33.6c-20.3-14.3,1.5-14,1.5-14   c22.5,1.6,34.3,23.7,34.3,23.7c20,35.1,52.4,25,65.2,19.1c2-14.8,7.8-25,14.2-30.7c-49.7-5.8-102-25.5-102-113.5   c0-25.1,8.7-45.6,23-61.6c-2.3-5.8-10-29.2,2.2-60.8c0,0,18.8-6.2,61.6,23.5c17.9-5.1,37-7.6,56.1-7.7c19,0.1,38.2,2.6,56.1,7.7   c42.8-29.7,61.5-23.5,61.5-23.5c12.2,31.6,4.5,55,2.2,60.8c14.3,16.1,23,36.6,23,61.6c0,88.2-52.4,107.6-102.3,113.3   c8,7.1,15.2,21.1,15.2,42.5c0,30.7-0.3,55.5-0.3,63c0,6.1,4,13.3,15.4,11C415.9,449.1,480,363.1,480,261.7   C480,134.8,379.7,32,256,32z"/>
+</svg>
+
+<span class="new-window"><svg  height="8px"  style="enable-background:new 0 0 1000 1000;" version="1.1" viewBox="0 0 1000 1000" width="8px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" >
+<path d="M598 128h298v298h-86v-152l-418 418-60-60 418-418h-152v-86zM810 810v-298h86v298c0 46-40 86-86 86h-596c-48 0-86-40-86-86v-596c0-46 38-86 86-86h298v86h-298v596h596z" style="fill-rule:evenodd;clip-rule:evenodd;fill:;"/>
+</svg>
+</span></a>
+
+
+
+
+
+
+
+
+    </div>
+  </div>
+</nav>
+
+    </div>
+  </header>
+
+
+
+    <main class="pb7" role="main">
+      
+  
+  <article class="flex-l flex-wrap justify-between mw8 center ph3">
+    <header class="mt4 w-100">
+      <aside class="instapaper_ignoref b helvetica tracked">
+          
+        POSTS
+      </aside>
+      
+
+
+
+
+  <div id="sharing" class="mt3">
+
+    
+    <a href="https://www.facebook.com/sharer.php?u=http://hangaroundtheweb.com/posts/24-ways-for-being-productive-with-big-code-base/" class="facebook no-underline" aria-label="share on Facebook">
+      <svg height="32px"  style="enable-background:new 0 0 67 67;" version="1.1" viewBox="0 0 67 67" width="32px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M28.765,50.32h6.744V33.998h4.499l0.596-5.624h-5.095  l0.007-2.816c0-1.466,0.14-2.253,2.244-2.253h2.812V17.68h-4.5c-5.405,0-7.307,2.729-7.307,7.317v3.377h-3.369v5.625h3.369V50.32z   M33,64C16.432,64,3,50.569,3,34S16.432,4,33,4s30,13.431,30,30S49.568,64,33,64z" style="fill-rule:evenodd;clip-rule:evenodd;"/></svg>
+
+    </a>
+
+    
+    
+    <a href="https://twitter.com/share?url=http://hangaroundtheweb.com/posts/24-ways-for-being-productive-with-big-code-base/&amp;text=24%20ways%20for%20being%20productive%20with%20big%20code%20base" class="twitter no-underline" aria-label="share on Twitter">
+      <svg height="32px"  style="enable-background:new 0 0 67 67;" version="1.1" viewBox="0 0 67 67" width="32px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M37.167,22.283c-2.619,0.953-4.274,3.411-4.086,6.101  l0.063,1.038l-1.048-0.127c-3.813-0.487-7.145-2.139-9.974-4.915l-1.383-1.377l-0.356,1.017c-0.754,2.267-0.272,4.661,1.299,6.271  c0.838,0.89,0.649,1.017-0.796,0.487c-0.503-0.169-0.943-0.296-0.985-0.233c-0.146,0.149,0.356,2.076,0.754,2.839  c0.545,1.06,1.655,2.097,2.871,2.712l1.027,0.487l-1.215,0.021c-1.173,0-1.215,0.021-1.089,0.467  c0.419,1.377,2.074,2.839,3.918,3.475l1.299,0.444l-1.131,0.678c-1.676,0.976-3.646,1.526-5.616,1.568  C19.775,43.256,19,43.341,19,43.405c0,0.211,2.557,1.397,4.044,1.864c4.463,1.377,9.765,0.783,13.746-1.568  c2.829-1.673,5.657-5,6.978-8.221c0.713-1.716,1.425-4.851,1.425-6.354c0-0.975,0.063-1.102,1.236-2.267  c0.692-0.678,1.341-1.419,1.467-1.631c0.21-0.403,0.188-0.403-0.88-0.043c-1.781,0.636-2.033,0.551-1.152-0.402  c0.649-0.678,1.425-1.907,1.425-2.267c0-0.063-0.314,0.042-0.671,0.233c-0.377,0.212-1.215,0.53-1.844,0.72l-1.131,0.361l-1.027-0.7  c-0.566-0.381-1.361-0.805-1.781-0.932C39.766,21.902,38.131,21.944,37.167,22.283z M33,64C16.432,64,3,50.569,3,34S16.432,4,33,4  s30,13.431,30,30S49.568,64,33,64z" style="fill-rule:evenodd;clip-rule:evenodd;fill:;"/></svg>
+
+    </a>
+
+    
+    <a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=http://hangaroundtheweb.com/posts/24-ways-for-being-productive-with-big-code-base/&amp;title=24%20ways%20for%20being%20productive%20with%20big%20code%20base" class="linkedin no-underline" aria-label="share on LinkedIn">
+      <svg  height="32px"  style="enable-background:new 0 0 65 65;" version="1.1" viewBox="0 0 65 65" width="32px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <path d="M50.837,48.137V36.425c0-6.275-3.35-9.195-7.816-9.195  c-3.604,0-5.219,1.983-6.119,3.374V27.71h-6.79c0.09,1.917,0,20.427,0,20.427h6.79V36.729c0-0.609,0.044-1.219,0.224-1.655  c0.49-1.22,1.607-2.483,3.482-2.483c2.458,0,3.44,1.873,3.44,4.618v10.929H50.837z M22.959,24.922c2.367,0,3.842-1.57,3.842-3.531  c-0.044-2.003-1.475-3.528-3.797-3.528s-3.841,1.524-3.841,3.528c0,1.961,1.474,3.531,3.753,3.531H22.959z M34,64  C17.432,64,4,50.568,4,34C4,17.431,17.432,4,34,4s30,13.431,30,30C64,50.568,50.568,64,34,64z M26.354,48.137V27.71h-6.789v20.427  H26.354z" style="fill-rule:evenodd;clip-rule:evenodd;fill:;"/>
+</svg>
+
+    </a>
+  </div>
+
+
+      <h1 class="f1 athelas mt3 mb1">24 ways for being productive with big code base</h1>
+      
+      
+      <time class="f6 mv4 dib tracked" datetime="2019-04-21T22:30:14Z">April 21, 2019</time>
+
+      
+      
+    </header>
+    <div class="nested-copy-line-height lh-copy serif f4 nested-links nested-img mid-gray pr4-l w-two-thirds-l"><p>In this article we will take a look at some of the guiding principles which are beneficial while working with large code base.</p>
+<p>The whole idea of this post is to collect and come up with a checklist of significant approaches and ways to deal with large and legacy code bases.</p>
+<p>The readers are welcome to share more tools, methods and approaches in the comments section below.</p>
+<h2 id="1-onboarding-documentation">1. Onboarding Documentation</h2>
+<p>Ask if there is onboarding documentation, or someone who can give you a high-level overview of the codebase. Typically finding a person with a lot of context on the code is the fastest and most thorough way to understand the responsibilities and layouts of a codebase. Ask if they can draw an ER(Entity Relationship) diagram, it&rsquo;s extremely valuable documentation for any additional developers.</p>
+<blockquote>
+<p>Show me your flowcharts and conceal your tables, and I shall continue to be mystified.</p>
+<p>Show me your tables, and I won’t usually need your flowcharts; they’ll be obvious.</p>
+<p>-- <strong>Fred Brooks</strong></p>
+</blockquote>
+<h2 id="2-read-documentation">2. Read Documentation</h2>
+<p>Read all the documentation possible, especially design documentation. This should hopefully give you some clues as to both function (what) and purpose (why). The discussion around this will also introduce you to the major players in the architecture of the codebase.</p>
+<blockquote>
+<p><strong>Documentation is the castor oil of programming.</strong></p>
+<p>-- Gerald Weinberg, The Psychology of Computer Programming</p>
+</blockquote>
+<p><img src="/wp-content/uploads/2019/04/design-documentation.png" alt=""></p>
+<p>Note this does not necessarily mean formalized design docs, it could just be searching for any README&rsquo;s or relevant wiki pages. You&rsquo;re just gathering threads at this point, and documentation tends to be a lot more compact and easily digestible than foreign code.</p>
+<h2 id="3-look-at-the-models">3. Look at the models</h2>
+<p>Look at the models - there will be compact representations of data at some point. This gives good insight into the shared language of the code and can give a lot of clues about how things are done. They also tend to be a lot more human-readable than other pieces of code, so this is a plus.</p>
+<blockquote>
+<p><strong>The architectural model provides a Gestalt view of the system, allowing the developer to examine it as a whole.</strong></p>
+<p>-- Scott Ambler, Agile Modeling</p>
+</blockquote>
+<h2 id="4-find-and-skim-the-largest-files">4. Find and Skim the largest files.</h2>
+<p>Typically these files perform the majority of the work, have the most responsibility, and introduce most bugs. Knowing roughly where the major players are and what they do makes it a lot easier to read any individual file.</p>
+<p>You need to be fully aware of the presence of any <a href="http://wiki.c2.com/?GodClass">God Class</a> or components in your codebase which pose a serious threat to the long-term health of your product.</p>
+<h2 id="5-run-the-application">5. Run the application</h2>
+<p>Run the application, find some small behavior (a single, simple endpoint) and debug it. Step through the application code so you can see how a particular request flows through the system. This can show you how a lot of different concerns within the code are tied together and also ensures that you&rsquo;re set up for both running and debugging the codebase.</p>
+<h2 id="6-dont-plan-a-full-rewrite">6. Don&rsquo;t plan a full rewrite</h2>
+<p>Don&rsquo;t plan or do a full rewrite - it&rsquo;ll almost never work. Jeremy Burton has this wonderful <a href="https://vibratingmelon.com/2011/06/10/why-you-should-almost-never-rewrite-code-a-graphical-guide/">post</a>discussing the social and economical impacts of code re-writes.</p>
+<p>When you inevitably come across a trade off, choose the one which is easiest to change later. Everything else is just noise. Large changes in legacy systems often suffer from the <a href="https://en.wikipedia.org/wiki/Second-system_effect">second system effect</a> among other problems.</p>
+<h2 id="7-learn-the-tools">7. Learn the tools</h2>
+<p>Learn and use tools to automate the build system and quality assurance (<a href="https://jenkins.io/">Jenkins</a>, <a href="https://www.sonarqube.org/">Sonarqube</a>,<a href="https://docker.com">Docker</a>, <a href="https://github.com">Git</a>, etc.)</p>
+<p>Great tools let us do the impractical and the impossible. They give us super powers. The goal should be to know your tools so well that you can focus on the work at hand, without having to think — they should be second nature.</p>
+<h2 id="8-sharpen-the-saw">8. Sharpen the saw</h2>
+<p>Sharpen the Saw means preserving and enhancing the greatest asset you have&ndash;you. It means having a balanced program for self-renewal. It is the mindset to seek continuous improvement and renew yourself professionally.</p>
+<blockquote>
+<p>Give me six hours to chop down a tree and I will spend the first four sharpening the axe.</p>
+<p>— Abraham Lincoln</p>
+</blockquote>
+<p>Take the time to improve your skills and the skills of your team (coding dojos, experiments). An excuse to not sharpen the saw is an excuse for failure, burnout, and mediocrity.</p>
+<h2 id="9-spend-time-with-your-end-userscustomers">9. Spend time with your end users/customers</h2>
+<p>If possible spend time with the main user / product owner (especially in peak periods). You&rsquo;re blessed to have users, who understand your system.</p>
+<p>The team is actively encouraged to spend time with actual customers to learn more about their needs. A developer may spend time observing real users and come away with brilliant insight into what is most needed.</p>
+<h2 id="10-focus-on-cross-cutting-concerns">10. Focus on cross cutting concerns</h2>
+<p>The crosscutting concern also known as system-wide concern is a concern which is applicable throughout the application and it affects the entire application. These are the concerns representing functionalities for secondary requirements. These are typically implementation details that need to be kept separate from business logic. Do refactoring and first focus on cross cutting concerns (APIs, translations, caching, logging, database, etc.)</p>
+<h2 id="11-migrations">11. Migrations</h2>
+<p>Migrate things to well tested isolated APIs (e.g. use REST / Graphql APIs with new endpoints in the frontend and try not to use untested code for these APIs). It is always a good idea to have a strategic plan for migrations in your development roadmap. It could be every 6 weeks or 6 months, but it should be done at regular intervals of time or else you will be incurring a large amount of tech debt in your codebase.</p>
+<h2 id="12-move-fast-and-break-things">12. Move fast and break things</h2>
+<p>Don&rsquo;t be too backwards compatible (move fast and break things) This way of working usually emphasizes testing out new ideas, iterating quickly based on data, and aiming for more frequent points of learning. Allen Yang exhaustively discusses the pros and cons of this approach in this Forbes <a href="https://www.forbes.com/sites/quora/2014/12/16/should-innovative-companies-really-move-fast-and-break-things/#2eefc9fa6d1d">article</a>.</p>
+<h2 id="13-get-the-team-on-board">13. Get the team on board</h2>
+<p>If there are multiple people you need their buy-in and support for whatever approaches you want to do</p>
+<h2 id="14-plan-for-health-by-a-thousand-small-improvements">14. Plan for &ldquo;health by a thousand small improvements&rdquo;</h2>
+<p>It will be an iterative approach and you will refactor as you go.</p>
+<h2 id="15-dont-assume-different--bad">15. Don&rsquo;t assume different = bad</h2>
+<p>People might have done differently, consider using their approaches. You might do it differently. But it&rsquo;s better if you keep a consistency within the codebase. In codebase management consistency trumps cleverness.</p>
+<h2 id="16-create-space">16. Create space</h2>
+<p>Consider introducing a Fix-it Friday where everyone can work on little improvements. Think about conducting a <a href="https://en.wikipedia.org/wiki/Bug_bash">bug-bash</a> in your organization, at regular intervals of time so that it automatically creates a platform where all the developers, testers, program managers, usability researchers, designers, put aside their regular day-to-day duties and &ldquo;pound on the product&rdquo;.</p>
+<p>Because each person will use the product in slightly different (or very different) ways, and the product is getting a great deal of use in a short amount of time, this approach may reveal bugs relatively quickly.</p>
+<h2 id="17-create-a-non-blame-culture">17. Create a Non-Blame culture</h2>
+<p>Stuff will break if people risk improving things. Avoid blame shifted to them. If bug trackers ping individual people consider pinging the whole team instead.</p>
+<blockquote>
+<p><strong>If you get your ego in your way, you will only look to other people and circumstances to blame.</strong></p>
+<p>Jocko Willink</p>
+</blockquote>
+<h2 id="18-consider-automation">18. Consider automation</h2>
+<p>While &ldquo;development automation&rdquo; is not a commonly used and recognized term of the software development industry, business people normally use it to refer to &ldquo;anything that can speed up the development process and allow the organisation to bypass most, if not all, of the software development process, jumping from a simple business-level wish list to a ready-for-the-market product (writing as little code as possible and hiring as little programmers as possible)&rdquo;.</p>
+<blockquote>
+<p>Any technology/methodology that can reduce software development to the most complicated thing the average business guy can understand.</p>
+</blockquote>
+<p>Here are some examples of development automation:</p>
+<ul>
+<li>Automatic update of dependencies</li>
+<li>Automatic build process</li>
+<li>Automatic checking of style rules</li>
+<li>Automatic execution of unit tests with every build</li>
+<li>Automatic update of code-generated proxies</li>
+<li>Automatic creation of deployment packages</li>
+<li>Automatic configuration of target environments</li>
+<li>Automatic deployment to development or QA environments</li>
+<li>Automatic computation of metrics, such as Code Coverage</li>
+<li>Automatic smoke tests</li>
+<li>Automatic generation of release notes, or at least of the bug list that goes in the &ldquo;Fixed in this build&rdquo; section</li>
+</ul>
+<h2 id="19-start-with-the-tests">19. Start with the tests</h2>
+<p>This one is the most annoying, but worth doing. Whenever you improve a feature a bit try adding a test. Often in legacy apps there are no good tests. A lot of people recommend writing a test suite for the whole app before you do anything. If you are lucky enough to do this try it. The iterative approach more realistic as you can also do feature work while refactoring.</p>
+<p>When doing tests focus on integration (vertical/functional/etc) and not unit tests (unless the &ldquo;unit&rdquo; contains critical or complex logic). Your goal is to know &ldquo;<strong>that you broke something</strong>&rdquo; - you get by if you don&rsquo;t always know &ldquo;<strong>what you broke</strong>&rdquo;.</p>
+<p>Write automated tests (unit, integration, acceptance) for existing code where ever possible. Write at least unit tests and integration tests for new code.</p>
+<p>Make sure you have development and test environment available, including data transfer from production to test.</p>
+<h2 id="20-acknowledge-tech-debt">20. Acknowledge tech debt</h2>
+<p>Not everything needs refactoring. If it&rsquo;s not critical and nobody needs to touch it consider acknowledging it as tech debt. Add larger notes above the problematic areas and explain why you aren&rsquo;t refactoring it, explain things worth knowing to understand the code better, etc. Whenever you leave comments remember that comments should explain &ldquo;why&rdquo; not &ldquo;what&rdquo; the code does.</p>
+<h2 id="21-read-a-lot-of-code">21. Read a lot of code</h2>
+<p>Spend time reading code in the codebase even if it does not seem to make sense, even if you don’t think you’ll need to know that part of the code. Keep reading until it starts to make sense. The trick is to just read. You can even avoid tools that automatically navigate the code because you will know eventually where things are.</p>
+<h2 id="22-debugger-is-your-bff">22. Debugger is your BFF</h2>
+<p>The first and the foremost task while working with existing code bases is you need to get debugger working. Nothing can explain the processing workflow better than tracing the execution.</p>
+<p>Get familiar with your debugger. You may be surprised by how deep in a call stack a bug can live. It will also make you intimate with the different ways your codebase is orchestrated together. Also having any kind of schemas, protocol definitions and tests can help grasp whats happening in the system.</p>
+<h2 id="23-use-the-boyscout-approach">23. Use the boyscout approach</h2>
+<p>Clean where other left dirty stuff. Sure, many here would argue that &ldquo;never touch a running system&rdquo; is a gold rule, but what if the running system is running in the wrong way?</p>
+<blockquote>
+<p><strong>The Boyscout rule</strong></p>
+<p>Always leave the campground cleaner than you found it.</p>
+</blockquote>
+<p>If everyone attain her/himself to this rule, there wouldn&rsquo;t be what we call innovation.</p>
+<h2 id="24-dont-try-to-fix-the-pile-of-mud">24. Don&rsquo;t try to fix the pile of mud</h2>
+<p>Complicated software are infections of a complicated business requirements. When something is a pile of mud, don&rsquo;t try to fix the mud.</p>
+<p>Fix the business requirements until it get easier to handle. This also leads, most of the time, to a massive reduction in messy code bases.</p>
+<p>At this point you should have a fairly solid understanding of at least the most critical points of the codebase, and also be set up to run and debug it. You should also have at least one or two points of contact to ask questions. This gives you a good framework for figuring out how to modify the codebase moving forward.</p>
+<ul class="pa0">
+  
+   <li class="list">
+     <a href="/tags/articles" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">Articles</a>
+   </li>
+  
+   <li class="list">
+     <a href="/tags/bestpractices" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">bestpractices</a>
+   </li>
+  
+   <li class="list">
+     <a href="/tags/productivity" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">productivity</a>
+   </li>
+  
+   <li class="list">
+     <a href="/tags/uncategorized" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">Uncategorized</a>
+   </li>
+  
+</ul>
+<div class="mt6 instapaper_ignoref">
+      
+      
+      </div>
+    </div>
+
+    <aside class="w-30-l mt6-l">
+
+
+
+
+  <div class="bg-light-gray pa3 nested-list-reset nested-copy-line-height nested-links">
+    <p class="f5 b mb3">Related</p>
+    <ul class="pa0 list">
+	   
+	     <li  class="mb2">
+          <a href="/posts/software-craftsmanship-what-do-you-need-to-know/">Software Craftsmanship - What do you need to know?</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/posts/codemods-the-new-age-saviors-for-js-developers/">Codemods - The New Age Saviors for JS Developers</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/posts/8-key-differences-between-effective-and-non-effective-decision-makers/">8 key differences between effective and ineffective decision makers</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/posts/ember-octane-everything-one-can-expect-in-the-next-ember-edition/">Ember Octane - everything one can expect in the next Ember edition</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/posts/creating-connection-aware-ember-media-components/">Creating Connection-aware Ember Media Components</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/posts/css-conical-gradients-is-finally-gaining-momentum-among-browser-landscape/">CSS Conical Gradients is finally gaining momentum among browser landscape</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/posts/the-five-joys-of-the-programming-craft/">The Five Joys of the Programming Craft</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/posts/six-corporate-habits-and-rituals-that-seem-to-be-far-fetched/">Six Corporate Habits and Rituals that seem to be far-fetched</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/posts/conceptual-integrity-revisited/">Conceptual Integrity - Revisited</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/posts/cognitive-dissonance-in-programming/">Cognitive Dissonance in Programming</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/posts/classical-quotations-and-words-of-wisdom-on-managing-software/">Classical quotations and words of wisdom on managing software</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/posts/nine-illuminating-quotes-on-debugging/">Nine Illuminating Quotes on Debugging</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/posts/six-sensible-quotes-on-user-interface/">Six Sensible Quotes on User Interface</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/posts/eight-elegant-quotes-on-coding-best-practices/">Eight Elegant Quotes on Coding best practices</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/posts/eight-corporate-laws-of-gravity/">Eight Corporate Laws of Gravity</a>
+        </li>
+	    
+    </ul>
+</div>
+
+</aside>
+
+  </article>
+
+    </main>
+    <footer class="bg-black bottom-0 w-100 pa3" role="contentinfo">
+  <div class="flex justify-between">
+  <a class="f4 fw4 hover-white no-underline white-70 dn dib-ns pv2 ph3" href="http://hangaroundtheweb.com/" >
+    &copy;  hangaroundtheweb 2022 
+  </a>
+    <div>
+
+
+
+
+<a href="https://twitter.com/rajasegar_c" target="_blank" class="link-transition twitter link dib z-999 pt3 pt0-l mr1" title="Twitter link" rel="noopener" aria-label="follow on Twitter——Opens in a new window">
+  <svg height="32px"  style="enable-background:new 0 0 67 67;" version="1.1" viewBox="0 0 67 67" width="32px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M37.167,22.283c-2.619,0.953-4.274,3.411-4.086,6.101  l0.063,1.038l-1.048-0.127c-3.813-0.487-7.145-2.139-9.974-4.915l-1.383-1.377l-0.356,1.017c-0.754,2.267-0.272,4.661,1.299,6.271  c0.838,0.89,0.649,1.017-0.796,0.487c-0.503-0.169-0.943-0.296-0.985-0.233c-0.146,0.149,0.356,2.076,0.754,2.839  c0.545,1.06,1.655,2.097,2.871,2.712l1.027,0.487l-1.215,0.021c-1.173,0-1.215,0.021-1.089,0.467  c0.419,1.377,2.074,2.839,3.918,3.475l1.299,0.444l-1.131,0.678c-1.676,0.976-3.646,1.526-5.616,1.568  C19.775,43.256,19,43.341,19,43.405c0,0.211,2.557,1.397,4.044,1.864c4.463,1.377,9.765,0.783,13.746-1.568  c2.829-1.673,5.657-5,6.978-8.221c0.713-1.716,1.425-4.851,1.425-6.354c0-0.975,0.063-1.102,1.236-2.267  c0.692-0.678,1.341-1.419,1.467-1.631c0.21-0.403,0.188-0.403-0.88-0.043c-1.781,0.636-2.033,0.551-1.152-0.402  c0.649-0.678,1.425-1.907,1.425-2.267c0-0.063-0.314,0.042-0.671,0.233c-0.377,0.212-1.215,0.53-1.844,0.72l-1.131,0.361l-1.027-0.7  c-0.566-0.381-1.361-0.805-1.781-0.932C39.766,21.902,38.131,21.944,37.167,22.283z M33,64C16.432,64,3,50.569,3,34S16.432,4,33,4  s30,13.431,30,30S49.568,64,33,64z" style="fill-rule:evenodd;clip-rule:evenodd;fill:;"/></svg>
+
+<span class="new-window"><svg  height="8px"  style="enable-background:new 0 0 1000 1000;" version="1.1" viewBox="0 0 1000 1000" width="8px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" >
+<path d="M598 128h298v298h-86v-152l-418 418-60-60 418-418h-152v-86zM810 810v-298h86v298c0 46-40 86-86 86h-596c-48 0-86-40-86-86v-596c0-46 38-86 86-86h298v86h-298v596h596z" style="fill-rule:evenodd;clip-rule:evenodd;fill:;"/>
+</svg>
+</span></a>
+
+
+
+
+
+<a href="https://github.com/rajasegar" target="_blank" class="link-transition github link dib z-999 pt3 pt0-l mr1" title="Github link" rel="noopener" aria-label="follow on Github——Opens in a new window">
+  <svg  height="32px"  style="enable-background:new 0 0 512 512;" version="1.1" viewBox="0 0 512 512" width="32px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" >
+  <path d="M256,32C132.3,32,32,134.8,32,261.7c0,101.5,64.2,187.5,153.2,217.9c11.2,2.1,15.3-5,15.3-11.1   c0-5.5-0.2-19.9-0.3-39.1c-62.3,13.9-75.5-30.8-75.5-30.8c-10.2-26.5-24.9-33.6-24.9-33.6c-20.3-14.3,1.5-14,1.5-14   c22.5,1.6,34.3,23.7,34.3,23.7c20,35.1,52.4,25,65.2,19.1c2-14.8,7.8-25,14.2-30.7c-49.7-5.8-102-25.5-102-113.5   c0-25.1,8.7-45.6,23-61.6c-2.3-5.8-10-29.2,2.2-60.8c0,0,18.8-6.2,61.6,23.5c17.9-5.1,37-7.6,56.1-7.7c19,0.1,38.2,2.6,56.1,7.7   c42.8-29.7,61.5-23.5,61.5-23.5c12.2,31.6,4.5,55,2.2,60.8c14.3,16.1,23,36.6,23,61.6c0,88.2-52.4,107.6-102.3,113.3   c8,7.1,15.2,21.1,15.2,42.5c0,30.7-0.3,55.5-0.3,63c0,6.1,4,13.3,15.4,11C415.9,449.1,480,363.1,480,261.7   C480,134.8,379.7,32,256,32z"/>
+</svg>
+
+<span class="new-window"><svg  height="8px"  style="enable-background:new 0 0 1000 1000;" version="1.1" viewBox="0 0 1000 1000" width="8px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" >
+<path d="M598 128h298v298h-86v-152l-418 418-60-60 418-418h-152v-86zM810 810v-298h86v298c0 46-40 86-86 86h-596c-48 0-86-40-86-86v-596c0-46 38-86 86-86h298v86h-298v596h596z" style="fill-rule:evenodd;clip-rule:evenodd;fill:;"/>
+</svg>
+</span></a>
+
+
+
+
+
+
+
+</div>
+  </div>
+</footer>
+
+  </body>
+</html>

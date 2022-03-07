@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>principles on hangaroundtheweb</title>
+    <link>http://hangaroundtheweb.com/tags/principles/</link>
+    <description>Recent content in principles on hangaroundtheweb</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 22 Apr 2018 20:56:05 +0000</lastBuildDate><atom:link href="http://hangaroundtheweb.com/tags/principles/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Seven Principles of Software Development - Revisited</title>
+      <link>http://hangaroundtheweb.com/posts/seven-principles-of-software-development-revisited/</link>
+      <pubDate>Sun, 22 Apr 2018 20:56:05 +0000</pubDate>
+      
+      <guid>http://hangaroundtheweb.com/posts/seven-principles-of-software-development-revisited/</guid>
+      <description>Seven Principles of Software Development - Revisited Principle #1: The Reason It All Exists A software system exists for one reason: to provide value to its users. All decisions should be made with this in mind. Before specifying a system requirement, before noting a piece of system functionality, before determining the hardware platforms or development processes, ask yourself questions such as: Does this add real VALUE to the system? If the answer is no, don&amp;rsquo;t do it.</description>
+    </item>
+    
+  </channel>
+</rss>

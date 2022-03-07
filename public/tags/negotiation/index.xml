@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>negotiation on hangaroundtheweb</title>
+    <link>http://hangaroundtheweb.com/tags/negotiation/</link>
+    <description>Recent content in negotiation on hangaroundtheweb</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 27 May 2018 19:56:20 +0000</lastBuildDate><atom:link href="http://hangaroundtheweb.com/tags/negotiation/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Two simple ways to negotiate consensus in a software development group</title>
+      <link>http://hangaroundtheweb.com/posts/two-simple-ways-to-negotiate-consensus-in-a-software-development-group/</link>
+      <pubDate>Sun, 27 May 2018 19:56:20 +0000</pubDate>
+      
+      <guid>http://hangaroundtheweb.com/posts/two-simple-ways-to-negotiate-consensus-in-a-software-development-group/</guid>
+      <description>Two simple ways to negotiate consensus in a software development group You can&amp;rsquo;t reach consensus unless you recognize it when you have it in your grasp. This means that software development groups trying to reach collective decisions are wise to agree, in advance, on the criteria by which technical matters will be decided. What is important? What matters? What is “good” and what is “bad” within the confines of this particular project?</description>
+    </item>
+    
+  </channel>
+</rss>
