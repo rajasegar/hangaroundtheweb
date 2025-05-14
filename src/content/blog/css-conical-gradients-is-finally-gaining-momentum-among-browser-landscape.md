@@ -1,7 +1,7 @@
 ---
 title: 'CSS Conical Gradients is finally gaining momentum among browser landscape'
+description: ''
 pubDate: '2018-08-10'
-draft: false
 tags: ['Articles', 'conicalgradient', 'css', 'CSS', 'gradients']
 ---
 
