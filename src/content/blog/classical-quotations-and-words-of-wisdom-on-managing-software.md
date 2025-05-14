@@ -1,8 +1,9 @@
 ---
 title: 'Classical quotations and words of wisdom on managing software'
-date: Mon, 23 Jul 2018 23:45:42 +0000
-draft: false
+pubDate: '2018-07-23'
+description: 'Timeless advice and quotations on software project management.'
 tags: ['Articles', 'programming', 'quotes', 'software']
+heroImage: '/blog-placeholder-5.jpg'
 ---
 
 Managing Software - Words of Wisdom

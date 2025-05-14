@@ -1,8 +1,9 @@
 ---
 title: 'Six Corporate Habits and Rituals that seem to be far-fetched'
-date: Mon, 06 Aug 2018 19:20:26 +0000
-draft: false
+description: 'Exploring corporate habits and rituals that may be outdated or ineffective.'
+pubDate: 'Aug 06 2018'
 tags: ['corporate', 'habits', 'rituals', 'Uncategorized']
+heroImage: '/blog-placeholder-5.jpg'
 ---
 
 Six Corporate Habits and Rituals that seem to be far-fetched
@@ -155,5 +156,4 @@ A ritual is only important if it points to something that's really there. If the
 *   Photo by Sofiya Levchenko on Unsplash
 *   Photo by Nicolai Berntsen on Unsplash
 *   Photo by Henry Be on Unsplash  
-    
 *   Photo by [Chinh Le Duc](https://unsplash.com/photos/iXeddfYn5cs?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/search/photos/ritual?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)

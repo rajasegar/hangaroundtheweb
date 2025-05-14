@@ -1,8 +1,9 @@
 ---
 title: 'PlantUML in Spacemacs'
-date: Wed, 10 Jul 2019 03:04:02 +0000
-draft: false
+description: 'How to use PlantUML in Spacemacs for UML diagramming.'
+pubDate: 'Jul 10 2019'
 tags: ['Articles', 'emacs', 'plantuml', 'spacemacs', 'Spacemacs']
+heroImage: '/blog-placeholder-5.jpg'
 ---
 
 This article is the first in the series of articles about including and using [PlantUML](http://plantuml.com) in [Spacemacs](http://spacemacs.org) to do some amazing things. In this article we will see how to setup PlantUML in Spacemacs and use it. In the upcoming posts we will see some advanced usage of PlantUML and some awesome stuff you can do with it.

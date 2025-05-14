@@ -1,8 +1,9 @@
 ---
 title: 'Building a Rentals Listing web application in Common Lisp'
-date: Fri, 09 Jul 2021 09:30:14 +0000
-draft: false
+pubDate: '2021-07-09'
+description: 'Build a simple rentals listing web app in Common Lisp.'
 tags: ['common-lisp','lisp']
+heroImage: '/blog-placeholder-3.jpg'
 ---
 
 # Building a Rentals Listing web app in Common Lisp
@@ -376,9 +377,6 @@ So if we typed "urban" in the search box, we would get the same value from the a
 ```
 
 ![Alt Text](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/fh36hxqn6opxdc7w2ttq.gif)
-
-
-
 
 Next we need to pass this query value to find the list of rentals that match with the title of the rental. For that we are defining a new function called `filter-rentals` and pass the query value as the argument for the same. We also need to send only the values of the `*rentals*` list to the template, not the keys, so that they can be iterated properly and the rental details are displayed properly in the HTML.
 

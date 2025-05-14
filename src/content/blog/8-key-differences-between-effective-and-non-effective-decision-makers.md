@@ -1,7 +1,7 @@
 ---
 title: '8 key differences between effective and ineffective decision makers'
+pubDate: '2019-03-01'
 description: '8 key differences between effective and ineffective decision makers'
-pubDate: 'March 01 2019'
 tags:
     - Articles
     - comparison

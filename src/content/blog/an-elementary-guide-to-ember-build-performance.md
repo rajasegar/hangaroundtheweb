@@ -1,8 +1,7 @@
 ---
 title: 'An Elementary Guide to Ember Build Performance'
+pubDate: '2018-02-23'
 description: ''
-pubDate: Fri, 23 Feb 2018 03:32:25 +0000
-draft: false
 tags: ['Articles', 'ember', 'emberjs', 'EmberJS', 'performance', 'tips']
 heroImage: '/blog-placeholder-2.jpg'
 ---

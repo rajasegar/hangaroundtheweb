@@ -1,8 +1,7 @@
 ---
 title: 'A Refreshing Guide to Object.freeze in Javascript by Dr.Victor Fries'
+pubDate: '2018-06-21'
 description: ''
-pubDate: Thu, 21 Jun 2018 23:58:52 +0000
-draft: false
 tags: ['article', 'Articles', 'articles', 'javascript', 'Javascript']
 heroImage: '/blog-placeholder-2.jpg'
 ---
@@ -86,23 +85,23 @@ Object.defineProperty(obj, 'foo', { value: 'eit' });
 // It's also impossible to change the prototype
 // both statements below will throw a TypeError.
 Object.setPrototypeOf(obj, { x: 20 })
-obj.\_\_proto\_\_ = { x: 20 }
+obj.__proto__ = { x: 20 }
 
 ```
 
 ### I'm putting array on ice (Freezing Arrays)
 
 ```js
-let a = \[0\];
+let a = [0];
 Object.freeze(a); // The array cannot be modified now.
 
-a\[0\]=1; // fails silently
+a[0]=1; // fails silently
 a.push(2); // fails silently
 
 // In strict mode such attempts will throw TypeErrors
 function fail() {
   "use strict"
-  a\[0\] = 1;
+  a[0] = 1;
   a.push(2);
 }
 
@@ -165,9 +164,9 @@ function deepFreeze(object) {
   // Freeze properties before freezing self
 
   for (let name of propNames) {
-    let value = object\[name\];
+    let value = object[name];
 
-    object\[name\] = value && typeof value === "object" ? 
+    object[name] = value && typeof value === "object" ? 
       deepFreeze(value) : value;
   }
 

@@ -1,8 +1,9 @@
 ---
 title: 'Refactor your Javascript like a Pro with js2-refactor'
-date: Mon, 17 Jul 2017 03:25:15 +0000
-draft: false
+description: 'How to use the js2-refactor tool in Spacemacs for effective Javascript refactoring.'
+pubDate: 'Jul 17 2017'
 tags: ['emacs', 'javascript', 'Javascript', 'refactoring', 'spacemacs', 'web development']
+heroImage: '/blog-placeholder-3.jpg'
 ---
 
 In this article i will show you how to use the js2-refactor tool in Spacemacs which is a community built version of Emacs using Space key as the leader key.  
@@ -549,7 +550,6 @@ After:
 ```
 var a1 = 1;
 var b1 = 2;
-var c1 = 3;
 
 ```
 

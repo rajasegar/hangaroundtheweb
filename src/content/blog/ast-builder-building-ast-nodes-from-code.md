@@ -1,8 +1,9 @@
 ---
 title: 'AST Builder - Building AST nodes from code'
-date: Sun, 08 Dec 2019 23:01:09 +0000
-draft: false
+pubDate: '2019-12-08'
+description: 'A look at the AST Builder tool for generating AST nodes from source code.'
 tags: ['abstract syntax tree', 'Articles', 'codemod', 'codemods', 'Javascript', 'jscodeshift']
+heroImage: '/blog-placeholder-1.jpg'
 ---
 
 In this article, we are going to take a look at a tool called 'AST Builder' which will significantly improve the developer experience for writing codemods.

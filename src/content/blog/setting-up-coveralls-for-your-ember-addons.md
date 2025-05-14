@@ -1,8 +1,9 @@
 ---
 title: 'Setting up Coveralls for your Ember Addons'
-date: Wed, 13 May 2020 17:06:18 +0000
-draft: false
+description: 'How to set up automated code coverage metrics collection for Ember addons using Coveralls and Github Actions.'
+pubDate: 'May 13 2020'
 tags: ['Articles', 'coverage', 'coveralls', 'ember', 'ember-addon', 'EmberJS']
+heroImage: '/blog-placeholder-1.jpg'
 ---
 
 In this tutorial, we will see how to setup automated code coverage metrics collection for your Ember addons using [Coveralls](https://coveralls.io) and [Github Actions](https://github.com/features/actions).
@@ -15,7 +16,7 @@ Code coverage is often used as a metric to determine the effectiveness of Unit t
 
 ### ember-cli-code-coverage
 
-This addon provisions to gather Code coverage for your Ember apps and addons using [Istanbul](https://istanbul.js.org/). Install this addon into your Ember app or addon with \`ember install\`;
+This addon provisions to gather Code coverage for your Ember apps and addons using [Istanbul](https://istanbul.js.org/). Install this addon into your Ember app or addon with `ember install`;
 
 ```
 ember install ember-cli-code-coverage
@@ -88,7 +89,7 @@ Add a separate coveralls script to upload the coverage information to Coveralls 
 
 ```
 
-This will upload the coverage statistics generated while running tests in a folder called \`coverage\` in a file known as \`lcov.info\`
+This will upload the coverage statistics generated while running tests in a folder called `coverage` in a file known as `lcov.info`
 
 ### Generating coverage statistics in CI
 

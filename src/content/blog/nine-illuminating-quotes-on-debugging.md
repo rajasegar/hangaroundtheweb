@@ -1,8 +1,9 @@
 ---
 title: 'Nine Illuminating Quotes on Debugging'
-date: Sat, 21 Jul 2018 22:54:06 +0000
-draft: false
+description: 'A collection of insightful quotes about debugging from renowned developers.'
+pubDate: 'Jul 21 2018'
 tags: ['Articles', 'debugging', 'quotes']
+heroImage: '/blog-placeholder-2.jpg'
 ---
 
 Nine Illuminating Quotes on Debugging

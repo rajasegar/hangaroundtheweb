@@ -1,8 +1,9 @@
 ---
 title: 'Seven Principles of Software Development - Revisited'
-date: Sun, 22 Apr 2018 20:56:05 +0000
-draft: false
+description: 'A revisit of the core principles of software development.'
+pubDate: 'Apr 22 2018'
 tags: ['Articles', 'development', 'principles', 'software']
+heroImage: '/blog-placeholder-2.jpg'
 ---
 
 Seven Principles of Software Development - Revisited

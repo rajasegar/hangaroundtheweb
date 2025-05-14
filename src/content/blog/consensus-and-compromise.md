@@ -1,8 +1,9 @@
 ---
 title: 'Consensus and Compromise'
-date: Mon, 04 Jun 2018 23:45:53 +0000
-draft: false
+pubDate: '2018-06-04'
+description: 'Exploring the difference between consensus and compromise in software teams, and how true consensus leads to better outcomes.'
 tags: ['article', 'Articles', 'articles', 'compromise', 'consensus']
+heroImage: '/blog-placeholder-2.jpg'
 ---
 
 Consensus and Compromise

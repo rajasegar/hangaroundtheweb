@@ -1,6 +1,6 @@
 ---
 title: 'Creating runtime assisted Codemods using Telemetry helpers'
-date: Thu, 31 Oct 2019 22:30:28 +0000
+pubDate: '2019-10-31'
 draft: false
 tags: ['Articles', 'codemod', 'codemods', 'ember', 'emberjs', 'EmberJS', 'telemetry']
 ---
@@ -84,15 +84,12 @@ All invocations of `gatherTelemetryForUrl` internally returns an object enumer
   'input/helpers/pluralize': true,
   'input/helpers/singularize': true,
 }
-
-
 ```
 
 This package provides one gathering function: `analyzeEmberObject`. This function does a "best effort" analysis of the app runtime, returning such things as Components, Helpers, Routes, etc. and their particular properties.
 
 ```
 const { analyzeEmberObject } = require('ember-codemods-telemetry-helpers');
-
 ```
 
 It parses Ember meta data object, collects the runtime information and returns the following list of properties :
@@ -105,7 +102,6 @@ Let's see how the codemods use the telemetry helpers to gather data at runtime. 
 
 ```
 npx ember-native-class-codemod http://localhost:4200/path/to/server \[OPTIONS\] path/of/files/ or/some\*\*/\*glob.js
-
 ```
 
 The first argument that you must pass to the codemod is the URL of a running instance of your application. The codemod opens up your application using the URL passed as the argument and analyzes the classes directly in order to transform them. **Any classes that were not analyzed will not be transformed.** This includes classes that are private to a module and never exported.

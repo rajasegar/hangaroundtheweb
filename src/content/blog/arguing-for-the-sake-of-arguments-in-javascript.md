@@ -1,7 +1,7 @@
 ---
 title: 'Arguing for the sake of arguments in JavaScript'
-date: Thu, 29 Mar 2018 03:52:42 +0000
-draft: false
+pubDate: '2018-03-29'
+description: ''
 tags: ['article', 'Articles', 'articles', 'javascript', 'Javascript']
 ---
 
@@ -69,7 +69,7 @@ The **arity** of a function or operation is the number of arguments or operand
 
 The arguments object is not an Array. It is similar to an Array, but does not have any Array properties except length. However it can be converted to a real Array: using any one of the two below examples in ES5:
 
-```
+```js
 var args = Array.prototype.slice.call(arguments);
 var args = \[\].slice.call(arguments);
 
@@ -77,7 +77,7 @@ var args = \[\].slice.call(arguments);
 
 With the first method using **Array.prototype.slice.call(arguments)** we can write our program as:
 
-```
+```js
 function multiMax() {
   var args = Array.prototype.slice.call(arguments);
   var remaining = args.slice(1);
@@ -93,8 +93,8 @@ With the second method using **\[\].slice.call(arguments)** the same program w
 
 #### ES5 - v2
 
-```
-function multiMax() {
+```js
+function multiMax() 
   var args = \[\].slice.call(arguments);
   var remaining = args.slice(1);
   var sorted = remaining.sort(function(a, b) {
@@ -107,14 +107,14 @@ function multiMax() {
 
 In ES6, it is very easy to convert the arguments object to an array, using the **Array.from()**function.
 
-```
+```js
 const args = Array.from(arguments);
 
 ```
 
 #### ES6 - v1:
 
-```
+```js
 function multiMax() {
   let args = Array.from(arguments);
   let remaining = args.slice(1);
@@ -128,7 +128,7 @@ We can also use the **spread** operator to convert the arguments object like t
 
 #### ES6 - v2
 
-```
+```js
 function multiMax() {
   let args = \[...arguments\];
   let remaining = args.slice(1);
@@ -142,7 +142,7 @@ Or we can also make use of , in ES6, **rest parameters**
 
 #### ES6 - v3
 
-```
+```js
 function multiMax(first, ...remaining) {
   let sorted = remaining.sort((a, b) => b - a);
   return first \* sorted\[0\];
@@ -154,7 +154,7 @@ function multiMax(first, ...remaining) {
 
 Our next problem we are going to take it for our discussion is to define a function that concatenates several strings. This example defines a function that concatenates several strings. The only formal argument for the function is a string that specifies the characters that separate the items to concatenate. The function is defined as follows:
 
-```
+```js
 function multiConcat(separator) {
   var args = Array.prototype.slice.call(arguments, 1);
   return args.join(separator);
@@ -164,7 +164,7 @@ function multiConcat(separator) {
 
 Example use of this function will be like:
 
-```
+```js
 // returns "red, orange, blue"
 multiConcat(', ', 'red', 'orange', 'blue');
 
@@ -178,14 +178,14 @@ multiConcat('. ', 'sage', 'basil', 'oregano', 'pepper', 'parsley');
 
 ### Define a function to compute the average of numbers
 
-```
+```js
 function average(/\*numbers\*/) {
     for (var i=0, total = 0, len=arguments.length; i  
 ```
 
 If you are planning to solve this problem more elegantly and functional way, we can make use of the Array **reduce** function to obtain the sum of the arguments once it has been converted to a real array like below.
 
-```
+```js
 function average() {
   var args = \[\].slice.call(arguments);
   var sum  = args.reduce(function(a, b) {
@@ -198,7 +198,7 @@ function average() {
 
 If you want to go all guns blazing with ES6 spread operator and arrow functions, you may write.
 
-```
+```js
 function average() {
   var args = \[...arguments\];
   var sum  = args.reduce((a, b) =>  a + b, 0);
@@ -211,7 +211,7 @@ function average() {
 
 The following function accepts any number of numeric arguments and returns the value of the largest argument it is passed (see also the built-in function Math.max(), which behaves the same way):
 
-```
+```js
 function max( /\* ... \*/ ) {
   var max = Number.NEGATIVE\_INFINITY;
   // Loop through the arguments, looking for, and remembering, the biggest.
@@ -231,7 +231,7 @@ var largest = max(1, 10, 100, 2, 3, 1000, 4, 5, 10000, 6); // => 10000
 
 JavaScript’s liberal attitude to parameter passing is appealing but some functions will break if all named arguments are not supplied. We could write a function wrapper to enforce this when necessary:
 
-```
+```js
 function requireAllArgs(fn) {
     return function() {
         if (arguments.length < fn.length) {
@@ -252,7 +252,7 @@ divide(2,5); //0.4
 
 This example defines a function that creates a string containing HTML for a list. The only formal argument for the function is a string that is "u" if the list is to be unordered (bulleted), or "o" if the list is to be ordered (numbered). The function is defined as follows:
 
-```
+```js
 function list(type) {
   var result = '<' + type + 'l>*   ';
       var args = Array.prototype.slice.call(arguments, 1);
@@ -268,7 +268,7 @@ function list(type) {
 
 You can pass any number of arguments to this function, and it adds each argument as an item to a list of the type indicated. For example:
 
-```
+```js
 var listHTML = list('u', 'One', 'Two', 'Three');
 
 /\* listHTML is:
@@ -287,7 +287,7 @@ var listHTML = list('u', 'One', 'Two', 'Three');
 
 ### A String formatter
 
-```
+```js
 function format(string) {  
     var args = arguments;  
     var pattern = RegExp("%(\[1-" + (arguments.length-1) + "\])", "g");
@@ -305,7 +305,7 @@ format("a %1 and a %2", "cat", "dog");
 
 The typical JavaScript implementations of curry, partial and compose store the arguments object for later concatenation with the runtime arguments of the inner function.
 
-```
+```js
 Function.prototype.curry = function() {
     if (arguments.length<1) {
         return this; //nothing to curry with - return function
@@ -333,7 +333,7 @@ milesToKilometers(34); //55.1 km
 
 An arrow function expression has a shorter syntax than a function expression and does not have its own this, arguments, super, or new.target. These function expressions are best suited for non-method functions, and they cannot be used as constructors.
 
-```
+```js
 let myArrowFunc = () => {
   let args = \[...arguments\];
   return args\[0\];
@@ -349,7 +349,7 @@ console.log("myArrowFunc = ", myArrowFunc(1, 2, 3));
 
 Arrow functions do not have their own arguments object. Thus, in this example, arguments is simply a reference to the arguments of the enclosing scope:
 
-```
+```js
 var arguments = \[1, 2, 3\];
 var arr = () => arguments\[0\];
 
@@ -366,7 +366,7 @@ foo(1); // 2
 
 In most cases, using rest parameters is a good alternative to using an arguments object.
 
-```
+```js
 function foo(n) { 
   var f = (...args) => args\[0\] + n; 
   return f(10); 

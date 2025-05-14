@@ -1,7 +1,7 @@
 ---
 title: '24 ways for being productive with big code base'
+pubDate: '2019-04-21'
 description: ''
-pubDate: 'Apr 21 2019'
 heroImage: '/blog-placeholder-3.jpg'
 ---
 

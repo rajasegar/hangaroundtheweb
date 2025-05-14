@@ -1,6 +1,6 @@
 ---
 title: 'Eight Elegant Quotes on Coding best practices'
-date: Sun, 15 Jul 2018 00:20:46 +0000
+pubDate: '2018-07-15'
 draft: false
 tags: ['Articles']
 ---

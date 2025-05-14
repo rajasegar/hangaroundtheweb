@@ -1,8 +1,9 @@
 ---
 title: 'AST Finder - Finding AST nodes from code'
-date: Tue, 10 Dec 2019 02:27:46 +0000
-draft: false
+pubDate: '2019-12-10'
+description: 'A guide to using AST Finder for identifying AST nodes from code and writing codemods.'
 tags: ['abstract syntax tree', 'Articles', 'codemod', 'codemods', 'Javascript', 'jscodeshift']
+heroImage: '/blog-placeholder-1.jpg'
 ---
 
 In this article, we are going to take a look at a tool called 'AST Finder' which will significantly improve the developer experience for writing codemods.
@@ -45,7 +46,7 @@ Now let's say you want to replace a `CallExpression`, `foo.bar()` with a new 
       "name": "bar"
     }
   },
-  "arguments": \[\]
+  "arguments": []
 }
 
 
@@ -61,7 +62,7 @@ I have omitted a lot of information in the above code for clarity and readabilit
     "type": "Identifier",
     "name": "foo"
   },
-  "arguments": \[\]
+  "arguments": []
 }
 
 
@@ -85,7 +86,7 @@ module.exports = function transformer(file, api) {
       }
     }
   }).replaceWith(path => {
-    return j.callExpression(j.identifier("foo"), \[\]);
+    return j.callExpression(j.identifier("foo"), []);
   });
 
   return root.toSource();
@@ -140,12 +141,12 @@ This allows developers to easily and effectively find AST nodes from source code
 import { findQuery } from 'ast-node-finder';
 import { parse } from 'recast';
 
-const source = \`foo.bar()\`;
+const source = `foo.bar()`;
 
 const ast = parse(source);
 
 // Pass the node from ast and get the find api
-console.log(findQuery(ast.program.body\[0\].expression));
+console.log(findQuery(ast.program.body[0].expression));
 ```
 
 The above snippet will generate some thing like this:

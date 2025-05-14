@@ -1,8 +1,9 @@
 ---
 title: 'Codemods - The New Age Saviors for JS Developers'
-date: Fri, 22 Mar 2019 23:13:17 +0000
-draft: false
+pubDate: '2019-03-22'
+description: 'An introduction to codemods and their role in large-scale codebase refactoring.'
 tags: ['Articles', 'codemod', 'codemods', 'Javascript', 'jscodeshift']
+heroImage: '/blog-placeholder-1.jpg'
 ---
 
 In this article, we take a look at [Codemods](https://github.com/facebook/codemod), a tool for making sweeping changes across your code with ease and effectiveness. Codemods are invented by a team of developers from [Facebook](https://facebook.com) to assist large-scale migrations in code-base, and we are going to take a deep look into a particular codemod tool called jscodeshift.

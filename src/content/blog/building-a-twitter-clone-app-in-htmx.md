@@ -1,8 +1,9 @@
 ---
 title: 'Building a Twitter clone app in htmx'
-date: Sun, 11 Apr 2021 21:22:31 +0000
-draft: false
+pubDate: '2021-04-11'
+description: 'A demo Twitter clone app built using htmx.'
 tags: ['Articles', 'html', 'HTML', 'html5', 'htmx']
+heroImage: '/blog-placeholder-4.jpg'
 ---
 
 In this post, we are going to build a Twitter clone demo application using [htmx](https://htmx.org/). Before diving into the tutorial, let me tell you the background story about why I decided to build this app using htmx.

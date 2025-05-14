@@ -1,8 +1,9 @@
 ---
 title: 'Conceptual Integrity - Revisited'
-date: Mon, 06 Aug 2018 02:04:26 +0000
-draft: false
+pubDate: '2018-08-06'
+description: 'A discussion on the importance of conceptual integrity in system design.'
 tags: ['Articles', 'conceptualintegrity', 'programming', 'software']
+heroImage: '/blog-placeholder-3.jpg'
 ---
 
 Conceptual integrity is the principle that anywhere you look in your system, you can tell that the design is part of the same overall design. This includes low-level issues such as formatting and identifier naming, but also issues such as how modules and classes are designed, etc. This is vitally important, because inevitably, unanticipated issues come up that must be resolved quickly. If there is a coherent design to the system, it can be much easier to resolve these issues by determining what would be consistent with the overall design, especially if the other designers are not present.

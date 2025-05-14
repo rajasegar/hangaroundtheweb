@@ -1,8 +1,9 @@
 ---
 title: 'Cognitive Dissonance in Programming'
-date: Tue, 31 Jul 2018 22:46:04 +0000
-draft: false
+pubDate: '2018-07-31'
+description: 'Exploring the concept of cognitive dissonance in the context of programming.'
 tags: ['article', 'Articles', 'articles', 'programming', 'psychology']
+heroImage: '/blog-placeholder-2.jpg'
 ---
 
 Cognitive Dissonance in Programming

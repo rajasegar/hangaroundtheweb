@@ -1,8 +1,9 @@
 ---
 title: 'Playing Music in Spacemacs with EMMS'
-date: Thu, 02 Jul 2020 00:57:51 +0000
-draft: false
+description: 'Guide to playing music inside Spacemacs using EMMS.'
+pubDate: 'Jul 02 2020'
 tags: ['Articles', 'emacs', 'emms', 'music', 'spacemacs', 'Spacemacs']
+heroImage: '/blog-placeholder-4.jpg'
 ---
 
 I have been thinking about playing songs inside Spacemacs for quite a while, so that I don't have to leave my favorite editor for just playing music. After a small exploration I found out that all I need is to enable EMMS inside Spacemacs.

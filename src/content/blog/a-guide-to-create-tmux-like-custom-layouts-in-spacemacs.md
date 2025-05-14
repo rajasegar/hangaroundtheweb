@@ -1,8 +1,8 @@
 ---
 title: 'A guide to create tmux like Custom Layouts in Spacemacs'
+pubDate: '2019-06-21'
 description: ''
-pubDate: 'Jun 21 2019'
-tags: 
+tags:
     - Articles
     - emacs
     - spacemacs

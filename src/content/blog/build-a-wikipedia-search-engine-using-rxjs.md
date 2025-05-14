@@ -1,8 +1,9 @@
 ---
 title: 'Build a Wikipedia search engine using RxJS'
-date: Tue, 07 Mar 2017 18:43:10 +0000
-draft: false
+pubDate: '2017-03-07'
+description: 'Tutorial on building a Wikipedia search engine using RxJS.'
 tags: ['RxJS', 'rxjs', 'tutorial', 'tutorials', 'web development']
+heroImage: '/blog-placeholder-2.jpg'
 ---
 
 In this tutorial, we will be building a Wikipedia search engine using RxJS

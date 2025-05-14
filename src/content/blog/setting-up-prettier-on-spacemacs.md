@@ -1,8 +1,9 @@
 ---
 title: 'Setting up Prettier on Spacemacs'
-date: Sat, 30 May 2020 03:59:02 +0000
-draft: false
+description: 'A guide to configuring Prettier in Spacemacs for code formatting.'
+pubDate: 'May 30 2020'
 tags: ['Articles', 'emacs', 'prettier', 'spacemacs', 'Spacemacs']
+heroImage: '/blog-placeholder-3.jpg'
 ---
 
 ### What is Spacemacs?

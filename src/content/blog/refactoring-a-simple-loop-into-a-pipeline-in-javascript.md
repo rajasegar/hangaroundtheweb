@@ -1,8 +1,9 @@
 ---
 title: 'Refactoring a simple loop into a pipeline in Javascript'
-date: Thu, 07 Sep 2017 00:28:31 +0000
-draft: false
+description: 'Refactor loops to collection pipelines in Javascript with practical examples.'
+pubDate: 'Sep 07 2017'
 tags: ['Articles', 'javascript', 'Javascript', 'refactoring', 'web development']
+heroImage: '/blog-placeholder-2.jpg'
 ---
 
 The loop is the typical way of processing collections, but with the greater adoption of first-class functions in Javascript the [collection pipeline](https://martinfowler.com/articles/collection-pipeline) is an appealing alternative. In this article we look at refactoring loops to collection pipelines with a small example.
