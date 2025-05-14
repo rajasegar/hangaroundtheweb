@@ -30,17 +30,15 @@ Reactive Extensions (Rx) is a library for composing asynchronous and event-based
 
 ### 1.2 HTML markup for the search box
 
-```
-
-
-
+```html
+<p><input type="text" id="input"/></p>
 ```
 
 ### 1.3 Capturing the keyup events in search box
 
 Here we capture the **keyup** events of the input element using the [fromEvent](https://github.com/Reactive-Extensions/RxJS/blob/master/doc/api/core/operators/fromevent.md) operator of **Rx.Observable** which creates an observable sequence by adding an event listener to the matching DOM Element
 
-```
+```js
 // Only get the values from each keyups
 var keyups = Rx.Observable.fromEvent($input, 'keyup')
               .map(e => e.target.value)
@@ -54,7 +52,7 @@ var keyups = Rx.Observable.fromEvent($input, 'keyup')
 
 Here we are debouncing the keyup events for about 500 milliseconds using the [throttle](https://github.com/Reactive-Extensions/RxJS/blob/master/doc/api/core/operators/throttle.md) operator of **Rx.Observable** which returns an Observable that emits only the first item emitted by the source Observable during sequential time windows of a specified duration
 
-```
+```js
 // Now throttle/debounce the input for 500ms
 var throttled = keyups.throttle(500);
 
@@ -64,7 +62,7 @@ var throttled = keyups.throttle(500);
 
 The throttled input stream is then run through the **distinctUntilChanged** operator which returns an observable sequence that contains only distinct contiguous elements according to the keySelector and the comparer.
 
-```
+```js
 // Now only get the distinct values, so we eleminate the arrows and other control characters
 var distinct = throttled.distinctUntilChanged();
 
@@ -74,7 +72,7 @@ var distinct = throttled.distinctUntilChanged();
 
 We can now send the filtered input terms to Wikipedia for getting the search results. For that we will be defining a new function called **searchWikipedia** by passing the term as the parameter.
 
-```
+```js
 function searchWikipedia(term) {
   return $.ajax({
     url: "http://en.wikipedia.org/w/api.php",
@@ -93,7 +91,7 @@ function searchWikipedia(term) {
 
 We now got the distinct observable streams and the **flatMapLatest** transform the items emitted by an Observable into Observables, and mirror those items emitted by the most-recently transformed Observable.
 
-```
+```js
 var suggestions = distinct.flatMapLatest(searchWikipedia);
 
 suggestions.subscribe(data => {

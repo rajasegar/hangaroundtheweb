@@ -3,6 +3,7 @@ title: 'Creating runtime assisted Codemods using Telemetry helpers'
 description: ''
 pubDate: '2019-10-31'
 tags: ['Articles', 'codemod', 'codemods', 'ember', 'emberjs', 'EmberJS', 'telemetry']
+heroImage: 'blog-placeholder-2.jpg'
 ---
 
 In this article, we are going to take a glimpse at the [ember-codemods-telemetry-helpers](https://github.com/ember-codemods/ember-codemods-telemetry-helpers) package and how it helps to create more advanced codemods for [Ember.js](https://emberjs.com/).

@@ -1,12 +1,11 @@
 ---
 title: 'Arguing for the sake of arguments in JavaScript'
-pubDate: '2018-03-29'
+pubDate: 'March 29 2018'
 description: ''
 tags: ['article', 'Articles', 'articles', 'javascript', 'Javascript']
+heroImage: '/blog-placeholder-2.jpg'
 ---
 
-Arguing for the sake of arguments in JavaScript
------------------------------------------------
 
 This article deals with some intricacies revolving around the **arguments** object, a magical and mysterious creature residing in the functional realms of the Javascript world, which can be summoned anytime in your code by the programming wizards without any spells, incantations or sorcery. The arguments object is an Array-like object corresponding to the arguments passed to a function. It is a local variable available within all **(non-arrow)** functions. We will also be discussing the different ways the **arguments** object can be put to use to solve various problems involving multiple argument functions.
 

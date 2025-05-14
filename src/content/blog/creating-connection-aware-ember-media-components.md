@@ -3,6 +3,7 @@ title: 'Creating Connection-aware Ember Media Components'
 description: ''
 pubDate: 'Aug 18 2018'
 tags: ['Articles', 'component', 'ember', 'emberjs', 'EmberJS', 'networkinformationapi']
+heroImage: '/blog-placeholder-2.jpg'
 ---
 
 Creating Connection-aware Ember Media Components
