@@ -1,8 +1,9 @@
 ---
 title: 'Cycle.js tutorial: Create a simple registration form and track the application state'
-date: Wed, 08 Feb 2017 05:54:11 +0000
-draft: false
+description: ''
+pubDate: 'Feb 08 2017'
 tags: ['Cycle.js', 'cycle.js', 'cyclejs', 'frp', 'functional programming', 'reactive programming', 'web development']
+heroImage: '/blog-placeholder-3.jpg'
 ---
 
 Create a simple registration form using Cycle.js and track the application state This tutorial is the first in a series where we will be building a simple registration form using Cycle.js and we will be tracking the application state on what the user input is.
@@ -32,7 +33,7 @@ This tutorial is the first in a series where we will be building a simple regist
 
 The quickest way to create a new project with Cycle.js is by using [create-cycle-app](https://github.com/cyclejs-community/create-cycle-app).
 
-```
+```bash
 npm install --global create-cycle-app
 create-cycle-app my-awesome-app
 
@@ -55,7 +56,7 @@ Inside the ****src/**** directory, we will be having the source code:
 *   Map each event to the value of the input element i.e., the target
 *   Start with a empty quotes value for the initial application state
 
-```
+```js
 let username$ = sources.DOM.select('#username')
         .events("input")
         .map((event) => event.target.value)
@@ -68,7 +69,7 @@ let username$ = sources.DOM.select('#username')
 
 Again we are doing the same for the ****email**** element
 
-```
+```js
 let email$ = sources.DOM.select("#email")
         .events("input")
         .map((event) => event.target.value)
@@ -81,7 +82,7 @@ let email$ = sources.DOM.select("#email")
 
 Here we are constructing the Virtual DOM using the application state which in turn is got by combining the ****username**** and ****email**** streams. We will be using the [xstream](http://staltz.com/xstream/) library by Andre Staltz, which is an extremely intuitive, small, and fast functional reactive stream library for JavaScript
 
-```
+```js
 const vtree$ = xs.combine(username$,email$)
           .map((username,email) => {
             return div(\[
@@ -112,7 +113,7 @@ Also, we are capturing the application state using the values stored in ****user
 
 Finally we are returning the virtual DOM tree as output sinks back again to the main function.
 
-```
+```js
 const sinks = {
     DOM: vtree$
   };

@@ -6,9 +6,6 @@ tags: ['article', 'Articles', 'articles', 'programming', 'psychology']
 heroImage: '/blog-placeholder-2.jpg'
 ---
 
-Cognitive Dissonance in Programming
------------------------------------
-
 In the field of psychology, [cognitive dissonance](https://en.wikipedia.org/wiki/Cognitive_dissonance) is the mental discomfort (psychological stress) experienced by a person who simultaneously holds two or more contradictory beliefs, ideas, or values. The occurrence of cognitive dissonance is a consequence of a person performing an action that contradicts personal beliefs, ideals, and values; and also occurs when confronted with new information that contradicts said beliefs, ideals, and values. In the fable of **The Fox and the Grapes**, by Aesop, on failing to reach the desired bunch of grapes, the fox then decides he does not truly want the fruit because it is sour. The fox's act of rationalization (justification) reduced his anxiety about the cognitive dissonance occurred because of a desire he cannot realize.
 
 ![](/wp-content/uploads/2018/07/The_Fox_and_the_Grapes.jpg)
