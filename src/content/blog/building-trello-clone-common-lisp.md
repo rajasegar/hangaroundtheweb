@@ -1,42 +1,43 @@
-#+title: Building a Trello Clone in Common Lisp
-#+date: <2021-07-14 Wed>
-#+tags[]: common-lisp, lisp
-#+summary: In this post we are going to build a Trello clone using Common Lisp
-#+draft: true
+---
+title: 'Building a Trello Clone in Common Lisp'
+pubDate: 'July 14 2021'
+tags: ['common-lisp', 'lisp']
+description: In this post we are going to build a Trello clone using Common Lisp
+heroImage: '/blog-placeholder-2.jpg'
+---
 
-* Building a Trello Clone in Common Lisp
-  In this post we are going to build a Trello clone demo application in
+In this post we are going to build a Trello clone demo application in
 Common Lisp. It is just a demo app without any authentication or persistence,
 it's going to focus mainly on the routing, user experience and api mechanisms.
 We are going to use a couple of JavaScript libraries to enhance the user experience
 like drag-n-drop, inline forms, etc.,
 
-** Boards
+## Boards
    
    First we are going to construct our Trello board from two lists namely `To Do`
 and `Doing`, each containing two cards. We are going to create a list of property lists
 for this.
 
-#+BEGIN_SRC common-lisp
+```common-lisp
 ;; Boards
 (defvar *board* '((:name "To Do" :id 1 :cards ((:id 1 :label "First Card" :list 1)
                                                 (:id 2 :label "Second Card" :list 1)))
                    (:name "Doing" :id 2 :cards ((:id 3 :label "First Card" :list 2)
                                                 (:id 4 :label "Second Card" :list 2)))))
 
-#+END_SRC
+```
 
-*** Home page route
+### Home page route
 Next we are going to pass down this `board` to our home page, so that the lists and 
 cards can be rendered. This is how our home page route is going to look like:
 
-#+BEGIN_SRC common-lisp
+```common-lisp
 ;; Home page
 (defroute "/" ()
   (render #P"index.html" (list :board *board*)))
-#+END_SRC
+```
 
-** Creating New List
+## Creating New List
 Now we are going to focus on creating a new list on the board. We have a button called 
 `+ Add another list` in our page, by clicking on it you will get an inline form asking you
 for a name for the new list and when you press add , a new list will be created and added to
@@ -56,33 +57,26 @@ like more primitive method of creating an inline form experience for the user. Y
 the second approach is it somewhat more like the first one, the only difference is you are getting the HTML from the server
 and swap it in the DOM. Still, you have to manipulate the DOM. 
 
-But there is a catch here, first we are not going to directly manipulate the DOM in the second approach. Since this is
-kind of a recurring pattern in UI, like swapping parts of the DOM on some user events and reverting back once the user
-is done with updating or submitting the form. I am going to make use of an awesome library with a clean and declarative
-approach of manipulating the DOM on user events by using HTML fragments obtained from the server. The name of the 
-library is called [[https://htmx.org][htmx]].
+But there is a catch here, first we are not going to directly manipulate the DOM in the second approach. Since this is kind of a recurring pattern in UI, like swapping parts of the DOM on some user events and reverting back once the user is done with updating or submitting the form. I am going to make use of an awesome library with a clean and declarative approach of manipulating the DOM on user events by using HTML fragments obtained from the server. The name of the library is called [htmx](https://htmx.org).
 
 htmx allows you to access AJAX, CSS Transitions, WebSockets and Server Sent Events directly in HTML, using attributes, so you can build modern user interfaces with the simplicity and power of hypertext.
 It is small (~10k minified and gzipped), dependency-free, extendable and IE11 compatible.
 
 This is how we are going to do that. The below fragment is our original markup for the `+ Add another list` button.
 
-#+BEGIN_SRC html
+```html
 <div id="add-list" class="add-list-button" hx-get="/lists/add" hx-swap="outerHTML" hx-target="#add-list">
   {% include "svg-plus.html" %}
   Add another list
 </div>
-#+END_SRC
+```
 
-Notice the new attributes starting with `hx-`, they are the special htmx attributes that let you send AJAX requests to
-the server and get the HTML fragments and swap them automatically based on your target. In our case, we are sending
-a GET request with the `hx-get` attribute to the url `/lists/add` and swap the response with the `outerHTML` property
-of our target `#add-list` provided through the `hx-swap` and `hx-target` attributes.
+Notice the new attributes starting with `hx-`, they are the special htmx attributes that let you send AJAX requests to the server and get the HTML fragments and swap them automatically based on your target. In our case, we are sending a GET request with the `hx-get` attribute to the url `/lists/add` and swap the response with the `outerHTML` property of our target `#add-list` provided through the `hx-swap` and `hx-target` attributes.
 
-[[/images/cl-trello/add-list.png]]
+![Addlist](/images/cl-trello/add-list.png)
 
 The new markup response from the server will look something like this:
-#+BEGIN_SRC html
+```html
 <div id="add-list" class="add-list-editor">
   <form hx-post="/lists" hx-target="#board">
     <div class="list-title-edit">
@@ -102,33 +96,32 @@ The new markup response from the server will look something like this:
     </div>
   </form>
 </div>
-#+END_SRC
+```
 
 Route for creating new list:
 
-#+BEGIN_SRC common-lisp
+```common-lisp
 ;; Add new lists
 (defroute ("/lists" :method :POST) (&key _parsed)
   (let* ((name (get-param _parsed "name"))
 	(new-list (list :name name :id (+ 1 (length *board*)) :cards ())))
     (setf *board* (append *board* (list new-list)))
     (render #P"_board.html" (list :board *board*))))
-#+END_SRC
+```
 
 Route for cancelling new list addition:
 
-#+BEGIN_SRC common-lisp
+```common-lisp
 ;; Cancel add list
 (defroute "/lists/cancel" ()
   (render #P"_new-list.html"))
-#+END_SRC
+```
 
-[[/images/cl-trello/add-list-decision-tree.png]]
+![Add-list-decision-tree](/images/cl-trello/add-list-decision-tree.png)
 
-
-** Adding a new Card
+## Adding a new Card
    
-#+BEGIN_SRC html
+```html
 <div class="edit-card hidden" id="add-card-{{list.id}}">
   <div class="card">
     <textarea
@@ -163,10 +156,6 @@ Route for cancelling new list addition:
   </div>
   
 </div>
-#+END_SRC
-   
-[[/images/cl-trello/toggle-new-card.png]]
+```
 
-
-
-** Lists
+![New-Card](/images/cl-trello/toggle-new-card.png)
