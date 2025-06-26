@@ -1,8 +1,8 @@
-#+title: Heroku Buildpack for Common Lisp
-#+date: <2021-07-30 Fri>
-#+options: toc:nil num:nil html-postamble:nil
-#+summary: A Heroku buildpack for Common Lisp
+#+title: 'Heroku Buildpack for Common Lisp'
+#+pubDate: 'Jul 30 2021' 
+#+description: 'A Heroku buildpack for Common Lisp'
 #+tags[]: common-lisp lisp heroku-buildpacks
+#+hero_image: '/blog-placeholder-3.jpg'
 
 * Heroku Buildpack for Common Lisp
   In this post we are going to take a look at one of the Heroku buildpacks for deploying Common Lisp web

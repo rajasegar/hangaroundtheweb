@@ -1,7 +1,8 @@
 ---
 title: "Custom Layouts in Spacemacs"
-date: 2021-06-16T15:34:43+05:30
-draft: true
+pubDate: June 16 2021
+description: ''
+heroImage: '/blog-placeholder-3.jpg'
 ---
 
 #+options:  num:nil toc:nil  html-postamble:nil 

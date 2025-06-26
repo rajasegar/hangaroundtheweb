@@ -1,6 +1,6 @@
 ---
 title: 'Say Goodbye to Object Key Woes: A Look at JavaScript New Composites proposal'
-description: ''
+description: 'The TC39 Composites proposal represents a significant step towards addressing a long-standing limitation in JavaScript: the lack of built-in value-based equality for objects used as keys in collections'
 pubDate: 'May 15 2025'
 heroImage: '/images/composites-proposal.png'
 ---
