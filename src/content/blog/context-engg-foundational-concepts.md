@@ -2,7 +2,7 @@
 title: 'Context Engineering - Foundational Concepts and Mechanisms'
 description: 'Effective context engineering relies on several core technical mechanisms that enable Large Language Models (LLMs) to acquire, process, and utilize external information.'
 pubDate: 'June 27 2025'
-heroImage: '/blog-placeholder-2.jpg'
+heroImage: '/images/context-engg-foundations.png'
 ---
 
 Effective context engineering relies on several core technical mechanisms that enable Large Language Models (LLMs) to acquire, process, and utilize external information. These mechanisms are crucial for extending the capabilities of LLMs beyond their initial training data.
