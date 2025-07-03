@@ -2,7 +2,7 @@
 title:  'Context Engineering: Managing Context: Strategies and Techniques'
 description: ''
 pubDate: 'June 28 2025'
-heroImage: '/blog-placeholder-2.jpg'
+heroImage: '/images/context-engg-strategies-techniques.jpg'
 ---
 
 Effectively managing the context provided to Large Language Models (LLMs) is paramount for their performance, particularly given the inherent limitations of their context windows. Various strategies have been developed to optimize the use of this constrained "memory" and ensure the AI receives the most relevant information.
