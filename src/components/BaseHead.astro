@@ -50,6 +50,9 @@ const slug = Astro.url.pathname
 <meta property="og:title" content={title} />
 <meta property="og:description" content={description} />
 <meta property="og:image" content={new URL(`/images/cards/${slug}.jpg`, Astro.url)} />
+<meta property="og:logo" content={new URL(`/images/cards/${slug}.jpg`, Astro.url)} />
+
+        
 
 <!-- Twitter -->
 <meta property="twitter:card" content="summary_large_image" />
