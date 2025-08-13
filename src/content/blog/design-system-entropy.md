@@ -2,7 +2,7 @@
 title: 'Taming Design System Entropy'
 pubDate: '2025-08-12'
 description: 'Why Your Design System Grows Messy—and What to Do About It'
-heroImage: '/images/design-system-entropy.jpg'
+heroImage: '/images/cover/design-system-entropy.jpg'
 ---
 
 

@@ -12,15 +12,12 @@ interface Props {
 
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 
+console.log(Astro.url)
 const { title, description, image = '/blog-placeholder-1.jpg' } = Astro.props; 
-import { getEntry } from 'astro:content';
-
 const slug = Astro.url.pathname
-    .replace('/blog/','')
-    .replace('/','')
+.replace('/blog/','')
+.replace('/','')
 
-const currentPost = await getEntry('blog', slug);
-const { heroImage } = currentPost.data
 ---
 
 <!-- Global Metadata -->
@@ -54,7 +51,9 @@ const { heroImage } = currentPost.data
 <meta property="og:title" content={title} />
 <meta property="og:description" content={description} />
 <!-- <meta property="og:image" content={new URL(image, Astro.url)} /> -->
-<meta property="og:image" content={heroImage} />
+<meta property="og:image"
+content={new URL(`/images/cards/${slug}.jpg`, Astro.url)}
+/>
 
 <!-- Twitter -->
 <meta property="twitter:card" content="summary_large_image" />
