@@ -12,7 +12,6 @@ interface Props {
 
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 
-console.log(Astro.url)
 const { title, description, image = '/blog-placeholder-1.jpg' } = Astro.props; 
 const slug = Astro.url.pathname
 .replace('/blog/','')
@@ -50,17 +49,14 @@ const slug = Astro.url.pathname
 <meta property="og:url" content={Astro.url} />
 <meta property="og:title" content={title} />
 <meta property="og:description" content={description} />
-<!-- <meta property="og:image" content={new URL(image, Astro.url)} /> -->
-<meta property="og:image"
-content={new URL(`/images/cards/${slug}.jpg`, Astro.url)}
-/>
+<meta property="og:image" content={new URL(`/images/cards/${slug}.jpg`, Astro.url)} />
 
 <!-- Twitter -->
 <meta property="twitter:card" content="summary_large_image" />
 <meta property="twitter:url" content={Astro.url} />
 <meta property="twitter:title" content={title} />
 <meta property="twitter:description" content={description} />
-<meta property="twitter:image" content={new URL(image, Astro.url)} />
+<meta property="twitter:image" content={new URL(`/images/cards/${slug}.jpg`, Astro.url)} />
 
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-NV5MMHLML3"></script>
